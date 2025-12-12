@@ -1,86 +1,86 @@
-# Index/LUT Sandbox
+# แซนด์บ็อกซ์ดัชนี/LUT
 
-The Index/LUT Sandbox is an interactive workspace within the Chloros Image Viewer that allows you to experiment with multispectral index calculations and color visualizations in real-time. This powerful tool helps you test different indices, refine value ranges, and create publication-ready visualizations without reprocessing your entire dataset.
+Index/LUT Sandbox คือพื้นที่ทำงานแบบโต้ตอบภายในโปรแกรมดูรูปภาพคลอรอส ที่ให้คุณทดลองการคำนวณดัชนีแบบหลายสเปกตรัมและการแสดงภาพสีแบบเรียลไทม์ เครื่องมืออันทรงพลังนี้ช่วยให้คุณทดสอบดัชนีต่างๆ ปรับแต่งช่วงค่า และสร้างการแสดงภาพพร้อมสำหรับการเผยแพร่โดยไม่ต้องประมวลผลชุดข้อมูลทั้งหมดของคุณใหม่
 
-## What is the Index/LUT Sandbox?
+## Index/LUT Sandbox คืออะไร
 
-### Purpose
+### วัตถุประสงค์
 
-The Sandbox provides:
+แซนด์บ็อกซ์ให้:
 
-* **Real-time index calculation** - Apply any vegetation index instantly
-* **Interactive LUT adjustment** - Fine-tune color gradients and ranges
-* **Workflow optimization** - Determine best settings before batch processing
+* **การคำนวณดัชนีแบบเรียลไทม์** - ใช้ดัชนีพืชพรรณได้ทันที
+* **การปรับ LUT แบบโต้ตอบ** - ปรับแต่งการไล่ระดับสีและช่วงอย่างละเอียด
+* **การเพิ่มประสิทธิภาพขั้นตอนการทำงาน** - กำหนดการตั้งค่าที่ดีที่สุดก่อนการประมวลผลเป็นชุด
 
-### Sandbox vs. Project Processing
+### Sandbox กับการประมวลผลโครงการ
 
-**Index/LUT Sandbox (Interactive):**
+**แซนด์บ็อกซ์ดัชนี/LUT (แบบโต้ตอบ):**
 
-* Single image at a time
-* Instant feedback
-* Experimental and iterative
-* No permanent changes to files
-* Perfect for exploring and testing
+* ทีละภาพ.
+* ข้อเสนอแนะทันที
+* การทดลองและวนซ้ำ
+* ไม่มีการเปลี่ยนแปลงไฟล์อย่างถาวร
+* เหมาะสำหรับการสำรวจและทดสอบ
 
-**Project Processing (Batch):**
+**การประมวลผลโครงการ (ชุดงาน):**
 
-* Entire dataset at once
-* Pre-configured settings
-* Permanent output files
-* Time-intensive
-* Best when settings are finalized
+* ชุดข้อมูลทั้งหมดในครั้งเดียว
+* การตั้งค่าที่กำหนดไว้ล่วงหน้า
+* ไฟล์เอาต์พุตถาวร
+* ต้องใช้เวลามาก
+* ดีที่สุดเมื่อการตั้งค่าเสร็จสิ้น
 
-{% hint style="success" %}
-**Best Workflow**: Use the Sandbox to experiment and find optimal index and LUT settings, then apply those settings during Project Processing for your entire dataset.
-{% endhint %}
+{% คำใบ้สไตล์ = "ความสำเร็จ" %}
+**ขั้นตอนการทำงานที่ดีที่สุด**: ใช้แซนด์บ็อกซ์เพื่อทดสอบและค้นหาดัชนีและการตั้งค่า LUT ที่เหมาะสม จากนั้นใช้การตั้งค่าเหล่านั้นระหว่างการประมวลผลโครงการกับชุดข้อมูลทั้งหมดของคุณ
+{% คำแนะนำสุดท้าย %}
 
-***
+-
 
-## Working with the Index/LUT Sandbox
+## การทำงานกับแซนด์บ็อกซ์ Index/LUT
 
-### Understanding Pre-Calculated Indices
+### ทำความเข้าใจกับดัชนีที่คำนวณไว้ล่วงหน้า
 
-In Chloros, indices can be applied during project processing. To determine which index and LUT settings you want to apply to exports it is easiest to use the image viewer sandbox.
+ในคลอรอส สามารถใช้ดัชนีได้ในระหว่างการประมวลผลโครงการ หากต้องการกำหนดการตั้งค่าดัชนีและ LUT ที่คุณต้องการใช้กับการส่งออก วิธีที่ง่ายที่สุดคือใช้แซนด์บ็อกซ์โปรแกรมดูรูปภาพ
 
-The sandbox allows you to:
+แซนด์บ็อกซ์ช่วยให้คุณ:
 
-* **Apply new index and color gradients (LUTs)** to visualize the data
-* **Adjust visualization settings** interactively
-* **View** already-calculated index images
-* **Inspect** pixel values at all zoom levels
+* **ใช้ดัชนีใหม่และการไล่ระดับสี (LUT)** เพื่อแสดงข้อมูลเป็นภาพ
+* **ปรับการตั้งค่าการแสดงภาพ** แบบโต้ตอบ
+* **ดู** ภาพดัชนีที่คำนวณไว้แล้ว
+* **ตรวจสอบ** ค่าพิกเซลในทุกระดับการซูม
 
-### Opening the Sandbox
+### กำลังเปิดแซนด์บ็อกซ์
 
-The Index/LUT Sandbox is accessed in the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebar tab:
+เข้าถึง Index/LUT Sandbox ได้ใน **โปรแกรมดูรูปภาพ** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> แท็บแถบด้านข้าง:
 
-1. Click an image in the file browser image grid, it opens in the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab
-2. Click **the Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab to open the left pop-out sidebar if it's not already open
+1. คลิกรูปภาพในตารางรูปภาพของเบราว์เซอร์ไฟล์ จากนั้นจะเปิดขึ้นในแท็บ **โปรแกรมดูรูปภาพ** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">
+2. คลิกแท็บ **โปรแกรมดูรูปภาพ** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> เพื่อเปิดแถบด้านข้างที่โผล่ออกมาทางซ้ายหากยังไม่ได้เปิดไว้
 
-### Selecting an Image to Apply an Index/LUT to
+### การเลือกรูปภาพเพื่อใช้ดัชนี/LUT
 
-To work with an index in the Image Viewer <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sandbox:
+หากต้องการทำงานกับดัชนีในแซนด์บ็อกซ์ Image Viewer <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">:
 
-1. **Open an image** from the main image grid by clicking on it
-2. The **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab will then open
-3. Click the **Layer dropdown** (top-right of viewer)
-4. Select the layer from the dropdown:
-   * RAW (Reflectance)
+1. **เปิดรูปภาพ** จากตารางรูปภาพหลักโดยคลิกที่รูปภาพนั้น
+2. แท็บ **โปรแกรมดูรูปภาพ** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> จะเปิดขึ้น
+3. คลิก **เลเยอร์แบบเลื่อนลง** (ด้านบนขวาของโปรแกรมดู)
+4. เลือกเลเยอร์จากเมนูแบบเลื่อนลง:
+   * RAW (แสงสะท้อน)
 
-### Applying an Index to an Image
+### การใช้ดัชนีกับรูปภาพ
 
-Once the image is fullscreen and the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab sidebar is open:
+เมื่อรูปภาพเต็มหน้าจอและแถบด้านข้างแท็บ **โปรแกรมดูรูปภาพ** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> เปิดอยู่:
 
-1. Check the Index box at the top of the sidebar
-2. Choose your camera's filter from the left dropdown
-3. Choose the desired index formula from the right dropdown
-4. Drag the filter channel color circles to the locations in the index formula below
-5. Once the formula is valid the image will update and show the index values
-6. Move your mouse cursor around to see the values at the cursor's location
-7. Zoom in to see individual pixels and their associated values
+1. ทำเครื่องหมายที่ช่องดัชนีที่ด้านบนของแถบด้านข้าง
+2. เลือกฟิลเตอร์กล้องของคุณจากเมนูแบบเลื่อนลงด้านซ้าย
+3. เลือกสูตรดัชนีที่ต้องการจากเมนูแบบเลื่อนลงด้านขวา
+4. ลากวงกลมสีช่องตัวกรองไปยังตำแหน่งในสูตรดัชนีด้านล่าง
+5. เมื่อสูตรถูกต้อง รูปภาพจะอัปเดตและแสดงค่าดัชนี
+6. เลื่อนเคอร์เซอร์ของเมาส์ไปรอบๆ เพื่อดูค่าที่ตำแหน่งของเคอร์เซอร์
+7. ขยายเพื่อดูแต่ละพิกเซลและค่าที่เกี่ยวข้อง
 
-Each index has a specific value range and meaning:
+แต่ละดัชนีมีช่วงค่าและความหมายเฉพาะ:
 
-#### NDVI Example
+#### ตัวอย่าง NDVI
 
 ```
 Formula: (NIR - Red) / (NIR + Red)
@@ -96,293 +96,293 @@ Bare soil: 0.0 to 0.2
 Water: -0.1 to 0.1
 ```
 
-For complete index formula documentation, see [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md).
+สำหรับเอกสารประกอบสูตรดัชนีฉบับสมบูรณ์ โปรดดูที่ [สูตรดัชนีหลายสเปกตรัม](../project-settings/multispectral-index-formulas.md)
 
-***
+-
 
-## Working with LUTs (Look-Up Tables)
+## การทำงานกับ LUT (ตารางค้นหา)
 
-### What is a LUT?
+### LUT คืออะไร?
 
-A **Look-Up Table (LUT)** maps numerical index values to colors for visualization:
+**ตารางตรวจสอบ (LUT)** จะจับคู่ค่าดัชนีตัวเลขกับสีสำหรับการแสดงภาพ:
 
-* **Input**: Index pixel value (e.g., NDVI 0.65)
-* **Output**: RGB color (e.g., bright green)
-* **Purpose**: Make patterns easier to see and interpret
+* **อินพุต**: ค่าพิกเซลดัชนี (เช่น NDVI 0.65)
+* **เอาต์พุต**: สี RGB (เช่น สีเขียวสดใส)
+* **วัตถุประสงค์**: ทำให้รูปแบบดูและตีความได้ง่ายขึ้น
 
-**Grayscale vs. Color LUT:**
+**ระดับสีเทาเทียบกับสี LUT:**
 
-* Grayscale: Scientific and neutral, shows raw data
-* Color LUT: Intuitive and impactful, highlights patterns and differences
+* ระดับสีเทา: ทางวิทยาศาสตร์และเป็นกลาง แสดงข้อมูลดิบ
+* LUT สี: ใช้งานง่ายและมีประสิทธิภาพ เน้นรูปแบบและความแตกต่าง
 
-{% hint style="success" %}
-**Visualization Power**: Applying a color LUT to a grayscale index image makes it dramatically easier to identify patterns, anomalies, and areas of interest at a glance.
-{% endhint %}
+{% คำใบ้สไตล์ = "ความสำเร็จ" %}
+**พลังแห่งการแสดงภาพ**: การใช้ LUT สีกับภาพดัชนีระดับสีเทาช่วยให้ระบุรูปแบบ ความผิดปกติ และพื้นที่ที่สนใจได้ง่ายขึ้นอย่างมากในทันที
+{% คำแนะนำสุดท้าย %}
 
-### Applying a LUT to an Index Image
+### การใช้ LUT กับภาพดัชนี
 
-Once you have an index image showing
+เมื่อคุณมีภาพดัชนีแสดงแล้ว
 
-1. Click the <img src="../.gitbook/assets/image.png" alt="" data-size="line"> "+Add LUT" button
-2. Select the color gradient
-3. Adjust the clipping min/max end points
-4. Adjust the Clipping Mode
-5. Check the Index box in the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab sidebar to apply the LUT
+1. คลิกปุ่ม <img src="../.gitbook/assets/image.png" alt="" data-size="line"> "+เพิ่ม LUT"
+2. เลือกการไล่ระดับสี
+3. ปรับจุดสิ้นสุดต่ำสุด/สูงสุดที่ตัด
+4. ปรับโหมดการตัดภาพ
+5. ทำเครื่องหมายที่ช่องดัชนีในแถบด้านข้างของแท็บ **โปรแกรมดูรูปภาพ** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> เพื่อใช้ LUT
 
-### Choosing a Color Gradient
+### การเลือกการไล่ระดับสี
 
-**Selecting a gradient:**
+**การเลือกการไล่ระดับสี:**
 
-1. In the LUT panel, locate the **colored gradient bar**
-2. Hover your mouse over it to view available gradient presets
-3. Select desired gradient
-4. The image **updates immediately** with new colors when the Index box is checked
+1. ในแผง LUT ให้ค้นหา **แถบไล่ระดับสี**
+2. เลื่อนเมาส์ไปเหนือมันเพื่อดูค่าที่ตั้งไว้ล่วงหน้าสำหรับการไล่ระดับสีที่มีอยู่
+3. เลือกการไล่ระดับสีที่ต้องการ
+4. รูปภาพ **อัปเดตทันที** ด้วยสีใหม่เมื่อทำเครื่องหมายในช่องดัชนี
 
-{% hint style="success" %}
-**Best Practice**: For vegetation indices like NDVI, the Red-Yellow-Green gradient is most intuitive because it aligns with natural color associations (green=healthy, yellow=moderate, red=stressed).
-{% endhint %}
+{% คำใบ้สไตล์ = "ความสำเร็จ" %}
+**แนวทางปฏิบัติที่ดีที่สุด**: สำหรับดัชนีพืชพรรณ เช่น NDVI การไล่ระดับสีแดง-เหลือง-เขียวนั้นเป็นไปตามสัญชาตญาณมากที่สุด เนื่องจากสอดคล้องกับการเชื่อมโยงของสีตามธรรมชาติ (เขียว=ดีต่อสุขภาพ เหลือง=ปานกลาง แดง=เน้น)
+{% คำแนะนำสุดท้าย %}
 
-### Adjusting Color Classes
+### การปรับคลาสสี
 
-The **Classes control** determines how many discrete color steps appear in your gradient:
+ส่วนควบคุม **คลาส** จะกำหนดจำนวนขั้นตอนสีที่แยกจากกันที่จะปรากฏในการไล่ระดับสีของคุณ:
 
-**Class count options:**
+**ตัวเลือกการนับชั้นเรียน:**
 
-* **2-5 classes**: Very broad categories, distinct zones
-* **6-10 classes**: Balanced, good for classification
-* **11-20 classes**: Smooth gradients, continuous appearance
-* **20+ classes**: Near-continuous, maximum smoothness
+* **2-5 ชั้นเรียน**: หมวดหมู่ที่กว้างมาก โซนที่แตกต่างกัน
+* **6-10 คลาส**: สมดุล เหมาะสำหรับการจำแนกประเภท
+* **11-20 คลาส**: การไล่ระดับสีที่ราบรื่น มีลักษณะต่อเนื่อง
+* **20+ คลาส**: เกือบต่อเนื่องและราบรื่นสูงสุด
 
-**How to adjust:**
+**วิธีการปรับ:**
 
-1. In the LUT panel, locate the **color swatch squares below the gradient bar**
-2. Adjust the number of classes by adding with the + button
-3. Remove the number of classes by double clicking on a color swatch
-4. The gradient updates **in real-time** on the image
+1. ในแผง LUT ให้ค้นหา **สี่เหลี่ยมตัวอย่างสีใต้แถบไล่ระดับสี**
+2. ปรับจำนวนคลาสโดยเพิ่มด้วยปุ่ม +
+3. ลบจำนวนคลาสโดยดับเบิลคลิกที่ตัวอย่างสี
+4. การไล่ระดับสีจะอัปเดต **แบบเรียลไทม์** บนรูปภาพ
 
-**Effect on visualization:**
+**ผลกระทบต่อการมองเห็น:**
 
-* **Fewer classes** (3-5): Creates distinct zones, simplified classification, easier to distinguish categories
-* **Medium classes** (6-10): Balanced approach, good for most applications
-* **More classes** (15-20): Smooth transitions, detailed variation, photographic appearance
+* **คลาสน้อยลง** (3-5): สร้างโซนที่แตกต่าง การจัดหมวดหมู่ที่เรียบง่าย และแยกแยะหมวดหมู่ได้ง่ายขึ้น
+* **ชั้นเรียนระดับกลาง** (6-10): แนวทางที่สมดุล เหมาะสำหรับการใช้งานส่วนใหญ่
+* **ชั้นเรียนเพิ่มเติม** (15-20): การเปลี่ยนผ่านที่ราบรื่น รูปแบบที่มีรายละเอียด รูปลักษณ์ของภาพถ่าย
 
-**When to use:**
+**เมื่อใดควรใช้:**
 
-* **Few classes (3-5)**: Presentation slides, classification maps, simple reports
-* **Medium classes (6-10)**: General analysis, balanced detail, standard reports
-* **Many classes (15-20)**: Scientific analysis, detailed inspection, publication-quality outputs
+* **ไม่กี่ชั้นเรียน (3-5)**: สไลด์การนำเสนอ แผนที่การจัดหมวดหมู่ รายงานอย่างง่าย
+* **คลาสกลาง (6-10)**: การวิเคราะห์ทั่วไป รายละเอียดที่สมดุล รายงานมาตรฐาน
+* **หลายคลาส (15-20)**: การวิเคราะห์ทางวิทยาศาสตร์ การตรวจสอบโดยละเอียด ผลลัพธ์คุณภาพสิ่งพิมพ์
 
-### Fine-Tuning Value Ranges
+### ช่วงค่าการปรับแต่งแบบละเอียด
 
-The **value range controls** determine which index values map to which colors in your gradient:
+**การควบคุมช่วงค่า** จะเป็นตัวกำหนดว่าค่าดัชนีใดจะจับคู่กับสีใดในการไล่ระดับสีของคุณ:
 
-**Range controls in LUT panel:**
+**การควบคุมช่วงในแผง LUT:**
 
-* **Minimum value**: Lower bound of the color scale
-* **Maximum value**: Upper bound of the color scale
-* **Intermediate values**: Automatically distributed between min and max (based on class count)
+* **ค่าขั้นต่ำ**: ขอบเขตล่างของระดับสี
+* **ค่าสูงสุด**: ขอบเขตด้านบนของระดับสี
+* **ค่ากลาง**: กระจายโดยอัตโนมัติระหว่างค่าต่ำสุดและค่าสูงสุด (ขึ้นอยู่กับจำนวนชั้นเรียน)
 
-#### Adjusting Min/Max Values
+#### การปรับค่าต่ำสุด/สูงสุด
 
-**To adjust value ranges:**
+**วิธีปรับช่วงค่า:**
 
-1. In the LUT panel, locate the **Min Value** and **Max Value** input fields
-2. Click the **Min Value** field
-3. Type the desired minimum value (e.g., `0.2`)
-4. Press **Enter** or click outside the field
-5. Repeat for **Max Value** field (e.g., `0.9`)
-6. The visualization **updates immediately**
+1. ในแผง LUT ให้ค้นหาช่องป้อนข้อมูล **ค่าต่ำสุด** และ **ค่าสูงสุด**
+2. คลิกช่อง **มูลค่าขั้นต่ำ**
+3. พิมพ์ค่าขั้นต่ำที่ต้องการ (เช่น `0.2`)
+4. กด **Enter** หรือคลิกนอกช่อง
+5. ทำซ้ำสำหรับช่อง **ค่าสูงสุด** (เช่น `0.9`)
+6. การแสดงภาพ ** อัปเดตทันที **
 
-{% hint style="info" %}
-**Auto-Scaling**: When you first apply a LUT, Chloros automatically sets the min/max to the actual data range in the image. You can then narrow this range to focus on specific value ranges of interest.
-{% endhint %}
+{% คำใบ้สไตล์ = "ข้อมูล" %}
+**ปรับขนาดอัตโนมัติ**: เมื่อคุณใช้ LUT เป็นครั้งแรก คลอรอสจะตั้งค่าต่ำสุด/สูงสุดเป็นช่วงข้อมูลจริงในรูปภาพโดยอัตโนมัติ จากนั้นคุณสามารถจำกัดช่วงนี้ให้แคบลงเพื่อเน้นไปที่ช่วงมูลค่าเฉพาะที่สนใจได้
+{% คำแนะนำสุดท้าย %}
 
-**Example NDVI range adjustments:**
+**ตัวอย่างการปรับช่วง NDVI:**
 
-* **Full range**: `-1.0` to `1.0` (show all possible values)
-* **Vegetation-focused**: `0.2` to `0.9` (exclude bare soil and water)
-* **Healthy vegetation only**: `0.5` to `0.9` (highlight only vigorous plants)
-* **Stress detection**: `0.2` to `0.5` (emphasize problem areas)
-* **Custom range**: Adjust based on your observed pixel values
+* **เต็มช่วง**: `-1.0` ถึง `1.0` (แสดงค่าที่เป็นไปได้ทั้งหมด)
+* **เน้นพืชพรรณ**: `0.2` ถึง `0.9` (ไม่รวมดินเปล่าและน้ำ)
+* **พืชผักเพื่อสุขภาพเท่านั้น**: `0.5` ถึง `0.9` (เน้นเฉพาะพืชที่แข็งแรง)
+* **การตรวจจับความเครียด**: `0.2` ถึง `0.5` (เน้นส่วนที่เป็นปัญหา)
+* **ช่วงที่กำหนดเอง**: ปรับตามค่าพิกเซลที่คุณสังเกตได้
 
-**Why adjust ranges?**
+**ทำไมต้องปรับช่วง**
 
-* **Increase contrast** in your area of interest
-* **Exclude irrelevant values** (e.g., water bodies, bare soil)
-* **Standardize visualization** across multiple images or dates
-* **Emphasize subtle differences** within a narrow value range
+* **เพิ่มความเปรียบต่าง** ในพื้นที่ที่คุณสนใจ
+* **ไม่รวมค่าที่ไม่เกี่ยวข้อง** (เช่น แหล่งน้ำ ดินเปล่า)
+* **สร้างมาตรฐานการแสดงภาพ** ในหลายภาพหรือวันที่
+* **เน้นความแตกต่างเล็กน้อย** ภายในช่วงค่าที่แคบ
 
-### Clipping Out-of-Range Values
+### การตัดค่าที่อยู่นอกช่วง
 
-When pixel values fall outside your defined min/max range, you can control how they're displayed using **clipping modes**.
+เมื่อค่าพิกเซลอยู่นอกช่วงต่ำสุด/สูงสุดที่คุณกำหนด คุณสามารถควบคุมวิธีการแสดงค่าเหล่านั้นได้โดยใช้ **โหมดการตัดภาพ**
 
-#### **Available clipping mode options:**
+#### **ตัวเลือกโหมดการตัดที่มีอยู่:**
 
-#### 1. Minimum and Maximum
+#### 1. ขั้นต่ำและสูงสุด
 
-* Pixels **below minimum** → display using the **first color** in gradient (e.g., red)
-* Pixels **above maximum** → display using the **last color** in gradient (e.g., green)
-* **Use case**: Emphasize extremes, show full data range with saturated colors at limits
-* **Example**: NDVI values below 0.2 all appear red, values above 0.9 all appear green
+* พิกเซล **ต่ำกว่าขั้นต่ำ** → แสดงโดยใช้ **สีแรก** ในการไล่ระดับสี (เช่น สีแดง)
+* พิกเซล **สูงกว่าค่าสูงสุด** → แสดงโดยใช้ **สีสุดท้าย** ในการไล่ระดับสี (เช่น สีเขียว)
+* **กรณีการใช้งาน**: เน้นความสุดขั้ว แสดงช่วงข้อมูลทั้งหมดด้วยสีอิ่มตัวที่ขีดจำกัด
+* **ตัวอย่าง**: ค่า NDVI ต่ำกว่า 0.2 ทั้งหมดจะปรากฏเป็นสีแดง ค่าที่สูงกว่า 0.9 ทั้งหมดจะปรากฏเป็นสีเขียว
 
-#### 2. Transparent Background
+#### 2. พื้นหลังโปร่งใส
 
-* Pixels **outside the range** become **fully transparent**
-* Only pixels **within range** show color gradient
-* **Use case**: GIS overlay, isolating specific value ranges, highlighting only areas of interest
-* **Example**: Show only NDVI 0.4-0.7 in color, everything else transparent
+* พิกเซล **อยู่นอกช่วง** จะกลายเป็น **โปร่งใสทั้งหมด**
+* เฉพาะพิกเซล **ภายในช่วง** เท่านั้นที่แสดงการไล่ระดับสี
+* **กรณีการใช้งาน**: การซ้อนทับ GIS แยกช่วงค่าเฉพาะ เน้นเฉพาะพื้นที่ที่สนใจ
+* **ตัวอย่าง**: แสดงเฉพาะสี NDVI 0.4-0.7 ส่วนอย่างอื่นโปร่งใส
 
-{% hint style="warning" %}
-**Transparency Limitation**: Transparent pixels will appear as the background color in the viewer. When exported during processing, transparency is preserved in PNG format but not in JPG.
-{% endhint %}
+{% คำใบ้สไตล์ = "คำเตือน" %}
+**ข้อจำกัดด้านความโปร่งใส**: พิกเซลโปร่งใสจะปรากฏเป็นสีพื้นหลังในโปรแกรมดูภาพ เมื่อส่งออกระหว่างการประมวลผล ความโปร่งใสจะถูกรักษาไว้ในรูปแบบ PNG แต่ไม่ใช่ในรูปแบบ JPG
+{% คำแนะนำสุดท้าย %}
 
-#### 3. Index Background
+#### 3. ความเป็นมาของดัชนี
 
-* Pixels **outside range** display in **grayscale** (showing raw index values)
-* Pixels **within range** show **color gradient**
-* **Use case**: Subtle highlighting, maintain context while emphasizing areas of interest
-* **Example**: Color-highlight stressed vegetation (NDVI 0.3-0.5) while showing healthy areas in gray
+* พิกเซล **นอกช่วง** จะแสดงเป็น **ระดับสีเทา** (แสดงค่าดัชนีดิบ)
+* พิกเซล **ภายในช่วง** แสดง **การไล่ระดับสี**
+* **กรณีการใช้งาน**: การเน้นแบบละเอียด รักษาบริบทพร้อมเน้นส่วนที่สนใจ
+* **ตัวอย่าง**: พืชเน้นสีเน้นสี (NDVI 0.3-0.5) โดยแสดงพื้นที่ที่มีสุขภาพดีเป็นสีเทา
 
-#### 4. Original Background
+#### 4. พื้นหลังดั้งเดิม
 
-* Pixels **outside range** display the **original multispectral image**
-* Pixels **within range** show **color gradient**
-* **Use case**: Most intuitive - combines natural image context with analytical color overlay
-* **Example**: See the actual field/crop appearance with color-coded stress areas overlaid
+* พิกเซล **ช่วงนอก** แสดง **ภาพหลายสเปกตรัมดั้งเดิม**
+* พิกเซล **ภายในช่วง** แสดง **การไล่ระดับสี**
+* **กรณีการใช้งาน**: ใช้งานง่ายที่สุด - รวมบริบทของภาพที่เป็นธรรมชาติเข้ากับการซ้อนทับสีเชิงวิเคราะห์
+* **ตัวอย่าง**: ดูลักษณะจริงของฟิลด์/ครอบตัดพร้อมพื้นที่ความเค้นรหัสสีที่ซ้อนทับ
 
-### Choosing the Right Clipping Mode
+### การเลือกโหมดการตัดภาพที่เหมาะสม
 
-| Clipping Mode              | Best For                                   | Visualization Style          |
-| -------------------------- | ------------------------------------------ | ---------------------------- |
-| **Minimum and Maximum**    | Full data display, scientific analysis     | All pixels colored           |
-| **Transparent Background** | GIS overlays, isolating specific ranges    | Color on range, blank beyond |
-| **Index Background**       | Subtle emphasis, maintaining data context  | Color on range, gray beyond  |
-| **Original Background**    | Reports, presentations, intuitive analysis | Color on range, photo beyond |
+|  | โหมดการตัดภาพ | ดีที่สุดสำหรับ | สไตล์การแสดงภาพ |  |
+|  | - | - | - |  |
+|  | **ขั้นต่ำและสูงสุด** | การแสดงข้อมูลแบบเต็ม การวิเคราะห์ทางวิทยาศาสตร์ | พิกเซลทั้งหมดเป็นสี |  |
+|  | **พื้นหลังโปร่งใส** | การซ้อนทับ GIS แยกช่วงเฉพาะ | สีในช่วง ว่างเปล่าเกิน |  |
+|  | **ความเป็นมาของดัชนี** | เน้นอย่างละเอียด รักษาบริบทของข้อมูล | สีในช่วง สีเทาเกิน |  |
+|  | **พื้นหลังดั้งเดิม** | รายงาน การนำเสนอ การวิเคราะห์ที่ใช้งานง่าย | สีในช่วง ภาพเกิน |  |
 
-### Creating Custom LUT Colors
+### การสร้างสี LUT แบบกำหนดเอง
 
-For full control over your visualization, you can create **custom color gradients** by editing individual color stops.
+เพื่อการควบคุมการแสดงภาพของคุณอย่างสมบูรณ์ คุณสามารถสร้าง **การไล่ระดับสีที่กำหนดเอง** ได้โดยการแก้ไขจุดสีแต่ละสี
 
-**To create a custom gradient:**
+**วิธีสร้างการไล่ระดับสีแบบกำหนดเอง:**
 
-1. In the LUT panel, locate the **gradient preview bar**
-2. Look for **color swatch squares** below the gradient
-3. **Click a color stop** to select it
-4. A **color picker** opens
-5. Choose a new color using:
-   * **Color wheel**: Visual color selection
-   * **RGB/HSV sliders**: Precise color control
-   * **Hex code entry**: Exact color specification (e.g., `#FF0000` for red)
-6. Click off the color picker **to apply the new color**
-7. The gradient **updates immediately** on the image
+1. ในแผง LUT ให้ค้นหา **แถบแสดงตัวอย่างการไล่ระดับสี**
+2. มองหา **สี่เหลี่ยมตัวอย่างสี** ใต้การไล่ระดับสี
+3. **คลิกจุดหยุดสี** เพื่อเลือก
+4. **เครื่องมือเลือกสี** จะเปิดขึ้น
+5. เลือกสีใหม่โดยใช้:
+   * **วงล้อสี**: การเลือกสีของภาพ
+   * **แถบเลื่อน RGB/HSV**: การควบคุมสีที่แม่นยำ
+   * **การป้อนรหัสฐานสิบหก**: ข้อกำหนดสีที่แน่นอน (เช่น `#FF0000` สำหรับสีแดง)
+6. คลิกปิดเครื่องมือเลือกสี **เพื่อใช้สีใหม่**
+7. การไล่ระดับสี **อัปเดตทันที** บนรูปภาพ
 
-**Adding or removing color stops:**
+**การเพิ่มหรือลบการหยุดสี:**
 
-* **Add a stop**: Click the + icon to add a new swatch at the end
-* **Remove a stop**: Double click the color square to remove the swatch
+* **เพิ่มจุดหยุด**: คลิกไอคอน + เพื่อเพิ่มตัวอย่างใหม่ในตอนท้าย
+* **นำจุดหยุดออก**: คลิกสองครั้งที่สี่เหลี่ยมสีเพื่อลบตัวอย่าง
 
-**Customization strategies:**
+**กลยุทธ์การปรับแต่ง:**
 
-* **Invert gradient**: Flip color order to reverse the meaning (e.g., green=low, red=high)
-* **Brand colors**: Match your organization's color palette for reports
-* **Colorblind-friendly**: Use orange-blue or purple-yellow combinations
-* **Print optimization**: Choose colors that work in both color and grayscale printing
-* **Multi-threshold**: Use distinct colors at specific value thresholds for classification
+* **กลับการไล่ระดับสี**: พลิกลำดับสีเพื่อกลับความหมาย (เช่น เขียว=ต่ำ แดง=สูง)
+* **สีของแบรนด์**: จับคู่ชุดสีขององค์กรของคุณสำหรับรายงาน
+* **เหมาะสำหรับคนตาบอดสี**: ใช้การผสมสีส้ม-น้ำเงิน หรือ สีม่วง-เหลือง
+* **การเพิ่มประสิทธิภาพการพิมพ์**: เลือกสีที่ใช้ได้ทั้งการพิมพ์สีและระดับสีเทา
+* **เกณฑ์หลายเกณฑ์**: ใช้สีที่แตกต่างกันตามเกณฑ์ค่าเฉพาะสำหรับการจัดหมวดหมู่
 
-{% hint style="info" %}
-**Saving Custom Gradients**: Custom gradients can be saved and reused. Click the save icon in the LUT panel to preserve your custom color schemes for future use.
-{% endhint %}
+{% คำใบ้สไตล์ = "ข้อมูล" %}
+**การบันทึกการไล่ระดับสีแบบกำหนดเอง**: สามารถบันทึกและนำการไล่ระดับสีแบบกำหนดเองมาใช้ซ้ำได้ คลิกไอคอนบันทึกในแผง LUT เพื่อเก็บโทนสีที่คุณกำหนดเองไว้ใช้ในอนาคต
+{% คำแนะนำสุดท้าย %}
 
-***
+-
 
-## Interactive Workflow
+## เวิร์กโฟลว์แบบโต้ตอบ
 
-### Real-Time Updates
+### การอัปเดตตามเวลาจริง
 
-All LUT adjustments in the sandbox update the image **instantly and interactively**:
+การปรับ LUT ทั้งหมดในแซนด์บ็อกซ์จะอัปเดตรูปภาพ **ทันทีและโต้ตอบได้**:
 
-* **Switch layer** → Image changes immediately
-* **Select gradient** → Colors update instantly
-* **Adjust value range** → Contrast changes in real-time
-* **Change classes** → Gradient smoothness updates immediately
-* **Modify clipping** → Background display changes instantly
-* **Edit colors** → Custom gradient applies immediately
+* **สลับเลเยอร์** → รูปภาพเปลี่ยนทันที
+* **เลือกการไล่ระดับสี** → อัพเดตสีทันที
+* **ปรับช่วงค่า** → การเปลี่ยนแปลงคอนทราสต์แบบเรียลไทม์
+* **เปลี่ยนคลาส** → อัพเดตความเรียบของการไล่ระดับสีทันที
+* **แก้ไขการคลิป** → การแสดงพื้นหลังเปลี่ยนทันที
+* **แก้ไขสี** → การไล่ระดับสีแบบกำหนดเองจะมีผลทันที
 
-**No "Apply" button needed** - all changes are live and interactive!
+**ไม่จำเป็นต้องใช้ปุ่ม "นำไปใช้"** - การเปลี่ยนแปลงทั้งหมดใช้งานได้จริงและโต้ตอบได้!
 
-{% hint style="success" %}
-**Live Feedback**: The instant visual feedback allows you to rapidly experiment with different settings until you find the optimal visualization for your analysis needs.
-{% endhint %}
+{% คำใบ้สไตล์ = "ความสำเร็จ" %}
+**ผลตอบรับสด**: ผลตอบรับด้วยภาพทันทีช่วยให้คุณสามารถทดสอบการตั้งค่าต่างๆ ได้อย่างรวดเร็ว จนกว่าคุณจะพบการแสดงภาพที่เหมาะสมที่สุดสำหรับความต้องการในการวิเคราะห์ของคุณ
+{% คำแนะนำสุดท้าย %}
 
-### Iterative Refinement Workflow
+### เวิร์กโฟลว์การปรับแต่งซ้ำ
 
-**Typical LUT optimization workflow:**
+**ขั้นตอนการทำงานการปรับให้เหมาะสม LUT ทั่วไป:**
 
-1. **Select index layer** (e.g., RAW (Reflectance))
-2. **Apply index** - Choose camera filter and index formula, drag colored circles to appropriate location in the index formula
-3. **Apply LUT gradient** - Start with Red-Yellow-Green preset
-4. **Inspect pixel values** - Move cursor around, note value ranges
-5. **Adjust min/max** - Narrow to focus on vegetation (e.g., 0.2 to 0.9)
-6. **Choose clipping** - Try "Original Background" for context
-7. **Refine colors** - Customize gradient if needed for specific emphasis
-8. **Finalize settings** - Document settings and copy to Project Settings for export processing
+1. **เลือกเลเยอร์ดัชนี** (เช่น RAW (การสะท้อนแสง))
+2. **ใช้ดัชนี** - เลือกฟิลเตอร์กล้องและสูตรดัชนี ลากวงกลมสีไปยังตำแหน่งที่เหมาะสมในสูตรดัชนี
+3. **ใช้การไล่ระดับสี LUT** - เริ่มต้นด้วยการตั้งค่าล่วงหน้าสีแดง-เหลือง-เขียว
+4. **ตรวจสอบค่าพิกเซล** - เลื่อนเคอร์เซอร์ไปรอบๆ จดบันทึกช่วงค่า
+5. **ปรับต่ำสุด/สูงสุด** - แคบลงเพื่อเน้นที่พืชพรรณ (เช่น 0.2 ถึง 0.9)
+6. **เลือกการตัดภาพ** - ลองใช้ "พื้นหลังดั้งเดิม" เพื่อดูบริบท
+7. **ปรับแต่งสี** - ปรับแต่งการไล่ระดับสีหากจำเป็นเพื่อการเน้นเฉพาะเจาะจง
+8. **เสร็จสิ้นการตั้งค่า** - การตั้งค่าเอกสารและคัดลอกไปที่การตั้งค่าโครงการเพื่อการประมวลผลการส่งออก
 
-### Pixel Value Inspection
+### การตรวจสอบค่าพิกเซล
 
-Understanding actual pixel values is crucial for setting effective LUT ranges:
+การทำความเข้าใจค่าพิกเซลจริงเป็นสิ่งสำคัญสำหรับการตั้งค่าช่วง LUT ที่มีประสิทธิภาพ:
 
-**How to inspect values:**
+**วิธีการตรวจสอบค่า:**
 
-1. Pixel values show when the image has either the Index, or both the Index and LUT **boxes checked**.
-2. **Move your cursor** over different areas of the image
-3. **Observe pixel values** displayed in the legend as you hover
-4. Zoom in to see individual pixels highlighted with a floating value
-5. **Take notes** of value ranges for different features:
-   * **Healthy vegetation**: e.g., NDVI 0.55-0.85
-   * **Stressed vegetation**: e.g., NDVI 0.30-0.50
-   * **Bare soil**: e.g., NDVI 0.05-0.25
-   * **Water** (if present): e.g., NDVI -0.05 to 0.10
+1. ค่าพิกเซลจะแสดงเมื่อรูปภาพมีดัชนี หรือทั้งช่องดัชนีและ LUT **ทำเครื่องหมาย**
+2. **เลื่อนเคอร์เซอร์** ไปไว้เหนือส่วนต่างๆ ของรูปภาพ
+3. **สังเกตค่าพิกเซล** ที่แสดงในคำอธิบายเมื่อคุณวางเมาส์เหนือ
+4. ซูมเข้าเพื่อดูแต่ละพิกเซลที่ไฮไลต์ด้วยค่าลอยตัว
+5. **จดบันทึก** ช่วงค่าสำหรับฟีเจอร์ต่างๆ:
+   * **พืชผักเพื่อสุขภาพ**: เช่น NDVI 0.55-0.85
+   * **พืชพรรณเครียด**: เช่น NDVI 0.30-0.50
+   * **ดินเปล่า**: เช่น NDVI 0.05-0.25
+   * **น้ำ** (ถ้ามี): เช่น NDVI -0.05 ถึง 0.10
 
-**Using pixel values to set LUT ranges:**
+**การใช้ค่าพิกเซลเพื่อกำหนดช่วง LUT:**
 
-After inspecting pixel values, adjust your LUT min/max accordingly:
+หลังจากตรวจสอบค่าพิกเซลแล้ว ให้ปรับ LUT ต่ำสุด/สูงสุด ตาม:
 
-**Example scenario:**
+**สถานการณ์ตัวอย่าง:**
 
-* **Observation**: Soil values = 0.05-0.25, Stressed = 0.25-0.50, Healthy = 0.50-0.85
-* **Goal**: Visualize only plant health (exclude soil)
-* **LUT settings**: Min = `0.25`, Max = `0.85`
-* **Clipping**: "Original Background" to see soil in natural color
-* **Result**: Color gradient only applies to vegetation, soil shows as original image
+* **ข้อสังเกต**: ค่าดิน = 0.05-0.25 ความเครียด = 0.25-0.50 สุขภาพ = 0.50-0.85
+* **เป้าหมาย**: เห็นภาพเฉพาะสุขภาพของพืช (ไม่รวมดิน)
+* **การตั้งค่า LUT**: ต่ำสุด = `0.25` สูงสุด = `0.85`
+* **การตัดภาพ**: "พื้นหลังดั้งเดิม" เพื่อดูดินที่มีสีเป็นธรรมชาติ
+* **ผลลัพธ์**: การไล่ระดับสีใช้กับพืชพรรณเท่านั้น ดินจะแสดงเป็นภาพต้นฉบับ
 
-{% hint style="info" %}
-**Dynamic Range**: Different crops, seasons, and growth stages will have different value ranges. Always inspect pixel values in your specific dataset before setting LUT ranges.
-{% endhint %}
+{% คำใบ้สไตล์ = "ข้อมูล" %}
+**ช่วงไดนามิก**: พืชผล ฤดูกาล และระยะการเจริญเติบโตที่แตกต่างกันจะมีช่วงค่าที่แตกต่างกัน ตรวจสอบค่าพิกเซลในชุดข้อมูลเฉพาะของคุณก่อนตั้งค่าช่วง LUT เสมอ
+{% คำแนะนำสุดท้าย %}
 
-***
+-
 
-## Custom Indices (Chloros+)
+## ดัชนีที่กำหนดเอง (Chloros+)
 
-### Creating Custom Index Formulas
+### การสร้างสูตรดัชนีที่กำหนดเอง
 
-{% hint style="info" %}
-**Where to Create**: Custom indices can be configured in **Project Settings** before processing, as well as in the Image Viewer sandbox sidebar.
-{% endhint %}
+{% คำใบ้สไตล์ = "ข้อมูล" %}
+**ตำแหน่งที่จะสร้าง**: คุณสามารถกำหนดค่าดัชนีแบบกำหนดเองได้ใน **การตั้งค่าโปรเจ็กต์** ก่อนการประมวลผล รวมถึงในแถบด้านข้างแซนด์บ็อกซ์ของ Image Viewer
+{% คำแนะนำสุดท้าย %}
 
-**To create a custom index:**
+**วิธีสร้างดัชนีที่กำหนดเอง:**
 
-1. **Open Project Settings** (before processing) or Image Viewer sandbox sidebar
-2. Navigate to the **Index formula dropdown**
-3. Look for **"Custom"** option (must be logged in with Chloros+ license)
-4. **Define your formula** using band variables:
-   * Band names: `NIR`, `Red`, `Green`, `Blue`, `RedEdge`, etc.
-   * Operators: `+`, `-`, `*`, `/`, `^` (exponent)
-   * Functions: `sqrt()`, `abs()`, etc. (if supported)
-   * Parentheses: `()` for order of operations
-5. **Name your index** (e.g., "MyIndex" or "CustomNDVI")
-6. **Save the configuration**
+1. **เปิดการตั้งค่าโปรเจ็กต์** (ก่อนการประมวลผล) หรือแถบด้านข้างแซนด์บ็อกซ์ Image Viewer
+2. ไปที่เมนูแบบเลื่อนลง **สูตรดัชนี**
+3. มองหาตัวเลือก **"กำหนดเอง"** (ต้องเข้าสู่ระบบด้วยใบอนุญาต Chloros+)
+4. **กำหนดสูตรของคุณ** โดยใช้ตัวแปรแบนด์:
+   * ชื่อวงดนตรี: `NIR`, `Red`, `Green`, `Blue`, `RedEdge` ฯลฯ
+   * ตัวดำเนินการ: `+`, `-`, `*`, `/`, `^` (เลขชี้กำลัง)
+   * ฟังก์ชัน: `sqrt()`, `abs()` ฯลฯ (หากรองรับ)
+   * วงเล็บ: `()` สำหรับลำดับการดำเนินการ
+5. **ตั้งชื่อดัชนีของคุณ** (เช่น "MyIndex" หรือ "CustomNDVI")
+6. **บันทึกการกำหนดค่า**
 
-**Example custom formulas:**
+**ตัวอย่างสูตรที่กำหนดเอง:**
 
 ```
 Modified NDVI with offset:
@@ -398,22 +398,22 @@ Exponential index:
 (NIR / Red) ^ 2
 ```
 
-{% hint style="warning" %}
-**Formula Validation**: Ensure your formula uses bands available in your camera. For example, RedEdge is only available on cameras with a RedEdge filter.
-{% endhint %}
+{% คำใบ้สไตล์ = "คำเตือน" %}
+**การตรวจสอบสูตร**: ตรวจสอบให้แน่ใจว่าสูตรของคุณใช้แถบที่มีอยู่ในกล้องของคุณ ตัวอย่างเช่น RedEdge มีเฉพาะในกล้องที่มีฟิลเตอร์ RedEdge เท่านั้น
+{% คำแนะนำสุดท้าย %}
 
-***
+-
 
-## Next Steps
+## ขั้นตอนต่อไป
 
-Now that you understand the Index/LUT Sandbox:
+ตอนนี้คุณเข้าใจ Index/LUT Sandbox แล้ว:
 
-* **Apply to processing**: Use discovered settings in [Project Settings](../project-settings/page-2.md)
-* **Batch process**: Apply optimized indices to full datasets
-* **Learn more**: Read [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md)
+* **นำไปใช้กับการประมวลผล**: ใช้การตั้งค่าที่ค้นพบใน [การตั้งค่าโครงการ](../project-settings/page-2.md)
+* **กระบวนการเป็นชุด**: ใช้ดัชนีที่ปรับให้เหมาะสมกับชุดข้อมูลทั้งหมด
+* **เรียนรู้เพิ่มเติม**: อ่าน [สูตรดัชนีหลายสเปกตรัม](../project-settings/multispectral-index-formulas.md)
 
-Related documentation:
+เอกสารที่เกี่ยวข้อง:
 
-* [**Image Layers**](image-layers.md) - Layer management and visualization
-* [**Opening an Image Full Screen**](page-3.md) - Image Viewer basics
-* [**Processing Images (GUI)**](../processing-images-gui/page-1.md) - Full processing workflow
+* [**เลเยอร์รูปภาพ**](image-layers.md) - การจัดการเลเยอร์และการแสดงภาพ
+* [**การเปิดภาพแบบเต็มจอ**](page-3.md) - พื้นฐานโปรแกรมดูรูปภาพ
+* [**กำลังประมวลผลภาพ (GUI)**](../processing-images-gui/page-1.md) - ขั้นตอนการประมวลผลเต็มรูปแบบ

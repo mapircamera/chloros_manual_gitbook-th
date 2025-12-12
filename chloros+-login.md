@@ -1,43 +1,43 @@
-# Chloros+ Login
+# คลอรอส+ เข้าสู่ระบบ
 
-## Chloros and Chloros (Browser) Login
+## เข้าสู่ระบบคลอรอสและคลอรอส (เบราว์เซอร์)
 
-The user <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> sidebar menu allows you to log into your Chloros+ account and unlock additional features.
+เมนูแถบด้านข้างของผู้ใช้ <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> ช่วยให้คุณสามารถเข้าสู่ระบบบัญชี Chloros+ และปลดล็อคคุณสมบัติเพิ่มเติมได้
 
-When logged in your account details will be shown:
+เมื่อเข้าสู่ระบบรายละเอียดบัญชีของคุณจะแสดง:
 
 <figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
 
-## CLI Login
+## เข้าสู่ระบบ CLI
 
-Login with your Chloros+ credentials to enable CLI processing.
+เข้าสู่ระบบด้วยข้อมูลรับรอง Chloros+ ของคุณเพื่อเปิดใช้งานการประมวลผล CLI
 
-**Syntax:**
+**ไวยากรณ์:**
 
 ```bash
 chloros-cli login <email> <password>
 ```
 
-**Example:**
+**ตัวอย่าง:**
 
 ```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="warning" %}
-**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, or spaces.
-{% endhint %}
+{% คำใบ้สไตล์ = "คำเตือน" %}
+**อักขระพิเศษ**: ใช้เครื่องหมายคำพูดเดี่ยวรอบรหัสผ่านที่มีอักขระ เช่น `$`, `!` หรือช่องว่าง
+{% คำแนะนำสุดท้าย %}
 
-**Output:**
+**ผลลัพธ์:**
 
 <figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
 
-### Plan Expiration
+### การหมดอายุของแผน
 
-The plan expiration in the GUI shows when your license will become invalid. For recurring monthly subscriptions the expiration is at the end of the month. For yearly subscriptions it is a year after you started the subscription. The license check requires a monthly internet connection to verify, with a 30 day grace period.
+การหมดอายุของแผนใน GUI จะแสดงเมื่อใบอนุญาตของคุณจะไม่ถูกต้อง สำหรับการสมัครสมาชิกรายเดือนที่เกิดซ้ำ วันหมดอายุคือช่วงสิ้นเดือน สำหรับการสมัครสมาชิกรายปีคือหนึ่งปีหลังจากที่คุณเริ่มสมัครสมาชิก การตรวจสอบใบอนุญาตต้องใช้การเชื่อมต่ออินเทอร์เน็ตทุกเดือนเพื่อยืนยัน โดยมีระยะเวลาผ่อนผัน 30 วัน
 
-### Device Limit
+### ขีดจำกัดอุปกรณ์
 
-Each Chloros+ plan offers a different number of registered devices. Each device you log into with a Chloros+ account will count towards your number of registered devices. You can rename and remove a device on your MAPIR Cloud account page.
+แผนคลอรอส+ แต่ละแผนเสนออุปกรณ์ที่ลงทะเบียนในจำนวนที่แตกต่างกัน อุปกรณ์แต่ละเครื่องที่คุณเข้าสู่ระบบด้วยบัญชี Chloros+ จะนับรวมในจำนวนอุปกรณ์ที่ลงทะเบียนของคุณ คุณสามารถเปลี่ยนชื่อและลบอุปกรณ์บนหน้าบัญชี MAPIR Cloud ของคุณได้
 
-<table><thead><tr><th width="168.5999755859375" align="right">Chloros+ Plan</th><th align="center">COPPER</th><th align="center">BRONZE</th><th align="center">SILVER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">Devices Supported</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
+<table><thead><tr><th width="168.5999755859375" align="right">แผนคลอรอส+</th><th align="center">ทองแดง</th><th align="center">BRONZE</th><th align="center">SILVER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">อุปกรณ์ รองรับ</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>

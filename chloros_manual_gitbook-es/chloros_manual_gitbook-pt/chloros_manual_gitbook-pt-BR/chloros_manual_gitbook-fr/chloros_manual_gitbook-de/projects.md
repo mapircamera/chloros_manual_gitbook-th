@@ -1,17 +1,17 @@
-# Projects
+# โครงการ
 
-Chloros allows you to create projects which can be reopened in the future.
+คลอรอสช่วยให้คุณสร้างโปรเจ็กต์ที่สามารถเปิดใหม่ได้ในอนาคต
 
-## New Project
+## โครงการใหม่
 
 <figure><img src=".gitbook/assets/project_new.JPG" alt=""><figcaption></figcaption></figure>
 
-Select "New Project" from the main menu and enter a unique name for your project.
+เลือก "โครงการใหม่" จากเมนูหลักและป้อนชื่อเฉพาะสำหรับโครงการของคุณ
 
-## Open Project
+## เปิดโครงการ
 
 <figure><img src=".gitbook/assets/project_open.JPG" alt=""><figcaption></figcaption></figure>
 
-Select "Open Project" to see a list of existing projects in the Project Folder. If no projects exist the secondary side menu will not open. You can see some GUI created projects (t1, t2, t3) listed in the above photo. The DATE\_TIME projects were created by the CLI using the default project naming scheme. Clicking any project name will open it.
+เลือก "เปิดโครงการ" เพื่อดูรายการโครงการที่มีอยู่ในโฟลเดอร์โครงการ หากไม่มีโครงการอยู่ เมนูด้านข้างรองจะไม่เปิดขึ้น คุณสามารถดูโปรเจ็กต์ที่สร้างโดย GUI (t1, t2, t3) ที่แสดงอยู่ในรูปภาพด้านบน โปรเจ็กต์ DATE\_TIME ถูกสร้างขึ้นโดย CLI โดยใช้โครงร่างการตั้งชื่อโปรเจ็กต์เริ่มต้น การคลิกชื่อโปรเจ็กต์จะเป็นการเปิดขึ้นมา
 
-Clicking the "Open Project Folder" button opens your computer's file explorer at the project path. You can adjust the project path in the [Project Settings](project-settings/page-2.md).
+การคลิกปุ่ม "เปิดโฟลเดอร์โครงการ" จะเป็นการเปิดตัวสำรวจไฟล์ของคอมพิวเตอร์ของคุณที่เส้นทางโครงการ คุณสามารถปรับเส้นทางโครงการได้ใน [การตั้งค่าโครงการ](project-settings/page-2.md)

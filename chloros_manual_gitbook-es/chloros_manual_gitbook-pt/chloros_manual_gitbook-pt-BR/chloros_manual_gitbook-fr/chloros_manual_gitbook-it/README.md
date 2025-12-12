@@ -1,41 +1,41 @@
-﻿# Chloros User Manual - Italian
+﻿# คู่มือผู้ใช้คลอรอส - ภาษาอิตาลี
 
-This is the Italian translation of the Chloros Professional Multispectral Image Processing Software user manual.
+นี่คือคู่มือผู้ใช้ซอฟต์แวร์ประมวลผลภาพหลายสเปกตรัมของ Chloros Professional เป็นภาษาอิตาลี
 
-## About Chloros
+## เกี่ยวกับคลอรอส
 
-Chloros is professional multispectral image processing software that transforms imagery into actionable insights with powerful desktop software, command-line tools, and Python API.
+Chloros เป็นซอฟต์แวร์ประมวลผลภาพหลายสเปกตรัมระดับมืออาชีพที่แปลงภาพให้เป็นข้อมูลเชิงลึกที่นำไปใช้ได้จริงด้วยซอฟต์แวร์เดสก์ท็อปอันทรงพลัง เครื่องมือบรรทัดคำสั่ง และ Python API
 
-### Features
-- Desktop and Browser interfaces
-- CLI and Python SDK (Chloros+)
-- Available in 28 languages
-- 24+ vegetation indices
-- Reflectance calibration
-- Ambient light sensor support
+### คุณสมบัติ
+- อินเทอร์เฟซเดสก์ท็อปและเบราว์เซอร์
+- CLI และ Python SDK (คลอรอส+)
+- มีให้บริการใน 28 ภาษา
+- ดัชนีพืชพรรณมากกว่า 24 รายการ
+- การสอบเทียบการสะท้อนแสง
+- รองรับเซ็นเซอร์วัดแสงโดยรอบ
 
-## Documentation
+## เอกสารประกอบ
 
-This manual is synchronized with GitBook. The documentation covers:
-- Installation and setup
-- Image processing workflows
-- Calibration procedures
-- Vegetation index calculations
-- CLI and Python SDK usage
-- API reference
+คู่มือนี้ซิงโครไนซ์กับ GitBook เอกสารครอบคลุมถึง:
+- การติดตั้งและการตั้งค่า
+- ขั้นตอนการประมวลผลภาพ
+- ขั้นตอนการสอบเทียบ
+- การคำนวณดัชนีพืชพรรณ
+- การใช้งาน CLI และ Python SDK
+- การอ้างอิง API
 
-## Links
+## ลิงค์
 
-- [Main Website](https://www.mapir.camera)
-- [Chloros Download](https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link)
-- [Chloros+ Plans](https://cloud.mapir.camera/pricing)
-- [English Documentation](https://mapir.gitbook.io/chloros)
-- [Support](https://www.mapir.camera/community/contact)
+- [เว็บไซต์หลัก](https://www.mapir.camera)
+- [ดาวน์โหลดคลอรอส](https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link)
+- [แผนคลอรอส+](https://cloud.mapir.camera/pricing)
+- [เอกสารภาษาอังกฤษ](https://mapir.gitbook.io/chloros)
+- [สนับสนุน](https://www.mapir.camera/community/contact)
 
-## Translation Status
+## สถานะการแปล
 
-Translation in progress - This manual will be translated to Italian soon.
+กำลังดำเนินการแปล - คู่มือนี้จะได้รับการแปลเป็นภาษาอิตาลีเร็วๆ นี้
 
-## License
+## ใบอนุญาต
 
-Copyright MAPIR Camera. All rights reserved.
+กล้อง MAPIR ลิขสิทธิ์ สงวนลิขสิทธิ์.

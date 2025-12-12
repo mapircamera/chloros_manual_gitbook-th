@@ -1,204 +1,204 @@
-# Adding Files to a Project
+# การเพิ่มไฟล์ในโครงการ
 
-Once you've created or opened a project in Chloros, the next step is to add your multispectral images to begin processing. The File Browser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> tab makes it easy to import images and manage your dataset.
+เมื่อคุณสร้างหรือเปิดโปรเจ็กต์ใน Chloros แล้ว ขั้นตอนต่อไปคือการเพิ่มรูปภาพหลายสเปกตรัมเพื่อเริ่มการประมวลผล แท็บ File Browser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> ทำให้การนำเข้ารูปภาพและจัดการชุดข้อมูลของคุณเป็นเรื่องง่าย
 
-## Accessing the File Browser
+## การเข้าถึงไฟล์เบราว์เซอร์
 
-1. Open or create a project in Chloros
-2. Click the **File Browser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> icon in the left sidebar
-3. The File Browser panel will display your project's file list
+1. เปิดหรือสร้างโปรเจ็กต์ในคลอรอส
+2. คลิกไอคอน **File Browser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> ในแถบด้านข้างซ้าย
+3. แผง File Browser จะแสดงรายการไฟล์ของโครงการของคุณ
 
-{% hint style="info" %}
-**Supported File Types**: Chloros supports RAW+JPG and JPG image files from MAPIR Survey3W and Survey3N cameras. Only RAW+JPG are recommended.
-{% endhint %}
+{% คำใบ้สไตล์ = "ข้อมูล" %}
+**ประเภทไฟล์ที่รองรับ**: Chloros รองรับไฟล์ภาพ RAW+JPG และ JPG จากกล้อง MAPIR Survey3W และ Survey3N แนะนำให้ใช้เฉพาะ RAW+JPG เท่านั้น
+{% คำแนะนำสุดท้าย %}
 
-***
+-
 
-## Adding Images to Your Project
+## การเพิ่มรูปภาพในโครงการของคุณ
 
-There are two primary ways to add images to your project:
+มีสองวิธีหลักในการเพิ่มรูปภาพในโครงการของคุณ:
 
-### Method 1: Add Files
+### วิธีที่ 1: เพิ่มไฟล์
 
-Use this option to import individual image files or a small selection of files.
+ใช้ตัวเลือกนี้เพื่อนำเข้าไฟล์รูปภาพแต่ละไฟล์หรือไฟล์ที่เลือกจำนวนน้อย
 
-1. Click the **"Add Files"** button at the top of the File Browser panel
-2. Navigate to the folder containing your images
-3. Select one or more image files (hold **Ctrl** to select multiple files)
-4. Click **"Open"** to import the selected files
+1. คลิกปุ่ม **"เพิ่มไฟล์"** ที่ด้านบนของแผง File Browser
+2. นำทางไปยังโฟลเดอร์ที่มีรูปภาพของคุณ
+3. เลือกไฟล์ภาพตั้งแต่หนึ่งไฟล์ขึ้นไป (กด **Ctrl** ค้างไว้เพื่อเลือกหลายไฟล์)
+4. คลิก **"เปิด"** เพื่อนำเข้าไฟล์ที่เลือก
 
-### Method 2: Add Folder
+### วิธีที่ 2: เพิ่มโฟลเดอร์
 
-Use this option to import all images from a folder at once.
+ใช้ตัวเลือกนี้เพื่อนำเข้าภาพทั้งหมดจากโฟลเดอร์ในครั้งเดียว
 
-1. Click the **"Add Folder"** button at the top of the File Browser panel
-2. Navigate to and select the folder containing your capture session images
-3. Click **"Select Folder"** to import all supported images from that folder
+1. คลิกปุ่ม **"เพิ่มโฟลเดอร์"** ที่ด้านบนของแผง File Browser
+2. นำทางไปยังและเลือกโฟลเดอร์ที่มีภาพเซสชันการจับภาพของคุณ
+3. คลิก **"เลือกโฟลเดอร์"** เพื่อนำเข้ารูปภาพที่รองรับทั้งหมดจากโฟลเดอร์นั้น
 
-***
+-
 
-## Understanding the File Browser Table
+## ทำความเข้าใจกับตารางเบราว์เซอร์ไฟล์
 
-Once images are imported, they appear in a table with the following columns:
+เมื่อนำเข้ารูปภาพแล้ว รูปภาพเหล่านั้นจะปรากฏในตารางที่มีคอลัมน์ต่อไปนี้:
 
-### Thumbnail
+### ภาพขนาดย่อ
 
-* Small preview of each image
-* Click thumbnail to view full image in the main preview area
+* ตัวอย่างเล็กๆ น้อยๆ ของแต่ละภาพ
+* คลิกภาพขนาดย่อเพื่อดูภาพเต็มในพื้นที่แสดงตัวอย่างหลัก
 
-### File Name
+### ชื่อไฟล์
 
-* Original filename from the camera
-* Maintains camera naming convention (e.g., IMG\_0001.RAW)
+* ชื่อไฟล์ต้นฉบับจากกล้อง
+* รักษารูปแบบการตั้งชื่อกล้อง (เช่น IMG\_0001.RAW)
 
-### Timestamp
+### การประทับเวลา
 
-* Date and time the image was captured
-* Extracted from image EXIF metadata
-* Used for PPK synchronization and calibration target detection
+* วันที่และเวลาที่ภาพถูกถ่าย
+* แยกมาจากข้อมูลเมตา EXIF ​​ของรูปภาพ
+* ใช้สำหรับการซิงโครไนซ์ PPK และการตรวจจับเป้าหมายการสอบเทียบ
 
-### Camera Model
+### รุ่นกล้อง
 
-* Automatically detected camera and filter configuration
-* Examples: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
-* Used to apply correct processing profiles
+* ตรวจพบการกำหนดค่ากล้องและตัวกรองโดยอัตโนมัติ
+* ตัวอย่าง: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
+* ใช้เพื่อใช้โปรไฟล์การประมวลผลที่ถูกต้อง
 
-### Target Column (Checkbox)
+### คอลัมน์เป้าหมาย (ช่องทำเครื่องหมาย)
 
-* Check this box for images that contain calibration targets
-* Greatly speeds up target detection during processing
-* See [Choosing Target Images](choosing-target-images.md) for details
+* ทำเครื่องหมายในช่องนี้สำหรับรูปภาพที่มีเป้าหมายการปรับเทียบ
+* เพิ่มความเร็วในการตรวจจับเป้าหมายอย่างมากในระหว่างการประมวลผล
+* ดู [การเลือกภาพเป้าหมาย](choosing-target-images.md) สำหรับรายละเอียด
 
-***
+-
 
-## Managing Files in Your Project
+## การจัดการไฟล์ในโครงการของคุณ
 
-### Removing Files
+### การลบไฟล์
 
-To remove unwanted images from your project:
+หากต้องการลบภาพที่ไม่ต้องการออกจากโปรเจ็กต์ของคุณ:
 
-1. Select one or more images in the File Browser table
-2. Click the **"Remove Selected"** button
-3. Confirm removal (files are not deleted from disk, only removed from the project)
+1. เลือกรูปภาพหนึ่งภาพขึ้นไปในตาราง File Browser
+2. คลิกปุ่ม **"ลบรายการที่เลือก"**
+3. ยืนยันการลบ (ไฟล์จะไม่ถูกลบออกจากดิสก์ แต่จะลบออกจากโปรเจ็กต์เท่านั้น)
 
-### Sorting and Filtering
+### การเรียงลำดับและการกรอง
 
-* **Sort by column**: Click any column header to sort images
-* **Timestamp sort**: Useful for organizing chronological capture sequences
-* **Camera model filter**: Group images by camera type if using multiple cameras
+* **จัดเรียงตามคอลัมน์**: คลิกส่วนหัวคอลัมน์เพื่อจัดเรียงรูปภาพ
+* **การเรียงลำดับการประทับเวลา**: มีประโยชน์สำหรับการจัดระเบียบลำดับการจับภาพตามลำดับเวลา
+* **ตัวกรองรุ่นกล้อง**: จัดกลุ่มรูปภาพตามประเภทของกล้องหากใช้กล้องหลายตัว
 
-***
+-
 
-## Image Preview
+## ดูตัวอย่างรูปภาพ
 
-### Viewing Full Image
+### กำลังดูภาพเต็ม
 
-Click any image thumbnail in the File Browser to display it in the main preview area:
+คลิกรูปขนาดย่อของรูปภาพใดๆ ใน File Browser เพื่อแสดงในพื้นที่แสดงตัวอย่างหลัก:
 
-1. Image appears in the center preview panel
-2. Use zoom controls to inspect image details
-3. Navigate between images using arrow keys
+1. รูปภาพปรากฏในแผงแสดงตัวอย่างตรงกลาง
+2. ใช้ตัวควบคุมการซูมเพื่อตรวจสอบรายละเอียดของภาพ
+3. นำทางระหว่างรูปภาพโดยใช้ปุ่มลูกศร
 
-### Quick Navigation
+### การนำทางอย่างรวดเร็ว
 
-* **Previous Image**: Click left arrow or press ← key
-* **Next Image**: Click right arrow or press → key
-* **Zoom In/Out**: Use mouse wheel or zoom buttons
-* **Pan**: Click and drag on image when zoomed in
+* **ภาพก่อนหน้า**: คลิกลูกศรซ้ายหรือกดปุ่ม ←
+* **รูปภาพถัดไป**: คลิกลูกศรขวาหรือกดปุ่ม →
+* **ซูมเข้า/ออก**: ใช้ล้อเลื่อนของเมาส์หรือปุ่มซูม
+* **แพน**: คลิกและลากบนรูปภาพเมื่อซูมเข้า
 
-***
+-
 
-## Duplicate File Handling
+## การจัดการไฟล์ซ้ำ
 
-Chloros automatically detects and ignores duplicate files:
+Chloros ตรวจจับและละเว้นไฟล์ที่ซ้ำกันโดยอัตโนมัติ:
 
-* Files with identical filenames are skipped
-* Prevents accidental double-processing
-* Warning message displayed when duplicates are detected
+* ไฟล์ที่มีชื่อไฟล์เหมือนกันจะถูกข้ามไป
+* ป้องกันการประมวลผลซ้ำซ้อนโดยไม่ตั้งใจ
+* ข้อความเตือนปรากฏขึ้นเมื่อตรวจพบรายการซ้ำ
 
-{% hint style="warning" %}
-**Important**: Do not rename or modify your original image files before importing. Chloros relies on original filenames and metadata for proper processing.
-{% endhint %}
+{% คำใบ้สไตล์ = "คำเตือน" %}
+**ข้อสำคัญ**: ห้ามเปลี่ยนชื่อหรือแก้ไขไฟล์ภาพต้นฉบับของคุณก่อนที่จะนำเข้า คลอรอสอาศัยชื่อไฟล์และข้อมูลเมตาดั้งเดิมเพื่อการประมวลผลที่เหมาะสม
+{% คำแนะนำสุดท้าย %}
 
-***
+-
 
-## Mixed Camera Datasets
+## ชุดข้อมูลกล้องแบบผสม
 
-If your project contains images from multiple MAPIR cameras:
+หากโปรเจ็กต์ของคุณมีรูปภาพจากกล้อง MAPIR หลายตัว:
 
-1. Chloros automatically detects each camera model
-2. Each camera type is processed with its appropriate calibration profile
-3. File Browser displays camera model in the Camera Model column
-4. Processing applies correct settings for each camera type
+1. คลอรอสจะตรวจจับกล้องแต่ละรุ่นโดยอัตโนมัติ
+2. กล้องแต่ละประเภทได้รับการประมวลผลด้วยโปรไฟล์การสอบเทียบที่เหมาะสม
+3. File Browser จะแสดงรุ่นกล้องในคอลัมน์ Camera Model
+4. การประมวลผลใช้การตั้งค่าที่ถูกต้องสำหรับกล้องแต่ละประเภท
 
-**Example scenario**: Survey3W RGN + Survey3N OCN dual-camera setup
+**สถานการณ์ตัวอย่าง**: การตั้งค่ากล้องคู่ Survey3W RGN + Survey3N OCN
 
-***
+-
 
-## Best Practices
+## แนวทางปฏิบัติที่ดีที่สุด
 
-### Organize Before Import
+### จัดระเบียบก่อนนำเข้า
 
-* Keep calibration target images in the same folder as survey images
-* Maintain original folder structure from your camera/SD card
-* Don't mix datasets from different sessions in one project
+* เก็บรูปภาพเป้าหมายการปรับเทียบไว้ในโฟลเดอร์เดียวกับรูปภาพแบบสำรวจ
+* รักษาโครงสร้างโฟลเดอร์ดั้งเดิมจากกล้อง/การ์ด SD ของคุณ
+* อย่าผสมชุดข้อมูลจากเซสชันที่แตกต่างกันในโปรเจ็กต์เดียว
 
-### File Naming
+### การตั้งชื่อไฟล์
 
-* Preserve original camera filenames (IMG\_0001.RAW, etc.)
-* Don't rename files before import
-* Original names contain important metadata
+* รักษาชื่อไฟล์กล้องดั้งเดิม (IMG\_0001.RAW ฯลฯ)
+* อย่าเปลี่ยนชื่อไฟล์ก่อนที่จะนำเข้า
+* ชื่อเดิมมีข้อมูลเมตาที่สำคัญ
 
-### Calibration Target Images
+### รูปภาพเป้าหมายการสอบเทียบ
 
-* Always include 1-2 calibration target images per session
-* Capture targets before and after the capture session
-* Place targets in the same lighting conditions as capture area
-* Mark target images using the Target checkbox to speed up processing
+* รวมรูปภาพเป้าหมายการสอบเทียบ 1-2 ภาพต่อเซสชันเสมอ
+* จับเป้าหมายก่อนและหลังเซสชันการจับภาพ
+* วางเป้าหมายในสภาพแสงเดียวกันกับพื้นที่จับภาพ
+* ทำเครื่องหมายรูปภาพเป้าหมายโดยใช้ช่องทำเครื่องหมายเป้าหมายเพื่อเร่งการประมวลผล
 
-***
+-
 
-## Common Issues and Solutions
+## ปัญหาทั่วไปและแนวทางแก้ไข
 
-### Images Not Appearing After Import
+### รูปภาพไม่ปรากฏหลังจากการนำเข้า
 
-**Possible causes:**
+**สาเหตุที่เป็นไปได้:**
 
-* File format not supported (only RAW+JPG and JPG from MAPIR cameras)
-* Images are from non-MAPIR cameras (see [Supported Cameras](../supported-cameras.md))
-* File corruption or incomplete transfer from SD card
+* ไม่รองรับรูปแบบไฟล์ (เฉพาะ RAW+JPG และ JPG จากกล้อง MAPIR)
+* รูปภาพมาจากกล้องที่ไม่ใช่ MAPIR (ดู [กล้องที่รองรับ](../supported-cameras.md))
+* ไฟล์เสียหายหรือถ่ายโอนจากการ์ด SD ไม่สมบูรณ์
 
-**Solution**: Verify file format and camera model compatibility
+**วิธีแก้ไข**: ตรวจสอบรูปแบบไฟล์และความเข้ากันได้ของรุ่นกล้อง
 
-### Camera Model Not Detected
+### ตรวจไม่พบรุ่นกล้อง
 
-**Possible causes:**
+**สาเหตุที่เป็นไปได้:**
 
-* Modified EXIF metadata
-* Images edited in external software
-* Incomplete file transfer
+* แก้ไขข้อมูลเมตา EXIF
+* รูปภาพที่แก้ไขในซอฟต์แวร์ภายนอก
+* การถ่ายโอนไฟล์ไม่สมบูรณ์
 
-**Solution**: Re-import original, unmodified files from camera/SD card
+**วิธีแก้ปัญหา**: นำเข้าไฟล์ต้นฉบับที่ยังไม่ได้แก้ไขอีกครั้งจากกล้อง/การ์ด SD
 
-### Missing Timestamps
+### การประทับเวลาหายไป
 
-**Possible causes:**
+**สาเหตุที่เป็นไปได้:**
 
-* Camera clock not set correctly
-* EXIF data stripped by external software
+* นาฬิกาในกล้องไม่ได้ตั้งค่าอย่างถูกต้อง
+* ข้อมูล EXIF ​​​​ถูกปล้นโดยซอฟต์แวร์ภายนอก
 
-**Solution**: Verify camera time settings were correct during capture
+**วิธีแก้ปัญหา**: ตรวจสอบว่าการตั้งค่าเวลาของกล้องถูกต้องระหว่างการถ่ายภาพ
 
-***
+-
 
-## Next Steps
+## ขั้นตอนต่อไป
 
-Once your files are imported:
+เมื่อไฟล์ของคุณถูกนำเข้าแล้ว:
 
-1. **Review the file list** - Ensure all images loaded correctly
-2. **Check camera models** - Verify correct camera detection
-3. **Mark target images** - See [Choosing Target Images](choosing-target-images.md)
-4. **Adjust settings** - Configure processing options in [Project Settings](adjusting-project-settings.md)
-5. **Start processing** - See [Starting the Processing](starting-the-processing.md)
+1. **ตรวจสอบรายชื่อไฟล์** - ตรวจสอบให้แน่ใจว่ารูปภาพทั้งหมดโหลดอย่างถูกต้อง
+2. **ตรวจสอบรุ่นกล้อง** - ตรวจสอบการตรวจจับกล้องที่ถูกต้อง
+3. **ทำเครื่องหมายรูปภาพเป้าหมาย** - ดู [การเลือกภาพเป้าหมาย](choosing-target-images.md)
+4. **ปรับการตั้งค่า** - กำหนดค่าตัวเลือกการประมวลผลใน [การตั้งค่าโครงการ](adjusting-project-settings.md)
+5. **เริ่มการประมวลผล** - ดู [เริ่มต้นการประมวลผล](starting-the-processing.md)
 
-For detailed information about project configuration, see [Adjusting Project Settings](adjusting-project-settings.md).
+สำหรับข้อมูลโดยละเอียดเกี่ยวกับการกำหนดค่าโครงการ โปรดดู [การปรับการตั้งค่าโครงการ](adjusting-project-settings.md)

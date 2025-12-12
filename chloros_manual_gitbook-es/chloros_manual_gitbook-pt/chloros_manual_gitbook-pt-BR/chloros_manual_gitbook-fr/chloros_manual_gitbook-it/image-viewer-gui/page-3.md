@@ -1,247 +1,247 @@
-# Opening an Image Full Screen
+# การเปิดภาพแบบเต็มหน้าจอ
 
-The Chloros Image Viewer provides a dedicated full-screen interface for viewing, analyzing, and manipulating your multispectral images. Whether viewing original images or processed outputs, the Image Viewer offers powerful tools for inspection and analysis.
+โปรแกรมดูรูปภาพคลอรอสมีอินเทอร์เฟซแบบเต็มหน้าจอโดยเฉพาะสำหรับการดู วิเคราะห์ และจัดการภาพหลายสเปกตรัมของคุณ ไม่ว่าจะดูภาพต้นฉบับหรือภาพที่ประมวลผลแล้ว Image Viewer มีเครื่องมืออันทรงพลังสำหรับการตรวจสอบและวิเคราะห์
 
-## Accessing the Image Viewer
+## การเข้าถึงโปรแกรมดูรูปภาพ
 
-### From the File Browser
+### จากไฟล์เบราว์เซอร์
 
-The most common way to open an image in the Image Viewer:
+วิธีทั่วไปในการเปิดรูปภาพใน Image Viewer:
 
-1. Ensure you're in the **File Browser** tab <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Click any **image thumbnail** in the image grid
-3. The image opens in the **main preview area** (center of screen)
-4. The image is now loaded and ready for full-screen viewing
+1. ตรวจสอบให้แน่ใจว่าคุณอยู่ในแท็บ **ไฟล์เบราว์เซอร์** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. คลิก **ภาพขนาดย่อ** ใดก็ได้ในตารางภาพ
+3. รูปภาพจะเปิดขึ้นใน **พื้นที่แสดงตัวอย่างหลัก** (กลางหน้าจอ)
+4. ตอนนี้รูปภาพถูกโหลดและพร้อมสำหรับการดูแบบเต็มหน้าจอแล้ว
 
-### Opening the Image Viewer Tab
+### การเปิดแท็บโปรแกรมดูรูปภาพ
 
-Once an image is loaded in the preview area:
+เมื่อโหลดรูปภาพในพื้นที่แสดงตัวอย่างแล้ว:
 
-1. Click the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> icon in the left sidebar
-2. The Image Viewer tab opens, displaying the selected image full-screen
-3. Advanced viewing and analysis tools become available in the left sidebar
+1. คลิกไอคอน **โปรแกรมดูรูปภาพ** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> ในแถบด้านข้างซ้าย
+2. แท็บ Image Viewer จะเปิดขึ้นโดยแสดงรูปภาพที่เลือกแบบเต็มหน้าจอ
+3. เครื่องมือดูและวิเคราะห์ขั้นสูงมีให้ใช้งานในแถบด้านข้างซ้าย
 
-***
+-
 
-## Image Viewer Interface Overview
+## ภาพรวมอินเทอร์เฟซโปรแกรมดูรูปภาพ
 
-### Main Display Area
+### พื้นที่แสดงผลหลัก
 
-The largest portion of the screen shows your image:
+ส่วนที่ใหญ่ที่สุดของหน้าจอจะแสดงภาพของคุณ:
 
-* **Full resolution**: Images displayed at native resolution
-* **Zoomable**: Use controls or mouse wheel to zoom
-* **Pannable**: Click and drag to move around when zoomed
-* **Aspect ratio maintained**: Images scale proportionally
+* **ความละเอียดเต็ม**: รูปภาพที่แสดงด้วยความละเอียดดั้งเดิม
+* **ซูมได้**: ใช้ตัวควบคุมหรือล้อเมาส์เพื่อซูม
+* **แพนได้**: คลิกและลากเพื่อเลื่อนไปรอบๆ เมื่อซูม
+* **รักษาอัตราส่วนภาพไว้**: รูปภาพจะปรับขนาดตามสัดส่วน
 
-***
+-
 
-## Viewing Options
+## ตัวเลือกการดู
 
-### Basic Image Navigation
+### การนำทางรูปภาพขั้นพื้นฐาน
 
-#### Browse Through Images
+#### เรียกดูภาพ
 
-Navigate through your image set using keyboard shortcuts or buttons:
+นำทางผ่านชุดรูปภาพของคุณโดยใช้แป้นพิมพ์ลัดหรือปุ่ม:
 
-* **Next image**: Click → button or press **→** (Right Arrow) key
-* **Previous image**: Click ← button or press **←** (Left Arrow) key
-* **Jump to specific image**: Return to File Browser and click desired thumbnail
+* **ภาพถัดไป**: คลิกปุ่ม → หรือกดปุ่ม **→** (ลูกศรขวา)
+* **รูปภาพก่อนหน้า**: คลิกปุ่ม ← หรือกดปุ่ม **←** (ลูกศรซ้าย)
+* **ข้ามไปยังรูปภาพที่ต้องการ**: กลับไปที่ File Browser แล้วคลิกภาพขนาดย่อที่ต้องการ
 
-#### Zoom Controls
+#### การควบคุมการซูม
 
-Adjust magnification to inspect image details:
+ปรับการขยายเพื่อตรวจสอบรายละเอียดของภาพ:
 
-**Zoom In:**
+**ซูมเข้า:**
 
-* Click **+** (Plus) button
-* Press **+** or **=** key
-* Scroll mouse wheel **up**
+* คลิกปุ่ม ******* (บวก)
+* กดปุ่ม **+** หรือ **=**
+* ล้อเลื่อนของเมาส์ **ขึ้น**
 
-**Zoom Out:**
+**ซูมออก:**
 
-* Click **−** (Minus) button
-* Press **−** (Minus) key
-* Scroll mouse wheel **down**
+* คลิกปุ่ม **−** (ลบ)
+* กดปุ่ม **−** (ลบ)
+* ล้อเลื่อนของเมาส์ **ลง**
 
-**Fit to Screen:**
+**พอดีกับหน้าจอ:**
 
-* Click **↔** (Fit) button
-* Press **0** (Zero) key
-* Double-click on image
+* คลิกปุ่ม **↔** (พอดี)
+* กด **0** (ศูนย์)
+* ดับเบิลคลิกที่ภาพ
 
-#### Pan When Zoomed
+#### แพนเมื่อซูม
 
-When zoomed in beyond screen size:
+เมื่อขยายเกินขนาดหน้าจอ:
 
-1. Move mouse cursor over image
-2. Click and **hold left mouse button**
-3. **Drag** to move image around
-4. Release to stop panning
+1. เลื่อนเคอร์เซอร์ของเมาส์ไปที่รูปภาพ
+2. คลิกและ **กดปุ่มซ้ายของเมาส์ค้างไว้**
+3. **ลาก** เพื่อย้ายรูปภาพไปรอบๆ
+4. ปล่อยเพื่อหยุดการแพน
 
-**Alternative**: Use arrow keys to pan in small increments
+**ทางเลือก**: ใช้ปุ่มลูกศรเพื่อเลื่อนทีละน้อย
 
-***
+-
 
-## Pixel Value Inspection
+## การตรวจสอบค่าพิกเซล
 
-### Viewing Pixel Values at Cursor
+### การดูค่าพิกเซลที่เคอร์เซอร์
 
-As you move your mouse cursor over the image, pixel values display in real-time:
+เมื่อคุณเลื่อนเคอร์เซอร์ไปเหนือรูปภาพ ค่าพิกเซลจะแสดงแบบเรียลไทม์:
 
-**Value display location:**
+**ตำแหน่งแสดงมูลค่า:**
 
-* **Floating number and red line in right side index LUT gradient legend**
-* **When zoomed in further, floating value near cursor and highlighted pixel**
-* Shows values for pixel **under cursor or highlighted**
-* Updates as you move mouse
+* **ตัวเลขลอยตัวและเส้นสีแดงในดัชนีด้านขวา คำอธิบายการไล่ระดับสี LUT**
+* **เมื่อขยายเข้าไปอีก ค่าลอยตัวอยู่ใกล้เคอร์เซอร์และพิกเซลที่ไฮไลต์**
+* แสดงค่าพิกเซล **ใต้เคอร์เซอร์หรือไฮไลต์**
+* อัปเดตเมื่อคุณเลื่อนเมาส์
 
-***
+-
 
-## Image Types You Can View
+## ประเภทภาพที่คุณสามารถดูได้
 
-### Original Images (Pre-Processing)
+### รูปภาพต้นฉบับ (กำลังประมวลผลล่วงหน้า)
 
-**RAW + JPG images from camera:**
+**ภาพ RAW + JPG จากกล้อง:**
 
-* Display RAW data as previewed
-* Show original, uncorrected values
-* Useful for checking image quality before processing
+* แสดงข้อมูล RAW ตามที่แสดงตัวอย่าง
+* แสดงค่าดั้งเดิมที่ยังไม่ได้แก้ไข
+* มีประโยชน์สำหรับการตรวจสอบคุณภาพของภาพก่อนการประมวลผล
 
-### Calibrated Reflectance Images
+### ภาพสะท้อนที่ปรับเทียบแล้ว
 
-**After processing:**
+**หลังการประมวลผล:**
 
-* Vignette corrected
-* Reflectance calibrated
-* Multi-band TIFF (Red, Green, NIR, etc.)
-* Scientific data ready for analysis
+* แก้ไขวิกเน็ตต์แล้ว
+* ปรับเทียบการสะท้อนแสงแล้ว
+* TIFF แบบหลายแบนด์ (แดง เขียว NIR ฯลฯ)
+* ข้อมูลทางวิทยาศาสตร์พร้อมสำหรับการวิเคราะห์
 
-### Index Images
+### ดัชนีรูปภาพ
 
-**NDVI, NDRE, GNDVI, etc. (\_NDVI.tif files):**
+**NDVI, NDRE, GNDVI ฯลฯ (ไฟล์\_NDVI.tif):**
 
-* Single-band grayscale images
-* Pixel values represent index calculation results
-* Range typically -1 to +1 for normalized indices
-* Can apply color LUTs for visualization
+* ภาพระดับสีเทาแถบเดียว
+* ค่าพิกเซลแสดงถึงผลการคำนวณดัชนี
+* โดยทั่วไปช่วง -1 ถึง +1 สำหรับดัชนีมาตรฐาน
+* สามารถใช้ LUT สีสำหรับการแสดงภาพได้
 
-***
+-
 
-## Index and LUT Application
+## ดัชนีและแอปพลิเคชัน LUT
 
-Apply multispectral indices and color Look-Up Tables:
+ใช้ดัชนีหลายสเปกตรัมและตารางค้นหาสี:
 
-1. Locate **Index/LUT Sandbox** in **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebar
-2. Select vegetation index (NDVI, NDRE, etc.)
-3. Select multispectral formula, or create your own custom one (Chloros+ only)
-4. Apply color LUT gradient for visualization
-5. Adjust value ranges and thresholds
+1. ค้นหา **Index/LUT Sandbox** ใน **โปรแกรมดูรูปภาพ** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> แถบด้านข้าง
+2. เลือกดัชนีพืชพรรณ (NDVI, NDRE ฯลฯ)
+3. เลือกสูตรหลายสเปกตรัมหรือสร้างสูตรที่คุณกำหนดเอง (เฉพาะคลอรอส+)
+4. ใช้การไล่ระดับสี LUT สำหรับการแสดงภาพ
+5. ปรับช่วงค่าและเกณฑ์
 
-See [Index/LUT Sandbox](index-lut-sandbox.md) for detailed instructions.
+ดู [แซนด์บ็อกซ์ดัชนี/LUT](index-lut-sandbox.md) สำหรับคำแนะนำโดยละเอียด
 
-***
+-
 
-## Keyboard Shortcuts
+## แป้นพิมพ์ลัด
 
-### Navigation
+### การนำทาง
 
-* **→** (Right Arrow): Next image
-* **←** (Left Arrow): Previous image
-* **Home**: First image in list
-* **End**: Last image in list
+* **→** (ลูกศรขวา): รูปภาพถัดไป
+* **←** (ลูกศรซ้าย): รูปภาพก่อนหน้า
+* **หน้าแรก**: ภาพแรกในรายการ
+* **สิ้นสุด**: รูปภาพสุดท้ายในรายการ
 
-### Zoom
+### ซูม
 
-* **+** or **=**: Zoom in
-* **−**: Zoom out
-* **0** (Zero): Fit to screen
-* **Mouse Wheel**: Zoom in/out
+* **+** หรือ **=**: ซูมเข้า
+* **−**: ซูมออก
+* **0** (ศูนย์): พอดีกับหน้าจอ
+* **ล้อเมาส์**: ซูมเข้า/ออก
 
-### View Controls
+### ดูการควบคุม
 
-* **P**: Toggle pixel percent mode
-* **L**: Toggle layers panel
-* **Esc**: Close full-screen or return to File Browser
+* **P**: สลับโหมดเปอร์เซ็นต์พิกเซล
+* **L**: สลับแผงเลเยอร์
+* **Esc**: ปิดเต็มหน้าจอหรือกลับไปที่ File Browser
 
-### Other
+### อื่น
 
-* **Ctrl+S**: Save current image
-* **F**: Full-screen mode (if available)
+* **Ctrl+S**: บันทึกภาพปัจจุบัน
+* **F**: โหมดเต็มหน้าจอ (ถ้ามี)
 
-***
+-
 
-### Verifying Index Calculations
+### การตรวจสอบการคำนวณดัชนี
 
-Check that indices calculated correctly:
+ตรวจสอบว่าดัชนีคำนวณอย่างถูกต้อง:
 
-1. Open NDVI or other index image
-2. Check vegetation areas:
-   * **NDVI**: Should show 0.4-0.9 for healthy plants
-   * **NDRE**: Higher values for vigorous growth
-   * **GNDVI**: Similar to NDVI but chlorophyll-sensitive
-3. Check non-vegetation:
-   * **Soil**: Near 0 or slightly negative
-   * **Water**: Negative values (-0.5 to 0)
+1. เปิด NDVI หรือภาพดัชนีอื่นๆ
+2. ตรวจสอบพื้นที่ปลูกพืช:
+   * **NDVI**: ควรแสดง 0.4-0.9 สำหรับพืชที่แข็งแรง
+   * **NDRE**: ค่าที่สูงขึ้นสำหรับการเติบโตอย่างแข็งแกร่ง
+   * **GNDVI**: คล้ายกับ NDVI แต่มีความไวต่อคลอโรฟิลล์
+3. ตรวจสอบพืชที่ไม่ใช่พืช:
+   * **ดิน**: ใกล้ 0 หรือติดลบเล็กน้อย
+   * **น้ำ**: ค่าลบ (-0.5 ถึง 0)
 
-***
+-
 
-## Troubleshooting Viewing Issues
+## การแก้ไขปัญหาการดู
 
-### Image Won't Open
+### รูปภาพเปิดไม่ได้
 
-**Possible causes:**
+**สาเหตุที่เป็นไปได้:**
 
-* File corrupted during processing
-* Unsupported file format
-* Insufficient memory for large image
+* ไฟล์เสียหายระหว่างการประมวลผล
+* รูปแบบไฟล์ที่ไม่รองรับ
+* หน่วยความจำไม่เพียงพอสำหรับภาพขนาดใหญ่
 
-**Solutions:**
+**แนวทางแก้ไข:**
 
-1. Try opening in external viewer to verify file integrity
-2. Check file format matches expected type
-3. Close other applications to free memory
-4. Try smaller/different image
+1. ลองเปิดในโปรแกรมดูภายนอกเพื่อตรวจสอบความสมบูรณ์ของไฟล์
+2. ตรวจสอบรูปแบบไฟล์ที่ตรงกับประเภทที่คาดไว้
+3. ปิดแอปพลิเคชั่นอื่นเพื่อเพิ่มหน่วยความจำ
+4. ลองรูปภาพที่เล็กลง/แตกต่างออกไป
 
-### Black or White Image Display
+### การแสดงภาพขาวดำ
 
-**Possible causes:**
+**สาเหตุที่เป็นไปได้:**
 
-* Value range outside display capability
-* 32-bit float image with unusual values
-* Index calculation error
+* ช่วงค่าอยู่นอกความสามารถในการแสดงผล
+* รูปภาพโฟลต 32 บิตที่มีค่าผิดปกติ
+* ข้อผิดพลาดในการคำนวณดัชนี
 
-**Solutions:**
+**แนวทางแก้ไข:**
 
-1. Check pixel values - if all very low or very high, adjust display range
-2. Try opening in QGIS or similar with auto-range adjustment
-3. Check Debug Log from processing for errors
+1. ตรวจสอบค่าพิกเซล - หากทั้งหมดต่ำมากหรือสูงมาก ให้ปรับช่วงการแสดงผล
+2. ลองเปิดใน QGIS หรือที่คล้ายกันพร้อมการปรับช่วงอัตโนมัติ
+3. ตรวจสอบบันทึกการแก้ไขข้อบกพร่องจากการประมวลผลเพื่อดูข้อผิดพลาด
 
-### Pixel Values Seem Wrong
+### ค่าพิกเซลดูเหมือนผิด
 
-**Possible causes:**
+**สาเหตุที่เป็นไปได้:**
 
-* Viewing wrong image (original vs processed)
-* Calibration didn't apply correctly
-* Light sensor data wasn't included in input
-* Percent mode toggled incorrectly
+* ดูภาพผิด (ต้นฉบับเทียบกับที่ประมวลผลแล้ว)
+* การปรับเทียบใช้ไม่ถูกต้อง
+* ข้อมูลเซ็นเซอร์แสงไม่รวมอยู่ในอินพุต
+* โหมดเปอร์เซ็นต์สลับไม่ถูกต้อง
 
-**Solutions:**
+**แนวทางแก้ไข:**
 
-1. Verify you're viewing processed output (check filename suffix)
-2. Check percent mode button state
-3. Compare with known-good images from same dataset
+1. ตรวจสอบว่าคุณกำลังดูเอาต์พุตที่ประมวลผลแล้ว (ตรวจสอบส่วนต่อท้ายชื่อไฟล์)
+2. ตรวจสอบสถานะปุ่มโหมดเปอร์เซ็นต์
+3. เปรียบเทียบกับรูปภาพที่ทราบดีจากชุดข้อมูลเดียวกัน
 
-***
+-
 
-## Next Steps
+## ขั้นตอนต่อไป
 
-Now that you can view images full-screen:
+ตอนนี้คุณสามารถดูภาพแบบเต็มหน้าจอได้แล้ว:
 
-* [**Image Layers**](image-layers.md) - Learn about multi-band visualization
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Apply custom indices and color mapping
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Understand available indices
+* [**เลเยอร์รูปภาพ**](image-layers.md) - เรียนรู้เกี่ยวกับการแสดงภาพแบบหลายแบนด์
+* [**แซนด์บ็อกซ์ดัชนี/LUT**](index-lut-sandbox.md) - ใช้ดัชนีที่กำหนดเองและการจับคู่สี
+* [**สูตรดัชนีหลายสเปกตรัม**](../project-settings/multispectral-index-formulas.md) - ทำความเข้าใจดัชนีที่มีอยู่
 
-For processing workflow, see:
+สำหรับเวิร์กโฟลว์การประมวลผล โปรดดู:
 
-* [**Processing Images (GUI)**](../processing-images-gui/page-1.md) - Complete processing guide
+* [**กำลังประมวลผลภาพ (GUI)**](../processing-images-gui/page-1.md) - คู่มือการประมวลผลฉบับสมบูรณ์
