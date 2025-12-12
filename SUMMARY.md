@@ -16,7 +16,7 @@
 ## กำลังประมวลผลภาพ (GUI)
 
 * [การปรับการตั้งค่าโครงการ](processing-images-gui/adjusting-project-settings.md)
-* [การเพิ่มไฟล์ในโครงการ](processing-images-gui/page-1.md)
+* [การเพิ่มไฟล์ในโครงการ](processing-images-gui/adding-files-to-a-project.md)
 * [การเลือกภาพเป้าหมาย](processing-images-gui/choosing-target-images.md)
 * [เริ่มต้นการประมวลผล](processing-images-gui/starting-the-processing.md)
 * [การตรวจสอบการประมวลผล](processing-images-gui/monitoring-the-processing.md)
@@ -24,11 +24,11 @@
 
 ## การตั้งค่าโครงการ
 
-* [การตั้งค่าโครงการ](project-settings/page-2.md)
+* [การตั้งค่าโครงการ](project-settings/project-settings.md)
 * [สูตรดัชนีหลายสเปกตรัม](project-settings/multispectral-index-formulas.md)
 
 ## โปรแกรมดูภาพ (GUI)
 
-* [การเปิดภาพแบบเต็มหน้าจอ](image-viewer-gui/page-3.md)
+* [การเปิดภาพแบบเต็มหน้าจอ](image-viewer-gui/opening-an-image-full-screen.md)
 * [เลเยอร์รูปภาพ](image-viewer-gui/image-layers.md)
 * [แซนด์บ็อกซ์ดัชนี/LUT](image-viewer-gui/index-lut-sandbox.md)
