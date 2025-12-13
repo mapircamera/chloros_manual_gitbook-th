@@ -28,7 +28,7 @@ Download the latest version of Chloros for Windows to get started with multispec
 
 ## Download Chloros
 
-### <a href="https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link" class="button primary">Download Chloros Here</a>
+### <a href="https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link" class="button primary">ดาวน์โหลด Chloros ที่นี่</a>
 
 ### Latest Stable Release
 

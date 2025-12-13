@@ -1,36 +1,36 @@
-# API : Python SDK
+# API : หลาม SDK
 
-The **Chloros Python SDK** provides programmatic access to the Chloros image processing engine, enabling automation, custom workflows, and seamless integration with your Python applications and research pipelines.
+**Chloros Python SDK** ให้การเข้าถึงโปรแกรมประมวลผลภาพ Chloros โดยอัตโนมัติ เวิร์กโฟลว์แบบกำหนดเอง และการผสานรวมกับแอปพลิเคชัน Python และไปป์ไลน์การวิจัยของคุณได้อย่างราบรื่น
 
-### Key Features
+### คุณสมบัติที่สำคัญ
 
-* 🐍 **Native Python** - Clean, Pythonic API for image processing
-* 🔧 **Full API Access** - Complete control over Chloros processing
-* 🚀 **Automation** - Build custom batch processing workflows
-* 🔗 **Integration** - Embed Chloros in existing Python applications
-* 📊 **Research-Ready** - Perfect for scientific analysis pipelines
-* ⚡ **Parallel Processing** - Scales to your CPU cores (Chloros+)
+* 🐍 **Native Python** - Clean, Pythonic API สำหรับการประมวลผลภาพ
+* Optim **การเข้าถึง API แบบเต็ม** - ควบคุมการประมวลผลคลอรอสได้อย่างสมบูรณ์
+* 🚀 **ระบบอัตโนมัติ** - สร้างเวิร์กโฟลว์การประมวลผลแบบแบตช์แบบกำหนดเอง
+* 🔗 **บูรณาการ** - ฝังคลอรอสในแอปพลิเคชัน Python ที่มีอยู่
+* 📊 **พร้อมการวิจัย** - เหมาะสำหรับไปป์ไลน์การวิเคราะห์ทางวิทยาศาสตร์
+* ⚡ **การประมวลผลแบบขนาน** - ปรับขนาดตามคอร์ CPU ของคุณ (Chloros+)
 
-### Requirements
+### ความต้องการ
 
-| Requirement          | Details                                                             |
-| -------------------- | ------------------------------------------------------------------- |
-| **Chloros Desktop**  | Must be installed locally                                           |
-| **License**          | Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) |
-| **Operating System** | Windows 10/11 (64-bit)                                              |
-| **Python**           | Python 3.7 or higher                                                |
-| **Memory**           | 8GB RAM minimum (16GB recommended)                                  |
-| **Internet**         | Required for license activation                                     |
+- ข้อกำหนด - รายละเอียด -
+- -------------------- - ------------------------------------------------------------------- -
+- **คลอรอส เดสก์ท็อป** - จะต้องติดตั้งในเครื่อง -
+- **ใบอนุญาต** - Chloros+ ([ต้องใช้แผนการชำระเงิน](XPROT000122X)) -
+- **ระบบปฏิบัติการ** - Windows 10/11 (64 บิต) -
+- **หลาม** - Python 3.7 หรือสูงกว่า -
+- **ความทรงจำ** - RAM ขั้นต่ำ 8GB (แนะนำ 16GB) -
+- **อินเตอร์เน็ต** - จำเป็นสำหรับการเปิดใช้งานใบอนุญาต -
 
 {% hint style="warning" %}
-**License Requirement**: The Python SDK requires a paid Chloros+ subscription for API access. Standard (free) plans do not have API/SDK access. Visit [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) to upgrade.
+**ข้อกำหนดสิทธิ์การใช้งาน**: Python SDK ต้องมีการสมัครใช้งาน Chloros+ แบบชำระเงินสำหรับการเข้าถึง API แผนมาตรฐาน (ฟรี) ไม่มีการเข้าถึง API/SDK ไปที่ [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) เพื่ออัปเกรด
 {% endhint %}
 
-## Quick Start
+## เริ่มต้นอย่างรวดเร็ว
 
-### Installation
+### การติดตั้ง
 
-Install via pip:
+ติดตั้งผ่าน pip:
 
 ```bash
 pip install chloros-sdk
@@ -1215,26 +1215,26 @@ thread.start()
 
 ***
 
-## Getting Help
+## การขอความช่วยเหลือ
 
-### Documentation
+### เอกสารประกอบ
 
-* **API Reference**: This page
+* **การอ้างอิง API**: หน้านี้
 
-### Support Channels
+### ช่องทางการสนับสนุน
 
-* **Email**: info@mapir.camera
-* **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Pricing**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
+* **อีเมล**: info@mapir.cam
+* **เว็บไซต์**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* **ราคา**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
-### Sample Code
+### โค้ดตัวอย่าง
 
-All examples listed here are tested and production-ready. Copy and adapt them for your use case.
+ตัวอย่างทั้งหมดที่แสดงไว้ที่นี่ได้รับการทดสอบและพร้อมสำหรับการผลิต คัดลอกและปรับใช้ให้เหมาะกับกรณีการใช้งานของคุณ
 
 ***
 
-## License
+## ใบอนุญาต
 
-**Proprietary Software** - Copyright (c) 2025 MAPIR Inc.
+**ซอฟต์แวร์ที่เป็นกรรมสิทธิ์** - ลิขสิทธิ์ (c) 2025 MAPIR Inc.
 
-SDK requires an active Chloros+ subscription. Unauthorized use, distribution, or modification is prohibited.
+SDK ต้องการการสมัครสมาชิก Chloros+ ที่ใช้งานอยู่ ห้ามใช้ แจกจ่าย หรือดัดแปลงโดยไม่ได้รับอนุญาต

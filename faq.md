@@ -9,7 +9,7 @@ metaLinks:
 
 <details>
 
-<summary>Can I process images from cameras that are not MAPIR brand with Chloros?</summary>
+<summary>ฉันสามารถประมวลผลภาพจากกล้องที่ไม่ใช่แบรนด์ MAPIR ด้วยคลอรอสได้หรือไม่</summary>
 
 No, Chloros only supports processing MAPIR camera images. Please see the list of [supported camera models](supported-cameras.md) for more information. We do offer processing of other cameras on MAPIR Cloud, see full list [here](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
 
@@ -17,7 +17,7 @@ No, Chloros only supports processing MAPIR camera images. Please see the list of
 
 <details>
 
-<summary>Can I calibrate my images for reflectance without a calibration target?</summary>
+<summary>ฉันสามารถปรับเทียบภาพเพื่อการสะท้อนแสงโดยไม่มีเป้าหมายการปรับเทียบได้หรือไม่</summary>
 
 No. Without an image of the calibration target captured around when the non target images are captured you will not be able to relate the image's pixel values to a known reflectance percent. If you also do not include the log from a MAPIR light sensor then the ambient light spectrum will not be measured, and the reflectance results will not be accurate.
 
@@ -25,7 +25,7 @@ No. Without an image of the calibration target captured around when the non targ
 
 <details>
 
-<summary>Can I edit my images prior to processing in Chloros?</summary>
+<summary>ฉันสามารถแก้ไขภาพก่อนประมวลผลในคลอรอสได้หรือไม่</summary>
 
 No. Chloros assumes the input data has not been modified. Do not change the file names.
 
@@ -33,7 +33,7 @@ No. Chloros assumes the input data has not been modified. Do not change the file
 
 <details>
 
-<summary>Can I set my MAPIR Survey3 cameras to auto exposure and process the images in Chloros?</summary>
+<summary>ฉันสามารถตั้งค่ากล้อง MAPIR Survey3 ให้เป็นค่าแสงอัตโนมัติและประมวลผลภาพในคลอรอสได้หรือไม่</summary>
 
 No. Survey3 image datasets must have a fixed/locked exposure, so no auto shutter speed or auto ISO. All images of the same camera model must have identical shutter speed and ISO (exposure).
 

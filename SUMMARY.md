@@ -1,34 +1,34 @@
-# Table of contents
+#สารบัญ
 
-* [Getting Started](README.md)
-* [GUI : Navigation](navigation.md)
-* [GUI : Projects](projects.md)
-* [CLI : Command Line](CLI.md)
+* [เริ่มต้นใช้งาน](README.md)
+* [GUI : การนำทาง](navigation.md)
+* [GUI : โครงการ](projects.md)
+* [CLI : บรรทัดคำสั่ง](CLI.md)
 * [API : Python SDK](api-python-sdk.md)
-* [Supported Cameras](supported-cameras.md)
-* [Output Image Formats](output-image-formats.md)
-* [Chloros+ Login](chloros+-login.md)
-* [Calibration Targets](calibration-targets.md)
-* [Supported Languages](supported-languages.md)
-* [Download](download.md)
-* [FAQ](faq.md)
+* [กล้องที่รองรับ](supported-cameras.md)
+* [รูปแบบภาพที่ส่งออก](output-image-formats.md)
+* [เข้าสู่ระบบ Chloros+](chloros+-login.md)
+* [เป้าหมายการสอบเทียบ](calibration-targets.md)
+* [ภาษาที่รองรับ](supported-languages.md)
+* [ดาวน์โหลด](download.md)
+* [คำถามที่พบบ่อย](faq.md)
 
-## Processing Images (GUI)
+## กำลังประมวลผลรูปภาพ (GUI)
 
-* [Adjusting Project Settings](processing-images-gui/adjusting-project-settings.md)
-* [Adding Files to a Project](processing-images-gui/adding-files-to-a-project.md)
-* [Choosing Target Images](processing-images-gui/choosing-target-images.md)
-* [Starting the Processing](processing-images-gui/starting-the-processing.md)
-* [Monitoring the Processing](processing-images-gui/monitoring-the-processing.md)
-* [Finishing the Processing](processing-images-gui/finishing-the-processing.md)
+* [การปรับการตั้งค่าโปรเจ็กต์](processing-images-gui/adjusting-project-settings.md)
+* [การเพิ่มไฟล์ในโครงการ](processing-images-gui/adding-files-to-a-project.md)
+* [การเลือกรูปภาพเป้าหมาย](processing-images-gui/choosing-target-images.md)
+* [เริ่มการประมวลผล](processing-images-gui/starting-the-processing.md)
+* [การตรวจสอบการประมวลผล](processing-images-gui/monitoring-the-processing.md)
+* [เสร็จสิ้นการประมวลผล](processing-images-gui/finishing-the-processing.md)
 
-## PROJECT SETTINGS
+## การตั้งค่าโครงการ
 
-* [Project Settings](project-settings/project-settings.md)
-* [Multispectral Index Formulas](project-settings/multispectral-index-formulas.md)
+* [การตั้งค่าโครงการ](project-settings/project-settings.md)
+* [สูตรดัชนี Multispectral](project-settings/multispectral-index-formulas.md)
 
-## IMAGE VIEWER (GUI)
+## โปรแกรมดูภาพ (GUI)
 
-* [Opening an Image Full Screen](image-viewer-gui/opening-an-image-full-screen.md)
-* [Image Layers](image-viewer-gui/image-layers.md)
-* [Index/LUT Sandbox](image-viewer-gui/index-lut-sandbox.md)
+* [การเปิดภาพเต็มหน้าจอ](image-viewer-gui/opening-an-image-full-screen.md)
+* [เลเยอร์รูปภาพ](image-viewer-gui/image-layers.md)
+* [แซนด์บ็อกซ์ดัชนี/LUT](image-viewer-gui/index-lut-sandbox.md)
