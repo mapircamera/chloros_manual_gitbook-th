@@ -57,7 +57,7 @@ In the file browser table pre-selecting the target images in the right column wi
 
 <details>
 
-<summary>If I will upload my images to <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a> should I process in Chloros prior to uploading?</summary>
+<summary>หากฉันจะอัปโหลดรูปภาพของฉันไปยัง <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a> ฉันควรประมวลผลใน Chloros ก่อนอัปโหลดหรือไม่?</summary>
 
 If you plan to upload to our online processing platform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription) do not edit the images prior to uploading. Cloud will perform all the same processing and more.
 
