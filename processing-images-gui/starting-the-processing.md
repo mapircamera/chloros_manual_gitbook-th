@@ -1,366 +1,366 @@
-# Starting the Processing
+#เริ่มต้นการประมวลผล
 
-Once you've imported your images, marked your calibration targets, and configured your project settings, you're ready to begin processing. This page guides you through initiating the Chloros processing pipeline.
+เมื่อคุณนำเข้ารูปภาพ ทำเครื่องหมายเป้าหมายการปรับเทียบ และกำหนดการตั้งค่าโปรเจ็กต์แล้ว คุณก็พร้อมที่จะเริ่มการประมวลผลแล้ว หน้านี้แนะนำคุณตลอดขั้นตอนการเริ่มต้นไปป์ไลน์การประมวลผลคลอรอส
 
-## Pre-Processing Checklist
+## รายการตรวจสอบก่อนการประมวลผล
 
-Before clicking the Start button, verify that everything is ready:
+ก่อนที่จะคลิกปุ่มเริ่ม ให้ตรวจสอบว่าทุกอย่างพร้อมแล้ว:
 
-* [ ] **Files imported** - All images appear in File Browser
-* [ ] **Target images marked** - Target column checked for calibration images
-* [ ] **Camera models detected** - Camera Model column shows correct cameras
-* [ ] **Settings configured** - Project Settings reviewed and adjusted
-* [ ] **Indices selected** - Desired multispectral indices added (if needed)
-* [ ] **Export format chosen** - Output format appropriate for your workflow
+* [ ] **ไฟล์ที่นำเข้า** - รูปภาพทั้งหมดปรากฏใน File Browser
+* [ ] **ทำเครื่องหมายรูปภาพเป้าหมาย** - ตรวจสอบคอลัมน์เป้าหมายสำหรับรูปภาพที่ปรับเทียบแล้ว
+* [ ] **ตรวจพบรุ่นกล้อง** - คอลัมน์รุ่นกล้องแสดงกล้องที่ถูกต้อง
+* [ ] **กำหนดค่าการตั้งค่าแล้ว** - ตรวจสอบและปรับเปลี่ยนการตั้งค่าโครงการแล้ว
+* [ ] **ดัชนีที่เลือก** - ดัชนีหลายสเปกตรัมที่ต้องการเพิ่ม (หากจำเป็น)
+* [ ] **รูปแบบการส่งออกที่เลือก** - รูปแบบเอาต์พุตที่เหมาะสมกับขั้นตอนการทำงานของคุณ
 
-{% hint style="info" %}
-**Tip**: Click through a few images in the File Browser to verify they loaded correctly before processing.
-{% endhint %}
-
-***
-
-## Starting the Processing
-
-### Locate the Start Button
-
-The Start/Play button is located in the top header bar of Chloros:
-
-* Position: Top center of the window
-* Icon: **Play/Start button** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
-* Status: Button is enabled (bright) when ready to process
-
-### Click to Start
-
-1. Click the **Play/Start button** in the top header
-2. Processing begins immediately
-3. The button becomes disabled (grayed out) during processing
-4. Progress bar updates, showing processing status
-
-{% hint style="success" %}
-**Processing Started**: Once clicked, Chloros automatically handles all processing steps - target detection, debayering, calibration, index calculation, and export.
-{% endhint %}
+{% คำใบ้สไตล์ = "ข้อมูล" %}
+**เคล็ดลับ**: คลิกดูภาพบางภาพใน File Browser เพื่อตรวจสอบว่าโหลดถูกต้องก่อนประมวลผล
+{% คำแนะนำสุดท้าย %}
 
 ***
 
-## Understanding Processing Modes
+## เริ่มต้นการประมวลผล
 
-Chloros operates in two different processing modes depending on your license:
+### ค้นหาปุ่มเริ่มต้น
 
-### Free Mode (Sequential Processing)
+ปุ่มเริ่ม/เล่นอยู่ที่แถบส่วนหัวด้านบนของ Chloros:
 
-**Available to all users**
+* ตำแหน่ง: ตรงกลางด้านบนของหน้าต่าง
+* ไอคอน: **ปุ่มเล่น/เริ่ม** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
+* สถานะ: ปุ่มเปิดใช้งาน (สว่าง) เมื่อพร้อมดำเนินการ
 
-**How it works:**
+### คลิกเพื่อเริ่ม
 
-* Processes images one at a time, sequentially
-* Single-threaded operation
-* Lower memory usage
+1. คลิกปุ่ม **เล่น/เริ่ม** ในส่วนหัวด้านบน
+2. การประมวลผลจะเริ่มขึ้นทันที
+3. ปุ่มจะปิดใช้งาน (เป็นสีเทา) ในระหว่างการประมวลผล
+4. อัพเดตแถบความคืบหน้า แสดงสถานะการประมวลผล
 
-**Progress bar shows 2 stages:**
-
-1. **Target Detect** - Scanning for calibration targets
-2. **Processing** - Applying calibration and exporting images
-
-**Processing time:**
-
-* Much slower than Chloros+ parallel mode
-* Suitable for small to medium datasets (< 200 images)
-
-### Chloros+ Mode (Parallel Processing)
-
-**Requires Chloros+ license**
-
-**How it works:**
-
-* Processes multiple images simultaneously
-* Multi-threaded operation (up to 16 parallel workers)
-* Utilizes multiple CPU cores
-* Optional GPU (CUDA) acceleration with NVIDIA graphics cards
-
-**Progress bar shows 4 stages:**
-
-1. **Detecting** - Finding calibration targets
-2. **Analyzing** - Examining image metadata and preparing pipeline
-3. **Calibrating** - Applying corrections and calibrations
-4. **Exporting** - Saving processed images and indices
-
-**Progress bar interaction:**
-
-* **Hover mouse** over bar to see detailed 4-stage dropdown panel
-* **Click** progress bar to freeze the dropdown panel in place
-* **Click again** to unfreeze and hide panel
-
-**Processing time:**
-
-* Significantly faster than free mode
-* Scales with CPU core count
-* GPU acceleration further improves speed
-
-{% hint style="info" %}
-**Chloros+ Speed**: Parallel processing can be 5-10x faster than sequential mode for large datasets. A 500-image project that takes 2 hours in free mode may complete in 15-20 minutes with Chloros+.
-{% endhint %}
+{% คำใบ้สไตล์ = "ความสำเร็จ" %}
+**เริ่มต้นการประมวลผล**: เมื่อคลิกแล้ว คลอรอสจะจัดการขั้นตอนการประมวลผลทั้งหมดโดยอัตโนมัติ - การตรวจจับเป้าหมาย การแยกส่วน การสอบเทียบ การคำนวณดัชนี และการส่งออก
+{% คำแนะนำสุดท้าย %}
 
 ***
 
-## What Happens During Processing
+## ทำความเข้าใจกับโหมดการประมวลผล
 
-### Stage 1: Target Detection
+คลอรอสทำงานในโหมดการประมวลผลที่แตกต่างกันสองโหมด ขึ้นอยู่กับใบอนุญาตของคุณ:
 
-**What Chloros does:**
+### โหมดฟรี (การประมวลผลตามลำดับ)
 
-* Scans marked target images (or all images if none marked)
-* Identifies the 4 calibration panels in each target
-* Extracts reflectance values from target panels
-* Records target timestamps for calibration scheduling
+** ใช้ได้กับผู้ใช้ทุกคน **
 
-**Duration:** 1-30 seconds (with marked targets), 5-30+ minutes (unmarked)
+**วิธีการทำงาน:**
 
-### Stage 2: Debayering (RAW Conversion)
+* ประมวลผลภาพทีละภาพตามลำดับ
+* การทำงานแบบเธรดเดียว
+* การใช้หน่วยความจำลดลง
 
-**What Chloros does:**
+**แถบความคืบหน้าแสดง 2 ขั้นตอน:**
 
-* Converts RAW Bayer pattern data to full RGB images
-* Applies high-quality demosaicing algorithm
-* Preserves maximum image quality and detail
+1. **การตรวจจับเป้าหมาย** - กำลังสแกนหาเป้าหมายการสอบเทียบ
+2. **กำลังประมวลผล** - ใช้การปรับเทียบและส่งออกรูปภาพ
 
-**Duration:** Varies by image count and CPU speed
+**ระยะเวลาดำเนินการ:**
 
-### Stage 3: Calibration
+* ช้ากว่าโหมดขนาน Chloros+ มาก
+* เหมาะสำหรับชุดข้อมูลขนาดเล็กถึงขนาดกลาง (< 200 รูปภาพ)
 
-**What Chloros does:**
+### โหมดคลอรอส+ (การประมวลผลแบบขนาน)
 
-* **Vignette correction**: Removes lens darkening at edges
-* **Reflectance calibration**: Normalizes using target reflectance values
-* Applies corrections across all bands/channels
-* Uses appropriate calibration target for each image based on timestamp
+**ต้องมีใบอนุญาตคลอรอส+**
 
-**Duration:** Majority of processing time
+**วิธีการทำงาน:**
 
-### Stage 4: Index Calculation
+* ประมวลผลภาพหลายภาพพร้อมกัน
+* การทำงานแบบมัลติเธรด (มากถึง 16 คนแบบขนาน)
+* ใช้แกน CPU หลายตัว
+* การเร่งความเร็ว GPU (CUDA) เสริมด้วยการ์ดกราฟิก NVIDIA
 
-**What Chloros does:**
+**แถบความคืบหน้าแสดง 4 ขั้นตอน:**
 
-* Calculates configured multispectral indices (NDVI, NDRE, etc.)
-* Applies band math to calibrated images
-* Generates index images for each selected index
+1. **การตรวจจับ** - การค้นหาเป้าหมายการสอบเทียบ
+2. **การวิเคราะห์** - ตรวจสอบข้อมูลเมตาของรูปภาพและการเตรียมไปป์ไลน์
+3. **การปรับเทียบ** - การใช้การแก้ไขและการสอบเทียบ
+4. **การส่งออก** - บันทึกรูปภาพและดัชนีที่ประมวลผลแล้ว
 
-**Duration:** A few seconds per image
+**การโต้ตอบของแถบความคืบหน้า:**
 
-### Stage 5: Export
+* **เลื่อนเมาส์** เหนือแถบเพื่อดูแผงแบบเลื่อนลง 4 ขั้นตอนโดยละเอียด
+* **คลิก** แถบความคืบหน้าเพื่อตรึงแผงแบบเลื่อนลงให้อยู่กับที่
+* **คลิกอีกครั้ง** เพื่อยกเลิกการตรึงและซ่อนแผง
 
-**What Chloros does:**
+**ระยะเวลาดำเนินการ:**
 
-* Saves calibrated images in selected format
-* Exports index images with configured LUT colors
-* Writes files to camera model subfolders
-* Preserves original filenames with suffixes
+* เร็วกว่าโหมดฟรีอย่างเห็นได้ชัด
+* ปรับขนาดด้วยจำนวนคอร์ CPU
+* การเร่งความเร็วของ GPU ช่วยเพิ่มความเร็วให้ดียิ่งขึ้น
 
-**Duration:** Varies by export format and file size
-
-***
-
-## Processing Behavior
-
-### Automatic Processing Pipeline
-
-Once started, the entire pipeline runs automatically:
-
-* No user interaction needed
-* All configured steps execute in sequence
-* Progress updates shown in real-time
-
-### Computer Usage During Processing
-
-**Free Mode:**
-
-* Relatively low CPU usage (single-threaded)
-* Computer remains responsive for other tasks
-* Safe to minimize Chloros and work in other applications
-
-**Chloros+ Parallel Mode:**
-
-* High CPU usage (multi-threaded, up to 16 cores)
-* With GPU acceleration: High GPU usage
-* Computer may be less responsive during processing
-* Avoid starting other CPU-intensive tasks
-
-{% hint style="warning" %}
-**Performance Tip**: For best Chloros+ performance, close other applications and let Chloros use full system resources.
-{% endhint %}
-
-### Processing Cannot Be Paused
-
-**Important limitations:**
-
-* Once started, processing cannot be paused
-* You can cancel processing, but progress is lost
-* Partial results are not saved
-* Must restart from beginning if canceled
-
-**Planning tip:** For very large projects, consider processing in batches or using CLI for better control.
+{% คำใบ้สไตล์ = "ข้อมูล" %}
+**ความเร็วของคลอรอส+**: การประมวลผลแบบขนานอาจเร็วกว่าโหมดลำดับสำหรับชุดข้อมูลขนาดใหญ่ถึง 5-10 เท่า โปรเจ็กต์ 500 ภาพที่ใช้เวลา 2 ชั่วโมงในโหมดฟรีอาจเสร็จสิ้นภายใน 15-20 นาทีด้วย Chloros+
+{% คำแนะนำสุดท้าย %}
 
 ***
 
-## Monitoring Your Processing
+## เกิดอะไรขึ้นระหว่างการประมวลผล
 
-While processing runs, you can:
+### ด่าน 1: การตรวจจับเป้าหมาย
 
-* **Watch progress bar** - See overall completion percentage
-* **View current stage** - Detect, Analyze, Calibrate, or Export
-* **Check log tab** - See detailed processing messages and warnings
-* **Preview completed images** - Some export files may appear during processing
+**คลอรอสทำอะไร:**
 
-For detailed information on monitoring, see [Monitoring the Processing](monitoring-the-processing.md).
+* สแกนภาพเป้าหมายที่ทำเครื่องหมายไว้ (หรือภาพทั้งหมดหากไม่มีเครื่องหมาย)
+* ระบุแผงการสอบเทียบ 4 แผงในแต่ละเป้าหมาย
+* แยกค่าการสะท้อนแสงออกจากแผงเป้าหมาย
+* บันทึกการประทับเวลาเป้าหมายสำหรับการกำหนดเวลาการสอบเทียบ
+
+**ระยะเวลา:** 1-30 วินาที (โดยมีเป้าหมายที่ทำเครื่องหมายไว้), 5-30+ นาที (ไม่มีเครื่องหมาย)
+
+### ด่าน 2: การดีบาย (การแปลงไฟล์ RAW)
+
+**คลอรอสทำอะไร:**
+
+* แปลงข้อมูลรูปแบบ RAW Bayer เป็นภาพ RGB เต็มรูปแบบ
+* ใช้อัลกอริทึม demosaicing คุณภาพสูง
+* รักษาคุณภาพและรายละเอียดของภาพสูงสุด
+
+**ระยะเวลา:** แตกต่างกันไปตามจำนวนภาพและความเร็ว CPU
+
+### ขั้นตอนที่ 3: การสอบเทียบ
+
+**คลอรอสทำอะไร:**
+
+* **การแก้ไขขอบมืด**: ลบการทำให้เลนส์มืดลงที่ขอบ
+* **การปรับเทียบการสะท้อนแสง**: ทำให้เป็นมาตรฐานโดยใช้ค่าการสะท้อนแสงเป้าหมาย
+* ใช้การแก้ไขในทุกแบนด์/ช่อง
+* ใช้เป้าหมายการปรับเทียบที่เหมาะสมสำหรับแต่ละภาพโดยอิงจากการประทับเวลา
+
+**ระยะเวลา:** ส่วนใหญ่ของเวลาในการประมวลผล
+
+### ขั้นตอนที่ 4: การคำนวณดัชนี
+
+**คลอรอสทำอะไร:**
+
+* คำนวณดัชนีหลายสเปกตรัมที่กำหนดค่า (NDVI, NDRE ฯลฯ )
+* ใช้แถบคณิตศาสตร์กับภาพที่ปรับเทียบแล้ว
+* สร้างภาพดัชนีสำหรับแต่ละดัชนีที่เลือก
+
+**ระยะเวลา:** ไม่กี่วินาทีต่อภาพ
+
+### ขั้นตอนที่ 5: ส่งออก
+
+**คลอรอสทำอะไร:**
+
+* บันทึกภาพที่ปรับเทียบแล้วในรูปแบบที่เลือก
+* ส่งออกภาพดัชนีด้วยสี LUT ที่กำหนดค่าไว้
+* เขียนไฟล์ไปยังโฟลเดอร์ย่อยของรุ่นกล้อง
+* รักษาชื่อไฟล์ต้นฉบับพร้อมส่วนต่อท้าย
+
+**ระยะเวลา:** แตกต่างกันไปตามรูปแบบการส่งออกและขนาดไฟล์
 
 ***
 
-## Canceling Processing
+## พฤติกรรมการประมวลผล
 
-If you need to stop processing:
+### ไปป์ไลน์การประมวลผลอัตโนมัติ
 
-### How to Cancel
+เมื่อเริ่มต้นแล้ว ไปป์ไลน์ทั้งหมดจะทำงานโดยอัตโนมัติ:
 
-1. Locate the **Stop/Cancel button** (replaces Start button during processing)
-2. Click the Stop button
-3. Processing halts immediately
-4. Partial results are discarded
+* ไม่จำเป็นต้องมีการโต้ตอบกับผู้ใช้
+* ขั้นตอนที่กำหนดค่าไว้ทั้งหมดจะดำเนินการตามลำดับ
+* การอัปเดตความคืบหน้าจะแสดงแบบเรียลไทม์
 
-### When to Cancel
+### การใช้คอมพิวเตอร์ระหว่างการประมวลผล
 
-**Valid reasons to cancel:**
+**โหมดฟรี:**
 
-* Realized incorrect settings were used
-* Forgot to mark target images
-* Wrong images imported
-* System running too slow or unresponsive
+* การใช้งาน CPU ค่อนข้างต่ำ (เธรดเดียว)
+* คอมพิวเตอร์ยังคงตอบสนองต่องานอื่นๆ ได้
+* ปลอดภัยในการลดคลอรอสและนำไปใช้งานอื่นๆ ได้
 
-**After canceling:**
+**คลอรอส+ โหมดขนาน:**
 
-* Review and fix any issues
-* Adjust settings as needed
-* Restart processing from the beginning
-* For the cleanest experience, completely close Chloros and restart
+* การใช้งาน CPU สูง (มัลติเธรด สูงสุด 16 คอร์)
+* ด้วยการเร่งความเร็ว GPU: การใช้งาน GPU สูง
+* คอมพิวเตอร์อาจมีการตอบสนองน้อยลงระหว่างการประมวลผล
+* หลีกเลี่ยงการเริ่มงานที่ต้องใช้ CPU มาก
 
-{% hint style="warning" %}
-**No Partial Results**: Canceling discards all progress. Chloros does not save partially processed images.
-{% endhint %}
+{% คำใบ้สไตล์ = "คำเตือน" %}
+**เคล็ดลับด้านประสิทธิภาพ**: เพื่อประสิทธิภาพการทำงานของคลอรอส+ ที่ดีที่สุด ให้ปิดแอปพลิเคชันอื่นๆ และปล่อยให้คลอรอสใช้ทรัพยากรระบบทั้งหมด
+{% คำแนะนำสุดท้าย %}
+
+### ไม่สามารถหยุดการประมวลผลชั่วคราวได้
+
+**ข้อจำกัดที่สำคัญ:**
+
+* เมื่อเริ่มต้นแล้ว การประมวลผลไม่สามารถหยุดชั่วคราวได้
+* คุณสามารถยกเลิกการประมวลผลได้ แต่ความคืบหน้าจะหายไป
+* ผลลัพธ์บางส่วนจะไม่ได้รับการบันทึก
+* ต้องรีสตาร์ทตั้งแต่ต้นหากยกเลิก
+
+**เคล็ดลับการวางแผน:** สำหรับโปรเจ็กต์ขนาดใหญ่มาก ให้พิจารณาการประมวลผลเป็นชุดหรือใช้ CLI เพื่อการควบคุมที่ดีขึ้น
 
 ***
 
-## Processing Time Estimates
+## ติดตามการประมวลผลของคุณ
 
-Actual processing time varies greatly based on:
+ขณะที่ประมวลผล คุณสามารถ:
 
-* Number of images
-* Image resolution
-* RAW vs JPG input format
-* Processing mode (Free vs Chloros+)
-* CPU speed and core count
-* GPU availability (Chloros+ only)
-* Number of indices to calculate
-* Export format complexity
+* **แถบความคืบหน้าในการรับชม** - ดูเปอร์เซ็นต์ความสำเร็จโดยรวม
+* **ดูขั้นตอนปัจจุบัน** - ตรวจจับ วิเคราะห์ ปรับเทียบ หรือส่งออก
+* **ตรวจสอบแท็บบันทึก** - ดูข้อความการประมวลผลและคำเตือนโดยละเอียด
+* **ดูตัวอย่างภาพที่เสร็จสมบูรณ์** - ไฟล์ส่งออกบางไฟล์อาจปรากฏขึ้นระหว่างการประมวลผล
 
-### Rough Estimates (Chloros+, 12MP images, modern CPU)
+สำหรับข้อมูลโดยละเอียดเกี่ยวกับการตรวจสอบ โปรดดู [การตรวจสอบการประมวลผล](monitoring-the-processing.md)
 
-| Image Count | Free Mode | Chloros+ (CPU) | Chloros+ (GPU) |
+***
+
+## กำลังยกเลิกการประมวลผล
+
+หากคุณต้องการหยุดการประมวลผล:
+
+### วิธียกเลิก
+
+1. ค้นหาปุ่ม **หยุด/ยกเลิก** (แทนที่ปุ่มเริ่มในระหว่างการประมวลผล)
+2. คลิกปุ่มหยุด
+3. การประมวลผลหยุดทันที
+4. ผลลัพธ์บางส่วนจะถูกละทิ้ง
+
+### เมื่อจะยกเลิก
+
+**เหตุผลที่ถูกต้องในการยกเลิก:**
+
+* มีการใช้การตั้งค่าที่ไม่ถูกต้อง
+* ลืมทำเครื่องหมายภาพเป้าหมาย
+* นำเข้ารูปภาพผิด
+* ระบบทำงานช้าเกินไปหรือไม่ตอบสนอง
+
+**หลังจากยกเลิก:**
+
+* ตรวจสอบและแก้ไขปัญหาใด ๆ
+* ปรับการตั้งค่าได้ตามต้องการ
+* เริ่มการประมวลผลใหม่ตั้งแต่ต้น
+* เพื่อประสบการณ์ที่สะอาดที่สุด ให้ปิดคลอรอสทั้งหมดแล้วรีสตาร์ท
+
+{% คำใบ้สไตล์ = "คำเตือน" %}
+**ไม่มีผลลัพธ์บางส่วน**: การยกเลิกจะยกเลิกความคืบหน้าทั้งหมด คลอรอสไม่บันทึกภาพที่ประมวลผลบางส่วน
+{% คำแนะนำสุดท้าย %}
+
+***
+
+## การประมาณเวลาดำเนินการ
+
+เวลาในการประมวลผลจริงจะแตกต่างกันไปอย่างมากโดยขึ้นอยู่กับ:
+
+* จำนวนภาพ
+* ความละเอียดของภาพ
+* รูปแบบอินพุต RAW และ JPG
+* โหมดการประมวลผล (ฟรี เทียบกับ คลอรอส+)
+* ความเร็ว CPU และจำนวนคอร์
+* ความพร้อมใช้งานของ GPU (Chloros+ เท่านั้น)
+* จำนวนดัชนีที่จะคำนวณ
+* ส่งออกความซับซ้อนของรูปแบบ
+
+### การประมาณการคร่าวๆ (Chloros+, ภาพ 12MP, CPU สมัยใหม่)
+
+- จำนวนรูปภาพ - โหมดฟรี - คลอรอส+ (ซีพียู) - คลอรอส+ (GPU) -
 | ----------- | --------- | -------------- | -------------- |
-| 50 images   | 15-20 min | 5-8 min        | 3-5 min        |
-| 100 images  | 30-40 min | 10-15 min      | 5-8 min        |
-| 200 images  | 1-1.5 hrs | 20-30 min      | 10-15 min      |
-| 500 images  | 2-3 hrs   | 45-60 min      | 20-30 min      |
-| 1000 images | 4-6 hrs   | 1.5-2 hrs      | 40-60 min      |
+- 50 ภาพ - 15-20 นาที - 5-8 นาที - 3-5 นาที -
+- 100 ภาพ - 30-40 นาที - 10-15 นาที - 5-8 นาที -
+- 200 ภาพ - 1-1.5 น. - 20-30 นาที - 10-15 นาที -
+- 500 ภาพ - 2-3 ชม. - 45-60 นาที - 20-30 นาที -
+- 1,000 ภาพ - 4-6 ชม. - 1.5-2 ชม. - 40-60 นาที -
 
-{% hint style="info" %}
-**First Run**: Initial processing may take longer as Chloros builds caches and profiles. Subsequent processing of similar datasets will be faster.
-{% endhint %}
-
-***
-
-## Common Issues at Start
-
-### Start Button Disabled (Grayed Out)
-
-**Possible causes:**
-
-* No images imported
-* Backend not fully started
-* Previous processing still running
-* Project not fully loaded
-
-**Solutions:**
-
-1. Wait for backend to fully initialize (check main menu icon)
-2. Verify images are imported in File Browser
-3. Restart Chloros if button remains disabled
-4. Check Debug Log for error messages
-
-### Processing Starts Then Immediately Fails
-
-**Possible causes:**
-
-* No valid images in project
-* Corrupted image files
-* Insufficient disk space
-* Insufficient memory (RAM)
-
-**Solutions:**
-
-1. Check Debug Log <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> for error messages
-2. Verify disk space available
-3. Try processing a smaller subset of images
-4. Verify images are not corrupted
-
-### "No Targets Detected" Warning
-
-**Possible causes:**
-
-* Forgot to mark target images
-* Target images don't contain visible targets
-* Target detection settings too strict
-
-**Solutions:**
-
-1. Review [Choosing Target Images](choosing-target-images.md)
-2. Mark appropriate images in Target column
-3. Verify targets are visible in marked images
-4. Adjust target detection settings if needed
+{% คำใบ้สไตล์ = "ข้อมูล" %}
+**การดำเนินการครั้งแรก**: การประมวลผลเริ่มต้นอาจใช้เวลานานกว่าเนื่องจากคลอรอสสร้างแคชและโปรไฟล์ การประมวลผลชุดข้อมูลที่คล้ายกันในภายหลังจะเร็วขึ้น
+{% คำแนะนำสุดท้าย %}
 
 ***
 
-## Tips for Successful Processing
+## ปัญหาทั่วไปเมื่อเริ่มต้น
 
-### Before Starting
+### ปุ่มเริ่มถูกปิดใช้งาน (เป็นสีเทา)
 
-1. **Test with small subset first** - Process 10-20 images to verify settings
-2. **Check available disk space** - Ensure 2-3x dataset size free
-3. **Close unnecessary applications** - Free up system resources
-4. **Verify target images** - Preview marked targets to ensure quality
-5. **Save project** - Project auto-saves, but good practice to save manually
+**สาเหตุที่เป็นไปได้:**
 
-### During Processing
+* ไม่มีการนำเข้ารูปภาพ
+* แบ็กเอนด์ไม่ได้เริ่มต้นอย่างสมบูรณ์
+* การประมวลผลก่อนหน้านี้ยังคงทำงานอยู่
+* โครงการยังโหลดไม่เต็มที่
 
-1. **Avoid system sleep** - Disable power saving modes
-2. **Keep Chloros in foreground** - Or at least visible in taskbar
-3. **Monitor progress occasionally** - Check for warnings or errors
-4. **Don't load other heavy applications** - Especially with Chloros+ parallel mode
+**แนวทางแก้ไข:**
 
-### Chloros+ GPU Acceleration
+1. รอให้แบ็กเอนด์เริ่มต้นอย่างสมบูรณ์ (ตรวจสอบไอคอนเมนูหลัก)
+2. ตรวจสอบว่ารูปภาพถูกนำเข้าใน File Browser
+3. รีสตาร์ทคลอรอสหากปุ่มยังคงปิดใช้งานอยู่
+4. ตรวจสอบบันทึกการแก้ไขข้อบกพร่องเพื่อดูข้อความแสดงข้อผิดพลาด
 
-If using NVIDIA GPU acceleration:
+### การประมวลผลเริ่มต้นแล้วล้มเหลวทันที
 
-1. Update NVIDIA drivers to latest version
-2. Ensure GPU has 4GB+ VRAM
-3. Close GPU-intensive applications (games, video editing)
-4. Monitor GPU temperature (ensure adequate cooling)
+**สาเหตุที่เป็นไปได้:**
+
+* ไม่มีรูปภาพที่ถูกต้องในโครงการ
+* ไฟล์ภาพเสียหาย
+* เนื้อที่ดิสก์ไม่เพียงพอ
+* หน่วยความจำไม่เพียงพอ (RAM)
+
+**แนวทางแก้ไข:**
+
+1. ตรวจสอบบันทึกการแก้ไขข้อบกพร่อง <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> เพื่อดูข้อความแสดงข้อผิดพลาด
+2. ตรวจสอบพื้นที่ว่างในดิสก์
+3. ลองประมวลผลชุดย่อยของรูปภาพให้เล็กลง
+4. ตรวจสอบว่ารูปภาพไม่เสียหาย
+
+### คำเตือน "ไม่พบเป้าหมาย"
+
+**สาเหตุที่เป็นไปได้:**
+
+* ลืมทำเครื่องหมายภาพเป้าหมาย
+* รูปภาพเป้าหมายไม่มีเป้าหมายที่มองเห็นได้
+* การตั้งค่าการตรวจจับเป้าหมายเข้มงวดเกินไป
+
+**แนวทางแก้ไข:**
+
+1. ตรวจสอบ [การเลือกรูปภาพเป้าหมาย](choosing-target-images.md)
+2. ทำเครื่องหมายรูปภาพที่เหมาะสมในคอลัมน์เป้าหมาย
+3. ตรวจสอบว่าเป้าหมายมองเห็นได้ในภาพที่ทำเครื่องหมายไว้
+4. ปรับการตั้งค่าการตรวจจับเป้าหมายหากจำเป็น
 
 ***
 
-## Next Steps
+## เคล็ดลับสำหรับการประมวลผลที่ประสบความสำเร็จ
 
-Once processing has started:
+### ก่อนเริ่ม
 
-1. **Monitor the progress** - See [Monitoring the Processing](monitoring-the-processing.md)
-2. **Wait for completion** - Processing runs automatically
-3. **Review results** - See [Finishing the Processing](finishing-the-processing.md)
+1. **ทดสอบด้วยเซ็ตย่อยเล็กๆ ก่อน** - ประมวลผลรูปภาพ 10-20 รูปเพื่อตรวจสอบการตั้งค่า
+2. **ตรวจสอบพื้นที่ว่างในดิสก์** - ตรวจสอบให้แน่ใจว่าชุดข้อมูลว่าง 2-3x
+3. **ปิดแอปพลิเคชันที่ไม่จำเป็น** - เพิ่มทรัพยากรระบบ
+4. **ตรวจสอบภาพเป้าหมาย** - ดูตัวอย่างเป้าหมายที่ทำเครื่องหมายไว้เพื่อให้มั่นใจในคุณภาพ
+5. **บันทึกโครงการ** - โครงการบันทึกอัตโนมัติ แต่แนวทางปฏิบัติที่ดีในการบันทึกด้วยตนเอง
 
-For information about what to do during processing, see [Monitoring the Processing](monitoring-the-processing.md).
+### ระหว่างการประมวลผล
+
+1. **หลีกเลี่ยงระบบสลีป** - ปิดใช้งานโหมดประหยัดพลังงาน
+2. **เก็บคลอรอสไว้เบื้องหน้า** - หรืออย่างน้อยก็มองเห็นได้ในแถบงาน
+3. **ติดตามความคืบหน้าเป็นครั้งคราว** - ตรวจสอบคำเตือนหรือข้อผิดพลาด
+4. **อย่าโหลดการใช้งานหนักๆ อื่นๆ** - โดยเฉพาะเมื่อใช้โหมดขนานคลอรอส+
+
+### การเร่งความเร็วของคลอรอส+ GPU
+
+หากใช้การเร่งความเร็ว NVIDIA GPU:
+
+1. อัปเดตไดรเวอร์ NVIDIA ให้เป็นเวอร์ชันล่าสุด
+2. ตรวจสอบให้แน่ใจว่า GPU มี 4GB+ VRAM
+3. ปิดแอพพลิเคชั่นที่เน้น GPU (เกม, การตัดต่อวิดีโอ)
+4. ตรวจสอบอุณหภูมิ GPU (ให้แน่ใจว่ามีการระบายความร้อนเพียงพอ)
+
+***
+
+## ขั้นตอนต่อไป
+
+เมื่อเริ่มการประมวลผลแล้ว:
+
+1. **ติดตามความคืบหน้า** - ดู [การตรวจสอบการประมวลผล](monitoring-the-processing.md)
+2. **รอดำเนินการให้เสร็จสิ้น** - การประมวลผลดำเนินไปโดยอัตโนมัติ
+3. **ผลการตรวจสอบ** - ดู [การตกแต่งขั้นสุดท้าย](finishing-the-processing.md)
+
+สำหรับข้อมูลเกี่ยวกับสิ่งที่ต้องทำระหว่างการประมวลผล โปรดดู [การตรวจสอบการประมวลผล](monitoring-the-processing.md)

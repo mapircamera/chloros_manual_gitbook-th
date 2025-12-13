@@ -1,48 +1,48 @@
-# CLI : Command Line
+# CLI : บรรทัดคำสั่ง
 
 <figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
 
-The **Chloros CLI** provides powerful command-line access to the Chloros image processing engine, enabling automation, scripting, and headless operation for your imaging workflows.
+**Chloros CLI** ให้การเข้าถึงบรรทัดคำสั่งที่มีประสิทธิภาพสำหรับกลไกการประมวลผลภาพ Chloros ช่วยให้ทำงานอัตโนมัติ การเขียนสคริปต์ และการทำงานแบบไม่มีส่วนหัวสำหรับเวิร์กโฟลว์เกี่ยวกับภาพของคุณ
 
-### Key Features
+### คุณสมบัติที่สำคัญ
 
-* 🚀 **Automation** - Script batch processing of multiple datasets
-* 🔗 **Integration** - Embed in existing workflows and pipelines
-* 💻 **Headless Operation** - Run without GUI
-* 🌍 **Multi-Language** - Support for 38 languages
-* ⚡ **Parallel Processing** - Dynamically scales to your CPU (up to 16 parallel workers)
+* 🚀 **ระบบอัตโนมัติ** - การประมวลผลสคริปต์ชุดข้อมูลหลายชุด
+* 🔗 **บูรณาการ** - ฝังอยู่ในเวิร์กโฟลว์และไปป์ไลน์ที่มีอยู่
+* 💻 **การทำงานแบบไร้หัว** - ทำงานโดยไม่มี GUI
+* 🌍 **หลายภาษา** - รองรับ 38 ภาษา
+* ⚡ **การประมวลผลแบบขนาน** - ปรับขนาดตาม CPU ของคุณแบบไดนามิก (สูงสุด 16 คนแบบขนาน)
 
-### Requirements
+### ความต้องการ
 
-| Requirement          | Details                                                             |
+- ข้อกำหนด - รายละเอียด -
 | -------------------- | ------------------------------------------------------------------- |
-| **Operating System** | Windows 10/11 (64-bit)                                              |
-| **License**          | Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) |
-| **Memory**           | 8GB RAM minimum (16GB recommended)                                  |
-| **Internet**         | Required for license activation                                     |
-| **Disk Space**       | Varies by project size                                              |
+- **ระบบปฏิบัติการ** - Windows 10/11 (64 บิต) -
+- **ใบอนุญาต** - Chloros+ ([ต้องใช้แผนบริการแบบชำระเงิน](https://cloud.mapir.cam/pricing)) -
+- **ความทรงจำ** - RAM ขั้นต่ำ 8GB (แนะนำ 16GB) -
+- **อินเตอร์เน็ต** - จำเป็นสำหรับการเปิดใช้งานใบอนุญาต -
+- **พื้นที่ดิสก์** - แตกต่างกันไปตามขนาดโครงการ -
 
-{% hint style="warning" %}
-**License Requirement**: The CLI requires a paid Chloros+ subscription. Standard (free) plans do not have CLI access. Visit [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) to upgrade.
-{% endhint %}
+{% คำใบ้สไตล์ = "คำเตือน" %}
+**ข้อกำหนดสิทธิ์การใช้งาน**: CLI กำหนดให้ต้องสมัครสมาชิก Chloros+ แบบชำระเงิน แผนมาตรฐาน (ฟรี) ไม่มีสิทธิ์เข้าถึง CLI ไปที่ [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) เพื่ออัปเกรด
+{% คำแนะนำสุดท้าย %}
 
-## Quick Start
+## เริ่มต้นอย่างรวดเร็ว
 
-### Installation
+### การติดตั้ง
 
-The CLI is automatically included with the Chloros installer:
+CLI จะรวมอยู่ในโปรแกรมติดตั้ง Chloros โดยอัตโนมัติ:
 
-1. Download and run **Chloros Installer.exe**
-2. Complete the installation wizard
-3. CLI installed to: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
+1. ดาวน์โหลดและรัน **Chloros Installer.exe**
+2. กรอกวิซาร์ดการติดตั้งให้เสร็จสมบูรณ์
+3. CLI ติดตั้งไว้ที่: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
-{% hint style="success" %}
-The installer automatically adds `chloros-cli` to your system PATH. Restart your terminal after installation.
-{% endhint %}
+{% คำใบ้สไตล์ = "ความสำเร็จ" %}
+โปรแกรมติดตั้งจะเพิ่ม `chloros-cli` ให้กับ PATH ระบบของคุณโดยอัตโนมัติ รีสตาร์ทเทอร์มินัลของคุณหลังการติดตั้ง
+{% คำแนะนำสุดท้าย %}
 
-### First-Time Setup
+### การตั้งค่าครั้งแรก
 
-Before using the CLI, activate your Chloros+ license:
+ก่อนใช้ CLI ให้เปิดใช้งานใบอนุญาต Chloros+ ของคุณ:
 
 ```bash
 # Login with your Chloros+ account
@@ -77,7 +77,7 @@ chloros-cli [global-options] <command> [command-options]
 
 ## Commands
 
-### `process` - Process Images
+### `กระบวนการ` - Process Images
 
 Process images in a folder with calibration.
 
@@ -97,25 +97,25 @@ chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 
 | Option                | Type    | Default        | Description                                                                            |
 | --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
-| `<input-folder>`      | Path    | _Required_     | Folder containing RAW/JPG multispectral images                                         |
-| `-o, --output`        | Path    | Same as input  | Output folder for processed images                                                     |
-| `-n, --project-name`  | String  | Auto-generated | Custom project name                                                                    |
-| `--vignette`          | Flag    | Enabled        | Enable vignette correction                                                             |
-| `--no-vignette`       | Flag    | -              | Disable vignette correction                                                            |
-| `--reflectance`       | Flag    | Enabled        | Enable reflectance calibration                                                         |
-| `--no-reflectance`    | Flag    | -              | Disable reflectance calibration                                                        |
+| `<โฟลเดอร์อินพุต>`      | Path    | _Required_     | Folder containing RAW/JPG multispectral images                                         |
+| `-o, --เอาท์พุท`        | Path    | Same as input  | Output folder for processed images                                                     |
+| `-n, --ชื่อโครงการ`  | String  | Auto-generated | Custom project name                                                                    |
+| `--บทความสั้น`          | Flag    | Enabled        | Enable vignette correction                                                             |
+| `--ไม่มีบทความสั้น`       | Flag    | -              | Disable vignette correction                                                            |
+| `--เงาสะท้อน`       | Flag    | Enabled        | Enable reflectance calibration                                                         |
+| `--ไม่สะท้อนแสง`    | Flag    | -              | Disable reflectance calibration                                                        |
 | `--ppk`               | Flag    | Disabled       | Apply PPK corrections from .daq light sensor data                                      |
-| `--format`            | Choice  | TIFF (16-bit)  | Output format: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size`   | Integer | Auto           | Minimum target size in pixels for calibration panel detection                          |
-| `--target-clustering` | Integer | Auto           | Target clustering threshold (0-100)                                                    |
+| `--รูปแบบ`            | Choice  | TIFF (16-bit)  | Output format: `TIFF (16 บิต)`, `TIFF (32 บิต, เปอร์เซ็นต์)`, `PNG (8 บิต)`, `JPG (8 บิต)` |
+| `--ขนาดเป้าหมายขั้นต่ำ`   | Integer | Auto           | Minimum target size in pixels for calibration panel detection                          |
+| `--การจัดกลุ่มเป้าหมาย` | Integer | Auto           | Target clustering threshold (0-100)                                                    |
 | `--exposure-pin-1`    | String  | None           | Lock exposure for camera model (Pin 1)                                                 |
 | `--exposure-pin-2`    | String  | None           | Lock exposure for camera model (Pin 2)                                                 |
-| `--recal-interval`    | Integer | Auto           | Recalibration interval in seconds                                                      |
-| `--timezone-offset`   | Integer | 0              | Timezone offset in hours                                                               |
+| `--recal-ช่วงเวลา`    | Integer | Auto           | Recalibration interval in seconds                                                      |
+| `--ชดเชยเขตเวลา`   | Integer | 0              | Timezone offset in hours                                                               |
 
 ***
 
-### `login` - Authenticate Account
+### `เข้าสู่ระบบ` - Authenticate Account
 
 Login with your Chloros+ credentials to enable CLI processing.
 
@@ -141,7 +141,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 ***
 
-### `logout` - Clear Credentials
+### `ออกจากระบบ` - Clear Credentials
 
 Clear stored credentials and logout from your account.
 
@@ -164,9 +164,9 @@ chloros-cli logout
 ℹ Credentials cleared from cache
 ```
 
-***
+**Example:**
 
-### `status` - Check License Status
+`สถานะ` - Check License Status
 
 Display current license and authentication status.
 
@@ -179,7 +179,7 @@ chloros-cli status
 **Example:**
 
 ```powershell
-chloros-cli status
+chloros-cli login user@example.com 'password'
 ```
 
 **Output:**
@@ -195,9 +195,9 @@ chloros-cli status
 ✓ Status: Active
 ```
 
-***
+**Output:**
 
-### `export-status` - Check Export Progress
+`สถานะการส่งออก` - Check Export Progress
 
 Monitor Thread 4 export progress during or after processing.
 
@@ -217,7 +217,7 @@ chloros-cli export-status
 
 ***
 
-### `language` - Manage Interface Language
+### `ภาษา` - Manage Interface Language
 
 View or change the CLI interface language.
 
@@ -254,52 +254,73 @@ chloros-cli language ja
 
 | Code    | Language              | Native Name      |
 | ------- | --------------------- | ---------------- |
-| `en`    | English               | English          |
+| `th`    | English               | English          |
 | `es`    | Spanish               | Español          |
 | `pt`    | Portuguese            | Português        |
-| `fr`    | French                | Français         |
-| `de`    | German                | Deutsch          |
-| `it`    | Italian               | Italiano         |
-| `ja`    | Japanese              | 日本語              |
-| `ko`    | Korean                | 한국어              |
+| `จาก`    | French                | Français         |
+| `เดอ`    | German                | Deutsch          |
+| `มัน`    | Italian               | Italiano         |
+| `จะ`    | Japanese              | 日本語              |
+| `โก้`    | Korean                | 한국어              |
 | `zh`    | Chinese (Simplified)  | 简体中文             |
 | `zh-TW` | Chinese (Traditional) | 繁體中文             |
-| `ru`    | Russian               | Русский          |
-| `nl`    | Dutch                 | Nederlands       |
-| `ar`    | Arabic                | العربية          |
-| `pl`    | Polish                | Polski           |
+| `รู`    | Russian               | Русский          |
+| `ไม่มี`    | Dutch                 | Nederlands       |
+| `อาร์`    | Arabic                | العربية          |
+| `ได้โปรด`    | Polish                | Polski           |
 | `tr`    | Turkish               | Türkçe           |
-| `hi`    | Hindi                 | हिंदी            |
-| `id`    | Indonesian            | Bahasa Indonesia |
-| `vi`    | Vietnamese            | Tiếng Việt       |
+| `สวัสดี`    | Hindi                 | हिंदी            |
+| `ไอดี`    | Indonesian            | Bahasa Indonesia |
+| `วี`    | Vietnamese            | Tiếng Việt       |
 | `th`    | Thai                  | ไทย              |
 | `sv`    | Swedish               | Svenska          |
-| `da`    | Danish                | Dansk            |
-| `no`    | Norwegian             | Norsk            |
-| `fi`    | Finnish               | Suomi            |
-| `el`    | Greek                 | Ελληνικά         |
-| `cs`    | Czech                 | Čeština          |
-| `hu`    | Hungarian             | Magyar           |
-| `ro`    | Romanian              | Română           |
-| `uk`    | Ukrainian             | Українська       |
+| `ดา`    | Danish                | Dansk            |
+| `ไม่`    | Norwegian             | Norsk            |
+| `ฟี`    | Finnish               | Suomi            |
+| `เอล`    | Greek                 | Ελληνικά         |
+| `ซีเอส`    | Czech                 | Čeština          |
+| `ฮะ`    | Hungarian             | Magyar           |
+| `โร`    | Romanian              | Română           |
+| `สหราชอาณาจักร`    | Ukrainian             | Українська       |
 | `pt-BR` | Brazilian Portuguese  | Português Brasileiro |
 | `zh-HK` | Cantonese             | 粵語             |
-| `ms`    | Malay                 | Bahasa Melayu    |
-| `sk`    | Slovak                | Slovenčina       |
-| `bg`    | Bulgarian             | Български        |
-| `hr`    | Croatian              | Hrvatski         |
-| `lt`    | Lithuanian            | Lietuvių         |
-| `lv`    | Latvian               | Latviešu         |
-| `et`    | Estonian              | Eesti            |
-| `sl`    | Slovenian             | Slovenščina      |
+| `คุณ' - มาเลย์ - บาฮาซามลายู -
+- `    | Malay                 | Bahasa Melayu    |
+| ` - สโลวัก - สโลวีเนีย -
+- `    | Slovak                | Slovenčina       |
+| ` - บัลแกเรีย - Български -
+- `    | Bulgarian             | Български        |
+| ` - ภาษาโครเอเชีย - ฮวาตสกี -
+- 'lt' - ลิทัวเนีย - Lietuvių -
+- `    | Croatian              | Hrvatski         |
+| ` - ลัตเวีย - ลัตเวียซู -
+- `    | Lithuanian            | Lietuvių         |
+| ` - เอสโตเนีย - เอเอสตี้ -
+- `    | Latvian               | Latviešu         |
+| ` - ภาษาสโลเวเนีย - สโลวีเนีย -
+
+{% คำใบ้สไตล์ = "ความสำเร็จ" %}
+**การคงอยู่อัตโนมัติ**: การตั้งค่าภาษาของคุณจะถูกบันทึกไว้ใน `    | Estonian              | Eesti            |
+| ` และคงอยู่ในทุกเซสชัน
+{% คำแนะนำสุดท้าย %}
+
+***
+
+### `    | Slovenian             | Slovenščina      |
 
 {% hint style="success" %}
-**Automatic Persistence**: Your language preference is saved to `~/.chloros/cli_language.json` and persists across all sessions.
+**Automatic Persistence**: Your language preference is saved to ` - ตั้งค่าโฟลเดอร์โปรเจ็กต์เริ่มต้น
+
+เปลี่ยนตำแหน่งโฟลเดอร์โครงการเริ่มต้น (แชร์กับ GUI)
+
+**ไวยากรณ์:**
+
+``` and persists across all sessions.
 {% endhint %}
 
 ***
 
-### `set-project-folder` - Set Default Project Folder
+### ``` - Set Default Project Folder
 
 Change the default project folder location (shared with GUI).
 
@@ -309,15 +330,15 @@ Change the default project folder location (shared with GUI).
 chloros-cli set-project-folder <folder-path>
 ```
 
-**Example:**
+***
 
-```powershell
+### `get-project-folder`powershell
 chloros-cli set-project-folder "C:\Projects\2025"
 ```
 
 ***
 
-### `get-project-folder` - Show Project Folder
+### ``` - Show Project Folder
 
 Display the current default project folder location.
 
@@ -333,23 +354,23 @@ chloros-cli get-project-folder
 chloros-cli get-project-folder
 ```
 
-**Output:**
+***
 
-```
+### `รีเซ็ตโปรเจ็กต์โฟลเดอร์`
 ℹ Current project folder: C:\Projects\2025
 ```
 
 ***
 
-### `reset-project-folder` - Reset to Default
+### ``` - Reset to Default
 
 Reset the project folder to the default location.
 
 **Syntax:**
 
-```bash
+`--แบ็กเอนด์-exe`bash
 chloros-cli reset-project-folder
-```
+`--พอร์ต`
 
 ***
 
@@ -359,17 +380,17 @@ These options apply to all commands:
 
 | Option          | Type    | Default       | Description                                      |
 | --------------- | ------- | ------------- | ------------------------------------------------ |
-| `--backend-exe` | Path    | Auto-detected | Path to backend executable                       |
-| `--port`        | Integer | 5000          | Backend API port number                          |
-| `--restart`     | Flag    | -             | Force restart backend (kills existing processes) |
-| `--version`     | Flag    | -             | Show version information and exit                |
-| `--help`        | Flag    | -             | Show help information and exit                   |
+| `--รีสตาร์ท` | Path    | Auto-detected | Path to backend executable                       |
+| `--เวอร์ชัน`        | Integer | 5000          | Backend API port number                          |
+| `--ช่วยด้วย`     | Flag    | -             | Force restart backend (kills existing processes) |
+| ```     | Flag    | -             | Show version information and exit                |
+| ```        | Flag    | -             | Show help information and exit                   |
 
 **Example with Global Options:**
 
-```powershell
+`--no-vignette`powershell
 chloros-cli --port 5001 process "C:\Datasets\Survey_001"
-```
+`--no-reflectance`
 
 ***
 
@@ -410,7 +431,7 @@ The CLI uses **High Quality (Faster)** as the default and recommended debayer al
 **What it does:** Corrects light falloff at image edges (darker corners common in camera imagery).
 
 * **Enabled by default** - Most users should keep this enabled
-* Use `--no-vignette` to disable
+* Use `--ppk` to disable
 
 {% hint style="success" %}
 **Recommendation**: Always enable vignette correction to ensure uniform brightness across the frame.
@@ -422,7 +443,7 @@ Converts raw sensor values to standardized reflectance percentages using calibra
 
 * **Enabled by default** - Essential for vegetation analysis
 * Requires calibration target panels in images
-* Use `--no-reflectance` to disable
+* Use ``` to disable
 
 {% hint style="info" %}
 **Requirements**: Ensure calibration panels are properly exposed and visible in your images for accurate reflectance conversion.
@@ -433,7 +454,8 @@ Converts raw sensor values to standardized reflectance percentages using calibra
 **What it does:** Applies Post-Processed Kinematic corrections using DAQ-A-SD log data for improved GPS accuracy.
 
 * **Disabled by default**
-* Use `--ppk` to enable
+* Use `
+        --vignette ` to enable
 * Requires .daq files in project folder from MAPIR DAQ-A-SD light sensor.
 
 ### Output Formats
@@ -456,8 +478,7 @@ $datasets = Get-ChildItem "C:\Datasets\2025" -Directory
 foreach ($dataset in $datasets) {
     Write-Host "Processing $($dataset.Name)..." -ForegroundColor Cyan
     
-    chloros-cli process $dataset.FullName `
-        --vignette `
+    chloros-cli process $dataset.FullName ```
         --reflectance
     
     if ($LASTEXITCODE -eq 0) {
@@ -635,14 +656,14 @@ dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 
 2. Use full path if not in PATH:
 
-```powershell
+`C:\Program Files\Chloros\resources\cli`powershell
 "C:\Program Files\Chloros\resources\cli\chloros-cli.exe" process "C:\Datasets\Field_A"
 ```
 
 3. Add to PATH manually:
    * Open System Properties → Environment Variables
    * Edit PATH variable
-   * Add: `C:\Program Files\Chloros\resources\cli`
+   * Add: ```
    * Restart terminal
 
 ***
@@ -661,8 +682,8 @@ Backend failed to start within 30 seconds
 2. Check Windows Firewall is not blocking
 3. Try different port:
 
-```powershell
-chloros-cli --port 5001 process "C:\Datasets\Field_A"
+```
+Port 5000 is already in use
 ```
 
 4. Force restart backend:
@@ -687,7 +708,7 @@ Chloros+ license required for CLI access
 2. Login with your credentials:
 
 ```powershell
-chloros-cli login user@example.com 'password'
+chloros-cli status
 ```
 
 3. Check license status:
@@ -731,17 +752,17 @@ No images found in the specified folder
 
 **Error:**
 
-```
-Port 5000 is already in use
+```powershell
+chloros-cli --port 5001 process "C:\Datasets\Field_A"
 ```
 
 **Solution:**
 
 Specify a different port:
 
-```powershell
+`Survey3N_RGN/`powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
-```
+`-o`
 
 ***
 
@@ -771,9 +792,9 @@ Subscribe at: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pr
 
 ### Q: Where are processed images saved?
 
-**A:** By default, processed images are saved in the **same folder as input** in camera-model subfolders (e.g., `Survey3N_RGN/`).
+**A:** By default, processed images are saved in the **same folder as input** in camera-model subfolders (e.g., ```).
 
-Use `-o` option to specify different output folder:
+Use ``` option to specify different output folder:
 
 ```powershell
 chloros-cli process "C:\Input" -o "D:\Output"
@@ -939,24 +960,4 @@ chloros-cli process "C:\Datasets\Field_A"
 
 # Step 4: Logout (optional, when switching accounts)
 chloros-cli logout
-```
-
-***
-
-### Example 7: Multi-Language Usage
-
-Change interface language:
-
-```powershell
-# List available languages
-chloros-cli language --list
-
-# Change to Spanish
-chloros-cli language es
-
-# Process with Spanish interface
-chloros-cli process "C:\Vuelos\Campo_A"
-
-# Change back to English
-chloros-cli language en
 ```

@@ -1,230 +1,230 @@
 ---
-description: This page lists some multispectral indices that Chloros uses
-metaLinks:
-  alternates:
+คำอธิบาย: หน้านี้แสดงรายการดัชนีหลายสเปกตรัมที่คลอรอสใช้
+เมตาลิงค์:
+  ทางเลือก:
     - >-
       https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/multispectral-index-formulas
 ---
 
-# Multispectral Index Formulas
+# สูตรดัชนีหลายสเปกตรัม
 
-The below index formulas use a combination of Survey3 filter average transmission ranges:
+สูตรดัชนีด้านล่างใช้ช่วงการส่งข้อมูลเฉลี่ยของตัวกรอง Survey3 รวมกัน:
 
 <table><thead><tr><th align="center">Survey3 Filter Color</th><th width="196.199951171875" align="center">Survey3 Filter Name</th><th width="159.800048828125" align="center">Transmission Range (FWHM)</th><th align="center">Average Transmission</th></tr></thead><tbody><tr><td align="center">Blue</td><td align="center">NGB - Blue</td><td align="center">468-483nm</td><td align="center">475nm</td></tr><tr><td align="center">Cyan</td><td align="center">OCN- Cyan</td><td align="center">476-512nm</td><td align="center">494nm</td></tr><tr><td align="center">Green</td><td align="center">RGN | NGB - Green</td><td align="center">543-558nm</td><td align="center">547nm</td></tr><tr><td align="center">Orange</td><td align="center">OCN - Orange</td><td align="center">598-640nm</td><td align="center">619nm</td></tr><tr><td align="center">Red</td><td align="center">RGN - Red</td><td align="center">653-668nm</td><td align="center">661nm</td></tr><tr><td align="center">RedEdge</td><td align="center">Re - RedEdge</td><td align="center">712-735nm</td><td align="center">724nm</td></tr><tr><td align="center">NIR1</td><td align="center">OCN - NIR1</td><td align="center">798-848nm</td><td align="center">823nm</td></tr><tr><td align="center">NIR2</td><td align="center">RGN | NGB | NIR - NIR2</td><td align="center">835-865nm</td><td align="center">850nm</td></tr></tbody></table>
 
-When these formulas are used the name may end in "\_1" or "\_2", which corresponds to which NIR filter, either NIR1 or NIR2 was used.
+เมื่อใช้สูตรเหล่านี้ ชื่ออาจลงท้ายด้วย "\_1" หรือ "\_2" ซึ่งสอดคล้องกับตัวกรอง NIR ใด ซึ่งจะใช้ NIR1 หรือ NIR2
 
 ***
 
-## EVI - Enhanced Vegetation Index
+## EVI - ดัชนีพืชพรรณที่ได้รับการปรับปรุง
 
-This index was originally developed for use with MODIS data as an improvement over NDVI by optimizing the vegetation signal in areas of high leaf area index (LAI). It is most useful in high LAI regions where NDVI may saturate. It uses the blue reflectance region to correct for soil background signals and to reduce atmospheric influences, including aerosol scattering.
+ดัชนีนี้เดิมได้รับการพัฒนาเพื่อใช้กับข้อมูล MODIS เพื่อปรับปรุง NDVI โดยการปรับสัญญาณพืชพรรณในพื้นที่ที่มีดัชนีพื้นที่ใบไม้สูง (LAI) ให้เหมาะสม มีประโยชน์มากที่สุดในภูมิภาค LAI ที่สูงซึ่ง NDVI อาจอิ่มตัว โดยจะใช้บริเวณการสะท้อนแสงสีน้ำเงินเพื่อแก้ไขสัญญาณพื้นหลังของดิน และเพื่อลดอิทธิพลของชั้นบรรยากาศ รวมถึงการกระเจิงของละอองลอย
 
 $$
 EVI = 2.5 *  {(NIR - Red) \over (NIR + 6 * Red - 7.5 * Blue + 1)}
 $$
 
-EVI values should range from 0 to 1 for vegetation pixels. Bright features such as clouds and white buildings, along with dark features such as water, can result in anomalous pixel values in an EVI image. Before creating an EVI image, you should mask out clouds and bright features from the reflectance image, and optionally threshold the pixel values from 0 to 1.
+ค่า EVI ควรอยู่ในช่วงตั้งแต่ 0 ถึง 1 สำหรับพิกเซลพืชพรรณ ลักษณะที่สว่าง เช่น เมฆและอาคารสีขาว รวมถึงลักษณะที่มืด เช่น น้ำ อาจส่งผลให้ค่าพิกเซลผิดปกติในภาพ EVI ก่อนที่จะสร้างภาพ EVI คุณควรปกปิดเมฆและส่วนสว่างออกจากภาพสะท้อนแสง และเลือกกำหนดค่าพิกเซลจาก 0 ถึง 1 ได้
 
-_Reference: Huete, A., et al. "Overview of the Radiometric and Biophysical Performance of the MODIS Vegetation Indices." Remote Sensing of Environment 83 (2002):195–213._
+_อ้างอิง: Huete, A., และคณะ "ภาพรวมของประสิทธิภาพเชิงรังสีและชีวฟิสิกส์ของดัชนีพืชพรรณ MODIS" การสำรวจสภาพแวดล้อมระยะไกล 83 (2545):195–213._
 
 ***
 
-## FCI1 - Forest Cover Index 1
+## FCI1 - ดัชนีการปกคลุมป่าไม้ 1
 
-This index distinguishes forest canopies from other types of vegetation using multispectral reflectance imagery that includes a red edge band.
+ดัชนีนี้แยกความแตกต่างระหว่างหลังคาป่ากับพืชพรรณประเภทอื่นๆ โดยใช้ภาพการสะท้อนแบบหลายสเปกตรัมที่มีแถบขอบสีแดง
 
 $$
 FCI1 = Red * RedEdge
 $$
 
-Forested areas will have lower FCI1 values due to the lower reflectance of trees and the presence of shadows within the canopy.
+พื้นที่ป่าจะมีค่า FCI1 ต่ำกว่า เนื่องจากการสะท้อนแสงของต้นไม้ลดลงและมีเงาอยู่ภายในทรงพุ่ม
 
-_Reference: Becker, Sarah J., Craig S.T. Daughtry, and Andrew L. Russ. "Robust forest cover indices for multispectral images." Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505-512._
+_อ้างอิง: Becker, Sarah J., Craig S.T. ดอทรี และแอนดรูว์ แอล. รัส "ดัชนีปกคลุมป่าไม้ที่แข็งแกร่งสำหรับภาพหลายสเปกตรัม" วิศวกรรมโฟโตแกรมเมตริกและการสำรวจระยะไกล 84.8 (2018): 505-512._
 
 ***
 
-## FCI2 - Forest Cover Index 2
+## FCI2 - ดัชนีการปกคลุมป่าไม้ 2
 
-This index distinguishes forest canopies from other types of vegetation using multispectral reflectance imagery that does not include a red edge band.
+ดัชนีนี้แยกความแตกต่างระหว่างทรงพุ่มในป่ากับพืชพรรณประเภทอื่นๆ โดยใช้ภาพการสะท้อนแบบหลายสเปกตรัมซึ่งไม่มีแถบขอบสีแดง
 
 $$
 FCI2 = Red * NIR
 $$
 
-Forested areas will have lower FCI2 values due to the lower reflectance of trees and the presence of shadows within the canopy.
+พื้นที่ป่าจะมีค่า FCI2 ต่ำกว่า เนื่องจากการสะท้อนแสงของต้นไม้ลดลงและมีเงาอยู่ภายในทรงพุ่ม
 
-_Reference: Becker, Sarah J., Craig S.T. Daughtry, and Andrew L. Russ. "Robust forest cover indices for multispectral images." Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505-512._
+_อ้างอิง: Becker, Sarah J., Craig S.T. ดอทรี และแอนดรูว์ แอล. รัส "ดัชนีปกคลุมป่าไม้ที่แข็งแกร่งสำหรับภาพหลายสเปกตรัม" วิศวกรรมโฟโตแกรมเมตริกและการสำรวจระยะไกล 84.8 (2018): 505-512._
 
 ***
 
-## GEMI - Global Environmental Monitoring Index
+## GEMI - ดัชนีการตรวจสอบสิ่งแวดล้อมทั่วโลก
 
-This non-linear vegetation index is used for global environmental monitoring from satellite imagery and attempts to correct for atmospheric effects. It is similar to NDVI but is less sensitive to atmospheric effects. It is affected by bare soil; therefore, it is not recommended for use in areas of sparse or moderately dense vegetation.
+ดัชนีพืชพรรณที่ไม่เป็นเชิงเส้นนี้ใช้สำหรับการตรวจสอบสภาพแวดล้อมทั่วโลกจากภาพถ่ายดาวเทียม และความพยายามในการแก้ไขผลกระทบของบรรยากาศ คล้ายกับ NDVI แต่มีความไวต่อผลกระทบของบรรยากาศน้อยกว่า ได้รับผลกระทบจากดินเปล่า จึงไม่แนะนำให้ใช้ในพื้นที่ที่มีพืชพรรณเบาบางหรือหนาแน่นปานกลาง
 
 $$
 GEMI = eta (1 - 0.25 * eta) - {Red - 0.125 \over 1 - Red}
 $$
 
-Where:
+ที่ไหน:
 
 $$
 eta = {2(NIR^{2}-Red^{2}) + 1.5 * NIR + 0.5 *  Red \over NIR + Red + 0.5}
 $$
 
-_Reference: Pinty, B., and M. Verstraete. GEMI: a Non-Linear Index to Monitor Global Vegetation From Satellites. Vegetation 101 (1992): 15-20._
+_อ้างอิง: Pinty, B. และ M. Verstraete GEMI: ดัชนีไม่เชิงเส้นเพื่อติดตามพืชพรรณทั่วโลกจากดาวเทียม พืชพรรณ 101 (1992): 15-20._
 
 ***
 
-## GARI - Green Atmospherically Resistant Index
+## GARI - ดัชนีต้านทานบรรยากาศสีเขียว
 
-This index is more sensitive to a wide range of chlorophyll concentrations and less sensitive to atmospheric effects than NDVI.
+ดัชนีนี้มีความไวต่อความเข้มข้นของคลอโรฟิลล์ที่หลากหลายและมีความไวต่อผลกระทบของบรรยากาศน้อยกว่า NDVI
 
 $$
 GARI = {NIR - [Green - \gamma(Blue - Red)] \over NIR + [Green - \gamma(Blue - Red)]   }
 $$
 
-The gamma constant is a weighting function that depends on aerosol conditions in the atmosphere. ENVI uses a value of 1.7, which is the recommended value from Gitelson, Kaufman, and Merzylak (1996, page 296).
+ค่าคงที่แกมม่าเป็นฟังก์ชันถ่วงน้ำหนักซึ่งขึ้นอยู่กับสภาวะของละอองลอยในบรรยากาศ ENVI ใช้ค่า 1.7 ซึ่งเป็นค่าที่แนะนำจาก Gitelson, Kaufman และ Merzylak (1996, หน้า 296)
 
-_Reference: Gitelson, A., Y. Kaufman, and M. Merzylak. "Use of a Green Channel in Remote Sensing of Global Vegetation from EOS-MODIS." Remote Sensing of Environment 58 (1996): 289-298._
+_อ้างอิง: Gitelson, A., Y. Kaufman และ M. Merzylak "การใช้ช่องสีเขียวในการรับรู้ระยะไกลของพืชพรรณทั่วโลกจาก EOS-MODIS" การสำรวจสภาพแวดล้อมระยะไกล 58 (1996): 289-298._
 
 ***
 
-## GCI - Green Chlorophyll Index
+## GCI - ดัชนีคลอโรฟิลล์สีเขียว
 
-This index is used to estimate leaf chlorophyll content across a wide range of plant species.
+ดัชนีนี้ใช้ในการประมาณปริมาณคลอโรฟิลล์ในใบในพืชหลากหลายชนิด
 
 $$
 GCI = {NIR \over Green} - 1
 $$
 
-Having broad NIR and green wavelengths provides a better prediction of chlorophyll content while allowing for more sensitivity and a higher signal-to-noise ratio.
+การมี NIR ที่กว้างและความยาวคลื่นสีเขียวช่วยให้คาดการณ์ปริมาณคลอโรฟิลล์ได้ดีขึ้น ขณะเดียวกันก็ให้ความไวมากขึ้นและอัตราส่วนสัญญาณต่อเสียงรบกวนที่สูงขึ้น
 
-_Reference: Gitelson, A., Y. Gritz, and M. Merzlyak. "Relationships Between Leaf Chlorophyll Content and Spectral Reflectance and Algorithms for Non-Destructive Chlorophyll Assessment in Higher Plant Leaves." Journal of Plant Physiology 160 (2003): 271-282._
+_อ้างอิง: Gitelson, A., Y. Gritz และ M. Merzlyak "ความสัมพันธ์ระหว่างปริมาณคลอโรฟิลล์ในใบกับการสะท้อนแสงและอัลกอริทึมสำหรับการประเมินคลอโรฟิลล์แบบไม่ทำลายในใบพืชที่สูงขึ้น" วารสารสรีรวิทยาพืช 160 (2546): 271-282._
 
 ***
 
-## GLI - Green Leaf Index
+## GLI - ดัชนีใบไม้เขียว
 
-This index was originally designed for use with a digital RGB camera to measure wheat cover, where the red, green, and blue digital numbers (DNs) range from 0 to 255.
+ดัชนีนี้เดิมได้รับการออกแบบมาเพื่อใช้กับกล้องดิจิตอล RGB เพื่อวัดข้าวสาลีปกคลุม โดยที่ตัวเลขดิจิทัล (DN) สีแดง เขียว และน้ำเงินอยู่ในช่วงตั้งแต่ 0 ถึง 255
 
 $$
 GLI = {(Green - Red) + (Green - Blue)  \over (2 * Green) + Red + Blue }
 $$
 
-GLI values range from -1 to +1. Negative values represent soil and non-living features, while positive values represent green leaves and stems.
+ค่า GLI มีตั้งแต่ -1 ถึง +1 ค่าลบแสดงถึงลักษณะดินและสิ่งไม่มีชีวิต ส่วนค่าบวกแสดงถึงใบและลำต้นสีเขียว
 
-_Reference: Louhaichi, M., M. Borman, and D. Johnson. "Spatially Located Platform and Aerial Photography for Documentation of Grazing Impacts on Wheat." Geocarto International 16, No. 1 (2001): 65-70._
+_อ้างอิง: Louhaichi, M., M. Borman และ D. Johnson "ชานชาลาที่ตั้งอยู่ในพื้นที่และภาพถ่ายทางอากาศเพื่อบันทึกผลกระทบจากการเล็มหญ้าต่อข้าวสาลี" Geocarto International 16 ฉบับที่ 1 (2544): 65-70._
 
 ***
 
-## GNDVI - Green Normalized Difference Vegetation Index
+## GNDVI - ดัชนีพืชพรรณความแตกต่างที่เป็นมาตรฐานสีเขียว
 
-This index is similar to NDVI except that it measures the green spectrum from 540 to 570 nm instead of the red spectrum. This index is more sensitive to chlorophyll concentration than NDVI.
+ดัชนีนี้คล้ายกับ NDVI ยกเว้นว่าจะวัดสเปกตรัมสีเขียวตั้งแต่ 540 ถึง 570 นาโนเมตร แทนที่จะเป็นสเปกตรัมสีแดง ดัชนีนี้มีความไวต่อความเข้มข้นของคลอโรฟิลล์มากกว่า NDVI
 
 $$
 GNDVI = {(NIR - Green) \over (NIR + Green)  }
 $$
 
-_Reference: Gitelson, A., and M. Merzlyak. "Remote Sensing of Chlorophyll Concentration in Higher Plant Leaves." Advances in Space Research 22 (1998): 689-692._
+_อ้างอิง: Gitelson, A. และ M. Merzlyak "การรับรู้ระยะไกลของความเข้มข้นของคลอโรฟิลล์ในใบพืชที่สูงขึ้น" ความก้าวหน้าในการวิจัยอวกาศ 22 (1998): 689-692._
 
 ***
 
-## GOSAVI - Green Optimized Soil Adjusted Vegetation Index
+## GOSAVI - ดัชนีพืชพรรณที่ปรับดินให้เหมาะสมสีเขียว
 
-This index was originally designed with color-infrared photography to predict nitrogen requirements for corn. It is similar to OSAVI, but it substitutes the green band for red.
+ดัชนีนี้เดิมได้รับการออกแบบด้วยการถ่ายภาพอินฟราเรดสีเพื่อคาดการณ์ความต้องการไนโตรเจนสำหรับข้าวโพด มันคล้ายกับ OSAVI แต่แทนที่แถบสีเขียวด้วยสีแดง
 
 $$
 GOSAVI = {NIR - Green \over NIR + Green + 0.16)  }
 $$
 
-_Reference: Sripada, R., et al. "Determining In-Season Nitrogen Requirements for Corn Using Aerial Color-Infrared Photography." Ph.D. dissertation, North Carolina State University, 2005._
+_อ้างอิง: ศรีภาดา ร. และคณะ "การกำหนดความต้องการไนโตรเจนในฤดูกาลสำหรับข้าวโพดโดยใช้ภาพถ่ายอินฟราเรดสีทางอากาศ" ปริญญาเอก วิทยานิพนธ์, มหาวิทยาลัยแห่งรัฐนอร์ธแคโรไลนา, 2548._
 
 ***
 
-## GRVI - Green Ratio Vegetation Index
+## GRVI - ดัชนีพืชพรรณอัตราส่วนสีเขียว
 
-This index is sensitive to photosynthetic rates in forest canopies, as green and red reflectances are strongly influenced by changes in leaf pigments.
+ดัชนีนี้มีความไวต่ออัตราการสังเคราะห์แสงในทรงพุ่มของป่า เนื่องจากการสะท้อนแสงสีเขียวและสีแดงได้รับอิทธิพลอย่างมากจากการเปลี่ยนแปลงของเม็ดสีในใบ
 
 $$
 GRVI = {NIR \over Green }
 $$
 
-_Reference: Sripada, R., et al. "Aerial Color Infrared Photography for Determining Early In-season Nitrogen Requirements in Corn." Agronomy Journal 98 (2006): 968-977._
+_อ้างอิง: ศรีภาดา ร. และคณะ "การถ่ายภาพด้วยอินฟราเรดสีทางอากาศเพื่อกำหนดความต้องการไนโตรเจนในช่วงต้นฤดูกาลในข้าวโพด" พืชไร่วารสาร 98 (2549): 968-977._
 
 ***
 
-## GSAVI - Green Soil Adjusted Vegetation Index
+## GSAVI - ดัชนีพืชพรรณที่ปรับดินสีเขียว
 
-This index was originally designed with color-infrared photography to predict nitrogren requirements for corn. It is similar to SAVI, but it substitutes the green band for red.
+ดัชนีนี้เดิมได้รับการออกแบบด้วยการถ่ายภาพอินฟราเรดสีเพื่อคาดการณ์ความต้องการไนโตรเจนสำหรับข้าวโพด คล้ายกับ SAVI แต่ใช้แถบสีเขียวแทนสีแดง
 
 $$
 GSAVI = 1.5 * {(NIR - Green) \over (NIR + Green + 0.5)  }
 $$
 
-_Reference: Sripada, R., et al. "Determining In-Season Nitrogen Requirements for Corn Using Aerial Color-Infrared Photography." Ph.D. dissertation, North Carolina State University, 2005._
+_อ้างอิง: ศรีภาดา ร. และคณะ "การกำหนดความต้องการไนโตรเจนในฤดูกาลสำหรับข้าวโพดโดยใช้ภาพถ่ายอินฟราเรดสีทางอากาศ" ปริญญาเอก วิทยานิพนธ์, มหาวิทยาลัยแห่งรัฐนอร์ธแคโรไลนา, 2548._
 
 ***
 
-## LAI - Leaf Area Index
+## LAI - ดัชนีพื้นที่ใบ
 
-This index is used to estimate foliage cover and to forecast crop growth and yield. ENVI computes green LAI using the following empirical formula from Boegh et al (2002):
+ดัชนีนี้ใช้เพื่อประเมินการปกคลุมของใบไม้และเพื่อคาดการณ์การเติบโตและผลผลิตของพืชผล ENVI คำนวณ LAI สีเขียวโดยใช้สูตรเชิงประจักษ์ต่อไปนี้จาก Boegh et al (2002):
 
 $$
 LAI = 3.618 * EVI - 0.118
 $$
 
-Where EVI is:
+EVI อยู่ที่ไหน:
 
 $$
 EVI = 2.5 *  {(NIR - Red) \over (NIR + 6 * Red - 7.5 * Blue + 1)}
 $$
 
-High LAI values typically range from approximately 0 to 3.5. However, when the scene contains clouds and other bright features that produce saturated pixels, the LAI values can exceed 3.5. You should ideally mask out clouds and bright features from your scene before creating an LAI image.
+โดยทั่วไปค่า LAI สูงจะอยู่ในช่วงประมาณ 0 ถึง 3.5 อย่างไรก็ตาม เมื่อฉากมีเมฆและองค์ประกอบสว่างอื่นๆ ที่สร้างพิกเซลอิ่มตัว ค่า LAI อาจเกิน 3.5 ได้ คุณควรปกปิดเมฆและส่วนสว่างออกจากฉากของคุณก่อนที่จะสร้างภาพ LAI
 
-_Reference: Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde, and A. Thomsen. "Airborne Multi-spectral Data for Quantifying Leaf Area Index, Nitrogen Concentration and Photosynthetic Efficiency in Agriculture." Remote Sensing of Environment 81, no. 2-3 (2002): 179-193._
+_อ้างอิง: Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde และ A. Thomsen "ข้อมูลหลายสเปกตรัมในอากาศสำหรับดัชนีพื้นที่ใบเชิงปริมาณ ความเข้มข้นของไนโตรเจน และประสิทธิภาพการสังเคราะห์แสงในการเกษตร" การสำรวจสภาพแวดล้อมระยะไกล 81 เลขที่ 2-3 (2545): 179-193._
 
 ***
 
-## LCI - Leaf Chlorophyll Index
+## LCI - ดัชนีคลอโรฟิลล์ของใบ
 
-This index is used to estimate chlorophyll content in higher plants, sensitive to variation in reflectance caused by chlorophyll absorption.
+ดัชนีนี้ใช้ในการประมาณปริมาณคลอโรฟิลล์ในพืชชั้นสูง ซึ่งมีความไวต่อการแปรผันของการสะท้อนแสงที่เกิดจากการดูดซึมคลอโรฟิลล์
 
 $$
 LCI = {NIR2 - RedEdge \over NIR2 + Red}
 $$
 
-_Reference: Datt, B. "Remote Sensing of Water Content in Eucalyptus Leaves." Journal of Plant Physiology 154, no. 1 (1999): 30-36._
+_อ้างอิง: Datt, B. "การรับรู้ระยะไกลของปริมาณน้ำในใบยูคาลิปตัส" วารสารสรีรวิทยาพืช 154, ฉบับที่. 1 (1999): 30-36._
 
 ***
 
-## MNLI - Modified Non-Linear Index
+## MNLI - แก้ไขดัชนีที่ไม่ใช่เชิงเส้น
 
-This index is an enhancement to the Non-Linear Index (NLI) that incorporates the Soil Adjusted Vegetation Index (SAVI) to account for the soil background. ENVI uses a canopy background adjustment factor (_L_) value of 0.5.
+ดัชนีนี้เป็นการเพิ่มประสิทธิภาพให้กับดัชนีไม่เชิงเส้น (NLI) ที่รวมเอาดัชนีพืชพรรณที่ปรับสภาพดิน (SAVI) เพื่อพิจารณาพื้นหลังของดิน ENVI ใช้ค่าปัจจัยการปรับพื้นหลังหลังคา (_L_) เท่ากับ 0.5
 
 $$
 MNLI = {(NIR^{2} - Red) * (1 + L) \over (NIR^{2} + Red + L)  }
 $$
 
-_Reference: Yang, Z., P. Willis, and R. Mueller. "Impact of Band-Ratio Enhanced AWIFS Image to Crop Classification Accuracy." Proceedings of the Pecora 17 Remote Sensing Symposium (2008), Denver, CO._
+_อ้างอิง: Yang, Z., P. Willis และ R. Mueller "ผลกระทบของภาพ AWIFS ที่ปรับปรุงอัตราส่วนแบนด์ต่อความแม่นยำในการจำแนกประเภทพืชผล" การดำเนินการของการประชุม Pecora 17 Remote Sensing Symposium (2008), เดนเวอร์, โคโลราโด._
 
 ***
 
-## MSAVI2 - Modified Soil Adjusted Vegetation Index 2
+## MSAVI2 - ดัชนีพืชพรรณที่ปรับปรุงดินดัดแปลง 2
 
-This index is a simpler version of the MSAVI index proposed by Qi, et al (1994), which improves upon the Soil Adjusted Vegetation Index (SAVI). It reduces soil noise and increases the dynamic range of the vegetation signal. MSAVI2 is based on an inductive method that does not use a constant _L_ value (as with SAVI) to highlight healthy vegetation.
+ดัชนีนี้เป็นเวอร์ชันที่เรียบง่ายกว่าของดัชนี MSAVI ที่เสนอโดย Qi, et al (1994) ซึ่งปรับปรุงตามดัชนีพืชพรรณที่ปรับดิน (SAVI) จะช่วยลดเสียงรบกวนในดินและเพิ่มช่วงไดนามิกของสัญญาณพืชพรรณ MSAVI2 ใช้วิธีการอุปนัยที่ไม่ใช้ค่า _L_ คงที่ (เช่นเดียวกับ SAVI) เพื่อเน้นพืชพรรณที่มีสุขภาพดี
 
 $$
 MSAVI2 = {2 * NIR + 1 - \sqrt{(2 * NIR + 1)^{2} - 8(NIR - Red)} \over 2}
 $$
 
-_Reference: Qi, J., A. Chehbouni, A. Huete, Y. Kerr, and S. Sorooshian. "A Modified Soil Adjusted Vegetation Index." Remote Sensing of Environment 48 (1994): 119-126._
+_อ้างอิง: Qi, J., A. Chehbouni, A. Huete, Y. Kerr และ S. Sorooshian "ดัชนีพืชพรรณปรับดินดัดแปลง" การสำรวจสภาพแวดล้อมระยะไกล 48 (1994): 119-126._
 
 ***
 
-## NDRE- Normalized Difference RedEdge
+## NDRE- ความแตกต่างที่ทำให้เป็นมาตรฐาน RedEdge
 
-This index is similar to NDVI but compares the contrast between NIR with RedEdge instead of Red, which often detects vegetation stress sooner.
+ดัชนีนี้คล้ายกับ NDVI แต่เปรียบเทียบความแตกต่างระหว่าง NIR กับ RedEdge แทนที่จะเป็นสีแดง ซึ่งมักจะตรวจพบความเครียดของพืชได้เร็วกว่า
 
 $$
 NDRE = {NIR - RedEdge \over NIR + RedEdge  }
@@ -232,104 +232,104 @@ $$
 
 ***
 
-## NDVI - Normalized Difference Vegetation Index
+## NDVI - ดัชนีพืชพรรณความแตกต่างที่ทำให้เป็นมาตรฐาน
 
-This index is a measure of healthy, green vegetation. The combination of its normalized difference formulation and use of the highest absorption and reflectance regions of chlorophyll make it robust over a wide range of conditions. It can, however, saturate in dense vegetation conditions when LAI becomes high.
+ดัชนีนี้เป็นตัวชี้วัดพืชพรรณสีเขียวที่มีสุขภาพดี การผสมผสานระหว่างสูตรความแตกต่างที่ทำให้เป็นมาตรฐานและการใช้บริเวณการดูดซับและการสะท้อนแสงสูงสุดของคลอโรฟิลล์ ทำให้คลอโรฟิลล์มีความทนทานในสภาวะต่างๆ อย่างไรก็ตาม มันสามารถอิ่มตัวได้ในสภาพพืชพรรณที่หนาแน่นเมื่อ LAI สูง
 
 $$
 NDVI = {NIR - Red \over NIR + Red  }
 $$
 
-The value of this index ranges from -1 to 1. The common range for green vegetation is 0.2 to 0.8.
+ค่าของดัชนีนี้อยู่ในช่วง -1 ถึง 1 ช่วงทั่วไปสำหรับพืชสีเขียวคือ 0.2 ถึง 0.8
 
-_Reference: Rouse, J., R. Haas, J. Schell, and D. Deering. Monitoring Vegetation Systems in the Great Plains with ERTS. Third ERTS Symposium, NASA (1973): 309-317._
+_อ้างอิง: Rouse, J., R. Haas, J. Schell และ D. Deering การตรวจสอบระบบพืชพรรณใน Great Plains ด้วย ERTS การประชุมสัมมนา ERTS ครั้งที่สาม NASA (1973): 309-317._
 
 ***
 
-## NLI - Non-Linear Index
+## NLI - ดัชนีที่ไม่ใช่เชิงเส้น
 
-This index assumes that the relationship between many vegetation indices and surface biophysical parameters is non-linear. It linearizes relationships with surface parameters that tend to be non-linear.
+ดัชนีนี้สันนิษฐานว่าความสัมพันธ์ระหว่างดัชนีพืชพรรณหลายชนิดกับพารามิเตอร์ทางชีวฟิสิกส์ของพื้นผิวนั้นไม่เป็นเชิงเส้น มันทำให้ความสัมพันธ์เป็นเส้นตรงกับพารามิเตอร์พื้นผิวที่มีแนวโน้มว่าจะไม่เป็นเชิงเส้น
 
 $$
 NLI = {NIR^{2} - Red \over NIR^{2} + Red  }
 $$
 
-_Reference: Goel, N., and W. Qin. "Influences of Canopy Architecture on Relationships Between Various Vegetation Indices and LAI and Fpar: A Computer Simulation." Remote Sensing Reviews 10 (1994): 309-347._
+_อ้างอิง: Goel, N. และ W. Qin "อิทธิพลของสถาปัตยกรรมทรงพุ่มต่อความสัมพันธ์ระหว่างดัชนีพืชพรรณต่างๆ กับ LAI และ Fpar: การจำลองด้วยคอมพิวเตอร์" รีวิวการสำรวจระยะไกล 10 (1994): 309-347._
 
 ***
 
-## OSAVI - Optimized Soil Adjusted Vegetation Index
+## OSAVI - ดัชนีพืชพรรณที่ปรับดินให้เหมาะสม
 
-This index is based on the Soil Adjusted Vegetation Index (SAVI). It uses a standard value of 0.16 for the canopy background adjustment factor. Rondeaux (1996) determined that this value provides greater soil variation than SAVI for low vegetation cover, while demonstrating increased sensitivity to vegetation cover greater than 50%. This index is best used in areas with relatively sparse vegetation where soil is visible through the canopy.
+ดัชนีนี้อิงตามดัชนีพืชพรรณปรับดิน (SAVI) โดยจะใช้ค่ามาตรฐาน 0.16 สำหรับปัจจัยการปรับพื้นหลังหลังคา Rondeaux (1996) ระบุว่าค่านี้ให้ความแปรผันของดินมากกว่า SAVI สำหรับพืชคลุมดินต่ำ ขณะเดียวกันก็แสดงให้เห็นถึงความไวที่เพิ่มขึ้นต่อพืชคลุมดินมากกว่า 50% ดัชนีนี้ใช้ดีที่สุดในพื้นที่ที่มีพืชพรรณค่อนข้างเบาบางซึ่งมองเห็นดินผ่านทรงพุ่ม
 
 $$
 OSAVI = {(NIR - Red) \over (NIR + Red + 0.16)  }
 $$
 
-_Reference: Rondeaux, G., M. Steven, and F. Baret. "Optimization of Soil-Adjusted Vegetation Indices." Remote Sensing of Environment 55 (1996): 95-107._
+_อ้างอิง: Rondeaux, G., M. Steven และ F. Baret "การเพิ่มประสิทธิภาพดัชนีพืชพรรณที่ปรับดินแล้ว" การสำรวจสภาพแวดล้อมระยะไกล 55 (1996): 95-107._
 
 ***
 
-## RDVI - Renormalized Difference Vegetation Index
+## RDVI - ดัชนีพืชพรรณที่แตกต่างที่ทำให้เป็นมาตรฐานใหม่
 
-This index uses the difference between near-infrared and red wavelengths, along with the NDVI, to highlight healthy vegetation. It is insensitive to the effects of soil and sun viewing geometry.
+ดัชนีนี้ใช้ความแตกต่างระหว่างความยาวคลื่นใกล้อินฟราเรดและสีแดง พร้อมด้วย NDVI เพื่อเน้นพืชพรรณที่มีสุขภาพดี มันไม่ไวต่อผลกระทบของเรขาคณิตในการดูดินและดวงอาทิตย์
 
 $$
 RDVI = {(NIR- Red) \over \sqrt{(NIR + Red)}  }
 $$
 
-_Reference: Roujean, J., and F. Breon. "Estimating PAR Absorbed by Vegetation from Bidirectional Reflectance Measurements." Remote Sensing of Environment 51 (1995): 375-384._
+_อ้างอิง: Roujean, J. และ F. Breon "การประมาณค่า PAR ที่ถูกดูดซับโดยพืชพรรณจากการวัดการสะท้อนแสงแบบสองทิศทาง" การสำรวจสภาพแวดล้อมระยะไกล 51 (1995): 375-384._
 
 ***
 
-## SAVI - Soil Adjusted Vegetation Index
+## SAVI - ดัชนีพืชพรรณที่ปรับดิน
 
-This index is similar to NDVI, but it suppresses the effects of soil pixels. It uses a canopy background adjustment factor, _L_, which is a function of vegetation density and often requires prior knowledge of vegetation amounts. Huete (1988) suggests an optimal value of _L_=0.5 to account for first-order soil background variations. This index is best used in areas with relatively sparse vegetation where soil is visible through the canopy.
+ดัชนีนี้คล้ายกับ NDVI แต่จะระงับผลกระทบของพิกเซลของดิน โดยจะใช้ปัจจัยการปรับพื้นหลังทรงพุ่ม _L_ ซึ่งเป็นหน้าที่ของความหนาแน่นของพืชพรรณ และมักต้องอาศัยความรู้ล่วงหน้าเกี่ยวกับปริมาณพืชพรรณ Huete (1988) แนะนำค่าที่เหมาะสมที่สุดที่ _L_=0.5 เพื่อพิจารณาความแปรผันของพื้นหลังของดินลำดับที่หนึ่ง ดัชนีนี้ใช้ดีที่สุดในพื้นที่ที่มีพืชพรรณค่อนข้างเบาบางซึ่งมองเห็นดินผ่านทรงพุ่ม
 
 $$
 SAVI = {1.5 * (NIR- Red) \over (NIR + Red + 0.5)  }
 $$
 
-_Reference: Huete, A. "A Soil-Adjusted Vegetation Index (SAVI)." Remote Sensing of Environment 25 (1988): 295-309._
+_อ้างอิง: Huete, A. "ดัชนีพืชพรรณที่ปรับดิน (SAVI)" การสำรวจสภาพแวดล้อมระยะไกล 25 (1988): 295-309._
 
 ***
 
-## TDVI - Transformed Difference Vegetation Index
+## TDVI - ดัชนีพืชพรรณที่แตกต่างที่เปลี่ยนแปลงแล้ว
 
-This index is useful for monitoring vegetation cover in urban environments. It does not saturate like NDVI and SAVI.
+ดัชนีนี้มีประโยชน์สำหรับการติดตามพืชพรรณที่ปกคลุมในสภาพแวดล้อมในเมือง มันไม่อิ่มตัวเหมือน NDVI และ SAVI
 
 $$
 TDVI = 1.5 * {(NIR- Red) \over \sqrt{NIR^{2} + Red + 0.5}  }
 $$
 
-_Reference: Bannari, A., H. Asalhi, and P. Teillet. "Transformed Difference Vegetation Index (TDVI) for Vegetation Cover Mapping" In Proceedings of the Geoscience and Remote Sensing Symposium, IGARSS '02, IEEE International, Volume 5 (2002)._
+_อ้างอิง: บันนาริ, เอ., เอช. อาซาลี และพี. ไทเลต์ "Transformed Difference Vegetation Index (TDVI) สำหรับการทำแผนที่ปกคลุมพืชพรรณ" ในการดำเนินการของการประชุมสัมมนาทางธรณีวิทยาและการสำรวจระยะไกล, IGARSS '02, IEEE International, เล่มที่ 5 (2002)._
 
 ***
 
-## VARI - Visible Atmospherically Resistant Index
+## VARI - ดัชนีต้านทานบรรยากาศที่มองเห็นได้
 
-This index is based on the ARVI and is used to estimate the fraction of vegetation in a scene with low sensitivity to atmospheric effects.
+ดัชนีนี้อิงตาม ARVI และใช้ในการประมาณสัดส่วนของพืชพรรณในฉากที่มีความไวต่อผลกระทบจากบรรยากาศต่ำ
 
 $$
 VARI = {Green - Red \over Green + Red - Blue  }
 $$
 
-_Reference: Gitelson, A., et al. "Vegetation and Soil Lines in Visible Spectral Space: A Concept and Technique for Remote Estimation of Vegetation Fraction. International Journal of Remote Sensing 23 (2002): 2537−2562._
+_อ้างอิง: Gitelson, A., และคณะ "เส้นพืชพรรณและดินในพื้นที่สเปกตรัมที่มองเห็นได้: แนวคิดและเทคนิคสำหรับการประมาณค่าเศษส่วนพืชพรรณระยะไกล วารสารการสำรวจระยะไกลระหว่างประเทศ 23 (2545): 2537−2562._
 
 ***
 
-## WDRVI - Wide Dynamic Range Vegetation Index
+## WDRVI - ดัชนีพืชพรรณช่วงไดนามิกกว้าง
 
-This index is similar to NDVI, but it uses a weighting coefficient (_a_) to reduce the disparity between the contributions of the near-infrared and red signals to the NDVI. The WDRVI is particularly effective in scenes that have moderate-to-high vegetation density when NDVI exceeds 0.6. NDVI tends to level off when vegetation fraction and leaf area index (LAI) increase, whereas the WDRVI is more sensitive to a wider range of vegetation fractions and to changes in LAI.
+ดัชนีนี้คล้ายกับ NDVI แต่ใช้ค่าสัมประสิทธิ์การถ่วงน้ำหนัก (_a_) เพื่อลดความแตกต่างระหว่างการมีส่วนร่วมของสัญญาณอินฟราเรดใกล้และสัญญาณสีแดงไปยัง NDVI WDRVI มีประสิทธิภาพเป็นพิเศษในฉากที่มีความหนาแน่นของพืชพรรณปานกลางถึงสูง เมื่อ NDVI เกิน 0.6 NDVI มีแนวโน้มที่จะลดลงเมื่อเศษส่วนของพืชพรรณและดัชนีพื้นที่ใบ (LAI) เพิ่มขึ้น ในขณะที่ WDRVI มีความไวต่อเศษส่วนของพืชพรรณที่หลากหลายและการเปลี่ยนแปลงใน LAI มากขึ้น
 
 $$
 WDRVI = {(\alpha * NIR- Red) \over (\alpha * NIR + Red)}
 $$
 
-The weighting coefficient (_a_) can range from 0.1 to 0.2. A value of 0.2 is recommended by Henebry, Viña, and Gitelson (2004).
+ค่าสัมประสิทธิ์การถ่วงน้ำหนัก (_a_) สามารถอยู่ในช่วงตั้งแต่ 0.1 ถึง 0.2 Henebry, Viña และ Gitelson (2004) แนะนำค่า 0.2
 
-_References_
+_อ้างอิง_
 
-_Gitelson, A. "Wide Dynamic Range Vegetation Index for Remote Quantification of Biophysical Characteristics of Vegetation." Journal of Plant Physiology 161, No. 2 (2004): 165-173._
+_Gitelson, A. "ดัชนีพืชพรรณช่วงไดนามิกกว้างสำหรับการวัดปริมาณระยะไกลของลักษณะทางชีวฟิสิกส์ของพืชพรรณ" วารสารสรีรวิทยาพืช 161 ฉบับที่ 2 (2547): 165-173._
 
-_Henebry, G., A. Viña, and A. Gitelson. "The Wide Dynamic Range Vegetation Index and its Potential Utility for Gap Analysis." Gap Analysis Bulletin 12: 50-56._
+_เฮนเนบรี, จี., เอ. วินา และเอ. กิเทลสัน "ดัชนีพืชพรรณช่วงไดนามิกกว้างและประโยชน์ที่เป็นไปได้สำหรับการวิเคราะห์ช่องว่าง" กระดานข่าวการวิเคราะห์ช่องว่าง 12: 50-56._

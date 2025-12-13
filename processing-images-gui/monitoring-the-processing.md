@@ -1,392 +1,392 @@
-# Monitoring the Processing
+# การตรวจสอบการประมวลผล
 
-Once processing has started, Chloros provides several ways to monitor progress, check for issues, and understand what's happening with your dataset. This page explains how to track your processing and interpret the information Chloros provides.
+เมื่อการประมวลผลเริ่มต้นแล้ว Chloros มีวิธีต่างๆ มากมายในการติดตามความคืบหน้า ตรวจสอบปัญหา และทำความเข้าใจสิ่งที่เกิดขึ้นกับชุดข้อมูลของคุณ หน้านี้อธิบายวิธีติดตามการประมวลผลและตีความข้อมูลที่คลอรอสให้
 
-## Progress Bar Overview
+## ภาพรวมแถบความคืบหน้า
 
-The progress bar in the top header shows real-time processing status and completion percentage.
+แถบความคืบหน้าในส่วนหัวด้านบนจะแสดงสถานะการประมวลผลแบบเรียลไทม์และเปอร์เซ็นต์ความสำเร็จ
 
-### Free Mode Progress Bar
+### แถบความคืบหน้าโหมดฟรี
 
-For users without Chloros+ license:
+สำหรับผู้ใช้ที่ไม่มีใบอนุญาต Chloros+:
 
-**2-Stage Progress Display:**
+**การแสดงความคืบหน้า 2 ขั้นตอน:**
 
-1. **Target Detect** - Finding calibration targets in images
-2. **Processing** - Applying corrections and exporting
+1. **การตรวจจับเป้าหมาย** - ค้นหาเป้าหมายการปรับเทียบในภาพ
+2. **การประมวลผล** - การใช้การแก้ไขและการส่งออก
 
-**Progress bar shows:**
+**แถบความคืบหน้าแสดง:**
 
-* Overall completion percentage (0-100%)
-* Current stage name
-* Simple horizontal bar visualization
+* เปอร์เซ็นต์ความสำเร็จโดยรวม (0-100%)
+* ชื่อบนเวทีปัจจุบัน
+* การแสดงภาพแถบแนวนอนอย่างง่าย
 
-### Chloros+ Progress Bar
+### คลอรอส+ แถบความคืบหน้า
 
-For users with Chloros+ license:
+สำหรับผู้ใช้ที่มีใบอนุญาต Chloros+:
 
-**4-Stage Progress Display:**
+**การแสดงความคืบหน้า 4 ขั้นตอน:**
 
-1. **Detecting** - Finding calibration targets
-2. **Analyzing** - Examining images and preparing pipeline
-3. **Calibrating** - Applying vignette and reflectance corrections
-4. **Exporting** - Saving processed files
+1. **การตรวจจับ** - การค้นหาเป้าหมายการสอบเทียบ
+2. **การวิเคราะห์** - ตรวจสอบภาพและเตรียมไปป์ไลน์
+3. **การปรับเทียบ** - การใช้บทความสั้นและการแก้ไขการสะท้อนแสง
+4. **การส่งออก** - บันทึกไฟล์ที่ประมวลผล
 
-**Interactive Features:**
+** คุณสมบัติแบบโต้ตอบ: **
 
-* **Hover over** progress bar to see expanded 4-stage panel
-* **Click** progress bar to freeze/pin the expanded panel
-* **Click again** to unfreeze and auto-hide on mouse leave
-* Each stage shows individual progress (0-100%)
-
-***
-
-## Understanding Each Processing Stage
-
-### Stage 1: Detecting (Target Detection)
-
-**What's happening:**
-
-* Chloros scans images marked with Target checkbox
-* Computer vision algorithms identify the 4 calibration panels
-* Reflectance values extracted from each panel
-* Target timestamps recorded for proper calibration scheduling
-
-**Duration:**
-
-* With marked targets: 10-60 seconds
-* Without marked targets: 5-30+ minutes (scans all images)
-
-**Progress indicator:**
-
-* Detecting: 0% → 100%
-* Number of images scanned
-* Targets found count
-
-**What to watch for:**
-
-* Should complete quickly if targets properly marked
-* If taking too long, targets may not be marked
-* Check Debug Log for "Target found" messages
-
-### Stage 2: Analyzing
-
-**What's happening:**
-
-* Reading image EXIF metadata (timestamps, exposure settings)
-* Determining calibration strategy based on target timestamps
-* Organizing image processing queue
-* Preparing parallel processing workers (Chloros+ only)
-
-**Duration:** 5-30 seconds
-
-**Progress indicator:**
-
-* Analyzing: 0% → 100%
-* Fast stage, usually completes quickly
-
-**What to watch for:**
-
-* Should progress steadily without pauses
-* Warnings about missing metadata will appear in Debug Log
-
-### Stage 3: Calibrating
-
-**What's happening:**
-
-* **Debayering**: Converting RAW Bayer pattern to 3 channels
-* **Vignette correction**: Removing lens edge darkening
-* **Reflectance calibration**: Normalizing with target values
-* **Index calculation**: Computing multispectral indices
-* Processing each image through the full pipeline
-
-**Duration:** Majority of total processing time (60-80%)
-
-**Progress indicator:**
-
-* Calibrating: 0% → 100%
-* Current image being processed
-* Images completed / Total images
-
-**Processing behavior:**
-
-* **Free mode**: Processes one image at a time sequentially
-* **Chloros+ mode**: Processes up to 16 images simultaneously
-* **GPU acceleration**: Significantly speeds up this stage
-
-**What to watch for:**
-
-* Steady progress through image count
-* Check Debug Log for per-image completion messages
-* Warnings about image quality or calibration issues
-
-### Stage 4: Exporting
-
-**What's happening:**
-
-* Writing calibrated images to disk in selected format
-* Exporting multispectral index images with LUT colors
-* Creating camera model subfolders
-* Preserving original filenames with appropriate suffixes
-
-**Duration:** 10-20% of total processing time
-
-**Progress indicator:**
-
-* Exporting: 0% → 100%
-* Files being written
-* Export format and destination
-
-**What to watch for:**
-
-* Disk space warnings
-* File write errors
-* Completion of all configured outputs
+* **วางเมาส์เหนือ** แถบความคืบหน้าเพื่อดูแผง 4 ขั้นที่ขยาย
+* **คลิก** แถบความคืบหน้าเพื่อตรึง/ปักหมุดแผงที่ขยาย
+* **คลิกอีกครั้ง** เพื่อยกเลิกการตรึงและซ่อนอัตโนมัติเมื่อปล่อยเมาส์
+* แต่ละด่านแสดงความก้าวหน้าของแต่ละคน (0-100%)
 
 ***
 
-## Debug Log Tab
+## ทำความเข้าใจแต่ละขั้นตอนการประมวลผล
 
-The Debug Log provides detailed information about processing progress and any issues encountered.
+### ขั้นตอนที่ 1: การตรวจจับ (การตรวจจับเป้าหมาย)
 
-### Accessing the Debug Log
+**เกิดอะไรขึ้น:**
 
-1. Click the **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> icon in the left sidebar
-2. Log panel opens showing real-time processing messages
-3. Auto-scrolls to show latest messages
+* คลอรอสสแกนภาพที่ทำเครื่องหมายด้วยช่องทำเครื่องหมายเป้าหมาย
+* อัลกอริธึมการมองเห็นของคอมพิวเตอร์ระบุแผงการสอบเทียบ 4 แผง
+* ค่าการสะท้อนที่ดึงมาจากแต่ละแผง
+* การประทับเวลาเป้าหมายที่บันทึกไว้เพื่อการกำหนดเวลาการสอบเทียบที่เหมาะสม
 
-### Understanding Log Messages
+**ระยะเวลา:**
 
-#### Information Messages (White/Gray)
+* โดยมีเป้าหมายที่ทำเครื่องหมายไว้: 10-60 วินาที
+* ไม่มีเป้าหมายที่ทำเครื่องหมายไว้: 5-30+ นาที (สแกนภาพทั้งหมด)
 
-Normal processing updates:
+**ตัวบ่งชี้ความคืบหน้า:**
+
+* การตรวจจับ: 0% → 100%
+* จำนวนภาพที่สแกน
+* จำนวนเป้าหมายที่พบ
+
+**สิ่งที่ต้องระวัง:**
+
+* ควรดำเนินการให้เสร็จสิ้นโดยเร็วหากกำหนดเป้าหมายถูกต้อง
+* หากใช้เวลานานเกินไป เป้าหมายอาจไม่ถูกทำเครื่องหมาย
+* ตรวจสอบบันทึกการแก้ไขข้อบกพร่องสำหรับข้อความ "พบเป้าหมาย"
+
+### ขั้นตอนที่ 2: การวิเคราะห์
+
+**เกิดอะไรขึ้น:**
+
+* การอ่านข้อมูลเมตา EXIF ​​ของรูปภาพ (การประทับเวลา การตั้งค่าการรับแสง)
+* การกำหนดกลยุทธ์การสอบเทียบตามการประทับเวลาเป้าหมาย
+* การจัดคิวการประมวลผลภาพ
+* การจัดเตรียมผู้ปฏิบัติงานที่ประมวลผลแบบขนาน (Chloros+ เท่านั้น)
+
+**ระยะเวลา:** 5-30 วินาที
+
+**ตัวบ่งชี้ความคืบหน้า:**
+
+* การวิเคราะห์: 0% → 100%
+* ด่านเร็ว มักจะจบเร็ว
+
+**สิ่งที่ต้องระวัง:**
+
+* ควรก้าวหน้าอย่างมั่นคงไม่มีหยุดชั่วคราว
+* คำเตือนเกี่ยวกับข้อมูลเมตาที่หายไปจะปรากฏในบันทึกการแก้ไขข้อบกพร่อง
+
+### ขั้นตอนที่ 3: การปรับเทียบ
+
+**เกิดอะไรขึ้น:**
+
+* **Debayering**: แปลงรูปแบบ RAW Bayer เป็น 3 ช่อง
+* **การแก้ไขขอบมืด**: การลบการทำให้ขอบเลนส์มืดลง
+* **การปรับเทียบการสะท้อนแสง**: การทำให้เป็นมาตรฐานด้วยค่าเป้าหมาย
+* **การคำนวณดัชนี**: การคำนวณดัชนีหลายสเปกตรัม
+* การประมวลผลภาพแต่ละภาพผ่านทางไปป์ไลน์แบบเต็ม
+
+**ระยะเวลา:** เวลาประมวลผลส่วนใหญ่ (60-80%)
+
+**ตัวบ่งชี้ความคืบหน้า:**
+
+* การปรับเทียบ: 0% → 100%
+* ภาพปัจจุบันกำลังถูกประมวลผล
+* รูปภาพที่เสร็จสมบูรณ์ / รูปภาพทั้งหมด
+
+**พฤติกรรมการประมวลผล:**
+
+* **โหมดอิสระ**: ประมวลผลภาพทีละภาพตามลำดับ
+* **โหมดคลอรอส+**: ประมวลผลภาพได้สูงสุด 16 ภาพพร้อมกัน
+* **การเร่งความเร็ว GPU**: เพิ่มความเร็วขั้นนี้อย่างมาก
+
+**สิ่งที่ต้องระวัง:**
+
+* ความก้าวหน้าอย่างต่อเนื่องผ่านการนับภาพ
+* ตรวจสอบบันทึกการแก้ไขข้อบกพร่องเพื่อดูข้อความการเสร็จสิ้นต่อภาพ
+* คำเตือนเกี่ยวกับคุณภาพของภาพหรือปัญหาการปรับเทียบ
+
+### ขั้นตอนที่ 4: การส่งออก
+
+**เกิดอะไรขึ้น:**
+
+* การเขียนภาพที่ปรับเทียบแล้วลงดิสก์ในรูปแบบที่เลือก
+* ส่งออกภาพดัชนีหลายสเปกตรัมด้วยสี LUT
+* การสร้างโฟลเดอร์ย่อยรุ่นกล้อง
+* รักษาชื่อไฟล์ต้นฉบับพร้อมส่วนต่อท้ายที่เหมาะสม
+
+**ระยะเวลา:** 10-20% ของเวลาประมวลผลทั้งหมด
+
+**ตัวบ่งชี้ความคืบหน้า:**
+
+* การส่งออก: 0% → 100%
+* ไฟล์ที่กำลังเขียน
+* รูปแบบการส่งออกและปลายทาง
+
+**สิ่งที่ต้องระวัง:**
+
+* คำเตือนพื้นที่ดิสก์
+* ข้อผิดพลาดในการเขียนไฟล์
+* เสร็จสิ้นการกำหนดค่าเอาต์พุตทั้งหมด
+
+***
+
+## แท็บบันทึกการแก้ไขข้อบกพร่อง
+
+บันทึกการแก้ไขข้อบกพร่องให้ข้อมูลโดยละเอียดเกี่ยวกับความคืบหน้าในการประมวลผลและปัญหาใดๆ ที่พบ
+
+### การเข้าถึงบันทึกการแก้ไขข้อบกพร่อง
+
+1. คลิกไอคอน **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> ในแถบด้านข้างซ้าย
+2. แผงบันทึกจะเปิดขึ้นเพื่อแสดงข้อความการประมวลผลแบบเรียลไทม์
+3. เลื่อนอัตโนมัติเพื่อแสดงข้อความล่าสุด
+
+### ทำความเข้าใจกับข้อความบันทึก
+
+#### ข้อความแจ้งข้อมูล (ขาว/เทา)
+
+การอัปเดตการประมวลผลปกติ:
 
 ```
-[INFO] Processing started
-[INFO] Target detected in IMG_0015.RAW - 4 panels found
-[INFO] Calibrating IMG_0234.RAW
-[INFO] Exported NDVI image: IMG_0234_NDVI.tif
-[INFO] Processing complete
+[INFO] เริ่มการประมวลผลแล้ว
+[INFO] ตรวจพบเป้าหมายใน IMG_0015.RAW - พบ 4 แผง
+[INFO] กำลังปรับเทียบ IMG_0234.RAW
+[INFO] รูปภาพ NDVI ที่ส่งออก: IMG_0234_NDVI.tif
+[INFO] การประมวลผลเสร็จสมบูรณ์
 ```
 
-#### Warning Messages (Yellow)
+#### ข้อความเตือน (สีเหลือง)
 
-Non-critical issues that don't stop processing:
-
-```
-[WARN] No GPS data found in IMG_0145.RAW
-[WARN] Target image timestamp gap > 30 minutes
-[WARN] Low contrast in calibration panel - results may vary
-```
-
-**Action:** Review warnings after processing, but don't interrupt
-
-#### Error Messages (Red)
-
-Critical issues that may cause processing to fail:
+ปัญหาที่ไม่ร้ายแรงที่ไม่หยุดประมวลผล:
 
 ```
-[ERROR] Cannot write file - disk full
-[ERROR] Corrupted image file: IMG_0299.RAW
-[ERROR] No targets detected - enable reflectance calibration or mark target images
+[คำเตือน] ไม่พบข้อมูล GPS ใน IMG_0145.RAW
+[คำเตือน] ช่องว่างการประทับเวลาของรูปภาพเป้าหมาย > 30 นาที
+[คำเตือน] คอนทราสต์ต่ำในแผงการปรับเทียบ - ผลลัพธ์อาจแตกต่างกันไป
 ```
 
-**Action:** Stop processing, resolve error, restart
+**การดำเนินการ:** ตรวจสอบคำเตือนหลังการประมวลผล แต่อย่าขัดจังหวะ
 
-### Common Log Messages
+#### ข้อความแสดงข้อผิดพลาด (สีแดง)
 
-| Message                          | Meaning                                | Action Needed                                         |
+ปัญหาสำคัญที่อาจทำให้การประมวลผลล้มเหลว:
+
+```
+[ข้อผิดพลาด] ไม่สามารถเขียนไฟล์ได้ - ดิสก์เต็ม
+[ข้อผิดพลาด] ไฟล์ภาพเสียหาย: IMG_0299.RAW
+[ข้อผิดพลาด] ตรวจไม่พบเป้าหมาย - เปิดใช้งานการปรับเทียบการสะท้อนแสงหรือทำเครื่องหมายรูปภาพเป้าหมาย
+```
+
+**การดำเนินการ:** หยุดการประมวลผล แก้ไขข้อผิดพลาด รีสตาร์ท
+
+### ข้อความบันทึกทั่วไป
+
+- ข้อความ - ความหมาย - การดำเนินการที่จำเป็น -
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| "Target detected in \[filename]" | Calibration target found successfully  | None - normal                                         |
-| "Processing image X of Y"        | Current progress update                | None - normal                                         |
-| "No targets found"               | No calibration targets detected        | Mark target images or disable reflectance calibration |
-| "Insufficient disk space"        | Not enough storage for output          | Free up disk space                                    |
-| "Skipping corrupted file"        | Image file is damaged                  | Re-copy file from SD card                             |
-| "PPK data applied"               | GPS corrections from .daq file applied | None - normal                                         |
+- "ตรวจพบเป้าหมายใน \[ชื่อไฟล์]" - พบเป้าหมายการปรับเทียบสำเร็จแล้ว - ไม่มี - ปกติ -
+- "กำลังประมวลผลรูปภาพ X จาก Y" - อัพเดทความคืบหน้าปัจจุบัน - ไม่มี - ปกติ -
+- "ไม่พบเป้าหมาย" - ไม่พบเป้าหมายการสอบเทียบ - ทำเครื่องหมายรูปภาพเป้าหมายหรือปิดใช้งานการปรับเทียบการสะท้อนแสง -
+- "พื้นที่ดิสก์ไม่เพียงพอ" - พื้นที่เก็บข้อมูลไม่เพียงพอสำหรับเอาต์พุต - เพิ่มพื้นที่ว่างในดิสก์ -
+- "ข้ามไฟล์ที่เสียหาย" - ไฟล์ภาพเสียหาย - คัดลอกไฟล์จากการ์ด SD อีกครั้ง -
+- "ใช้ข้อมูล PPK" - ใช้การแก้ไข GPS จากไฟล์ .daq - ไม่มี - ปกติ -
 
-### Copying Log Data
+### กำลังคัดลอกข้อมูลบันทึก
 
-To copy log for troubleshooting or support:
+หากต้องการคัดลอกบันทึกเพื่อแก้ไขปัญหาหรือสนับสนุน:
 
-1. Open Debug Log panel
-2. Click **"Copy Log"** button (or right-click → Select All)
-3. Paste into text file or email
-4. Send to MAPIR support if needed
-
-***
-
-## System Resource Monitoring
-
-### CPU Usage
-
-**Free Mode:**
-
-* 1 CPU core at \~100%
-* Other cores idle or available
-* System remains responsive
-
-**Chloros+ Parallel Mode:**
-
-* Multiple cores at 80-100% (up to 16 cores)
-* High overall CPU utilization
-* System may feel less responsive
-
-**To monitor:**
-
-* Windows Task Manager (Ctrl+Shift+Esc)
-* Performance tab → CPU section
-* Look for "Chloros" or "chloros-backend" processes
-
-### Memory (RAM) Usage
-
-**Typical usage:**
-
-* Small projects (< 100 images): 2-4 GB
-* Medium projects (100-500 images): 4-8 GB
-* Large projects (500+ images): 8-16 GB
-* Chloros+ parallel mode uses more RAM
-
-**If memory is low:**
-
-* Process smaller batches
-* Close other applications
-* Upgrade RAM if regularly processing large datasets
-
-### GPU Usage (Chloros+ with CUDA)
-
-When GPU acceleration is enabled:
-
-* NVIDIA GPU shows high utilization (60-90%)
-* VRAM usage increases (requires 4GB+ VRAM)
-* Calibrating stage is significantly faster
-
-**To monitor:**
-
-* NVIDIA System Tray icon
-* Task Manager → Performance → GPU
-* GPU-Z or similar monitoring tool
-
-### Disk I/O
-
-**What to expect:**
-
-* High disk read during Analyzing stage
-* High disk write during Exporting stage
-* SSD significantly faster than HDD
-
-**Performance tip:**
-
-* Use SSD for project folder when possible
-* Avoid network drives for large datasets
-* Ensure disk isn't near capacity (affects write speed)
+1. เปิดแผงบันทึกการแก้ไขข้อบกพร่อง
+2. คลิกปุ่ม **"คัดลอกบันทึก"** (หรือคลิกขวา → เลือกทั้งหมด)
+3. วางลงในไฟล์ข้อความหรืออีเมล
+4. ส่งไปยังฝ่ายสนับสนุน MAPIR หากจำเป็น
 
 ***
 
-## Detecting Problems During Processing
+## การตรวจสอบทรัพยากรระบบ
 
-### Warning Signs
+### การใช้งาน CPU
 
-**Progress stalls (no change for 5+ minutes):**
+**โหมดฟรี:**
 
-* Check Debug Log for errors
-* Verify disk space available
-* Check Task Manager to ensure Chloros is running
+* 1 CPU คอร์ที่ \~100%
+* แกนอื่นๆ ไม่ได้ใช้งานหรือพร้อมใช้งาน
+* ระบบยังคงตอบสนอง
 
-**Error messages appear frequently:**
+**คลอรอส+ โหมดขนาน:**
 
-* Stop processing and review errors
-* Common causes: disk space, corrupted files, memory issues
-* See Troubleshooting section below
+* หลายคอร์ที่ 80-100% (สูงสุด 16 คอร์)
+* การใช้งาน CPU โดยรวมสูง
+* ระบบอาจรู้สึกตอบสนองน้อยลง
 
-**System becomes unresponsive:**
+**เพื่อติดตาม:**
 
-* Chloros+ parallel mode using too many resources
-* Consider reducing concurrent tasks or upgrading hardware
-* Free mode is less resource-intensive
+* ตัวจัดการงานของ Windows (Ctrl+Shift+Esc)
+* แท็บประสิทธิภาพ → ส่วน CPU
+* มองหากระบวนการ "Chloros" หรือ "chloros-backend"
 
-### When to Stop Processing
+### การใช้งานหน่วยความจำ (RAM)
 
-Stop processing if you see:
+**การใช้งานทั่วไป:**
 
-* ❌ "Disk full" or "Cannot write file" errors
-* ❌ Repeated image file corruption errors
-* ❌ System completely frozen (not responding)
-* ❌ Realized wrong settings were configured
-* ❌ Wrong images imported
+* โครงการขนาดเล็ก (< 100 ภาพ): 2-4 GB
+* โปรเจ็กต์ขนาดกลาง (100-500 ภาพ): 4-8 GB
+* โปรเจ็กต์ขนาดใหญ่ (500+ ภาพ): 8-16 GB
+* โหมดขนาน Chloros+ ใช้ RAM มากกว่า
 
-**How to stop:**
+**หากหน่วยความจำเหลือน้อย:**
 
-1. Click **Stop/Cancel button** (replaces Start button)
-2. Processing halts, progress is lost
-3. Fix issues and restart from beginning
+* ประมวลผลแบทช์ที่มีขนาดเล็กลง
+* ปิดแอปพลิเคชันอื่นๆ
+* อัปเกรด RAM หากประมวลผลชุดข้อมูลขนาดใหญ่เป็นประจำ
 
-***
+### การใช้งาน GPU (Chloros+ พร้อม CUDA)
 
-## Troubleshooting During Processing
+เมื่อเปิดใช้งานการเร่งความเร็ว GPU:
 
-### Processing is Very Slow
+* NVIDIA GPU แสดงการใช้งานสูง (60-90%)
+* การใช้งาน VRAM เพิ่มขึ้น (ต้องใช้ 4GB+ VRAM)
+* ขั้นตอนการปรับเทียบจะเร็วขึ้นอย่างมาก
 
-**Possible causes:**
+**เพื่อติดตาม:**
 
-* Unmarked target images (scanning all images)
-* HDD instead of SSD storage
-* Insufficient system resources
-* Many indices configured
-* Network drive access
+* ไอคอนถาดระบบ NVIDIA
+* ตัวจัดการงาน → ประสิทธิภาพ → GPU
+* GPU-Z หรือเครื่องมือตรวจสอบที่คล้ายกัน
 
-**Solutions:**
+### ดิสก์ I/O
 
-1. If just started and in Detecting stage: Cancel, mark targets, restart
-2. For future: Use SSD, reduce indices, upgrade hardware
-3. Consider CLI for batch processing large datasets
+**สิ่งที่คาดหวัง:**
 
-### "Disk Space" Warnings
+* อ่านดิสก์สูงในระหว่างขั้นตอนการวิเคราะห์
+* เขียนดิสก์สูงในระหว่างขั้นตอนการส่งออก
+* SSD เร็วกว่า HDD อย่างมาก
 
-**Solutions:**
+**เคล็ดลับด้านประสิทธิภาพ:**
 
-1. Free up disk space immediately
-2. Move project to drive with more space
-3. Reduce number of indices to export
-4. Use JPG format instead of TIFF (smaller files)
-
-### Frequent "Corrupted File" Messages
-
-**Solutions:**
-
-1. Re-copy images from SD card to ensure integrity
-2. Test SD card for errors
-3. Remove corrupted files from project
-4. Continue processing remaining images
-
-### System Overheating / Throttling
-
-**Solutions:**
-
-1. Ensure adequate ventilation
-2. Clean dust from computer vents
-3. Reduce processing load (use Free mode instead of Chloros+)
-4. Process during cooler times of day
+* ใช้ SSD สำหรับโฟลเดอร์โครงการเมื่อเป็นไปได้
+* หลีกเลี่ยงไดรฟ์เครือข่ายสำหรับชุดข้อมูลขนาดใหญ่
+* ตรวจสอบให้แน่ใจว่าดิสก์ไม่ใกล้ความจุ (ส่งผลต่อความเร็วในการเขียน)
 
 ***
 
-## Processing Complete Notification
+## การตรวจจับปัญหาระหว่างการประมวลผล
 
-When processing finishes:
+### สัญญาณเตือน
 
-* Progress bar reaches 100%
-* **"Processing Complete"** message appears in Debug Log
-* Start button becomes enabled again
-* All output files are in camera model subfolder
+**ความคืบหน้าแผงลอย (ไม่มีการเปลี่ยนแปลงเป็นเวลา 5+ นาที):**
+
+* ตรวจสอบบันทึกการแก้ไขข้อบกพร่องเพื่อดูข้อผิดพลาด
+* ตรวจสอบพื้นที่ว่างในดิสก์
+* ตรวจสอบตัวจัดการงานเพื่อให้แน่ใจว่าคลอรอสกำลังทำงานอยู่
+
+**ข้อความแสดงข้อผิดพลาดปรากฏขึ้นบ่อยครั้ง:**
+
+* หยุดการประมวลผลและตรวจสอบข้อผิดพลาด
+* สาเหตุทั่วไป: พื้นที่ดิสก์ ไฟล์เสียหาย ปัญหาหน่วยความจำ
+* ดูส่วนการแก้ไขปัญหาด้านล่าง
+
+**ระบบไม่ตอบสนอง:**
+
+* โหมดขนาน Chloros+ ใช้ทรัพยากรมากเกินไป
+* พิจารณาลดงานที่เกิดขึ้นพร้อมกันหรืออัปเกรดฮาร์ดแวร์
+* โหมดฟรีใช้ทรัพยากรน้อยกว่า
+
+### เมื่อใดที่ควรหยุดการประมวลผล
+
+หยุดการประมวลผลหากคุณเห็น:
+
+* ❌ ข้อผิดพลาด "ดิสก์เต็ม" หรือ "ไม่สามารถเขียนไฟล์"
+* ❌ ข้อผิดพลาดไฟล์รูปภาพเสียหายซ้ำๆ
+* ❌ ระบบค้างอย่างสมบูรณ์ (ไม่ตอบสนอง)
+* ❌ ทราบว่ามีการกำหนดค่าการตั้งค่าที่ไม่ถูกต้อง
+* ❌ นำเข้ารูปภาพผิด
+
+**วิธีหยุด:**
+
+1. คลิก **ปุ่มหยุด/ยกเลิก** (แทนที่ปุ่มเริ่ม)
+2. การประมวลผลหยุดลง ความคืบหน้าจะหายไป
+3. แก้ไขปัญหาและรีสตาร์ทตั้งแต่ต้น
 
 ***
 
-## Next Steps
+## การแก้ไขปัญหาระหว่างการประมวลผล
 
-Once processing completes:
+### การประมวลผลช้ามาก
 
-1. **Review results** - See [Finishing the Processing](finishing-the-processing.md)
-2. **Check output folder** - Verify all files exported correctly
-3. **Review Debug Log** - Check for any warnings or errors
-4. **Preview processed images** - Use Image Viewer or external software
+**สาเหตุที่เป็นไปได้:**
 
-For information about reviewing and using your processed results, see [Finishing the Processing](finishing-the-processing.md).
+* ภาพเป้าหมายที่ไม่ได้ทำเครื่องหมาย (สแกนภาพทั้งหมด)
+* HDD แทนการจัดเก็บข้อมูล SSD
+* ทรัพยากรระบบไม่เพียงพอ
+* กำหนดค่าดัชนีจำนวนมาก
+* การเข้าถึงไดรฟ์เครือข่าย
+
+**แนวทางแก้ไข:**
+
+1. หากเพิ่งเริ่มต้นและอยู่ในขั้นตอนการตรวจจับ: ยกเลิก ทำเครื่องหมายเป้าหมาย แล้วรีสตาร์ท
+2. สำหรับอนาคต: ใช้ SSD ลดดัชนี อัพเกรดฮาร์ดแวร์
+3. พิจารณา CLI สำหรับการประมวลผลชุดข้อมูลขนาดใหญ่เป็นชุด
+
+### คำเตือน "พื้นที่ดิสก์"
+
+**แนวทางแก้ไข:**
+
+1. เพิ่มพื้นที่ว่างในดิสก์ทันที
+2. ย้ายโครงการเพื่อขับเคลื่อนด้วยพื้นที่มากขึ้น
+3. ลดจำนวนดัชนีที่จะส่งออก
+4. ใช้รูปแบบ JPG แทน TIFF (ไฟล์ขนาดเล็ก)
+
+### ข้อความ "ไฟล์เสียหาย" บ่อยครั้ง
+
+**แนวทางแก้ไข:**
+
+1. คัดลอกรูปภาพจากการ์ด SD อีกครั้งเพื่อให้แน่ใจว่ามีความสมบูรณ์
+2. ทดสอบการ์ด SD เพื่อหาข้อผิดพลาด
+3. ลบไฟล์ที่เสียหายออกจากโครงการ
+4. ประมวลผลภาพที่เหลือต่อไป
+
+### ระบบร้อนเกินไป / การควบคุมปริมาณ
+
+**แนวทางแก้ไข:**
+
+1. จัดให้มีการระบายอากาศที่เพียงพอ
+2. ทำความสะอาดฝุ่นจากช่องระบายอากาศของคอมพิวเตอร์
+3. ลดภาระการประมวลผล (ใช้โหมดอิสระแทนคลอรอส+)
+4. ดำเนินการในช่วงเวลาที่อากาศเย็นกว่าของวัน
+
+***
+
+## กำลังประมวลผลการแจ้งเตือนเสร็จสมบูรณ์
+
+เมื่อการประมวลผลเสร็จสิ้น:
+
+* แถบความคืบหน้าถึง 100%
+* **ข้อความ "การประมวลผลเสร็จสมบูรณ์"** ปรากฏในบันทึกการแก้ไขข้อบกพร่อง
+* ปุ่มเริ่มเปิดใช้งานอีกครั้ง
+* ไฟล์เอาต์พุตทั้งหมดอยู่ในโฟลเดอร์ย่อยของรุ่นกล้อง
+
+***
+
+## ขั้นตอนต่อไป
+
+เมื่อการประมวลผลเสร็จสิ้น:
+
+1. **ผลการตรวจสอบ** - ดู [การตกแต่งขั้นสุดท้าย](finishing-the-processing.md)
+2. **ตรวจสอบโฟลเดอร์เอาต์พุต** - ตรวจสอบไฟล์ทั้งหมดที่ส่งออกอย่างถูกต้อง
+3. **ตรวจสอบบันทึกการแก้ไขข้อบกพร่อง** - ตรวจสอบคำเตือนหรือข้อผิดพลาด
+4. **ดูตัวอย่างภาพที่ประมวลผล** - ใช้ Image Viewer หรือซอฟต์แวร์ภายนอก
+
+สำหรับข้อมูลเกี่ยวกับการตรวจสอบและการใช้ผลลัพธ์ที่ประมวลผลแล้ว โปรดดูที่ [เสร็จสิ้นการประมวลผล](finishing-the-processing.md)

@@ -1,221 +1,221 @@
-# Choosing Target Images
+# การเลือกรูปภาพเป้าหมาย
 
-Marking which images contain calibration targets is a crucial step that significantly speeds up the Chloros processing pipeline. By pre-selecting target images, you eliminate the need for Chloros to scan every image in your dataset for calibration targets.
+การทำเครื่องหมายว่ารูปภาพใดมีเป้าหมายในการสอบเทียบเป็นขั้นตอนสำคัญที่ช่วยเร่งไปป์ไลน์การประมวลผลคลอรอสได้อย่างมาก ด้วยการเลือกภาพเป้าหมายล่วงหน้า คุณจะไม่จำเป็นต้องใช้ Chloros ในการสแกนทุกภาพในชุดข้อมูลของคุณเพื่อหาเป้าหมายการสอบเทียบ
 
-## Why Mark Target Images?
+## ทำไมต้องทำเครื่องหมายรูปภาพเป้าหมาย?
 
-### Processing Speed
+### ความเร็วในการประมวลผล
 
-Without marking target images, Chloros must:
+คลอรอสต้อง: โดยไม่ต้องทำเครื่องหมายรูปภาพเป้าหมาย
 
-* Scan every single image in your project
-* Run target detection algorithms on each image
-* Check hundreds or thousands of images unnecessarily
+* สแกนทุกภาพในโครงการของคุณ
+* เรียกใช้อัลกอริธึมการตรวจจับเป้าหมายในแต่ละภาพ
+* ตรวจสอบภาพนับร้อยหรือหลายพันภาพโดยไม่จำเป็น
 
-**Result**: Processing can take significantly longer, especially for large datasets.
+**ผลลัพธ์**: การประมวลผลอาจใช้เวลานานกว่ามาก โดยเฉพาะชุดข้อมูลขนาดใหญ่
 
-### With Marked Target Images
+### พร้อมรูปภาพเป้าหมายที่ทำเครื่องหมายไว้
 
-When you check the Target column for specific images:
+เมื่อคุณตรวจสอบคอลัมน์เป้าหมายสำหรับรูปภาพเฉพาะ:
 
-* Chloros only scans the checked images for targets
-* Target detection completes much faster
-* Overall processing time is greatly reduced
+* คลอรอสจะสแกนเฉพาะภาพที่ตรวจสอบเพื่อหาเป้าหมายเท่านั้น
+* การตรวจจับเป้าหมายเสร็จสิ้นเร็วขึ้นมาก
+* เวลาการประมวลผลโดยรวมลดลงอย่างมาก
 
-{% hint style="success" %}
-**Speed Improvement**: Marking 2-3 target images in a 500-image dataset can reduce target detection time from 30+ minutes to under 1 minute.
-{% endhint %}
-
-***
-
-## How to Mark Target Images
-
-### Step 1: Identify Your Target Images
-
-Look through your imported images in the File Browser and identify which images contain calibration targets.
-
-**Common scenarios:**
-
-* **Pre-capture target**: Captured before starting the session
-* **Post-capture target**: Captured after completing the session
-* **In-field targets**: Targets placed within the capture area
-* **Multiple targets**: 2-3 target images per session (recommended)
-
-### Step 2: Check the Target Column
-
-For each image containing a calibration target:
-
-1. Locate the image in the File Browser table
-2. Find the **Target** column (rightmost column)
-3. Click the checkbox in the Target column for that image
-4. Repeat for all images containing targets
-
-### Step 3: Verify Your Selection
-
-Before processing, double-check:
-
-* [ ] All images with calibration targets are checked
-* [ ] No non-target images are accidentally checked
-* [ ] Targets are clearly visible in checked images
+{% คำใบ้สไตล์ = "ความสำเร็จ" %}
+**การปรับปรุงความเร็ว**: การทำเครื่องหมายภาพเป้าหมาย 2-3 ภาพในชุดข้อมูล 500 ภาพสามารถลดเวลาในการตรวจจับเป้าหมายจาก 30+ นาทีเหลือน้อยกว่า 1 นาที
+{% คำแนะนำสุดท้าย %}
 
 ***
 
-## Best Practices for Target Images
+## วิธีทำเครื่องหมายรูปภาพเป้าหมาย
 
-### Target Capture Guidelines
+### ขั้นตอนที่ 1: ระบุรูปภาพเป้าหมายของคุณ
 
-**Timing:**
+ดูภาพที่นำเข้าของคุณใน File Browser และระบุว่าภาพใดมีเป้าหมายการปรับเทียบ
 
-* Capture target images immediately before and throughout your capture session
-* Within the same lighting conditions as your DAQ light sensor
-* Ideally capture target images as often as possible for the best results. Otherwise, the light sensor data will be used to adjust the calibration over time.
+**สถานการณ์ทั่วไป:**
 
-**Camera Position:**
+* **เป้าหมายการจับภาพล่วงหน้า**: จับภาพก่อนเริ่มเซสชัน
+* **เป้าหมายหลังการจับภาพ**: จับภาพหลังจากเสร็จสิ้นเซสชัน
+* **เป้าหมายในสนาม**: เป้าหมายที่วางอยู่ภายในพื้นที่ยึดครอง
+* **หลายเป้าหมาย**: 2-3 รูปภาพเป้าหมายต่อเซสชัน (แนะนำ)
 
-* Hold camera above target such that is is centered and fills around 40-60% of the image center.
-* Keep camera parallel/nadir to target surface
+### ขั้นตอนที่ 2: ตรวจสอบคอลัมน์เป้าหมาย
 
-**Lighting:**
+สำหรับแต่ละภาพที่มีเป้าหมายการปรับเทียบ:
 
-* Same ambient lighting as your DAQ light sensor
-* Avoid shadows on the target surfaces
-* Don't block your light source with your body, vehicle or vegetation
-* Overcast conditions provide most consistent results
+1. ค้นหารูปภาพในตาราง File Browser
+2. ค้นหาคอลัมน์ **เป้าหมาย** (คอลัมน์ขวาสุด)
+3. คลิกช่องทำเครื่องหมายในคอลัมน์เป้าหมายของรูปภาพนั้น
+4. ทำซ้ำสำหรับรูปภาพทั้งหมดที่มีเป้าหมาย
 
-**Target Condition:**
+### ขั้นตอนที่ 3: ยืนยันการเลือกของคุณ
 
-* Keep target panels clean and dry
-* All 4 panels should be clearly visible and unobstructed
-* Targets perpendicular/nadir to the light source if possible
+ก่อนประมวลผล ให้ตรวจสอบอีกครั้ง:
 
-### How Many Target Images?
-
-**Minimum:** 1 target image per session. **Recommended:** 3-5 target images per session.
-
-**Best practice schedule:**
-
-* 3-5 images captured shortly after the light sensor is recording
-* Rotate the camera between captures for the best results
-* Optional: periodically mid-session if lighting conditions change constantly
+* [ ] มีการตรวจสอบรูปภาพที่มีเป้าหมายการปรับเทียบทั้งหมด
+* [ ] ไม่มีการตรวจสอบรูปภาพที่ไม่ใช่เป้าหมายโดยไม่ได้ตั้งใจ
+* [ ] มองเห็นเป้าหมายได้ชัดเจนในรูปภาพที่เลือก
 
 ***
 
-## Working with Multiple Cameras
+## แนวทางปฏิบัติที่ดีที่สุดสำหรับรูปภาพเป้าหมาย
 
-### Dual-Camera Setups
+### แนวทางการจับเป้าหมาย
 
-If using two MAPIR cameras simultaneously (e.g., Survey3W RGN + Survey3N OCN):
+**ระยะเวลา:**
 
-1. Capture target images with **both cameras** at the same time
-2. Use the **same physical target** for both cameras
-3. Mark target images for **both camera types** in the File Browser
-4. Chloros will use appropriate targets for each camera's calibration
+* จับภาพเป้าหมายทันทีก่อนและตลอดเซสชันการจับภาพของคุณ
+* ภายในสภาพแสงเดียวกันกับเซ็นเซอร์วัดแสง DAQ ของคุณ
+* ควรจับภาพเป้าหมายให้บ่อยที่สุดเท่าที่จะทำได้เพื่อผลลัพธ์ที่ดีที่สุด มิฉะนั้น ข้อมูลเซ็นเซอร์แสงจะถูกนำมาใช้เพื่อปรับการสอบเทียบเมื่อเวลาผ่านไป
 
-### Camera Model Column
+**ตำแหน่งกล้อง:**
 
-The **Camera Model** column helps identify which images came from which camera:
+* ถือกล้องไว้เหนือเป้าหมายโดยให้อยู่ตรงกลางและเติมเต็มประมาณ 40-60% ของกึ่งกลางภาพ
+* ให้กล้องขนาน/ขีดตกต่ำสุดกับพื้นผิวเป้าหมาย
+
+**แสงสว่าง:**
+
+* แสงโดยรอบแบบเดียวกับเซ็นเซอร์วัดแสง DAQ ของคุณ
+* หลีกเลี่ยงเงาบนพื้นผิวเป้าหมาย
+* อย่าบังแหล่งกำเนิดแสงด้วยร่างกาย ยานพาหนะ หรือพืชพรรณ
+* สภาพที่มืดครึ้มให้ผลลัพธ์ที่สม่ำเสมอที่สุด
+
+**เงื่อนไขเป้าหมาย:**
+
+* รักษาแผงเป้าหมายให้สะอาดและแห้ง
+* ควรมองเห็นแผงทั้ง 4 แผงได้ชัดเจนและไม่มีสิ่งกีดขวาง
+* กำหนดเป้าหมายในแนวตั้งฉาก/จุดตกต่ำสุดไปยังแหล่งกำเนิดแสง หากเป็นไปได้
+
+### มีภาพเป้าหมายกี่ภาพ?
+
+**ขั้นต่ำ:** 1 รูปภาพเป้าหมายต่อเซสชัน **แนะนำ:** รูปภาพเป้าหมาย 3-5 ภาพต่อเซสชัน
+
+**ตารางแนวทางปฏิบัติที่ดีที่สุด:**
+
+* ถ่ายภาพได้ 3-5 ภาพหลังจากเซ็นเซอร์วัดแสงบันทึกไม่นาน
+* หมุนกล้องระหว่างการจับภาพเพื่อให้ได้ผลลัพธ์ที่ดีที่สุด
+* ตัวเลือกเสริม: ในช่วงกลางเซสชันเป็นระยะๆ หากสภาพแสงเปลี่ยนแปลงตลอดเวลา
+
+***
+
+## การทำงานกับกล้องหลายตัว
+
+### การตั้งค่ากล้องคู่
+
+หากใช้กล้อง MAPIR สองตัวพร้อมกัน (เช่น Survey3W RGN + Survey3N OCN):
+
+1. จับภาพเป้าหมายด้วย **กล้องทั้งสองตัว** ในเวลาเดียวกัน
+2. ใช้ **เป้าหมายทางกายภาพเดียวกัน** สำหรับกล้องทั้งสองตัว
+3. ทำเครื่องหมายภาพเป้าหมายสำหรับ **กล้องทั้งสองประเภท** ใน File Browser
+4. คลอรอสจะใช้เป้าหมายที่เหมาะสมสำหรับการสอบเทียบของกล้องแต่ละตัว
+
+### คอลัมน์รุ่นกล้อง
+
+คอลัมน์ **รุ่นกล้อง** ช่วยระบุว่ารูปภาพใดมาจากกล้องตัวใด:
 
 * Survey3W\_RGN
-* Survey3N\_OCN
+* แบบสำรวจ3N\_OCN
 * Survey3W\_RGB
-* etc.
+* ฯลฯ
 
-Use this column to verify you've marked targets for each camera type in your project.
-
-***
-
-## Target Detection Settings
-
-### Adjusting Detection Sensitivity
-
-If Chloros isn't detecting your targets correctly, adjust these settings in [Project Settings](adjusting-project-settings.md):
-
-**Minimum calibration sample area:**
-
-* **Default**: 25 pixels
-* **Increase** if getting false detections on small artifacts
-* **Decrease** if targets aren't being detected
-
-**Minimum target clustering:**
-
-* **Default**: 60
-* **Increase** if targets are being split into multiple detections
-* **Decrease** if targets with color variation aren't fully detected
+ใช้คอลัมน์นี้เพื่อยืนยันว่าคุณได้ทำเครื่องหมายเป้าหมายสำหรับกล้องแต่ละประเภทในโครงการของคุณ
 
 ***
 
-## Common Target Image Issues
+## การตั้งค่าการตรวจจับเป้าหมาย
 
-### Problem: No Targets Detected
+### การปรับความไวในการตรวจจับ
 
-**Possible causes:**
+หากคลอรอสตรวจจับเป้าหมายของคุณไม่ถูกต้อง ให้ปรับการตั้งค่าเหล่านี้ใน [การตั้งค่าโครงการ](adjusting-project-settings.md):
 
-* Target images not marked in File Browser
-* Target too small in frame (< 30% of image)
-* Poor lighting (shadows, glare)
-* Target detection settings too strict
+**พื้นที่ตัวอย่างการสอบเทียบขั้นต่ำ:**
 
-**Solutions:**
+* **ค่าเริ่มต้น**: 25 พิกเซล
+* **เพิ่มขึ้น** หากตรวจพบสิ่งประดิษฐ์ขนาดเล็กที่ผิดพลาด
+* **ลดลง** หากตรวจไม่พบเป้าหมาย
 
-1. Verify Target column is checked for correct images
-2. Review target image quality in preview
-3. Recapture targets if quality is poor
-4. Adjust target detection settings if needed
+**การจัดกลุ่มเป้าหมายขั้นต่ำ:**
 
-### Problem: False Target Detections
-
-**Possible causes:**
-
-* White buildings, vehicles, or ground cover mistaken for targets
-* Bright patches in vegetation
-* Detection sensitivity too low
-
-**Solutions:**
-
-1. Mark only actual target images to limit detection scope
-2. Increase minimum calibration sample area
-3. Increase minimum target clustering value
-4. Ensure target images show only the target (minimal background clutter)
+* **ค่าเริ่มต้น**: 60
+* **เพิ่มขึ้น** หากเป้าหมายถูกแบ่งออกเป็นหลายการตรวจจับ
+* **ลดลง** หากตรวจไม่พบเป้าหมายที่มีความแปรผันของสีทั้งหมด
 
 ***
 
-## Verification Checklist
+## ปัญหารูปภาพเป้าหมายทั่วไป
 
-Before starting processing, verify your target image selection:
+### ปัญหา: ไม่พบเป้าหมาย
 
-* [ ] At least 1 target image marked per session
-* [ ] Target column checkboxes are checked for all target images
-* [ ] Target images captured within same timeframe as survey
-* [ ] Targets clearly visible in preview when clicked
-* [ ] All 4 calibration panels visible in each target image
-* [ ] No shadows or obstructions on targets
-* [ ] For dual-camera: Targets marked for both camera types
+**สาเหตุที่เป็นไปได้:**
+
+* กำหนดเป้าหมายรูปภาพที่ไม่ได้ทำเครื่องหมายใน File Browser
+* เป้าหมายเล็กเกินไปในเฟรม (< 30% ของภาพ)
+* สภาพแสงไม่ดี (เงา แสงจ้า)
+* การตั้งค่าการตรวจจับเป้าหมายเข้มงวดเกินไป
+
+**แนวทางแก้ไข:**
+
+1. ตรวจสอบคอลัมน์เป้าหมายว่ามีการตรวจสอบรูปภาพที่ถูกต้อง
+2. ตรวจสอบคุณภาพของภาพเป้าหมายในหน้าตัวอย่าง
+3. ยึดเป้าหมายคืนหากคุณภาพไม่ดี
+4. ปรับการตั้งค่าการตรวจจับเป้าหมายหากจำเป็น
+
+### ปัญหา: การตรวจจับเป้าหมายเท็จ
+
+**สาเหตุที่เป็นไปได้:**
+
+* อาคารสีขาว ยานพาหนะ หรือสิ่งปกคลุมดินที่เข้าใจผิดว่าเป็นเป้าหมาย
+* รอยสดใสในพืชพรรณ
+* ความไวในการตรวจจับต่ำเกินไป
+
+**แนวทางแก้ไข:**
+
+1. ทำเครื่องหมายเฉพาะภาพเป้าหมายจริงเพื่อจำกัดขอบเขตการตรวจจับ
+2. เพิ่มพื้นที่ตัวอย่างการสอบเทียบขั้นต่ำ
+3. เพิ่มมูลค่าการจัดกลุ่มเป้าหมายขั้นต่ำ
+4. ตรวจสอบให้แน่ใจว่ารูปภาพเป้าหมายแสดงเฉพาะเป้าหมาย (ความเกะกะของพื้นหลังน้อยที่สุด)
 
 ***
 
-## Target-Free Processing
+## รายการตรวจสอบการตรวจสอบ
 
-### Processing Without Calibration Targets
+ก่อนเริ่มการประมวลผล ให้ตรวจสอบการเลือกรูปภาพเป้าหมายของคุณ:
 
-While not recommended for scientific work, you can process without targets:
-
-1. Leave all Target column checkboxes unchecked
-2. **Disable** "Reflectance calibration" in Project Settings
-3. Vignette correction will still be applied
-4. Output will not be calibrated for absolute reflectance
-
-{% hint style="warning" %}
-**Not Recommended**: Without reflectance calibration, pixel values represent relative brightness only, not scientific reflectance measurements. Use calibration targets for accurate, repeatable results.
-{% endhint %}
+* [ ] ทำเครื่องหมายรูปภาพเป้าหมายอย่างน้อย 1 ภาพต่อเซสชัน
+* [ ] ช่องทำเครื่องหมายคอลัมน์เป้าหมายจะถูกทำเครื่องหมายสำหรับรูปภาพเป้าหมายทั้งหมด
+* [ ] กำหนดเป้าหมายภาพที่ถ่ายภายในกรอบเวลาเดียวกันกับแบบสำรวจ
+* [ ] เป้าหมายที่มองเห็นได้ชัดเจนในหน้าตัวอย่างเมื่อคลิก
+* [ ] แผงการปรับเทียบทั้ง 4 แผงมองเห็นได้ในแต่ละภาพเป้าหมาย
+* [ ] ไม่มีเงาหรือสิ่งกีดขวางบนเป้าหมาย
+* [ ] สำหรับกล้องคู่: เป้าหมายที่ทำเครื่องหมายไว้สำหรับกล้องทั้งสองประเภท
 
 ***
 
-## Next Steps
+## การประมวลผลแบบไร้เป้าหมาย
 
-Once you've marked your target images:
+### การประมวลผลโดยไม่มีเป้าหมายการสอบเทียบ
 
-1. **Review your settings** - See [Adjusting Project Settings](adjusting-project-settings.md)
-2. **Start processing** - See [Starting the Processing](starting-the-processing.md)
-3. **Monitor progress** - See [Monitoring the Processing](monitoring-the-processing.md)
+แม้ว่าจะไม่แนะนำสำหรับงานทางวิทยาศาสตร์ แต่คุณก็สามารถดำเนินการได้โดยไม่มีเป้าหมาย:
 
-For more information about calibration targets themselves, see [Calibration Targets](../calibration-targets.md).
+1. ปล่อยให้ช่องทำเครื่องหมายคอลัมน์เป้าหมายทั้งหมดไม่ถูกเลือก
+2. **ปิดใช้งาน** "การปรับเทียบการสะท้อนแสง" ในการตั้งค่าโปรเจ็กต์
+3. การแก้ไขขอบมืดจะยังคงมีผลอยู่
+4. เอาท์พุตจะไม่ถูกปรับเทียบเพื่อการสะท้อนแสงสัมบูรณ์
+
+{% คำใบ้สไตล์ = "คำเตือน" %}
+**ไม่แนะนำ**: หากไม่มีการปรับเทียบการสะท้อนแสง ค่าพิกเซลจะแสดงถึงความสว่างสัมพัทธ์เท่านั้น ไม่ใช่การวัดการสะท้อนแสงทางวิทยาศาสตร์ ใช้เป้าหมายการสอบเทียบเพื่อให้ได้ผลลัพธ์ที่แม่นยำและทำซ้ำได้
+{% คำแนะนำสุดท้าย %}
+
+***
+
+## ขั้นตอนต่อไป
+
+เมื่อคุณทำเครื่องหมายภาพเป้าหมายแล้ว:
+
+1. **ตรวจสอบการตั้งค่าของคุณ** - ดู [การปรับการตั้งค่าโครงการ](adjusting-project-settings.md)
+2. **เริ่มการประมวลผล** - โปรดดู [การเริ่มการประมวลผล](starting-the-processing.md)
+3. **ติดตามความคืบหน้า** - ดู [การตรวจสอบการประมวลผล](monitoring-the-processing.md)
+
+สำหรับข้อมูลเพิ่มเติมเกี่ยวกับเป้าหมายการสอบเทียบ โปรดดู [เป้าหมายการสอบเทียบ](../calibration-targets.md)

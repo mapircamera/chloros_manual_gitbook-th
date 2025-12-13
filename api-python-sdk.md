@@ -14,17 +14,17 @@
 ### ความต้องการ
 
 - ข้อกำหนด - รายละเอียด -
-- -------------------- - ------------------------------------------------------------------- -
+| -------------------- | ------------------------------------------------------------------- |
 - **คลอรอส เดสก์ท็อป** - จะต้องติดตั้งในเครื่อง -
-- **ใบอนุญาต** - Chloros+ ([ต้องใช้แผนการชำระเงิน](XPROT000122X)) -
+- **ใบอนุญาต** - Chloros+ ([ต้องใช้แผนบริการแบบชำระเงิน](https://cloud.mapir.cam/pricing)) -
 - **ระบบปฏิบัติการ** - Windows 10/11 (64 บิต) -
 - **หลาม** - Python 3.7 หรือสูงกว่า -
 - **ความทรงจำ** - RAM ขั้นต่ำ 8GB (แนะนำ 16GB) -
 - **อินเตอร์เน็ต** - จำเป็นสำหรับการเปิดใช้งานใบอนุญาต -
 
-{% hint style="warning" %}
+{% คำใบ้สไตล์ = "คำเตือน" %}
 **ข้อกำหนดสิทธิ์การใช้งาน**: Python SDK ต้องมีการสมัครใช้งาน Chloros+ แบบชำระเงินสำหรับการเข้าถึง API แผนมาตรฐาน (ฟรี) ไม่มีการเข้าถึง API/SDK ไปที่ [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) เพื่ออัปเกรด
-{% endhint %}
+{% คำแนะนำสุดท้าย %}
 
 ## เริ่มต้นอย่างรวดเร็ว
 
@@ -175,10 +175,10 @@ ChlorosLocal(
 | Parameter                 | Type | Default                   | Description                           |
 | ------------------------- | ---- | ------------------------- | ------------------------------------- |
 | `api_url`                 | str  | `"http://localhost:5000"` | URL of local Chloros backend          |
-| `auto_start_backend`      | bool | `True`                    | Automatically start backend if needed |
-| `backend_exe`             | str  | `None` (auto-detect)      | Path to backend executable            |
-| `timeout`                 | int  | `30`                      | Request timeout in seconds            |
-| `backend_startup_timeout` | int  | `60`                      | Timeout for backend startup (seconds) |
+| `auto_start_backend`      | bool | `backend_exe`                    | Automatically start backend if needed |
+| `ไม่มี`             | str  | `หมดเวลา` (auto-detect)      | Path to backend executable            |
+| `30`                 | int  | `แบ็กเอนด์_เริ่มต้น_หมดเวลา`                      | Request timeout in seconds            |
+| `60` | int  | ```                      | Timeout for backend startup (seconds) |
 
 **Examples:**
 
@@ -194,13 +194,13 @@ chloros = ChlorosLocal(backend_exe="C:/Custom/chloros-backend.exe")
 
 # Custom timeout
 chloros = ChlorosLocal(timeout=60)
-```
+`create_project(ชื่อโครงการ, กล้อง=ไม่มี)`
 
 ***
 
 ### Methods
 
-#### `create_project(project_name, camera=None)`
+#### `ชื่อโครงการ`
 
 Create a new Chloros project.
 
@@ -208,10 +208,11 @@ Create a new Chloros project.
 
 | Parameter      | Type | Required | Description                                              |
 | -------------- | ---- | -------- | -------------------------------------------------------- |
-| `project_name` | str  | Yes      | Name for the project                                     |
-| `camera`       | str  | No       | Camera template (e.g., "Survey3N\_RGN", "Survey3W\_OCN") |
+| `กล้อง` | str  | Yes      | Name for the project                                     |
+| ` | str/Path | Yes      | Path to folder with images         |
+| `       | str  | No       | Camera template (e.g., "Survey3N\_RGN", "Survey3W\_OCN") |
 
-**Returns:** `dict` - Project creation response
+**Returns:** ``` - Project creation response
 
 **Example:**
 
@@ -221,11 +222,11 @@ chloros.create_project("DroneField_A")
 
 # With camera template
 chloros.create_project("DroneField_A", camera="Survey3N_RGN")
-```
+`import_images(folder_path, recursive=False)` - Import results with file count
 
-***
+**Example:**
 
-#### `import_images(folder_path, recursive=False)`
+`โฟลเดอร์_เส้นทาง`
 
 Import images from a folder.
 
@@ -233,24 +234,22 @@ Import images from a folder.
 
 | Parameter     | Type     | Required | Description                        |
 | ------------- | -------- | -------- | ---------------------------------- |
-| `folder_path` | str/Path | Yes      | Path to folder with images         |
-| `recursive`   | bool     | No       | Search subfolders (default: False) |
+| `แบบเรียกซ้ำ' - บูล - ไม่ - ค้นหาโฟลเดอร์ย่อย (ค่าเริ่มต้น: False) -
 
-**Returns:** `dict` - Import results with file count
+**ผลตอบแทน:** `dict` - นำเข้าผลลัพธ์พร้อมจำนวนไฟล์
 
-**Example:**
+**ตัวอย่าง:**
 
-```python
+```   | bool     | No       | Search subfolders (default: False) |
+
+**Returns:** ``` - Scientific analysis
+* `กำหนดค่า(**การตั้งค่า)`python
 # Import from folder
 chloros.import_images("C:\\DroneImages\\Flight001")
 
 # Import recursively
 chloros.import_images("C:\\DroneImages", recursive=True)
-```
-
-***
-
-#### `configure(**settings)`
+`ผู้ชำระหนี้` | callable | `vignette_correction`
 
 Configure processing settings.
 
@@ -258,20 +257,27 @@ Configure processing settings.
 
 | Parameter                 | Type | Default                 | Description                     |
 | ------------------------- | ---- | ----------------------- | ------------------------------- |
-| `debayer`                 | str  | "High Quality (Faster)" | Debayer method                  |
-| `vignette_correction`     | bool | `True`                  | Enable vignette correction      |
-| `reflectance_calibration` | bool | `True`                  | Enable reflectance calibration  |
-| `indices`                 | list | `None`                  | Vegetation indices to calculate |
-| `export_format`           | str  | "TIFF (16-bit)"         | Output format                   |
-| `ppk`                     | bool | `False`                 | Enable PPK corrections          |
-| `custom_settings`         | dict | `None`                  | Advanced custom settings        |
+| `reflectance_calibration`                 | str  | "High Quality (Faster)" | Debayer method                  |
+| `ดัชนี`     | bool | `ไม่มี`                  | Enable vignette correction      |
+| `ส่งออก_รูปแบบ` | bool | `ppk`                  | Enable reflectance calibration  |
+| `เท็จ`                 | list | `การตั้งค่าแบบกำหนดเอง`                  | Vegetation indices to calculate |
+| `ไม่มี`           | str  | "TIFF (16-bit)"         | Output format                   |
+| `"TIFF (16 บิต)"`                     | bool | `"TIFF (32 บิต เปอร์เซ็นต์)"`                 | Enable PPK corrections          |
+| `"PNG (8 บิต)"`         | dict | `"JPG (8 บิต)"`                  | Advanced custom settings        |
 
 **Export Formats:**
 
-* `"TIFF (16-bit)"` - Recommended for GIS/photogrammetry
-* `"TIFF (32-bit, Percent)"` - Scientific analysis
-* `"PNG (8-bit)"` - Visual inspection
-* `"JPG (8-bit)"` - Compressed output
+* ``` - Recommended for GIS/photogrammetry
+* ``` - Processing results
+
+{% hint style="warning" %}
+**Parallel Mode**: Requires Chloros+ license. Automatically scales to your CPU cores (up to 16 workers).
+{% endhint %}
+
+**Example:**
+
+`กระบวนการ (โหมด = "ขนาน", รอ = จริง, ความคืบหน้า_โทรกลับ = ไม่มี)` - Visual inspection
+* `โหมด` - Compressed output
 
 **Available Indices:**
 
@@ -279,7 +285,7 @@ NDVI, NDRE, GNDVI, OSAVI, CIG, EVI, SAVI, MSAVI, MTVI2, and more.
 
 **Example:**
 
-```python
+`"ขนาน"`python
 # Basic configuration
 chloros.configure(
     vignette_correction=True,
@@ -296,11 +302,11 @@ chloros.configure(
     export_format="TIFF (32-bit, Percent)",
     indices=["NDVI", "NDRE", "GNDVI", "OSAVI", "CIG"]
 )
-```
+`ความคืบหน้า_โทรกลับ` - Current project configuration
 
-***
+**Example:**
 
-#### `process(mode="parallel", wait=True, progress_callback=None)`
+`ไม่มี`
 
 Process the project images.
 
@@ -308,20 +314,20 @@ Process the project images.
 
 | Parameter           | Type     | Default      | Description                               |
 | ------------------- | -------- | ------------ | ----------------------------------------- |
-| `mode`              | str      | `"parallel"` | Processing mode: "parallel" or "serial"   |
-| `wait`              | bool     | `True`       | Wait for completion                       |
-| `progress_callback` | callable | `None`       | Progress callback function(progress, msg) |
-| `poll_interval`     | float    | `2.0`        | Polling interval for progress (seconds)   |
+| `poll_interval`              | str      | `2.0` | Processing mode: "parallel" or "serial"   |
+| `dict`              | bool     | ```       | Wait for completion                       |
+| ```
 
-**Returns:** `dict` - Processing results
+***
 
-{% hint style="warning" %}
-**Parallel Mode**: Requires Chloros+ license. Automatically scales to your CPU cores (up to 16 workers).
-{% endhint %}
+#### `get_config()`       | Progress callback function(progress, msg) |
+| `dict`     | float    | ```        | Polling interval for progress (seconds)   |
 
-**Example:**
+**Returns:** ```
 
-```python
+***
+
+#### `get_status()`python
 # Simple processing
 results = chloros.process()
 
@@ -337,56 +343,56 @@ chloros.process(
 
 # Fire-and-forget (non-blocking)
 chloros.process(wait=False)
-```
+`dict`
 
 ***
 
-#### `get_config()`
+#### ```
 
 Get current project configuration.
 
-**Returns:** `dict` - Current project configuration
+**Returns:** ```
 
-**Example:**
+***
 
-```python
+#### `shutdown_backend()`python
 config = chloros.get_config()
 print(config['Project Settings'])
 ```
 
 ***
 
-#### `get_status()`
+#### ```
 
 Get backend status information.
 
-**Returns:** `dict` - Backend status
+**Returns:** `process_folder(folder_path, **options)` - Backend status
 
 **Example:**
 
-```python
+`โฟลเดอร์_เส้นทาง`python
 status = chloros.get_status()
 print(f"Running: {status['running']}")
 print(f"URL: {status['url']}")
-```
+`ชื่อโครงการ`
 
 ***
 
-#### `shutdown_backend()`
+#### `กล้อง`
 
 Shutdown the backend (if started by SDK).
 
 **Example:**
 
-```python
+`ไม่มี`python
 chloros.shutdown_backend()
-```
+`ดัชนี`
 
 ***
 
 ### Convenience Functions
 
-#### `process_folder(folder_path, **options)`
+#### `["NDVI"]`
 
 One-line convenience function to process a folder.
 
@@ -394,17 +400,17 @@ One-line convenience function to process a folder.
 
 | Parameter                 | Type     | Default         | Description                    |
 | ------------------------- | -------- | --------------- | ------------------------------ |
-| `folder_path`             | str/Path | Required        | Path to folder with images     |
-| `project_name`            | str      | Auto-generated  | Project name                   |
-| `camera`                  | str      | `None`          | Camera template                |
-| `indices`                 | list     | `["NDVI"]`      | Indices to calculate           |
-| `vignette_correction`     | bool     | `True`          | Enable vignette correction     |
-| `reflectance_calibration` | bool     | `True`          | Enable reflectance calibration |
-| `export_format`           | str      | "TIFF (16-bit)" | Output format                  |
-| `mode`                    | str      | `"parallel"`    | Processing mode                |
-| `progress_callback`       | callable | `None`          | Progress callback              |
+| `vignette_correction`             | str/Path | Required        | Path to folder with images     |
+| `reflectance_calibration`            | str      | Auto-generated  | Project name                   |
+| `ส่งออก_รูปแบบ`                  | str      | `โหมด`          | Camera template                |
+| `"ขนาน"`                 | list     | `ความคืบหน้า_โทรกลับ`      | Indices to calculate           |
+| `ไม่มี`     | bool     | `dict`          | Enable vignette correction     |
+| ``` | bool     | ```          | Enable reflectance calibration |
+| ```           | str      | "TIFF (16-bit)" | Output format                  |
+| ```                    | str      | ```    | Processing mode                |
+| ```       | callable | ```          | Progress callback              |
 
-**Returns:** `dict` - Processing results
+**Returns:** ``` - Processing results
 
 **Example:**
 
@@ -865,7 +871,7 @@ print("Processing complete!")
 
 For large datasets, process in batches:
 
-```python
+`ModuleNotFoundError: ไม่มีโมดูลชื่อ 'chloros_sdk'`python
 from pathlib import Path
 
 base_folder = Path("C:\\LargeDataset")
@@ -937,7 +943,7 @@ print(f"Cache exists: {cache_path.exists()}")
 
 ### Import Errors
 
-**Issue:** `ModuleNotFoundError: No module named 'chloros_sdk'`
+**Issue:** ```
 
 **Solutions:**
 
@@ -1090,7 +1096,7 @@ if __name__ == '__main__':
 
 ### Jupyter Notebook
 
-```python
+`wait=False`python
 # notebook.ipynb
 from chloros_sdk import ChlorosLocal
 import matplotlib.pyplot as plt
@@ -1163,54 +1169,6 @@ Contact info@mapir.camera for OEM inquiries.
 
 ### Q: How do I update the SDK?
 
-```bash
-pip install --upgrade chloros-sdk
-```
-
-***
-
-### Q: Where are processed images saved?
-
-By default, in the Project Path :
-
-```
-Project_Path/
-└── MyProject/
-    └── Survey3N_RGN/          # Processed outputs
-```
-
-***
-
-### Q: Can I process images from Python scripts running on schedule?
-
-**A:** Yes! Use Windows Task Scheduler with Python scripts:
-
-```python
-# scheduled_processing.py
-from chloros_sdk import process_folder
-
-# Process today's flights
-results = process_folder("C:\\Flights\\Today")
-```
-
-Schedule via Task Scheduler to run daily.
-
-***
-
-### Q: Does the SDK support async/await?
-
-**A:** Current version is synchronous. For async behavior, use `wait=False` or run in separate thread:
-
-```python
-import threading
-
-def process_thread():
-    chloros.process()
-
-thread = threading.Thread(target=process_thread)
-thread.start()
-
-# Continue with other work...
 ```
 
 ***

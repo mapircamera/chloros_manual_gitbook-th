@@ -1,352 +1,352 @@
-# Image Layers
+# เลเยอร์รูปภาพ
 
-The Image Layers dropdown in the Chloros Image Viewer allows you to quickly switch between different versions of the same image - from the original captures to processed reflectance outputs and calculated index images.
+เมนูแบบเลื่อนลงเลเยอร์รูปภาพในโปรแกรมดูรูปภาพ Chloros ช่วยให้คุณสามารถสลับระหว่างรูปภาพเดียวกันในเวอร์ชันต่างๆ ได้อย่างรวดเร็ว ตั้งแต่การบันทึกต้นฉบับไปจนถึงเอาต์พุตการสะท้อนแสงที่ประมวลผลและรูปภาพดัชนีที่คำนวณแล้ว
 
-## What are Image Layers?
+## เลเยอร์รูปภาพคืออะไร?
 
-In Chloros, **layers** refer to the different image outputs available for a single source image. When you process images, Chloros creates multiple versions:
+ในคลอรอส **เลเยอร์** หมายถึงเอาต์พุตรูปภาพต่างๆ ที่มีสำหรับอิมเมจต้นฉบับเดียว เมื่อคุณประมวลผลภาพ คลอรอสจะสร้างหลายเวอร์ชัน:
 
-* **Original images** (JPG and RAW files from your camera)
-* **Reflectance calibrated** outputs (if reflectance calibration was enabled)
-* **Target images** (if the image contains calibration targets)
-* **Index images** (NDVI, NDRE, GNDVI, etc. if indices were configured)
+* **ภาพต้นฉบับ** (ไฟล์ JPG และ RAW จากกล้องของคุณ)
+* **ปรับเทียบการสะท้อนแสง** เอาต์พุต (หากเปิดใช้งานการปรับเทียบการสะท้อนแสง)
+* **ภาพเป้าหมาย** (หากภาพมีเป้าหมายการปรับเทียบ)
+* **ภาพดัชนี** (NDVI, NDRE, GNDVI ฯลฯ หากกำหนดค่าดัชนีไว้)
 
-The **Layer Selector dropdown** in the top-right of the Image Viewer lets you instantly switch between these versions without leaving the viewer.
-
-***
-
-## Available Layer Types
-
-### JPG
-
-* The original JPG preview image from your camera
-* Always available for all images
-* Unprocessed, as captured by the camera
-* Fastest to load and display
-
-**When to view:**
-
-* Quick preview of original capture
-* Checking image composition and framing
-* Verifying capture quality before processing
-
-### RAW (Original)
-
-* The original RAW sensor data from your camera
-* Debayered with no post processing applied
-* Higher bit depth than JPG (typically 12-bit or 14-bit sensor data)
-
-**When to view:**
-
-* Inspecting original sensor data quality
-* Checking for sensor issues or artifacts
-* Comparing before/after processing results
-
-### RAW (Target)
-
-* Only appears for images identified as containing calibration targets
-* Shows the original RAW image with target detected
-* Used to verify target detection was successful
-
-**When to view:**
-
-* Confirming calibration targets were detected correctly
-* Checking target image quality
-* Troubleshooting calibration issues
-
-{% hint style="info" %}
-**Target Layer**: This layer only appears in the dropdown for images that contain calibration targets. Regular capture images will not have this option.
-{% endhint %}
-
-### RAW (Reflectance)
-
-* The calibrated reflectance output image
-* Vignette corrected (if enabled in processing)
-* Reflectance calibrated using target data (if enabled)
-* Multi-band TIFF with all camera channels
-* Pixel values represent percent reflectance (when using percent mode)
-* Ready to manipulate with the [Index/LUT Sandbox](index-lut-sandbox.md)
-
-**When to view:**
-
-* Inspecting calibrated results
-* Verifying calibration quality
-* Checking pixel values for scientific accuracy
-* Comparing with original to see calibration effects
-
-{% hint style="success" %}
-**Recommended**: Use RAW (Reflectance) layer when checking pixel values for scientific measurements and analysis.
-{% endhint %}
-
-### RAW (NDVI Index)... and similar
-
-* Calculated vegetation index image (NDVI in this example)
-* The index name changes based on which index was configured during processing
-* Examples: RAW (NDVI Index), RAW (NDRE Index), RAW (GNDVI Index), etc.
-* Single-band grayscale image showing index calculation results
-* One layer appears for each index configured in Project Settings
-
-**Possible index names:**
-
-* RAW (NDVI Index)
-* RAW (NDRE Index)
-* RAW (GNDVI Index)
-* RAW (OSAVI Index)
-* RAW (EVI Index)
-* RAW (SAVI Index)
-* And many more... (see [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md))
-
-**When to view:**
-
-* Examining index calculation results
-* Checking index value ranges
-* Identifying areas of interest
-* Verifying index images before using in GIS or analysis
+**เมนูแบบเลื่อนลงตัวเลือกเลเยอร์** ที่มุมขวาบนของโปรแกรมดูรูปภาพ ช่วยให้คุณสลับระหว่างเวอร์ชันเหล่านี้ได้ทันทีโดยไม่ต้องออกจากโปรแกรมดู
 
 ***
 
-## Using the Layer Selector
+## ประเภทเลเยอร์ที่มีอยู่
 
-### Opening the Dropdown
+###JPG
 
-1. Open an image in fullscreen mode (click any thumbnail in the Image Viewer)
-2. Locate the **layer dropdown** in the top-right corner of the viewer
-3. The dropdown shows the currently selected layer (e.g., "JPG")
-4. Click the dropdown to see all available layers
+* ภาพตัวอย่าง JPG ต้นฉบับจากกล้องของคุณ
+* ใช้ได้กับทุกภาพเสมอ
+* ยังไม่ได้ประมวลผล ตามที่กล้องถ่ายไว้
+* เร็วที่สุดในการโหลดและแสดงผล
 
-### Switching Layers
+**ควรดูเมื่อใด:**
 
-1. Click the layer dropdown to open the list
-2. All available layers for the current image are shown
-3. Click any layer name to switch to that version
-4. The image updates immediately to show the selected layer
+* ดูตัวอย่างการจับภาพต้นฉบับอย่างรวดเร็ว
+* ตรวจสอบองค์ประกอบภาพและการจัดเฟรม
+* ตรวจสอบคุณภาพการจับก่อนการประมวลผล
 
-**Quick switching:**
+### RAW (ต้นฉบับ)
 
-* The dropdown remembers your last selection
-* When navigating to the next image, Chloros attempts to show the same layer type
-* If that layer doesn't exist on the next image, it defaults to JPG
+* ข้อมูลเซ็นเซอร์ RAW ดั้งเดิมจากกล้องของคุณ
+* ผ่อนปรนโดยไม่มีการประมวลผลภายหลัง
+* ความลึกบิตสูงกว่า JPG (โดยทั่วไปคือข้อมูลเซ็นเซอร์ 12 บิตหรือ 14 บิต)
 
-### Layer Availability
+**ควรดูเมื่อใด:**
 
-Not all layers are available for every image:
+* การตรวจสอบคุณภาพข้อมูลเซ็นเซอร์ดั้งเดิม
+* ตรวจสอบปัญหาเซ็นเซอร์หรือสิ่งประดิษฐ์
+* เปรียบเทียบผลก่อน/หลังการประมวลผล
 
-**Always available:**
+### RAW (เป้าหมาย)
 
-* ✅ JPG (every image has a JPG preview)
+* ปรากฏเฉพาะกับภาพที่ระบุว่ามีเป้าหมายการปรับเทียบเท่านั้น
+* แสดงภาพ RAW ต้นฉบับพร้อมตรวจจับเป้าหมาย
+* ใช้เพื่อตรวจสอบว่าการตรวจจับเป้าหมายสำเร็จ
 
-**Conditionally available:**
+**ควรดูเมื่อใด:**
 
-* ⚠️ RAW (Original) - Only if image was captured in RAW or RAW+JPG mode
-* ⚠️ RAW (Target) - Only if image contains detected calibration targets
-* ⚠️ RAW (Reflectance) - Only after processing with reflectance calibration enabled
-* ⚠️ RAW (\[Index] Index) - Only after processing with indices configured
+* ยืนยันว่าตรวจพบเป้าหมายการสอบเทียบอย่างถูกต้อง
+* การตรวจสอบคุณภาพของภาพเป้าหมาย
+* การแก้ไขปัญหาการสอบเทียบ
 
-***
+{% คำใบ้สไตล์ = "ข้อมูล" %}
+**เลเยอร์เป้าหมาย**: เลเยอร์นี้จะปรากฏเฉพาะในเมนูแบบเลื่อนลงสำหรับรูปภาพที่มีเป้าหมายการปรับเทียบ ภาพที่ถ่ายปกติจะไม่มีตัวเลือกนี้
+{% คำแนะนำสุดท้าย %}
 
-## Layer Persistence
+### RAW (สะท้อนแสง)
 
-### Navigating Between Images
+* ภาพเอาต์พุตการสะท้อนแสงที่ปรับเทียบแล้ว
+* แก้ไขบทความสั้นแล้ว (หากเปิดใช้งานในการประมวลผล)
+* ปรับเทียบการสะท้อนแสงโดยใช้ข้อมูลเป้าหมาย (หากเปิดใช้งาน)
+* TIFF แบบมัลติแบนด์พร้อมช่องกล้องทั้งหมด
+* ค่าพิกเซลแสดงถึงเปอร์เซ็นต์การสะท้อนแสง (เมื่อใช้โหมดเปอร์เซ็นต์)
+* พร้อมจัดการด้วย [Index/LUT Sandbox](index-lut-sandbox.md)
 
-When you navigate to a different image (using arrow keys or clicking thumbnails):
+**ควรดูเมื่อใด:**
 
-**Layer preference is preserved:**
+* การตรวจสอบผลลัพธ์ที่สอบเทียบแล้ว
+* ตรวจสอบคุณภาพการสอบเทียบ
+* การตรวจสอบค่าพิกเซลเพื่อความถูกต้องทางวิทยาศาสตร์
+* เปรียบเทียบกับต้นฉบับเพื่อดูผลการปรับเทียบ
 
-* If viewing "RAW (Reflectance)", next image shows "RAW (Reflectance)" (if available)
-* If viewing "RAW (NDVI Index)", next image shows "RAW (NDVI Index)" (if available)
-* If the same layer doesn't exist, defaults to JPG
+{% คำใบ้สไตล์ = "ความสำเร็จ" %}
+**แนะนำ**: ใช้เลเยอร์ RAW (การสะท้อนแสง) เมื่อตรวจสอบค่าพิกเซลสำหรับการวัดและการวิเคราะห์ทางวิทยาศาสตร์
+{% คำแนะนำสุดท้าย %}
 
-**Example workflow:**
+### RAW (ดัชนี NDVI)... และที่คล้ายกัน
 
-1. Open Image 1, switch to RAW (NDVI Index)
-2. Press → to view Image 2
-3. Image 2 automatically displays RAW (NDVI Index) layer
-4. Continue navigating - all images show NDVI layer
-5. Very efficient for reviewing index results across many images
+* ภาพดัชนีพืชพรรณที่คำนวณ (NDVI ในตัวอย่างนี้)
+* ชื่อดัชนีจะเปลี่ยนไปตามดัชนีที่ถูกกำหนดค่าระหว่างการประมวลผล
+* ตัวอย่าง: RAW (ดัชนี NDVI), RAW (ดัชนี NDRE), RAW (ดัชนี GNDVI) ฯลฯ
+* ภาพระดับสีเทาแถบเดียวแสดงผลการคำนวณดัชนี
+* หนึ่งเลเยอร์จะปรากฏขึ้นสำหรับแต่ละดัชนีที่กำหนดค่าในการตั้งค่าโครงการ
 
-***
+**ชื่อดัชนีที่เป็นไปได้:**
 
-## Common Workflows
+* RAW (ดัชนี NDVI)
+* RAW (ดัชนี NDRE)
+* RAW (ดัชนี GNDVI)
+* RAW (ดัชนี OSAVI)
+* RAW (ดัชนี EVI)
+* RAW (ดัชนี SAVI)
+* และอื่นๆ อีกมากมาย... (ดู [สูตรดัชนี Multispectral](../project-settings/multispectral-index-formulas.md))
 
-### Workflow 1: Before/After Comparison
+**ควรดูเมื่อใด:**
 
-**Goal**: Compare original vs. calibrated image
-
-1. Open processed image in Image Viewer
-2. Select **RAW (Original)** from dropdown
-3. Note the vignetting and uncalibrated values
-4. Switch to **RAW (Reflectance)** from dropdown
-5. Compare - vignetting removed, values calibrated
-
-### Workflow 2: Index Review
-
-**Goal**: Quickly review NDVI results across dataset
-
-1. Open first processed image
-2. Select **RAW (NDVI Index)** from dropdown
-3. Use → arrow key to navigate to next image
-4. NDVI layer persists automatically
-5. Continue through all images, checking NDVI patterns
-6. Switch to **RAW (NDRE Index)** to compare
-
-### Workflow 3: Target Verification
-
-**Goal**: Verify all target images were detected correctly
-
-1. Navigate to a target image
-2. Select **RAW (Target)** from dropdown
-3. Verify calibration targets are clearly visible and detected
-4. Navigate to next target image
-5. Repeat verification for all targets
-
-### Workflow 4: Pixel Value Inspection
-
-**Goal**: Check reflectance values for scientific accuracy
-
-1. Open processed image
-2. Select **RAW (Reflectance)** layer
-3. Enable **Pixel Percent** mode (button in top-right toolbar)
-4. Move cursor over vegetation areas
-5. Verify pixel values are in expected ranges (30-70% for NIR, 5-15% for Red)
-6. Check soil and water areas for appropriate values
+* ตรวจสอบผลการคำนวณดัชนี
+* ตรวจสอบช่วงค่าดัชนี
+* การระบุพื้นที่ที่น่าสนใจ
+* การตรวจสอบภาพดัชนีก่อนนำไปใช้ใน GIS หรือการวิเคราะห์
 
 ***
 
-## Understanding Pixel Values by Layer
+## การใช้ตัวเลือกเลเยอร์
 
-Different layers show different pixel value ranges:
+### การเปิดเมนูแบบเลื่อนลง
 
-### JPG Layer
+1. เปิดภาพในโหมดเต็มหน้าจอ (คลิกภาพขนาดย่อใดก็ได้ใน Image Viewer)
+2. ค้นหา **เลเยอร์แบบเลื่อนลง** ที่มุมขวาบนของโปรแกรมดู
+3. เมนูแบบเลื่อนลงแสดงเลเยอร์ที่เลือกในปัจจุบัน (เช่น "JPG")
+4. คลิกเมนูแบบเลื่อนลงเพื่อดูเลเยอร์ที่มีอยู่ทั้งหมด
 
-* **Range**: 0-255 (8-bit)
-* **Meaning**: Display values, gamma-corrected
-* **Use**: Visual inspection only, not for scientific measurement
+### การสลับเลเยอร์
 
-### RAW (Original)
+1. คลิกเมนูแบบเลื่อนลงของเลเยอร์เพื่อเปิดรายการ
+2. เลเยอร์ที่มีอยู่ทั้งหมดสำหรับรูปภาพปัจจุบันจะปรากฏขึ้น
+3. คลิกชื่อเลเยอร์ใดก็ได้เพื่อสลับไปยังเวอร์ชันนั้น
+4. รูปภาพจะอัปเดตทันทีเพื่อแสดงเลเยอร์ที่เลือก
 
-* **Range**: 0-65535 (16-bit)
-* **Meaning**: Raw sensor digital numbers
-* **Use**: Checking sensor performance, not calibrated
+**การสลับอย่างรวดเร็ว:**
 
-### RAW (Reflectance)
+* เมนูแบบเลื่อนลงจะจดจำการเลือกครั้งล่าสุดของคุณ
+* เมื่อนำทางไปยังรูปภาพถัดไป คลอรอสจะพยายามแสดงเลเยอร์ประเภทเดียวกัน
+* หากไม่มีเลเยอร์นั้นอยู่ในรูปภาพถัดไป เลเยอร์นั้นจะมีค่าเริ่มต้นเป็น JPG
 
-* **Range**: 0-65,535 (16-bit TIFF) or 0.0-1.0 (32-bit Percent)
-* **Meaning**: Calibrated percent reflectance
-* **Use**: Scientific measurements and analysis
+### ความพร้อมของเลเยอร์
 
-**For 16-bit TIFF:** Divide by 65,535 to get percent reflectance **For 32-bit Percent:** Values directly represent percent (0.5 = 50% reflectance)
+บางเลเยอร์อาจไม่สามารถใช้ได้กับทุกภาพ:
 
-### RAW (Index Images)
+**ใช้ได้เสมอ:**
 
-* **Range**: Varies by index (typically -1.0 to +1.0 for normalized indices)
-* **Meaning**: Index calculation result
-* **Examples**:
-  * NDVI: -1 to +1 (vegetation typically 0.4 to 0.9)
-  * NDRE: -1 to +1 (stress detection)
-  * EVI: 0 to 1 (enhanced vegetation)
+* ✅ JPG (ทุกภาพมีภาพตัวอย่าง JPG)
 
-***
+**มีเงื่อนไข:**
 
-## Tips and Best Practices
-
-### Efficient Layer Switching
-
-* **Keyboard shortcut awareness**: While there's no keyboard shortcut for layers, navigation arrows (←/→) work across all layers
-* **Consistent workflows**: Pick one layer (e.g., NDVI) and review entire dataset before switching to another
-* **Quick comparisons**: Toggle between Original and Reflectance to verify processing quality
-
-### Performance Considerations
-
-* **JPG loads fastest**: Use for quick navigation through many images
-* **RAW layers load slower**: Higher resolution and bit depth
-* **Index layers**: Similar speed to Reflectance layers
-* **First load is slowest**: Subsequent views of same layer are cached and faster
-
-### Quality Verification
-
-* **Always check RAW (Original)**: Verify source data quality before trusting processed outputs
-* **Compare layers**: Use layer switching to validate processing worked correctly
-* **Check index ranges**: Use Pixel Percent mode with index layers to verify values are reasonable
+* ⚠️ RAW (ต้นฉบับ) - เฉพาะในกรณีที่ภาพถูกถ่ายในโหมด RAW หรือ RAW+JPG เท่านั้น
+* ⚠️ RAW (เป้าหมาย) - เฉพาะในกรณีที่รูปภาพมีเป้าหมายการปรับเทียบที่ตรวจพบเท่านั้น
+* ⚠️ RAW (การสะท้อนแสง) - หลังจากประมวลผลโดยเปิดใช้งานการปรับเทียบการสะท้อนแสงเท่านั้น
+* ⚠️ RAW (\[ดัชนี] ดัชนี) - หลังจากประมวลผลด้วยการกำหนดค่าดัชนีแล้วเท่านั้น
 
 ***
 
-## Troubleshooting
+## ความคงอยู่ของเลเยอร์
 
-### Layer Not Available
+### การนำทางระหว่างรูปภาพ
 
-**Problem**: Expected layer doesn't appear in dropdown
+เมื่อคุณนำทางไปยังรูปภาพอื่น (โดยใช้ปุ่มลูกศรหรือคลิกรูปขนาดย่อ):
 
-**Possible causes:**
+**การตั้งค่าเลเยอร์ยังคงอยู่:**
 
-* Image wasn't processed (only JPG and RAW (Original) available)
-* Reflectance calibration was disabled during processing
-* Specific index wasn't configured in Project Settings
-* Image is a target-only image (no indices generated for targets)
+* หากดู "RAW (Reflectance)" รูปภาพถัดไปจะแสดง "RAW (Reflectance)" (ถ้ามี)
+* หากดู "RAW (NDVI Index)" รูปภาพถัดไปจะแสดง "RAW (NDVI Index)" (ถ้ามี)
+* หากไม่มีเลเยอร์เดียวกัน ให้ใช้ค่าเริ่มต้นเป็น JPG
 
-**Solutions:**
+**ตัวอย่างขั้นตอนการทำงาน:**
 
-1. Verify image was processed (check output folder for processed files)
-2. Check Project Settings to confirm indices were configured
-3. Reprocess with desired indices enabled
-
-### Wrong Layer Shown
-
-**Problem**: Image opens in unexpected layer
-
-**Cause**: Layer preference from previous image carried forward, but that layer doesn't exist on current image
-
-**Solution**: Chloros automatically falls back to JPG when preferred layer unavailable - this is normal behavior
-
-### Can't See Calibration Targets
-
-**Problem**: RAW (Target) layer doesn't show target detection
-
-**Possible causes:**
-
-* Targets weren't detected during processing
-* Image doesn't actually contain targets
-* Target detection settings too strict
-
-**Solutions:**
-
-1. Check Debug Log for "Target found" messages
-2. Verify image actually contains visible calibration targets
-3. Adjust target detection settings in Project Settings
-4. See [Choosing Target Images](../processing-images-gui/choosing-target-images.md)
+1. เปิดภาพที่ 1 สลับไปที่ RAW (ดัชนี NDVI)
+2. กด → เพื่อดูภาพที่ 2
+3. ภาพที่ 2 จะแสดงเลเยอร์ RAW (NDVI Index) โดยอัตโนมัติ
+4. นำทางต่อไป - รูปภาพทั้งหมดแสดงเลเยอร์ NDVI
+5. มีประสิทธิภาพมากในการตรวจสอบผลลัพธ์ดัชนีในหลายภาพ
 
 ***
 
-## Related Features
+## ขั้นตอนการทำงานทั่วไป
 
-### Image Viewer Tools
+### ขั้นตอนการทำงาน 1: ก่อน/หลังการเปรียบเทียบ
 
-When viewing any layer, you can use:
+**เป้าหมาย**: เปรียบเทียบรูปภาพต้นฉบับกับรูปภาพที่ปรับเทียบแล้ว
 
-* **Zoom controls**: Magnify to inspect details
-* **Pan**: Click and drag to move around zoomed image
-* **Pixel value inspection**: See values at cursor location
-* **Navigation arrows**: Move between images while maintaining layer
-* **Pixel Percent mode**: Toggle between DN and percent display
+1. เปิดภาพที่ประมวลผลแล้วใน Image Viewer
+2. เลือก **RAW (ต้นฉบับ)** จากเมนูแบบเลื่อนลง
+3. สังเกตขอบมืดและค่าที่ไม่ได้ปรับเทียบ
+4. เปลี่ยนเป็น **RAW (การสะท้อนแสง)** จากเมนูแบบเลื่อนลง
+5. เปรียบเทียบ - ลบขอบมืดออก, ปรับเทียบค่าแล้ว
 
-See [Opening an Image Full Screen](opening-an-image-full-screen.md) for complete Image Viewer documentation.
+### ขั้นตอนการทำงาน 2: การตรวจสอบดัชนี
 
-### Index/LUT Sandbox
+**เป้าหมาย**: ตรวจสอบผลลัพธ์ NDVI ทั่วทั้งชุดข้อมูลอย่างรวดเร็ว
 
-For interactive index testing and visualization:
+1. เปิดภาพที่ประมวลผลภาพแรก
+2. เลือก **RAW (ดัชนี NDVI)** จากดรอปดาวน์
+3. ใช้ปุ่มลูกศร → เพื่อไปยังภาพถัดไป
+4. เลเยอร์ NDVI ยังคงอยู่โดยอัตโนมัติ
+5. ดูภาพทั้งหมดต่อไป ตรวจสอบรูปแบบ NDVI
+6. เปลี่ยนไปใช้ **RAW (ดัชนี NDRE)** เพื่อเปรียบเทียบ
 
-* **Real-time index calculation**: Test different index formulas
-* **LUT color mapping**: Apply color gradients to grayscale indices
-* **Export visualizations**: Save colored index images
+### ขั้นตอนการทำงาน 3: การตรวจสอบเป้าหมาย
 
-See [Index/LUT Sandbox](index-lut-sandbox.md) for details.
+**เป้าหมาย**: ตรวจสอบว่าตรวจพบภาพเป้าหมายทั้งหมดอย่างถูกต้อง
+
+1. นำทางไปยังรูปภาพเป้าหมาย
+2. เลือก **RAW (เป้าหมาย)** จากเมนูแบบเลื่อนลง
+3. ตรวจสอบว่าเป้าหมายการสอบเทียบมองเห็นและตรวจพบได้ชัดเจน
+4. นำทางไปยังรูปภาพเป้าหมายถัดไป
+5. ยืนยันซ้ำสำหรับเป้าหมายทั้งหมด
+
+### เวิร์กโฟลว์ 4: การตรวจสอบค่าพิกเซล
+
+**เป้าหมาย**: ตรวจสอบค่าการสะท้อนแสงเพื่อความถูกต้องทางวิทยาศาสตร์
+
+1. เปิดภาพที่ประมวลผลแล้ว
+2. เลือกเลเยอร์ **RAW (การสะท้อนแสง)**
+3. เปิดใช้งานโหมด **เปอร์เซ็นต์พิกเซล** (ปุ่มในแถบเครื่องมือด้านบนขวา)
+4. เลื่อนเคอร์เซอร์ไปที่พื้นที่พืชพรรณ
+5. ตรวจสอบค่าพิกเซลว่าอยู่ในช่วงที่คาดหวัง (30-70% สำหรับ NIR, 5-15% สำหรับสีแดง)
+6. ตรวจสอบพื้นที่ดินและน้ำเพื่อหาค่าที่เหมาะสม
 
 ***
 
-## Next Steps
+## ทำความเข้าใจกับค่าพิกเซลตามเลเยอร์
 
-Now that you understand image layers:
+เลเยอร์ที่ต่างกันจะแสดงช่วงค่าพิกเซลที่แตกต่างกัน:
 
-* [**Opening an Image Full Screen**](opening-an-image-full-screen.md) - Complete Image Viewer guide
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Interactive index visualization
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Available indices reference
-* [**Finishing the Processing**](../processing-images-gui/finishing-the-processing.md) - Understanding processed outputs
+### เลเยอร์ JPG
+
+* **ช่วง**: 0-255 (8 บิต)
+* **ความหมาย**: ค่าที่แสดง แก้ไขแกมมาแล้ว
+* **การใช้งาน**: การตรวจสอบด้วยสายตาเท่านั้น ไม่ใช่เพื่อการวัดทางวิทยาศาสตร์
+
+### RAW (ต้นฉบับ)
+
+* **ช่วง**: 0-65535 (16 บิต)
+* **ความหมาย**: ตัวเลขดิจิตอลเซ็นเซอร์ดิบ
+* **การใช้งาน**: กำลังตรวจสอบประสิทธิภาพของเซ็นเซอร์ ไม่ได้ปรับเทียบ
+
+### RAW (สะท้อนแสง)
+
+* **ช่วง**: 0-65,535 (TIFF 16 บิต) หรือ 0.0-1.0 (เปอร์เซ็นต์ 32 บิต)
+* **ความหมาย**: เปอร์เซ็นต์การสะท้อนแสงที่ปรับเทียบแล้ว
+* **การใช้งาน**: การวัดและการวิเคราะห์ทางวิทยาศาสตร์
+
+**สำหรับ TIFF 16 บิต:** หารด้วย 65,535 เพื่อให้ได้เปอร์เซ็นต์การสะท้อน **สำหรับเปอร์เซ็นต์ 32 บิต:** ค่าแสดงถึงเปอร์เซ็นต์โดยตรง (0.5 = การสะท้อน 50%)
+
+### RAW (ดัชนีรูปภาพ)
+
+* **ช่วง**: แตกต่างกันไปตามดัชนี (โดยทั่วไป -1.0 ถึง +1.0 สำหรับดัชนีมาตรฐาน)
+* **ความหมาย** : ผลการคำนวณดัชนี
+* **ตัวอย่าง**:
+  * NDVI: -1 ถึง +1 (โดยทั่วไปพืชพรรณจะอยู่ที่ 0.4 ถึง 0.9)
+  * NDRE: -1 ถึง +1 (การตรวจจับความเครียด)
+  * EVI: 0 ต่อ 1 (พืชพรรณที่ได้รับการปรับปรุง)
+
+***
+
+## เคล็ดลับและแนวทางปฏิบัติที่ดีที่สุด
+
+### การสลับเลเยอร์ที่มีประสิทธิภาพ
+
+* **การรับรู้แป้นพิมพ์ลัด**: แม้ว่าจะไม่มีแป้นพิมพ์ลัดสำหรับเลเยอร์ แต่ลูกศรนำทาง (←/→) จะทำงานในทุกเลเยอร์
+* **ขั้นตอนการทำงานที่สอดคล้องกัน**: เลือกหนึ่งเลเยอร์ (เช่น NDVI) และตรวจสอบชุดข้อมูลทั้งหมดก่อนที่จะเปลี่ยนไปใช้อีกเลเยอร์หนึ่ง
+* **การเปรียบเทียบอย่างรวดเร็ว**: สลับระหว่างต้นฉบับและแบบสะท้อนแสงเพื่อตรวจสอบคุณภาพการประมวลผล
+
+### ข้อควรพิจารณาด้านประสิทธิภาพ
+
+* **JPG โหลดเร็วที่สุด**: ใช้สำหรับการนำทางอย่างรวดเร็วผ่านรูปภาพจำนวนมาก
+* **เลเยอร์ RAW โหลดช้าลง**: ความละเอียดและความลึกของบิตสูงขึ้น
+* **ชั้นดัชนี**: ความเร็วใกล้เคียงกับชั้นการสะท้อนแสง
+* **การโหลดครั้งแรกช้าที่สุด**: การดูครั้งต่อไปของเลเยอร์เดียวกันจะถูกแคชและเร็วขึ้น
+
+### การตรวจสอบคุณภาพ
+
+* **ตรวจสอบ RAW (ต้นฉบับ) เสมอ**: ตรวจสอบคุณภาพข้อมูลต้นฉบับก่อนที่จะเชื่อถือเอาต์พุตที่ประมวลผล
+* **เปรียบเทียบเลเยอร์**: ใช้การสลับเลเยอร์เพื่อตรวจสอบความถูกต้องของการประมวลผล
+* **ตรวจสอบช่วงดัชนี**: ใช้โหมดเปอร์เซ็นต์พิกเซลพร้อมเลเยอร์ดัชนีเพื่อตรวจสอบว่าค่าต่างๆ นั้นสมเหตุสมผล
+
+***
+
+## การแก้ไขปัญหา
+
+### เลเยอร์ไม่พร้อมใช้งาน
+
+**ปัญหา**: เลเยอร์ที่คาดหวังไม่ปรากฏในเมนูแบบเลื่อนลง
+
+**สาเหตุที่เป็นไปได้:**
+
+* รูปภาพไม่ได้ถูกประมวลผล (ใช้ได้เฉพาะ JPG และ RAW (ต้นฉบับ))
+* การสอบเทียบการสะท้อนแสงถูกปิดใช้งานระหว่างการประมวลผล
+* ไม่ได้กำหนดค่าดัชนีเฉพาะในการตั้งค่าโครงการ
+* รูปภาพเป็นรูปภาพเป้าหมายเท่านั้น (ไม่มีการสร้างดัชนีสำหรับเป้าหมาย)
+
+**แนวทางแก้ไข:**
+
+1. ตรวจสอบว่ารูปภาพได้รับการประมวลผลแล้ว (ตรวจสอบโฟลเดอร์เอาต์พุตสำหรับไฟล์ที่ประมวลผล)
+2. ตรวจสอบการตั้งค่าโครงการเพื่อยืนยันว่าดัชนีได้รับการกำหนดค่าแล้ว
+3. ประมวลผลใหม่โดยเปิดใช้งานดัชนีที่ต้องการ
+
+### แสดงเลเยอร์ผิด
+
+**ปัญหา**: รูปภาพเปิดในเลเยอร์ที่ไม่คาดคิด
+
+**สาเหตุ**: การตั้งค่าเลเยอร์จากรูปภาพก่อนหน้ายกไปข้างหน้า แต่ไม่มีเลเยอร์นั้นอยู่ในรูปภาพปัจจุบัน
+
+**วิธีแก้ปัญหา**: คลอรอสจะถอยกลับไปเป็น JPG โดยอัตโนมัติเมื่อเลเยอร์ที่ต้องการไม่พร้อมใช้งาน - นี่เป็นพฤติกรรมปกติ
+
+### ไม่เห็นเป้าหมายการสอบเทียบ
+
+**ปัญหา**: เลเยอร์ RAW (เป้าหมาย) ไม่แสดงการตรวจจับเป้าหมาย
+
+**สาเหตุที่เป็นไปได้:**
+
+* ตรวจไม่พบเป้าหมายระหว่างการประมวลผล
+* รูปภาพไม่มีเป้าหมายจริงๆ
+* การตั้งค่าการตรวจจับเป้าหมายเข้มงวดเกินไป
+
+**แนวทางแก้ไข:**
+
+1. ตรวจสอบบันทึกการแก้ไขข้อบกพร่องสำหรับข้อความ "พบเป้าหมาย"
+2. ตรวจสอบว่ารูปภาพมีเป้าหมายการปรับเทียบที่มองเห็นได้จริง
+3. ปรับการตั้งค่าการตรวจจับเป้าหมายในการตั้งค่าโครงการ
+4. ดู [การเลือกรูปภาพเป้าหมาย](../processing-images-gui/choosing-target-images.md)
+
+***
+
+## คุณสมบัติที่เกี่ยวข้อง
+
+### เครื่องมือดูรูปภาพ
+
+เมื่อดูเลเยอร์ใด ๆ คุณสามารถใช้:
+
+* **การควบคุมการซูม**: ขยายเพื่อตรวจสอบรายละเอียด
+* **แพน**: คลิกและลากเพื่อเลื่อนไปรอบๆ ภาพที่ซูม
+* **การตรวจสอบค่าพิกเซล**: ดูค่าที่ตำแหน่งเคอร์เซอร์
+* **ลูกศรนำทาง**: ย้ายไปมาระหว่างรูปภาพโดยคงเลเยอร์ไว้
+* **โหมดเปอร์เซ็นต์พิกเซล**: สลับระหว่างการแสดง DN และเปอร์เซ็นต์
+
+ดู [การเปิดภาพเต็มหน้าจอ](opening-an-image-full-screen.md) สำหรับเอกสาร Image Viewer ฉบับสมบูรณ์
+
+### ดัชนี/แซนด์บ็อกซ์ LUT
+
+สำหรับการทดสอบและการแสดงภาพดัชนีเชิงโต้ตอบ:
+
+* **การคำนวณดัชนีแบบเรียลไทม์**: ทดสอบสูตรดัชนีต่างๆ
+* **การจับคู่สี LUT**: ใช้การไล่ระดับสีกับดัชนีระดับสีเทา
+* **ส่งออกการแสดงภาพ**: บันทึกภาพดัชนีสี
+
+ดูรายละเอียดใน [Index/LUT Sandbox](index-lut-sandbox.md)
+
+***
+
+## ขั้นตอนต่อไป
+
+ตอนนี้คุณเข้าใจเลเยอร์รูปภาพแล้ว:
+
+* [**การเปิดภาพแบบเต็มหน้าจอ**](opening-an-image-full-screen.md) - คู่มือโปรแกรมดูรูปภาพฉบับสมบูรณ์
+* [**Index/LUT Sandbox**](index-lut-sandbox.md) - การแสดงภาพดัชนีแบบโต้ตอบ
+* [**สูตรดัชนีหลายสเปกตรัม**](../project-settings/multispectral-index-formulas.md) - การอ้างอิงดัชนีที่มีอยู่
+* [**เสร็จสิ้นการประมวลผล**](../processing-images-gui/finishing-the-processing.md) - ทำความเข้าใจกับเอาต์พุตที่ประมวลผล

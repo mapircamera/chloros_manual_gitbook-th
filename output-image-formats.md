@@ -1,24 +1,24 @@
 ---
-metaLinks:
-  alternates:
+เมตาลิงค์:
+  ทางเลือก:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
 
-# Output Image Formats
+# รูปแบบภาพที่ส่งออก
 
-### TIFF (16-bit)
+### TIFF (16 บิต)
 
-16-bit (pixel digital number 0 - 65535) TIFF (.tif) format output.
+เอาต์พุตรูปแบบ TIFF (.tif) 16 บิต (ตัวเลขดิจิตอลพิกเซล 0 - 65535)
 
-### TIFF (32-bit, Percent %)
+### TIFF (32 บิต เปอร์เซ็นต์ %)
 
-32-bit (pixel float 0.0 - 1.0) TIFF (.tif) format output. Pixel values represent reflectance percentages where 0.0 = 0% and 1.0 = 100%.
+เอาต์พุตรูปแบบ TIFF (.tif) 32 บิต (pixel float 0.0 - 1.0) ค่าพิกเซลแสดงถึงเปอร์เซ็นต์การสะท้อนแสง โดยที่ 0.0 = 0% และ 1.0 = 100%
 
-### **JPG (8-bit)**
+### **JPG (8 บิต)**
 
-8-bit (pixel digital number 0 -255) JPG (.jpg) format output.
+เอาต์พุตรูปแบบ JPG (.jpg) 8 บิต (ตัวเลขดิจิตอลพิกเซล 0 -255)
 
-### **PNG (8-bit)**
+### **PNG (8 บิต)**
 
-8-bit (pixel digital number 0 - 255) PNG (.png) format output. Lossless compression suitable for web viewing and visualization.
+เอาต์พุตรูปแบบ PNG (.png) 8 บิต (ตัวเลขดิจิตอลพิกเซล 0 - 255) การบีบอัดแบบไม่สูญเสียคุณภาพเหมาะสำหรับการดูเว็บและการแสดงภาพ
 
