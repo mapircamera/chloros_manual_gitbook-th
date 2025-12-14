@@ -5,22 +5,16 @@ This guide provides a complete overview of setting up 27 language-specific repos
 ## 📋 Overview
 
 - **Total Languages**: 28 (including English)
-- **New Repositories to Create**: 27 (English already exists)
-- **Platform**: GitHub + GitBook
-- **Workflow**: GitHub repos ↔️ GitBook spaces (bi-directional sync)
+-**New Repositories to Create**: 27 (English already exists)
+-**Platform**: GitHub + GitBook
+-**Workflow**: GitHub repos ↔️ GitBook spaces (bi-directional sync)
 
 ## 🚀 Quick Start (3 Steps)
 
-### Step 1: Create GitHub Repositories
-
-**Option A: Automated (Recommended)**
-```powershell
+### Step 1: Create GitHub Repositories**Option A: Automated (Recommended)**```powershell
 # Run the PowerShell script
 .\create-language-repos.ps1
-```
-
-**Option B: Manual**
-- See `MANUAL-REPO-CREATION-INSTRUCTIONS.md` for detailed steps
+```**Option B: Manual**- See `MANUAL-REPO-CREATION-INSTRUCTIONS.md` for detailed steps
 - Use GitHub CLI or web interface to create each repo
 
 ### Step 2: Set Up GitBook Spaces
@@ -41,16 +35,13 @@ This guide provides a complete overview of setting up 27 language-specific repos
 For each of the 27 new GitBook spaces:
 
 1. Open the space
-2. Go to **Space Settings** (gear icon)
-3. Click **Integrations** → **GitHub**
-4. Click **Connect** or **Configure**
-5. Select the corresponding repository:
+2. Go to**Space Settings**(gear icon)
+3. Click**Integrations**→**GitHub**4. Click**Connect**or**Configure**5. Select the corresponding repository:
    - Spanish space → `chloros_manual_gitbook-es`
    - French space → `chloros_manual_gitbook-fr`
    - etc.
-6. Choose sync direction: **Bi-directional** (recommended)
-7. Select branch: **main**
-8. Save settings
+6. Choose sync direction:**Bi-directional**(recommended)
+7. Select branch:**main**8. Save settings
 9. Wait for initial sync to complete
 
 ## 📊 Repository Mapping
@@ -126,17 +117,11 @@ Once all repos are created and synced:
 - PowerShell 5.1+ (Windows) for running automation scripts
 - Code editor for reviewing translations
 
-### Installing GitHub CLI
-
-**Windows:**
-```powershell
+### Installing GitHub CLI**Windows:**```powershell
 winget install --id GitHub.cli
 ```
 
-Or download from: https://cli.github.com/
-
-**After installation:**
-```powershell
+Or download from: https://cli.github.com/**After installation:**```powershell
 gh auth login
 ```
 
@@ -156,58 +141,40 @@ gh auth login
 
 After completing this setup:
 
-1. **Notify the AI assistant**: Let them know all repos are created and synced
-2. **Translation scripts**: Request AI-powered translation scripts
-3. **Begin translation**: Start with high-priority languages
-4. **Quality review**: Review translations for accuracy
-5. **Publish**: Make translated manuals available to users
+1.**Notify the AI assistant**: Let them know all repos are created and synced
+2.**Translation scripts**: Request AI-powered translation scripts
+3.**Begin translation**: Start with high-priority languages
+4.**Quality review**: Review translations for accuracy
+5.**Publish**: Make translated manuals available to users
 
 ## 🌍 Language Priority (Suggested)
 
-If translating in phases, consider this order based on global usage:
-
-**Phase 1 (High Priority):**
-- Spanish (es)
+If translating in phases, consider this order based on global usage:**Phase 1 (High Priority):**- Spanish (es)
 - Portuguese (pt)
 - French (fr)
 - German (de)
 - Chinese Simplified (zh-CN)
-- Japanese (ja)
-
-**Phase 2 (Medium Priority):**
-- Italian (it)
+- Japanese (ja)**Phase 2 (Medium Priority):**- Italian (it)
 - Russian (ru)
 - Korean (ko)
 - Turkish (tr)
 - Arabic (ar)
-- Dutch (nl)
-
-**Phase 3 (Complete Coverage):**
-- All remaining languages
+- Dutch (nl)**Phase 3 (Complete Coverage):**- All remaining languages
 
 ## 💡 Tips
 
-1. **Batch Processing**: Process languages in small batches to maintain quality
-2. **Native Review**: If possible, have native speakers review translations
-3. **Consistency**: Use translation memory/glossaries for technical terms
-4. **Version Control**: Tag releases in Git when major updates are complete
-5. **Documentation**: Keep track of translation status in each repo's README
+1.**Batch Processing**: Process languages in small batches to maintain quality
+2.**Native Review**: If possible, have native speakers review translations
+3.**Consistency**: Use translation memory/glossaries for technical terms
+4.**Version Control**: Tag releases in Git when major updates are complete
+5.**Documentation**: Keep track of translation status in each repo's README
 
-## 🐛 Troubleshooting
-
-**Repos not creating?**
-- Check GitHub CLI authentication: `gh auth status`
+## 🐛 Troubleshooting**Repos not creating?**- Check GitHub CLI authentication: `gh auth status`
 - Verify you have permission to create repos
-- Check for rate limiting
-
-**GitBook not syncing?**
-- Verify GitHub integration is properly configured
+- Check for rate limiting**GitBook not syncing?**- Verify GitHub integration is properly configured
 - Check that the correct branch (main) is selected
 - Ensure bi-directional sync is enabled
-- Look for sync errors in GitBook settings
-
-**Translation questions?**
-- See language-specific translation guides (to be created)
+- Look for sync errors in GitBook settings**Translation questions?**- See language-specific translation guides (to be created)
 - Consult Chloros terminology glossary (to be created)
 - Contact project lead for clarification
 
@@ -219,7 +186,5 @@ If translating in phases, consider this order based on global usage:
 - [Chloros Main Site](https://www.mapir.camera)
 - [Chloros Download](https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link)
 
----
-
-**Ready to begin?** Run the PowerShell script or start creating repositories manually! 🚀
+---**Ready to begin?** Run the PowerShell script or start creating repositories manually! 🚀
 

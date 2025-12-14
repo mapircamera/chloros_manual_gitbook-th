@@ -14,13 +14,9 @@
 
 เข้าสู่ระบบด้วยข้อมูลรับรอง Chloros+ ของคุณเพื่อเปิดใช้งานการประมวลผล CLI
 
-**ไวยากรณ์:**
-
-```bash
+**ไวยากรณ์:**```bash
 chloros-cli login <email> <password>
-```**ตัวอย่าง:**
-
-```powershell
+```**ตัวอย่าง:**```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 

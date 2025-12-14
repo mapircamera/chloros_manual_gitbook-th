@@ -70,31 +70,25 @@ Repeat for all 27 languages (see language-repos-list.md for all language codes).
 
 ### For Each Language:
 
-1. **Go to GitHub**
-   - Navigate to https://github.com/new
+1. **Go to GitHub**- Navigate to https://github.com/new
    
-2. **Repository Settings**
-   - Repository name: `chloros_manual_gitbook-[language-code]`
+2.**Repository Settings**- Repository name: `chloros_manual_gitbook-[language-code]`
    - Description: `Chloros Professional Multispectral Image Processing Software - User Manual ([Native Language Name])`
    - Public repository
    - ✓ Add a README file
    - Add .gitignore: None (we'll add it later)
    - License: None (or your preferred license)
 
-3. **Click "Create repository"**
-
-4. **Clone Locally**
-   ```powershell
+3.**Click "Create repository"**4.**Clone Locally**```powershell
    git clone https://github.com/YOUR-USERNAME/chloros_manual_gitbook-[language-code]
    cd chloros_manual_gitbook-[language-code]
    ```
 
-5. **Add Files**
-   - Edit README.md with appropriate content
+5.**Add Files**- Edit README.md with appropriate content
    - Create .gitignore file
    - Commit and push
 
-6. **Repeat** for all 27 languages
+6.**Repeat**for all 27 languages
 
 ## All Repository Names to Create
 
@@ -166,12 +160,12 @@ gh repo create chloros_manual_gitbook-uk --public --description "Chloros User Ma
 
 ## Next Steps After Repo Creation
 
-1. **In GitBook**: Duplicate your Chloros manual 27 times (one for each language)
-2. **Name each space**: "Chloros Manual - [Native Language Name]"
-3. **Connect to GitHub**: In each GitBook space settings, connect to the corresponding GitHub repo
-4. **Enable Sync**: Set up bi-directional sync between GitBook and GitHub
-5. **Verify**: Check that all repos are properly synced
-6. **Translate**: Use translation tools to translate the content in each repo
+1.**In GitBook**: Duplicate your Chloros manual 27 times (one for each language)
+2.**Name each space**: "Chloros Manual - [Native Language Name]"
+3.**Connect to GitHub**: In each GitBook space settings, connect to the corresponding GitHub repo
+4.**Enable Sync**: Set up bi-directional sync between GitBook and GitHub
+5.**Verify**: Check that all repos are properly synced
+6.**Translate**: Use translation tools to translate the content in each repo
 
 ## Troubleshooting
 
