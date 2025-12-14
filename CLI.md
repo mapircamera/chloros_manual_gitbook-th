@@ -178,8 +178,8 @@ chloros-cli status
 
 **Example:**
 
-```powershell
-chloros-cli login user@example.com 'password'
+```
+Port 5000 is already in use
 ```
 
 **Output:**
@@ -315,12 +315,9 @@ chloros-cli language ja
 
 **ไวยากรณ์:**
 
-``` and persists across all sessions.
-{% endhint %}
-
-***
-
-### ``` - Set Default Project Folder
+```powershell
+chloros-cli set-project-folder "C:\Projects\2025"
+``` - Set Default Project Folder
 
 Change the default project folder location (shared with GUI).
 
@@ -335,10 +332,8 @@ chloros-cli set-project-folder <folder-path>
 ### `get-project-folder`powershell
 chloros-cli set-project-folder "C:\Projects\2025"
 ```
-
-***
-
-### ``` - Show Project Folder
+ℹ Current project folder: C:\Projects\2025
+``` - Show Project Folder
 
 Display the current default project folder location.
 
@@ -358,11 +353,9 @@ chloros-cli get-project-folder
 
 ### `รีเซ็ตโปรเจ็กต์โฟลเดอร์`
 ℹ Current project folder: C:\Projects\2025
-```
-
-***
-
-### ``` - Reset to Default
+```bash
+chloros-cli reset-project-folder
+``` - Reset to Default
 
 Reset the project folder to the default location.
 
@@ -383,8 +376,9 @@ These options apply to all commands:
 | `--รีสตาร์ท` | Path    | Auto-detected | Path to backend executable                       |
 | `--เวอร์ชัน`        | Integer | 5000          | Backend API port number                          |
 | `--ช่วยด้วย`     | Flag    | -             | Force restart backend (kills existing processes) |
-| ```     | Flag    | -             | Show version information and exit                |
-| ```        | Flag    | -             | Show help information and exit                   |
+| ```powershell
+chloros-cli --port 5001 process "C:\Datasets\Survey_001"
+```        | Flag    | -             | Show help information and exit                   |
 
 **Example with Global Options:**
 
@@ -443,34 +437,7 @@ Converts raw sensor values to standardized reflectance percentages using calibra
 
 * **Enabled by default** - Essential for vegetation analysis
 * Requires calibration target panels in images
-* Use ``` to disable
-
-{% hint style="info" %}
-**Requirements**: Ensure calibration panels are properly exposed and visible in your images for accurate reflectance conversion.
-{% endhint %}
-
-### PPK Corrections
-
-**What it does:** Applies Post-Processed Kinematic corrections using DAQ-A-SD log data for improved GPS accuracy.
-
-* **Disabled by default**
-* Use `
-        --vignette ` to enable
-* Requires .daq files in project folder from MAPIR DAQ-A-SD light sensor.
-
-### Output Formats
-
-<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bit Depth</th><th width="116.5999755859375">File Size</th><th>Best For</th></tr></thead><tbody><tr><td><strong>TIFF (16-bit)</strong> ⭐</td><td>16-bit integer</td><td>Large</td><td>GIS analysis, photogrammetry (recommended)</td></tr><tr><td><strong>TIFF (32-bit, Percent)</strong></td><td>32-bit float</td><td>Very Large</td><td>Scientific analysis, research</td></tr><tr><td><strong>PNG (8-bit)</strong></td><td>8-bit integer</td><td>Medium</td><td>Visual inspection, web sharing</td></tr><tr><td><strong>JPG (8-bit)</strong></td><td>8-bit integer</td><td>Small</td><td>Quick preview, compressed output</td></tr></tbody></table>
-
-***
-
-## Automation & Scripting
-
-### PowerShell Batch Processing
-
-Process multiple dataset folders automatically:
-
-```powershell
+* Use ```powershell
 # process_all_datasets.ps1
 
 $datasets = Get-ChildItem "C:\Datasets\2025" -Directory
@@ -478,7 +445,8 @@ $datasets = Get-ChildItem "C:\Datasets\2025" -Directory
 foreach ($dataset in $datasets) {
     Write-Host "Processing $($dataset.Name)..." -ForegroundColor Cyan
     
-    chloros-cli process $dataset.FullName ```
+    chloros-cli process $dataset.FullName `
+        --vignette `
         --reflectance
     
     if ($LASTEXITCODE -eq 0) {
@@ -489,6 +457,16 @@ foreach ($dataset in $datasets) {
 }
 
 Write-Host "All datasets processed!" -ForegroundColor Green
+```powershell
+# process_all_datasets.ps1
+
+$datasets = Get-ChildItem "C:\Datasets\2025" -Directory
+
+foreach ($dataset in $datasets) {
+    Write-Host "Processing $($dataset.Name)..." -ForegroundColor Cyan
+    
+    chloros-cli process $dataset.FullName ```powershell
+"C:\Program Files\Chloros\resources\cli\chloros-cli.exe" process "C:\Datasets\Field_A"
 ```
 
 ### Windows Batch Script
@@ -658,12 +636,9 @@ dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 
 `C:\Program Files\Chloros\resources\cli`powershell
 "C:\Program Files\Chloros\resources\cli\chloros-cli.exe" process "C:\Datasets\Field_A"
+```powershell
+chloros-cli --port 5001 process "C:\Datasets\Field_A"
 ```
-
-3. Add to PATH manually:
-   * Open System Properties → Environment Variables
-   * Edit PATH variable
-   * Add: ```
    * Restart terminal
 
 ***
@@ -682,8 +657,8 @@ Backend failed to start within 30 seconds
 2. Check Windows Firewall is not blocking
 3. Try different port:
 
-```
-Port 5000 is already in use
+```powershell
+chloros-cli login user@example.com 'password'
 ```
 
 4. Force restart backend:
@@ -792,9 +767,19 @@ Subscribe at: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pr
 
 ### Q: Where are processed images saved?
 
-**A:** By default, processed images are saved in the **same folder as input** in camera-model subfolders (e.g., ```).
+**A:** By default, processed images are saved in the **same folder as input** in camera-model subfolders (e.g., ```powershell
+# List available languages
+chloros-cli language --list
 
-Use ``` option to specify different output folder:
+# Change to Spanish
+chloros-cli language es
+
+# Process with Spanish interface
+chloros-cli process "C:\Vuelos\Campo_A"
+
+# Change back to English
+chloros-cli language en
+``` option to specify different output folder:
 
 ```powershell
 chloros-cli process "C:\Input" -o "D:\Output"

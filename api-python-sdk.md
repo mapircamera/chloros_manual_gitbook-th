@@ -178,10 +178,18 @@ ChlorosLocal(
 | `auto_start_backend`      | bool | `backend_exe`                    | Automatically start backend if needed |
 | `ไม่มี`             | str  | `หมดเวลา` (auto-detect)      | Path to backend executable            |
 | `30`                 | int  | `แบ็กเอนด์_เริ่มต้น_หมดเวลา`                      | Request timeout in seconds            |
-| `60` | int  | ```                      | Timeout for backend startup (seconds) |
+| `60` | int  | ```python
+# Default (auto-start backend)
+chloros = ChlorosLocal()
 
-**Examples:**
+# Connect to running backend
+chloros = ChlorosLocal(auto_start_backend=False)
 
+# Custom backend path
+chloros = ChlorosLocal(backend_exe="C:/Custom/chloros-backend.exe")
+
+# Custom timeout
+chloros = ChlorosLocal(timeout=60)
 ```python
 # Default (auto-start backend)
 chloros = ChlorosLocal()
@@ -212,10 +220,12 @@ Create a new Chloros project.
 | ` | str/Path | Yes      | Path to folder with images         |
 | `       | str  | No       | Camera template (e.g., "Survey3N\_RGN", "Survey3W\_OCN") |
 
-**Returns:** ``` - Project creation response
+**Returns:** ```python
+# Basic project
+chloros.create_project("DroneField_A")
 
-**Example:**
-
+# With camera template
+chloros.create_project("DroneField_A", camera="Survey3N_RGN")
 ```python
 # Basic project
 chloros.create_project("DroneField_A")
@@ -240,9 +250,13 @@ Import images from a folder.
 
 **ตัวอย่าง:**
 
-```   | bool     | No       | Search subfolders (default: False) |
+```python
+# Import from folder
+chloros.import_images("C:\\DroneImages\\Flight001")
 
-**Returns:** ``` - Scientific analysis
+# Import recursively
+chloros.import_images("C:\\DroneImages", recursive=True)
+``` - Scientific analysis
 * `กำหนดค่า(**การตั้งค่า)`python
 # Import from folder
 chloros.import_images("C:\\DroneImages\\Flight001")
@@ -267,8 +281,24 @@ Configure processing settings.
 
 **Export Formats:**
 
-* ``` - Recommended for GIS/photogrammetry
-* ``` - Processing results
+* ```python
+# Basic configuration
+chloros.configure(
+    vignette_correction=True,
+    reflectance_calibration=True,
+    indices=["NDVI", "NDRE"]
+)
+
+# Advanced configuration
+chloros.configure(
+    debayer="High Quality (Faster)",
+    vignette_correction=True,
+    reflectance_calibration=True,
+    ppk=True,
+    export_format="TIFF (32-bit, Percent)",
+    indices=["NDVI", "NDRE", "GNDVI", "OSAVI", "CIG"]
+)
+``` - Processing results
 
 {% hint style="warning" %}
 **Parallel Mode**: Requires Chloros+ license. Automatically scales to your CPU cores (up to 16 workers).
@@ -315,15 +345,31 @@ Process the project images.
 | Parameter           | Type     | Default      | Description                               |
 | ------------------- | -------- | ------------ | ----------------------------------------- |
 | `poll_interval`              | str      | `2.0` | Processing mode: "parallel" or "serial"   |
-| `dict`              | bool     | ```       | Wait for completion                       |
-| ```
+| `dict`              | bool     | ```python
+# Simple processing
+results = chloros.process()
+
+# With progress monitoring
+def show_progress(progress, message):
+    print(f"[{progress}%] {message}")
+
+chloros.process(
+    mode="parallel",
+    progress_callback=show_progress,
+    wait=True
+)
+
+# Fire-and-forget (non-blocking)
+chloros.process(wait=False)
+```
 
 ***
 
 #### `get_config()`       | Progress callback function(progress, msg) |
-| `dict`     | float    | ```        | Polling interval for progress (seconds)   |
-
-**Returns:** ```
+| `dict`     | float    | ```python
+config = chloros.get_config()
+print(config['Project Settings'])
+```
 
 ***
 
@@ -347,22 +393,20 @@ chloros.process(wait=False)
 
 ***
 
-#### ```
-
-Get current project configuration.
-
-**Returns:** ```
+#### ```python
+status = chloros.get_status()
+print(f"Running: {status['running']}")
+print(f"URL: {status['url']}")
+```
 
 ***
 
 #### `shutdown_backend()`python
 config = chloros.get_config()
 print(config['Project Settings'])
+```python
+chloros.shutdown_backend()
 ```
-
-***
-
-#### ```
 
 Get backend status information.
 
@@ -405,12 +449,40 @@ One-line convenience function to process a folder.
 | `ส่งออก_รูปแบบ`                  | str      | `โหมด`          | Camera template                |
 | `"ขนาน"`                 | list     | `ความคืบหน้า_โทรกลับ`      | Indices to calculate           |
 | `ไม่มี`     | bool     | `dict`          | Enable vignette correction     |
-| ``` | bool     | ```          | Enable reflectance calibration |
-| ```           | str      | "TIFF (16-bit)" | Output format                  |
-| ```                    | str      | ```    | Processing mode                |
-| ```       | callable | ```          | Progress callback              |
+| ```python
+chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
+```          | Enable reflectance calibration |
+| ```python
+from pathlib import Path
+import os
 
-**Returns:** ``` - Processing results
+# Check cache location (Windows)
+cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
+print(f"Cache exists: {cache_path.exists()}")
+```                    | str      | ```python
+from pathlib import Path
+
+base_folder = Path("C:\\LargeDataset")
+batch_size = 100
+
+# Get all image files
+images = list(base_folder.glob("*.RAW"))
+
+# Process in batches
+for i in range(0, len(images), batch_size):
+    batch = images[i:i+batch_size]
+    batch_folder = base_folder / f"batch_{i//batch_size}"
+    
+    # Create batch folder and move images
+    # ... (implementation details)
+    
+    # Process batch
+    process_folder(batch_folder)
+```       | callable | ```python
+import os
+backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe"
+print(f"Backend exists: {os.path.exists(backend_path)}")
+``` - Processing results
 
 **Example:**
 
@@ -890,44 +962,24 @@ for i in range(0, len(images), batch_size):
     
     # Process batch
     process_folder(batch_folder)
-```
-
-***
-
-## Troubleshooting
-
-### Backend Not Starting
-
-**Issue:** SDK fails to start backend
-
-**Solutions:**
-
-1. Verify Chloros Desktop is installed:
-
+```bash
+pip install --upgrade chloros-sdk
 ```python
 import os
 backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe"
 print(f"Backend exists: {os.path.exists(backend_path)}")
 ```
-
-2. Check Windows Firewall isn't blocking
-3. Try manual backend path:
-
+Project_Path/
+└── MyProject/
+    └── Survey3N_RGN/          # Processed outputs
 ```python
 chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
-```
+```python
+# scheduled_processing.py
+from chloros_sdk import process_folder
 
-***
-
-### License Not Detected
-
-**Issue:** SDK warns about missing license
-
-**Solutions:**
-
-1. Open Chloros, Chloros (Browser) or Chloros CLI and login.
-2. Verify license is cached:
-
+# Process today's flights
+results = process_folder("C:\\Flights\\Today")
 ```python
 from pathlib import Path
 import os
@@ -935,15 +987,32 @@ import os
 # Check cache location (Windows)
 cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
 print(f"Cache exists: {cache_path.exists()}")
+```python
+# notebook.ipynb
+from chloros_sdk import ChlorosLocal
+import matplotlib.pyplot as plt
+
+# Initialize
+chloros = ChlorosLocal()
+
+# Process
+chloros.create_project("JupyterTest")
+chloros.import_images("C:\\Data")
+chloros.configure(indices=["NDVI"])
+
+# Progress in notebook
+from IPython.display import clear_output
+
+def notebook_progress(progress, message):
+    clear_output(wait=True)
+    print(f"Progress: {progress}%")
+    print(message)
+
+chloros.process(progress_callback=notebook_progress)
+
+# Visualize results
+# ... (your visualization code)
 ```
-
-3. Contact support: info@mapir.camera
-
-***
-
-### Import Errors
-
-**Issue:** ```
 
 **Solutions:**
 
@@ -1121,54 +1190,16 @@ chloros.process(progress_callback=notebook_progress)
 
 # Visualize results
 # ... (your visualization code)
-```
+```python
+import threading
 
-***
+def process_thread():
+    chloros.process()
 
-## FAQ
+thread = threading.Thread(target=process_thread)
+thread.start()
 
-### Q: Does the SDK require an internet connection?
-
-**A:** Only for initial license activation. After logging in via Chloros, Chloros (Browser) or Chloros CLI the license is cached locally and works offline for 30 days.
-
-***
-
-### Q: Can I use the SDK on a server without GUI?
-
-**A:** Yes! Requirements:
-
-* Windows Server 2016 or later
-* Chloros installed (one-time)
-* License activated on any machine (cached license copied to server)
-
-***
-
-### Q: What's the difference between Desktop, CLI, and SDK?
-
-| Feature         | Desktop GUI | CLI Command Line | Python SDK  |
-| --------------- | ----------- | ---------------- | ----------- |
-| **Interface**   | Point-click | Command          | Python API  |
-| **Best For**    | Visual work | Scripting        | Integration |
-| **Automation**  | Limited     | Good             | Excellent   |
-| **Flexibility** | Basic       | Good             | Maximum     |
-| **License**     | Chloros+    | Chloros+         | Chloros+    |
-
-***
-
-### Q: Can I distribute apps built with the SDK?
-
-**A:** SDK code can be integrated into your applications, but:
-
-* End users need Chloros installed
-* End users need active Chloros+ licenses
-* Commercial distribution requires OEM licensing
-
-Contact info@mapir.camera for OEM inquiries.
-
-***
-
-### Q: How do I update the SDK?
-
+# Continue with other work...
 ```
 
 ***
