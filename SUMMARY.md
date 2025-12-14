@@ -13,7 +13,8 @@
 * [ดาวน์โหลด](download.md)
 * [คำถามที่พบบ่อย](faq.md)
 
-## กำลังประมวลผลรูปภาพ (GUI)
+
+# กำลังประมวลผลรูปภาพ (GUI)
 
 * [การปรับการตั้งค่าโปรเจ็กต์](processing-images-gui/adjusting-project-settings.md)
 * [การเพิ่มไฟล์ในโครงการ](processing-images-gui/adding-files-to-a-project.md)
@@ -22,12 +23,14 @@
 * [การตรวจสอบการประมวลผล](processing-images-gui/monitoring-the-processing.md)
 * [เสร็จสิ้นการประมวลผล](processing-images-gui/finishing-the-processing.md)
 
-## การตั้งค่าโครงการ
+
+# การตั้งค่าโครงการ
 
 * [การตั้งค่าโครงการ](project-settings/project-settings.md)
 * [สูตรดัชนี Multispectral](project-settings/multispectral-index-formulas.md)
 
-## โปรแกรมดูภาพ (GUI)
+
+# โปรแกรมดูภาพ (GUI)
 
 * [การเปิดภาพเต็มหน้าจอ](image-viewer-gui/opening-an-image-full-screen.md)
 * [เลเยอร์รูปภาพ](image-viewer-gui/image-layers.md)

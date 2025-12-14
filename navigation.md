@@ -6,15 +6,18 @@
 
 จากซ้ายไปขวาส่วนหัวด้านบนประกอบด้วย:
 
-### <img src=".gitbook/assets/image (1) (1).png" alt="" data-size="line"> เมนูหลัก
+
+## <img src=".gitbook/assets/image (1) (1).png" alt="" data-size="line"> เมนูหลัก
 
 จากเมนูหลัก คุณสามารถเริ่มโปรเจ็กต์ใหม่ เปิดโปรเจ็กต์ที่มีอยู่ หรือเปิดโฟลเดอร์โปรเจ็กต์ได้
 
-### <img src=".gitbook/assets/image (2).png" alt="" data-size="line"> ปุ่มเล่น/เริ่ม
+
+## <img src=".gitbook/assets/image (2).png" alt="" data-size="line"> ปุ่มเล่น/เริ่ม
 
 เมื่อเปิดใช้งาน ปุ่มเริ่มการประมวลผลจะเริ่มไปป์ไลน์การประมวลผลรูปภาพ
 
-### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> แถบความคืบหน้า <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
+
+## <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> แถบความคืบหน้า <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
 
 ในโหมดคลอรอสอิสระ ซึ่งประมวลผลไฟล์ทั้งหมดตามลำดับ แถบความคืบหน้าจะแสดง 2 ขั้นตอน: การตรวจจับเป้าหมายและการประมวลผล
 
@@ -22,26 +25,32 @@
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
-## เมนูด้านข้าง
+
+# เมนูด้านข้าง
 
 เมนูแถบด้านข้างด้านซ้ายมีไอคอนต่างๆ เพื่อโต้ตอบกับ:
 
-#### <img src=".gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> [การตั้งค่าโครงการ](project-settings/project-settings.md)
+
+### <img src=".gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> [การตั้งค่าโครงการ](project-settings/project-settings.md)
 
 แท็บการตั้งค่าโครงการช่วยให้คุณสามารถปรับการตั้งค่าส่วนกลางของโครงการและการประมวลผลโครงการได้ ปรับสิ่งเหล่านี้ก่อนที่จะเริ่มประมวลผลไฟล์ของคุณ
 
-#### <img src=".gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> ไฟล์เบราว์เซอร์
+
+### <img src=".gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> ไฟล์เบราว์เซอร์
 
 เพิ่มไฟล์/โฟลเดอร์และลบไฟล์ออกจากโครงการ ไฟล์ที่ซ้ำกันจะถูกละเว้น เลือกช่องคอลัมน์เป้าหมายสำหรับรูปภาพเป้าหมาย และการประมวลผลจะดูเฉพาะรูปภาพที่เลือกไว้สำหรับเป้าหมาย ซึ่งจะช่วยเร่งเวลาการประมวลผลของคุณได้อย่างมาก
 
-#### <img src=".gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> [โปรแกรมดูรูปภาพ](image-viewer-gui/opening-an-image-full-screen.md)
+
+### <img src=".gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> [โปรแกรมดูรูปภาพ](image-viewer-gui/opening-an-image-full-screen.md)
 
 เมื่อรูปภาพถูกคลิกในโปรแกรมดูรูปภาพหลัก รูปภาพนั้นจะเปิดแบบเต็มหน้าจอในแท็บโปรแกรมดูรูปภาพ
 
-#### <img src=".gitbook/assets/icon_log.JPG" alt="" data-size="line"> บันทึกการแก้ไขข้อบกพร่อง
+
+### <img src=".gitbook/assets/icon_log.JPG" alt="" data-size="line"> บันทึกการแก้ไขข้อบกพร่อง
 
 ตรวจสอบบันทึกสำหรับการพิมพ์การแก้ไขข้อบกพร่องเมื่อเกิดปัญหา คัดลอก/ดาวน์โหลดบันทึกและส่งไปที่ [MAPIR Support](https://www.mapir.cam/community/contact) เพื่อขอความช่วยเหลือ
 
-#### <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> [เข้าสู่ระบบของผู้ใช้](chloros+-login.md)
+
+### <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> [เข้าสู่ระบบของผู้ใช้](chloros+-login.md)
 
 แถบด้านข้างการเข้าสู่ระบบของผู้ใช้ช่วยให้คุณสามารถเข้าสู่ระบบบัญชี Chloros+ ของคุณเพื่อปลดล็อกคุณสมบัติขั้นสูง คุณยังสามารถดูเวอร์ชันแอปพลิเคชันปัจจุบัน รวมถึงปรับภาษาของข้อความที่แสดงใน Chloros GUI และ CLI

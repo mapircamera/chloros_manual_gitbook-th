@@ -2,13 +2,15 @@
 
 คลอรอสช่วยให้คุณสร้างโปรเจ็กต์ที่สามารถเปิดใหม่ได้ในอนาคต
 
-## โครงการใหม่
+
+# โครงการใหม่
 
 <figure><img src=".gitbook/assets/project_new.JPG" alt=""><figcaption></figcaption></figure>
 
 เลือก "โครงการใหม่" จากเมนูหลักและป้อนชื่อเฉพาะสำหรับโครงการของคุณ
 
-## เปิดโครงการ
+
+# เปิดโครงการ
 
 <figure><img src=".gitbook/assets/project_open.JPG" alt=""><figcaption></figcaption></figure>
 
