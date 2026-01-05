@@ -33,7 +33,7 @@
 
 1. คลิกปุ่ม **"Add Folder"** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> ที่ด้านบนของแผง File Browser
 2. นำทางไปยังและเลือกโฟลเดอร์ที่มีภาพเซสชันการจับภาพของคุณ
-3. Click **"Select Folder"** to import all supported images from that folder
+3. คลิก **"เลือกโฟลเดอร์"** เพื่อนำเข้ารูปภาพที่รองรับทั้งหมดจากโฟลเดอร์นั้น
 
 -
 
