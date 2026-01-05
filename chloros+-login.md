@@ -6,7 +6,7 @@
 
 เมื่อเข้าสู่ระบบรายละเอียดบัญชีของคุณจะแสดง:
 
-<รูป><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
+<รูป><img src=".gitbook/assets/user_account.JPG" alt="" data-size="line"><figcaption></figcaption></figure>
 
 ## CLI เข้าสู่ระบบ
 
