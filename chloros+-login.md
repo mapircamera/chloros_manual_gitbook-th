@@ -1,38 +1,47 @@
-# คลอรอส+ เข้าสู่ระบบ
+# Chloros+ เข้าสู่ระบบ
 
+## Chloros และ Chloros (เบราว์เซอร์) เข้าสู่ระบบ
 
-# คลอรอสและคลอรอส (เบราว์เซอร์) เข้าสู่ระบบ
-
-เมนูแถบด้านข้างของผู้ใช้ <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> ช่วยให้คุณสามารถลงชื่อเข้าใช้บัญชี Chloros+ และปลดล็อกคุณสมบัติเพิ่มเติมได้
+ผู้ใช้ <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> เมนูแถบด้านข้างของผู้ใช้อนุญาตให้คุณเข้าสู่ระบบบัญชี Chloros+ ของคุณและปลดล็อคคุณสมบัติเพิ่มเติม
 
 เมื่อเข้าสู่ระบบรายละเอียดบัญชีของคุณจะแสดง:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
+<รูป><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
 
+## CLI เข้าสู่ระบบ
 
-# เข้าสู่ระบบ CLI
+เข้าสู่ระบบด้วยข้อมูลประจำตัว Chloros+ ของคุณเพื่อเปิดใช้งานการประมวลผล CLI
 
-เข้าสู่ระบบด้วยข้อมูลรับรอง Chloros+ ของคุณเพื่อเปิดใช้งานการประมวลผล CLI
+**ไวยากรณ์:**
 
-**ไวยากรณ์:**```bash
+```bash
 chloros-cli login <email> <password>
-```**ตัวอย่าง:**```powershell
+```
+
+{% คำใบ้สไตล์ = "ข้อมูล" %}
+**ผู้ใช้ SDK**: Python SDK ยังมีวิธี `logout()` แบบเป็นโปรแกรมเพื่อล้างข้อมูลประจำตัวที่แคชไว้ ดู [Python เอกสารประกอบ SDK](api-python-sdk.md#logout) สำหรับรายละเอียด
+{% คำแนะนำสิ้นสุด %}
+
+**ตัวอย่าง:**
+
+```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="warning" %}**อักขระพิเศษ**: ใช้เครื่องหมายคำพูดเดี่ยวรอบรหัสผ่านที่มีอักขระ เช่น `$`, `!` หรือช่องว่าง
-{% endhint %}**ผลลัพธ์:**
+{% คำใบ้สไตล์ = "คำเตือน" %}
+**อักขระพิเศษ**: ใช้เครื่องหมายคำพูดเดี่ยวรอบรหัสผ่านที่มีอักขระ เช่น `$`, `!` หรือช่องว่าง
+{% คำแนะนำสิ้นสุด %}
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+**ผลลัพธ์:**
 
+<รูป><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
 
-## แผนหมดอายุ
+### แผนหมดอายุ
 
 การหมดอายุของแผนใน GUI จะแสดงเมื่อใบอนุญาตของคุณจะไม่ถูกต้อง สำหรับการสมัครสมาชิกรายเดือนที่เกิดซ้ำ วันหมดอายุคือช่วงสิ้นเดือน สำหรับการสมัครสมาชิกรายปีคือหนึ่งปีหลังจากที่คุณเริ่มสมัครสมาชิก การตรวจสอบใบอนุญาตต้องใช้การเชื่อมต่ออินเทอร์เน็ตทุกเดือนเพื่อยืนยัน โดยมีระยะเวลาผ่อนผัน 30 วัน
 
+### ขีดจำกัดอุปกรณ์
 
-## ขีดจำกัดอุปกรณ์
+แผน Chloros+ แต่ละแผนเสนออุปกรณ์ที่ลงทะเบียนในจำนวนที่แตกต่างกัน อุปกรณ์แต่ละเครื่องที่คุณเข้าสู่ระบบด้วยบัญชี Chloros+ จะนับรวมในจำนวนอุปกรณ์ที่ลงทะเบียนของคุณ คุณสามารถเปลี่ยนชื่อและลบอุปกรณ์บนหน้าบัญชี MAPIR Cloud ของคุณได้
 
-แผนคลอรอส+ แต่ละแผนเสนออุปกรณ์ที่ลงทะเบียนในจำนวนที่แตกต่างกัน อุปกรณ์แต่ละเครื่องที่คุณเข้าสู่ระบบด้วยบัญชี Chloros+ จะนับรวมในจำนวนอุปกรณ์ที่ลงทะเบียนของคุณ คุณสามารถเปลี่ยนชื่อและลบอุปกรณ์บนหน้าบัญชี MAPIR Cloud ของคุณได้
-
-<table><thead><tr><th width="168.5999755859375" align="right">Chloros+ Plan</th><th align="center">COPPER</th><th align="center">BRONZE</th><th align="center">SILVER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">Devices Supported</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
+<table><thead><tr><th width="168.5999755859375" align="right">แผน Chloros+</th><th align="center">ทองแดง</th><th align="center">BRONZE</th><th align="center">SILVER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">อุปกรณ์ที่รองรับ</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
