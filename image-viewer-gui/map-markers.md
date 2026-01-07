@@ -88,7 +88,7 @@
 
 คุณสามารถเลือกประเภทเลเยอร์แผนที่ได้ (จากซ้ายไปขวา):
 
-&#x20;<img src="../.gitbook/assets/image (23).png" alt="" data-size="line">
+&#x20;<img src="../.gitbook/assets/image (23).png" alt="" data-size="original">
 
 ### ภูมิประเทศ
 
