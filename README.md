@@ -1,7 +1,6 @@
 ---
 metaLinks: {}
 ---
-
 # การเริ่มต้น
 
 <div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
@@ -36,13 +35,21 @@ Chloros มีอยู่ใน 4 โหมดการใช้งาน:
 
 * **การประมวลผลแบบมัลติเธรด**: เพิ่มความเร็วอย่างมากในการประมวลผลภาพสำหรับโปรเจ็กต์ขนาดใหญ่โดยการประมวลผลภาพผ่านไปป์ไลน์ไปพร้อมๆ กัน
 * **การเร่งความเร็ว GPU (CUDA)**: ใช้ประโยชน์จากตัวเลือกหน่วยความจำ GPU ที่สูงกว่าในปัจจุบันเพื่อเร่งขั้นตอนการประมวลผลภาพให้เร็วขึ้น เราขอแนะนำ VRAM 4GB หรือมากกว่าเพื่อผลลัพธ์ที่ดีที่สุด
-* **Chloros+**[**CLI**](CLI.md)**การเข้าถึง**: เรียกใช้ Chloros+ จากบรรทัดคำสั่งเพื่อทำให้เป็นอัตโนมัติและรวมเข้ากับซอฟต์แวร์ของคุณเอง
-* **Chloros+**[**API**](api-python-sdk.md)**การเข้าถึง:** เรียกใช้ Chloros+ จาก Python สำหรับการควบคุมแบบเป็นโปรแกรม ช่วยให้สามารถผสานรวมกับไปป์ไลน์การวิจัยของคุณ เวิร์กโฟลว์การวิเคราะห์ข้อมูล และแอปพลิเคชันที่กำหนดเองได้อย่างราบรื่น
+* **Chloros+** [**CLI**](CLI.md) **การเข้าถึง**: เรียกใช้ Chloros+ จากบรรทัดคำสั่งเพื่อทำให้เป็นอัตโนมัติและรวมเข้ากับซอฟต์แวร์ของคุณเอง
+* **Chloros+** [**API**](api-python-sdk.md) **การเข้าถึง:** เรียกใช้ Chloros+ จาก Python สำหรับการควบคุมแบบเป็นโปรแกรม ช่วยให้สามารถผสานรวมกับไปป์ไลน์การวิจัยของคุณ เวิร์กโฟลว์การวิเคราะห์ข้อมูล และแอปพลิเคชันที่กำหนดเองได้อย่างราบรื่น
 * **การใช้งานหลายอุปกรณ์**: ใบอนุญาต Chloros+ แต่ละใบอนุญาตให้ลงทะเบียนอุปกรณ์ได้ 2+ เครื่อง ใช้บัญชี MAPIR Cloud ของคุณเพื่อจัดการอุปกรณ์ที่ลงทะเบียน เพิ่มการสนับสนุนสำหรับอุปกรณ์เพิ่มเติมโดยอัปเกรดใบอนุญาต Chloros+ ของคุณ
 * **สูตรดัชนีหลายสเปกตรัมแบบกำหนดเอง:** ป้อนดัชนีหลายสเปกตรัมแบบกำหนดเองในเครื่องคำนวณแรสเตอร์ Chloros ทั้งสำหรับการประมวลผลและแซนด์บ็อกซ์ดูภาพ
 
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary" data-icon="envira">Chloros+ ราคา &#x26; ลงทะเบียน</a></p>
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary" data-icon="envira">Chloros+ ราคา การสมัคร &#x26;</a></p>
 
-<รูป><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
-<รูป><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_mode.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
