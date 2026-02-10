@@ -13,9 +13,15 @@ MAPIR นำเสนอเป้าหมายการสอบเทีย�
 
 เป้าหมายอ้างอิงแบบกระจาย T4 มีเส้นโค้งการสะท้อนแสงต่อไปนี้ [ดาวน์โหลดข้อมูลที่นี่](https://cdn.shopify.com/s/files/1/0972/5566/files/MAPIR_Diffuse_Reflectance_Standard_Calibration_Target_Data_T4.xlsx?v=1741759157):
 
-<figure><img src=".gitbook/assets/MAPIR Diffuse Reflectance Standard ข้อมูลเป้าหมายการสอบเทียบ T4 (250-2500nm).png" alt=""><figcaption><p>MAPIR T4 Reflectance :: 250-2500nm</p></figcaption></figure>
+<figure><img src=".gitbook/assets/MAPIR Diffuse Reflectance ข้อมูลเป้าหมายการสอบเทียบมาตรฐาน T4 (250-2500nm).png" alt=""><figcaption><p>MAPIR T4 Reflectance :: 250-2500nm</p></figcaption></figure>
 
 <figure><img src=".gitbook/assets/MAPIR Diffuse Reflectance ข้อมูลเป้าหมายการสอบเทียบมาตรฐาน T4 (400-1000nm).png" alt=""><figcaption><p>MAPIR T4 Reflectance :: 400-1000nm</p></figcaption></figure>
+
+เป้าหมายอ้างอิงแบบกระจาย T4P มีเส้นโค้งการสะท้อนแสงต่อไปนี้ [ดาวน์โหลดข้อมูลที่นี่](https://cdn.shopify.com/s/files/1/0972/5566/files/MAPIR_Diffuse_Reflectance_Standard_Calibration_Target_Data_T4.xlsx?v=1741759157):
+
+<figure><img src=".gitbook/assets/MAPIR Diffuse Reflectance ข้อมูลเป้าหมายการสอบเทียบมาตรฐาน T4P -- 350-2500nm.jpg" alt=""><figcaption><p>MAPIR T4P Reflectance :: 250-2500nm</p></figcaption></figure>
+
+<figure><img src=".gitbook/assets/MAPIR Diffuse Reflectance ข้อมูลเป้าหมายการสอบเทียบมาตรฐาน T4P -- 400-1000nm.jpg" alt=""><figcaption><p>MAPIR T4P Reflectance :: 400-1000nm</p></figcaption></figure>
 
 เมื่อดูกราฟการสะท้อนแสง คุณจะเห็นว่าค่าคือความยาวคลื่น (แกน x) เทียบกับเปอร์เซ็นต์การสะท้อนแสง (แกน y) เมื่อเราจับภาพของเป้าหมายการปรับเทียบ เราจะสร้างความสัมพันธ์ระหว่างค่าพิกเซลและเปอร์เซ็นต์การสะท้อนแสง ภายในสเปกตรัมที่แถบเซ็นเซอร์ของกล้องแต่ละตัวไวต่อ
 

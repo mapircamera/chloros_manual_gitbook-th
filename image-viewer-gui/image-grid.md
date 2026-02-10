@@ -6,7 +6,7 @@
 
 คุณสามารถใช้แถบเลื่อนซูมที่มุมขวาบนเพื่อปรับขนาดภาพขนาดย่อของรูปภาพได้ คุณยังสามารถกด CTRL + ล้อเมาส์เพื่อปรับขนาดได้
 
-<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>
+<รูป><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>
 
 ## ส่งออกปุ่มมุมมอง
 
@@ -19,4 +19,4 @@
 
 การคลิกที่ภาพขนาดย่อของตารางรูปภาพจะเปิดแบบเต็มหน้าจอ [Image Viewer](opening-an-image-full-screen.md) หากตั้งค่าโหมดการดูบนตารางเป็นการส่งออกเฉพาะ เช่น "เป้าหมาย" เมื่อคลิกภาพขนาดย่อของตาราง ระบบจะเปิดภาพเป้าหมายที่ส่งออกแบบเต็มหน้าจอ
 
-<figure><img src="../.gitbook/assets/chloros_grid_mode.gif" alt=""><figcaption></figcaption></figure>
+<รูป><img src="../.gitbook/assets/chloros_grid_mode.gif" alt=""><figcaption></figcaption></figure>

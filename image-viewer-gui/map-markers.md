@@ -2,13 +2,13 @@
 
 แท็บแผนที่จะแสดงภาพของคุณบนแผนที่ 2 มิติเชิงโต้ตอบตามพิกัด GPS ข้อมูลนี้ให้ภาพรวมทางภูมิศาสตร์ของเซสชันการจับภาพของคุณและช่วยให้คุณเห็นภาพความครอบคลุมเชิงพื้นที่ นอกจากนี้ยังมีประโยชน์เมื่อนำเข้ารูปภาพของคุณเป็นครั้งแรก เพื่อลบรูปภาพใดๆ ที่คุณไม่จำเป็นต้องประมวลผลออกอย่างรวดเร็ว
 
-<figure><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
+<รูป><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
 
 ## การเข้าถึงแท็บแผนที่
 
 1. เปิดหรือสร้างโปรเจ็กต์ใน Chloros
 2. นำเข้ารูปภาพที่มีข้อมูลเมตา GPS
-3. คลิกแท็บ **แผนที่** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> ในแถบด้านข้างซ้าย
+3. คลิก **แผนที่** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> แท็บในแถบด้านข้างซ้าย
 4. แผนที่จะแสดงเครื่องหมายที่ตำแหน่ง GPS ของแต่ละภาพ
 
 {% hint style="info" %}
@@ -19,7 +19,7 @@
 
 ## การปรับภาพจากแท็บแผนที่
 
-แท็บ **แผนที่** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> มีการเพิ่ม <img src="../.gitbook/assets/image.png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> และลบปุ่มไฟล์ <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> เช่นเดียวกับที่แท็บ [**File Browser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> ทำ นอกจากนี้ยังแสดงรายการตารางไฟล์โครงการเดียวกัน แต่มีส่วนหัวคอลัมน์ต่างกัน:
+แท็บ **Map**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> มีการเพิ่มเหมือนกัน <img src="../.gitbook/assets/image.png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> และลบปุ่มไฟล์ <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> เป็น [**ไฟล์ เบราว์เซอร์**](../processing-images-gui/adding-files-to-a-project.md) แท็บ <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> ทำ นอกจากนี้ยังแสดงรายการตารางไฟล์โครงการเดียวกัน แต่มีส่วนหัวคอลัมน์ต่างกัน:
 
 ### ชื่อไฟล์
 
@@ -51,7 +51,7 @@
 ### การแสดงเครื่องหมาย
 
 * เครื่องหมายระบุพิกัด GPS ที่แน่นอนที่แต่ละภาพถูกถ่าย
-* เครื่องหมายที่เป็นกลุ่มอาจรวมกลุ่มเข้าด้วยกันเมื่อซูมออก
+* เครื่องหมายกลุ่มอาจรวมกลุ่มเข้าด้วยกันเมื่อซูมออก
 * ขยายเพื่อดูตำแหน่งภาพแต่ละภาพ
 
 {% hint style="success" %}
@@ -74,7 +74,7 @@
 
 แท็บแผนที่สนับสนุนผู้ให้บริการไทล์สองรายสำหรับภาพแผนที่พื้นหลัง:
 
-### กูเกิลแผนที่
+### กูเกิ้ลแผนที่
 
 * ภาพถ่ายดาวเทียมและแผนที่มาตรฐานจาก Google
 * ดีที่สุดสำหรับความคุ้มครองทั่วไปทั่วโลก
@@ -119,9 +119,7 @@
 
 ### การควบคุมการแพน
 
-* **แพน**: คลิกและลากเพื่อเลื่อนไปรอบๆ แผนที่
-
-***
+* **แพน**: คลิกและลากเพื่อเลื่อนไปรอบๆ แผนที่***
 
 ## กรณีการใช้งาน
 
