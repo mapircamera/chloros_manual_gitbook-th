@@ -2,15 +2,15 @@
 
 ## Chloros และ Chloros (เบราว์เซอร์) เข้าสู่ระบบ
 
-ผู้ใช้ <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> เมนูแถบด้านข้างของผู้ใช้อนุญาตให้คุณเข้าสู่ระบบบัญชี Chloros+ ของคุณและปลดล็อคคุณสมบัติเพิ่มเติม
+เมนูแถบด้านข้างของผู้ใช้ <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> ช่วยให้คุณสามารถเข้าสู่ระบบบัญชี Chloros+ ของคุณและปลดล็อคคุณสมบัติเพิ่มเติมได้
 
 เมื่อเข้าสู่ระบบรายละเอียดบัญชีของคุณจะแสดง:
 
-<รูป><img src=".gitbook/assets/user_account.JPG" alt="" data-size="line"><figcaption></figcaption></figure>
+<รูป><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
 
 ## CLI เข้าสู่ระบบ
 
-เข้าสู่ระบบด้วยข้อมูลประจำตัว Chloros+ ของคุณเพื่อเปิดใช้งานการประมวลผล CLI
+เข้าสู่ระบบด้วยข้อมูลประจำตัว Chloros+ ของคุณเพื่อเปิดใช้งานการประมวลผล CLI บน Linux (ไม่มี GUI) นี่เป็นวิธีเดียวในการเปิดใช้งานใบอนุญาตของคุณ
 
 **ไวยากรณ์:**
 
@@ -28,13 +28,22 @@ chloros-cli login <email> <password>
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% คำใบ้สไตล์ = "คำเตือน" %}
+{% hint style="warning" %}
 **อักขระพิเศษ**: ใช้เครื่องหมายคำพูดเดี่ยวรอบรหัสผ่านที่มีอักขระ เช่น `$`, `!` หรือช่องว่าง
 {% endhint %}
 
 **ผลลัพธ์:**
 
 <รูป><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+
+### ที่เก็บข้อมูลรับรอง
+
+ข้อมูลรับรองแคชจะถูกจัดเก็บไว้ในตำแหน่งเฉพาะแพลตฟอร์ม:
+
+| แพลตฟอร์ม | เส้นทางแคชข้อมูลประจำตัว |
+| --- | --- |
+| **Windows** | `%APPDATA%\Chloros\cache\` |
+| **Linux** | `~/.cache/chloros/` |
 
 ### แผนหมดอายุ
 

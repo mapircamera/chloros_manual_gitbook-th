@@ -13,16 +13,16 @@
 
 ### ความต้องการ
 
-- ข้อกำหนด - รายละเอียด -
-- -------------------- - ------------------------------------------------------------------- -
-- **Chloros เดสก์ท็อป** - จะต้องติดตั้งในเครื่อง -
-- **ใบอนุญาต** - Chloros+ ([ต้องใช้แผนการชำระเงิน](https://cloud.mapir.camera/pricing)) -
-- **ระบบปฏิบัติการ** - Windows 10/11 (64 บิต) -
-- **Python** - Python 3.7 หรือสูงกว่า -
-- **ความทรงจำ** - RAM ขั้นต่ำ 8GB (แนะนำ 16GB) -
-- **อินเตอร์เน็ต** - จำเป็นสำหรับการเปิดใช้งานใบอนุญาต -
+| ข้อกำหนด | รายละเอียด |
+| -------------------- | ------------------------------------------------------------------- |
+| **Chloros ติดตั้งแล้ว** | Windows: ตัวติดตั้งเดสก์ท็อป; Linux: แพ็คเกจ `.deb` |
+| **ใบอนุญาต** | Chloros+ ([ต้องใช้แผนการชำระเงิน](https://cloud.mapir.camera/pricing)) |
+| **ระบบปฏิบัติการ** | Windows 10/11 (64 บิต), Linux x86_64 (amd64), Linux arm64 (NVIDIA Jetson JetPack 6) |
+| **Python** | Python 3.7 หรือสูงกว่า |
+| **ความทรงจำ** | RAM ขั้นต่ำ 8GB (แนะนำ 16GB) |
+| **อินเตอร์เน็ต** | จำเป็นสำหรับการเปิดใช้งานใบอนุญาต |
 
-{% คำใบ้สไตล์ = "คำเตือน" %}
+{% hint style="warning" %}
 **ข้อกำหนดสิทธิ์การใช้งาน**: Python SDK ต้องการการสมัครสมาชิก Chloros+ แบบชำระเงินสำหรับการเข้าถึง API แผนมาตรฐาน (ฟรี) ไม่มีการเข้าถึง API/SDK ไปที่ [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) เพื่ออัปเกรด
 {% endhint %}
 
@@ -37,7 +37,7 @@ pip install chloros-sdk
 ```
 
 {% hint style="info" %}
-**การตั้งค่าครั้งแรก**: ก่อนใช้ SDK ให้เปิดใช้งานใบอนุญาต Chloros+ ของคุณโดยเปิด Chloros, Chloros (เบราว์เซอร์) หรือ Chloros CLI และเข้าสู่ระบบด้วยข้อมูลประจำตัวของคุณ ต้องทำเพียงครั้งเดียวเท่านั้น
+**การตั้งค่าครั้งแรก**: ก่อนใช้ SDK ให้เปิดใช้งานใบอนุญาต Chloros+ ของคุณโดยเปิด Chloros, Chloros (เบราว์เซอร์) หรือ Chloros CLI และเข้าสู่ระบบด้วยข้อมูลประจำตัวของคุณ ต้องทำเพียงครั้งเดียวเท่านั้น บน Linux (ไม่มี GUI) ให้ใช้: `chloros-cli login user@example.com 'password'`
 {% endhint %}
 
 ### การใช้งานพื้นฐาน
@@ -47,9 +47,16 @@ pip install chloros-sdk
 ```python
 from chloros_sdk import process_folder
 
-# One-line processing
+# One-line processing (Windows)
 results = process_folder("C:\\DroneImages\\Flight001")
+
+# One-line processing (Linux)
+results = process_folder("/home/user/drone_images/flight001")
 ```
+
+{% hint style="info" %}
+**เส้นทางข้ามแพลตฟอร์ม**: ตัวอย่างโค้ดในหน้านี้ใช้เส้นทางสไตล์ Windows (เช่น `C:\\DroneImages\\Flight001`) บน Linux ให้ใช้พาธ Linux แทน (เช่น `/home/user/drone_images/flight001` หรือ `~/drone_images/flight001`) SDK ทำงานเหมือนกันบนทั้งสองแพลตฟอร์ม
+{% endhint %}
 
 ### ควบคุมเต็มรูปแบบ
 
@@ -65,7 +72,8 @@ chloros = ChlorosLocal()
 chloros.create_project("MyProject", camera="Survey3N_RGN")
 
 # Import images
-chloros.import_images("C:\\DroneImages\\Flight001")
+chloros.import_images("C:\\DroneImages\\Flight001")  # Windows
+# chloros.import_images("/home/user/drone_images/flight001")  # Linux
 
 # Configure settings
 chloros.configure(
@@ -78,7 +86,7 @@ chloros.configure(
 chloros.process(mode="parallel", wait=True)
 ```
 
--
+***
 
 ## คู่มือการติดตั้ง
 
@@ -86,7 +94,7 @@ chloros.process(mode="parallel", wait=True)
 
 ก่อนที่จะติดตั้ง SDK ตรวจสอบให้แน่ใจว่าคุณมี:
 
-1. **Chloros Desktop** ติดตั้งแล้ว ([ดาวน์โหลด](download.md))
+1. **ติดตั้ง Chloros** — Windows: ตัวติดตั้งเดสก์ท็อป ([ดาวน์โหลด](download.md)); Linux: แพ็คเกจ `.deb` ([การติดตั้ง Linux](linux/linux-installation.md))
 2. **Python 3.7+** ติดตั้งแล้ว ([python.org](https://www.python.org))
 3. **สิทธิ์การใช้งาน Chloros+ ที่ใช้งานอยู่** ([อัปเกรด](https://cloud.mapir.camera/pricing))
 
@@ -119,18 +127,19 @@ import chloros_sdk
 print(f"Chloros SDK version: {chloros_sdk.__version__}")
 ```
 
--
+***
 
 ## การตั้งค่าครั้งแรก
 
 ### การเปิดใช้งานใบอนุญาต
 
-SDK ใช้ใบอนุญาตเดียวกันกับ Chloros, Chloros (เบราว์เซอร์) และ Chloros CLI เปิดใช้งานครั้งเดียวผ่าน GUI หรือ CLI:
+SDK ใช้ใบอนุญาตเดียวกันกับ Chloros, Chloros (เบราว์เซอร์) และ Chloros CLI เปิดใช้งานครั้งเดียวผ่าน GUI หรือ CLI:**Windows:**เปิด**Chloros หรือ Chloros (เบราว์เซอร์)** และเข้าสู่ระบบในแท็บผู้ใช้ <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> หรือใช้ CLI**Linux:** ใช้ CLI (ไม่มี GUI):
 
-1. เปิด **Chloros หรือ Chloros (เบราว์เซอร์)**และเข้าสู่ระบบในแท็บผู้ใช้ <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> หรือเปิด**CLI**
+```bash
+chloros-cli login user@example.com 'your_password'
+```
 
-2. ป้อนข้อมูลประจำตัว Chloros+ ของคุณแล้วเข้าสู่ระบบ
-3. ใบอนุญาตถูกแคชไว้ในเครื่อง (ยังคงมีอยู่ตลอดการรีบูต)
+ใบอนุญาตถูกแคชไว้ภายในเครื่องและคงอยู่ตลอดการรีบูต
 
 {% hint style="success" %}
 **การตั้งค่าครั้งเดียว**: หลังจากเข้าสู่ระบบผ่าน GUI หรือ CLI แล้ว SDK จะใช้สิทธิ์การใช้งานที่แคชไว้โดยอัตโนมัติ ไม่จำเป็นต้องมีการรับรองความถูกต้องเพิ่มเติม!
@@ -155,7 +164,7 @@ status = chloros.get_status()
 print(f"Backend running: {status['running']}")
 ```
 
--
+***
 
 ## API อ้างอิง
 
@@ -177,31 +186,41 @@ ChlorosLocal(
 
 **พารามิเตอร์:**
 
-- พารามิเตอร์ - พิมพ์ - ค่าเริ่มต้น - คำอธิบาย -
-- ------------------------- - ---- - ------------------------- - ----------------------------------------- -
-- `api_url` - STR - `"http://localhost:5000"` - URL ของแบ็กเอนด์ Chloros ในเครื่อง
-- `auto_start_backend` - บูล - `True` - เริ่มแบ็กเอนด์โดยอัตโนมัติหากจำเป็น -
-- `backend_exe` - STR - `None` (ตรวจจับอัตโนมัติ) - เส้นทางไปยังไฟล์ปฏิบัติการแบ็กเอนด์ -
-- `timeout` - อินท์ - `30` - ขอหมดเวลาเป็นวินาที -
-- `backend_startup_timeout` - อินท์ - `60` - หมดเวลาสำหรับการเริ่มต้นแบ็กเอนด์ (วินาที) -
+| พารามิเตอร์ | พิมพ์ | ค่าเริ่มต้น | คำอธิบาย |
+| ------------------------- | ---- | ------------------------- | ----------------------------------------- |
+| `api_url` | STR | `"http://localhost:5000"` | URL ของแบ็กเอนด์ Chloros ในเครื่อง
+| `auto_start_backend` | บูล | `True` | เริ่มแบ็กเอนด์โดยอัตโนมัติหากจำเป็น |
+| `backend_exe` | STR | `None` (ตรวจจับอัตโนมัติ) | เส้นทางไปยังไฟล์ปฏิบัติการแบ็กเอนด์ |
+| `timeout` | อินท์ | `30` | ขอหมดเวลาเป็นวินาที |
+| `backend_startup_timeout` | อินท์ | `60` | หมดเวลาสำหรับการเริ่มต้นแบ็กเอนด์ (วินาที) |
 
 **ตัวอย่าง:**
 
 ```python
-# Default (auto-start backend)
+# Default (auto-start backend, auto-detect path on Windows and Linux)
 chloros = ChlorosLocal()
 
 # Connect to running backend
 chloros = ChlorosLocal(auto_start_backend=False)
 
-# Custom backend path
+# Custom backend path (Windows)
 chloros = ChlorosLocal(backend_exe="C:/Custom/chloros-backend.exe")
 
-# Custom timeout
-chloros = ChlorosLocal(timeout=60)
+# Custom backend path (Linux)
+chloros = ChlorosLocal(backend_exe="/opt/mapir/chloros/backend/chloros-backend")
+
+# Custom timeout with longer startup (e.g., for Jetson)
+chloros = ChlorosLocal(timeout=60, backend_startup_timeout=120)
 ```
 
--
+{% hint style="info" %}
+**การตรวจจับข้ามแพลตฟอร์มอัตโนมัติ**: SDK จะพยายามเส้นทางแบ็กเอนด์ที่ถูกต้องสำหรับแพลตฟอร์มของคุณโดยอัตโนมัติ:
+* **Windows**: `C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe`
+* **Linux (.deb)**: `/usr/lib/chloros/chloros-backend`
+* **Linux (แบบแมนนวล)**: `/opt/mapir/chloros/backend/chloros-backend`
+{% endhint %}
+
+***
 
 ### วิธีการ
 
@@ -211,10 +230,10 @@ chloros = ChlorosLocal(timeout=60)
 
 **พารามิเตอร์:**
 
-- พารามิเตอร์ - พิมพ์ - จำเป็น - คำอธิบาย -
-- -------------- - ---- - -------- - ------------------------------------------------------------ -
-- `project_name` - STR - ใช่ - ชื่อโครงการ -
-- `camera` - STR - ไม่ - เทมเพลตกล้อง (เช่น "Survey3N\_RGN", "Survey3W\_OCN") -
+| พารามิเตอร์ | พิมพ์ | จำเป็น | คำอธิบาย |
+| -------------- | ---- | -------- | ------------------------------------------------------------ |
+| `project_name` | STR | ใช่ | ชื่อโครงการ |
+| `camera` | STR | ไม่ | เทมเพลตกล้อง (เช่น "Survey3N\_RGN", "Survey3W\_OCN") |
 
 **การส่งคืน:** `dict` - การตอบสนองในการสร้างโปรเจ็กต์**ตัวอย่าง:**
 
@@ -226,7 +245,7 @@ chloros.create_project("DroneField_A")
 chloros.create_project("DroneField_A", camera="Survey3N_RGN")
 ```
 
--
+***
 
 #### `import_images(folder_path, recursive=False)`
 
@@ -234,10 +253,10 @@ chloros.create_project("DroneField_A", camera="Survey3N_RGN")
 
 **พารามิเตอร์:**
 
-- พารามิเตอร์ - พิมพ์ - จำเป็น - คำอธิบาย -
-- ------------- - -------- - -------- - ---------------------------------- -
-- `folder_path` - str/เส้นทาง - ใช่ - เส้นทางไปยังโฟลเดอร์ที่มีรูปภาพ -
-- `recursive` - บูล - ไม่ - ค้นหาโฟลเดอร์ย่อย (ค่าเริ่มต้น: False) -
+| พารามิเตอร์ | พิมพ์ | จำเป็น | คำอธิบาย |
+| ------------- | -------- | -------- | ---------------------------------- |
+| `folder_path` | str/เส้นทาง | ใช่ | เส้นทางไปยังโฟลเดอร์ที่มีรูปภาพ |
+| `recursive` | บูล | ไม่ | ค้นหาโฟลเดอร์ย่อย (ค่าเริ่มต้น: False) |
 
 **การส่งคืน:** `dict` - นำเข้าผลลัพธ์พร้อมจำนวนไฟล์**ตัวอย่าง:**
 
@@ -249,7 +268,7 @@ chloros.import_images("C:\\DroneImages\\Flight001")
 chloros.import_images("C:\\DroneImages", recursive=True)
 ```
 
--
+***
 
 #### `configure(**settings)`
 
@@ -257,15 +276,15 @@ chloros.import_images("C:\\DroneImages", recursive=True)
 
 **พารามิเตอร์:**
 
-- พารามิเตอร์ - พิมพ์ - ค่าเริ่มต้น - คำอธิบาย -
-- ------------------------- - ---- - ----------------------- - ----------------------------------- -
-- `debayer` - STR - "คุณภาพสูง (เร็วขึ้น)" - วิธีการ Debayer -
-- `vignette_correction` - บูล - `True` - เปิดใช้งานการแก้ไขบทความสั้น -
-- `reflectance_calibration` - บูล - `True` - เปิดใช้งานการปรับเทียบการสะท้อนแสง -
-- `indices` - รายการ - `None` - ดัชนีพืชพรรณที่จะคำนวณ -
-- `export_format` - STR - "TIFF (16 บิต)" - รูปแบบเอาต์พุต -
-- `ppk` - บูล - `False` - เปิดใช้งานการแก้ไข PPK -
-- `custom_settings` - คำสั่ง - `None` - การตั้งค่าแบบกำหนดเองขั้นสูง -
+| พารามิเตอร์ | พิมพ์ | ค่าเริ่มต้น | คำอธิบาย |
+| ------------------------- | ---- | ----------------------- | ----------------------------------- |
+| `debayer` | STR | "มาตรฐาน (เร็ว คุณภาพปานกลาง)" | วิธีการ Debayer |
+| `vignette_correction` | บูล | `True` | เปิดใช้งานการแก้ไขบทความสั้น |
+| `reflectance_calibration` | บูล | `True` | เปิดใช้งานการปรับเทียบการสะท้อนแสง |
+| `indices` | รายการ | `None` | ดัชนีพืชพรรณที่จะคำนวณ |
+| `export_format` | STR | "TIFF (16 บิต)" | รูปแบบเอาต์พุต |
+| `ppk` | บูล | `False` | เปิดใช้งานการแก้ไข PPK |
+| `custom_settings` | คำสั่ง | `None` | การตั้งค่าแบบกำหนดเองขั้นสูง |
 
 **รูปแบบการส่งออก:**
 
@@ -286,7 +305,7 @@ chloros.configure(
 
 # Advanced configuration
 chloros.configure(
-    debayer="High Quality (Faster)",
+    debayer="Standard (Fast, Medium Quality)",
     vignette_correction=True,
     reflectance_calibration=True,
     ppk=True,
@@ -295,7 +314,7 @@ chloros.configure(
 )
 ```
 
--
+***
 
 #### `process(mode="parallel", wait=True, progress_callback=None)`
 
@@ -303,16 +322,16 @@ chloros.configure(
 
 **พารามิเตอร์:**
 
-- พารามิเตอร์ - พิมพ์ - ค่าเริ่มต้น - คำอธิบาย -
-- ------------------- - -------- - ------------ - --------------------------------------------- -
-- `mode` - STR - `"parallel"` - โหมดการประมวลผล: "ขนาน" หรือ "อนุกรม" -
-- `wait` - บูล - `True` - รอให้เสร็จสิ้น -
-- `progress_callback` - โทรได้ - `None` - ฟังก์ชั่นการเรียกกลับความคืบหน้า (ความคืบหน้า, msg) -
-- `poll_interval` - ลอย - `2.0` - ช่วงเวลาการโพลเพื่อความคืบหน้า (วินาที) -
+| พารามิเตอร์ | พิมพ์ | ค่าเริ่มต้น | คำอธิบาย |
+| ------------------- | -------- | ------------ | --------------------------------------------- |
+| `mode` | STR | `"parallel"` | โหมดการประมวลผล: "ขนาน" หรือ "อนุกรม" |
+| `wait` | บูล | `True` | รอให้เสร็จสิ้น |
+| `progress_callback` | โทรได้ | `None` | ฟังก์ชั่นการเรียกกลับความคืบหน้า (ความคืบหน้า, msg) |
+| `poll_interval` | ลอย | `2.0` | ช่วงเวลาการโพลเพื่อความคืบหน้า (วินาที) |
 
 **การส่งคืน:** `dict` - ผลการประมวลผล
 
-{% คำใบ้สไตล์ = "คำเตือน" %}
+{% hint style="warning" %}
 **โหมดขนาน**: ต้องมีใบอนุญาต Chloros+ ปรับขนาดตามคอร์ CPU ของคุณโดยอัตโนมัติ (สูงสุด 16 คน)
 {% endhint %}
 
@@ -336,7 +355,7 @@ chloros.process(
 chloros.process(wait=False)
 ```
 
--
+***
 
 #### `get_config()`
 
@@ -349,21 +368,41 @@ config = chloros.get_config()
 print(config['Project Settings'])
 ```
 
--
+***
 
 #### `get_status()`
 
-รับข้อมูลสถานะแบ็กเอนด์
+รับข้อมูลสถานะแบ็กเอนด์ รวมถึงความคืบหน้าในการประมวลผลต่อเธรด
 
-**การส่งคืน:** `dict` - สถานะแบ็กเอนด์**ตัวอย่าง:**
+**การส่งคืน:** `dict` - สถานะแบ็กเอนด์ที่มีโครงสร้างต่อไปนี้:
+
+```python
+{
+    "running": True,
+    "url": "http://localhost:5000",
+    "processing": {
+        "percent": 75.0,
+        "phase": "processing"
+    },
+    "export": {
+        "percent": 50.0,
+        "phase": "exporting",
+        "active": True
+    }
+}
+```
+
+**ตัวอย่าง:**
 
 ```python
 status = chloros.get_status()
 print(f"Running: {status['running']}")
 print(f"URL: {status['url']}")
+print(f"Processing: {status['processing']['percent']}%")
+print(f"Export: {status['export']['percent']}% - Active: {status['export']['active']}")
 ```
 
--
+***
 
 #### `shutdown_backend()`
 
@@ -375,7 +414,7 @@ print(f"URL: {status['url']}")
 chloros.shutdown_backend()
 ```
 
--
+***
 
 #### `logout()`
 
@@ -407,7 +446,7 @@ print(f"Logout successful: {result}")
 **ต้องมีการตรวจสอบสิทธิ์อีกครั้ง**: หลังจากโทร `logout()` คุณต้องเข้าสู่ระบบอีกครั้งผ่าน Chloros, Chloros (เบราว์เซอร์) หรือ Chloros CLI ก่อนใช้ SDK
 {% endhint %}
 
--
+***
 
 ### ฟังก์ชั่นอำนวยความสะดวก
 
@@ -417,17 +456,17 @@ print(f"Logout successful: {result}")
 
 **พารามิเตอร์:**
 
-- พารามิเตอร์ - พิมพ์ - ค่าเริ่มต้น - คำอธิบาย -
-- ------------------------- - -------- - --------------- - ---------------------------------- -
-- `folder_path` - str/เส้นทาง - จำเป็น - เส้นทางไปยังโฟลเดอร์ที่มีรูปภาพ -
-- `project_name` - STR - สร้างอัตโนมัติ - ชื่อโครงการ -
-- `camera` - STR - `None` - แม่แบบกล้อง -
-- `indices` - รายการ - `["NDVI"]` - ดัชนีที่จะคำนวณ -
-- `vignette_correction` - บูล - `True` - เปิดใช้งานการแก้ไขบทความสั้น -
-- `reflectance_calibration` - บูล - `True` - เปิดใช้งานการปรับเทียบการสะท้อนแสง -
-- `export_format` - STR - "TIFF (16 บิต)" - รูปแบบเอาต์พุต -
-- `mode` - STR - `"parallel"` - โหมดการประมวลผล -
-- `progress_callback` - โทรได้ - `None` - ความคืบหน้าการโทรกลับ -
+| พารามิเตอร์ | พิมพ์ | ค่าเริ่มต้น | คำอธิบาย |
+| ------------------------- | -------- | --------------- | ---------------------------------- |
+| `folder_path` | str/เส้นทาง | จำเป็น | เส้นทางไปยังโฟลเดอร์ที่มีรูปภาพ |
+| `project_name` | STR | สร้างอัตโนมัติ | ชื่อโครงการ |
+| `camera` | STR | `None` | แม่แบบกล้อง |
+| `indices` | รายการ | `["NDVI"]` | ดัชนีที่จะคำนวณ |
+| `vignette_correction` | บูล | `True` | เปิดใช้งานการแก้ไขบทความสั้น |
+| `reflectance_calibration` | บูล | `True` | เปิดใช้งานการปรับเทียบการสะท้อนแสง |
+| `export_format` | STR | "TIFF (16 บิต)" | รูปแบบเอาต์พุต |
+| `mode` | STR | `"parallel"` | โหมดการประมวลผล |
+| `progress_callback` | โทรได้ | `None` | ความคืบหน้าการโทรกลับ |
 
 **การส่งคืน:** `dict` - ผลการประมวลผล**ตัวอย่าง:**
 
@@ -456,7 +495,7 @@ results = process_folder(
 )
 ```
 
--
+***
 
 ## การสนับสนุนตัวจัดการบริบท
 
@@ -474,9 +513,13 @@ with ChlorosLocal() as chloros:
 # Backend automatically shut down here
 ```
 
--
+***
 
 ## ตัวอย่างที่สมบูรณ์
+
+{% hint style="info" %}
+**ผู้ใช้ Linux**: ตัวอย่างทั้งหมดด้านล่างนี้ใช้เส้นทาง Windows แทนที่เส้นทาง `C:\\...` ด้วยเส้นทาง Linux ของคุณ (เช่น `/home/user/...` หรือ `~/...`) ฟังก์ชัน SDK ทั้งหมดเหมือนกันในทุกแพลตฟอร์ม
+{% endhint %}
 
 ### ตัวอย่างที่ 1: การประมวลผลขั้นพื้นฐาน
 
@@ -491,7 +534,7 @@ results = process_folder("C:\\Datasets\\Field_A_2025_01_15")
 print(f"Processing complete: {results}")
 ```
 
--
+***
 
 ### ตัวอย่างที่ 2: เวิร์กโฟลว์แบบกำหนดเอง
 
@@ -512,7 +555,7 @@ print(f"Imported {len(import_results.get('files', []))} images")
 
 # Configure advanced settings
 chloros.configure(
-    debayer="High Quality (Faster)",
+    debayer="Standard (Fast, Medium Quality)",
     vignette_correction=True,
     reflectance_calibration=True,
     ppk=False,
@@ -533,7 +576,7 @@ chloros.process(
 print("Processing complete!")
 ```
 
--
+***
 
 ### ตัวอย่างที่ 3: การประมวลผลหลายโฟลเดอร์เป็นชุด
 
@@ -585,7 +628,7 @@ print("\n" + "="*60)
 print("All flights processed!")
 ```
 
--
+***
 
 ### ตัวอย่างที่ 4: การบูรณาการไปป์ไลน์การวิจัย
 
@@ -640,7 +683,7 @@ print(df)
 # plt.show()
 ```
 
--
+***
 
 ### ตัวอย่างที่ 5: การติดตามความคืบหน้าแบบกำหนดเอง
 
@@ -679,7 +722,7 @@ chloros.process(
 logging.info("Processing complete!")
 ```
 
--
+***
 
 ### ตัวอย่างที่ 6: การจัดการข้อผิดพลาด
 
@@ -709,7 +752,7 @@ def process_safely(folder_path):
         return False, f"License error: {e}. Upgrade to Chloros+ at cloud.mapir.camera/pricing"
     
     except ChlorosBackendError as e:
-        return False, f"Backend error: {e}. Ensure Chloros Desktop is installed."
+        return False, f"Backend error: {e}. Ensure Chloros is installed (Windows installer or Linux .deb package)."
     
     except ChlorosProcessingError as e:
         return False, f"Processing error: {e}"
@@ -731,7 +774,7 @@ else:
     print(f"✗ {message}")
 ```
 
--
+***
 
 ### ตัวอย่างที่ 7: การจัดการบัญชีและการออกจากระบบ
 
@@ -774,7 +817,7 @@ if switch_account():
 # secure_cleanup()
 ```
 
--
+***
 
 ### ตัวอย่างที่ 8: เครื่องมือบรรทัดคำสั่ง
 
@@ -861,7 +904,7 @@ python my_processor.py "C:\Flight001" "C:\Flight002" --indices NDVI NDRE GNDVI
 python my_processor.py --logout
 ```
 
--
+***
 
 ## การจัดการข้อยกเว้น
 
@@ -893,7 +936,7 @@ except ChlorosLicenseError:
     print("Chloros+ license required. Upgrade at cloud.mapir.camera/pricing")
 
 except ChlorosBackendError:
-    print("Backend failed to start. Ensure Chloros Desktop is installed.")
+    print("Backend failed to start. Ensure Chloros is installed (Windows installer or Linux .deb package).")
 
 except ChlorosProcessingError as e:
     print(f"Processing failed: {e}")
@@ -902,7 +945,7 @@ except ChlorosError as e:
     print(f"General Chloros error: {e}")
 ```
 
--
+***
 
 ## หัวข้อขั้นสูง
 
@@ -966,7 +1009,7 @@ for i in range(0, len(images), batch_size):
     process_folder(batch_folder)
 ```
 
--
+***
 
 ## การแก้ไขปัญหา
 
@@ -974,26 +1017,35 @@ for i in range(0, len(images), batch_size):
 
 **ปัญหา:** SDK ไม่สามารถเริ่มแบ็กเอนด์ได้**แนวทางแก้ไข:**
 
-1. ตรวจสอบว่าติดตั้ง Chloros Desktop แล้ว:
+1. ตรวจสอบว่ามีการติดตั้ง Chloros แล้ว:
 
 ```python
 import os
-backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe"
+import platform
+
+# Auto-detect backend path
+if platform.system() == "Windows":
+    backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe"
+else:
+    backend_path = "/usr/lib/chloros/chloros-backend"
+
 print(f"Backend exists: {os.path.exists(backend_path)}")
 ```
 
-2. ตรวจสอบว่าไฟร์วอลล์ Windows ไม่ได้บล็อกอยู่
+2. ตรวจสอบไฟร์วอลล์ (Windows) หรือความพร้อมใช้งานของพอร์ต (Linux: `lsof -i :5000`)
 3. ลองใช้เส้นทางแบ็กเอนด์ด้วยตนเอง:
 
 ```python
+# Windows
 chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
+
+# Linux
+chloros = ChlorosLocal(backend_exe="/opt/mapir/chloros/backend/chloros-backend")
 ```
 
--
+***
 
-### ตรวจไม่พบใบอนุญาต
-
-**ปัญหา:** SDK เตือนเกี่ยวกับใบอนุญาตที่ขาดหายไป**แนวทางแก้ไข:**
+### ตรวจไม่พบใบอนุญาต**ปัญหา:** SDK เตือนเกี่ยวกับใบอนุญาตที่ขาดหายไป**แนวทางแก้ไข:**
 
 1. เปิด Chloros, Chloros (เบราว์เซอร์) หรือ Chloros CLI และเข้าสู่ระบบ
 2. ตรวจสอบว่าใบอนุญาตถูกแคชไว้:
@@ -1001,9 +1053,14 @@ chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
 ```python
 from pathlib import Path
 import os
+import platform
 
-# Check cache location (Windows)
-cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
+# Check cache location
+if platform.system() == "Windows":
+    cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
+else:
+    cache_path = Path.home() / '.cache' / 'chloros'
+
 print(f"Cache exists: {cache_path.exists()}")
 ```
 
@@ -1021,11 +1078,9 @@ chloros.logout()
 
 4. ติดต่อฝ่ายสนับสนุน: info@mapir.camera
 
--
+***
 
-### ข้อผิดพลาดในการนำเข้า
-
-**ปัญหา:** `ModuleNotFoundError: No module named 'chloros_sdk'`**แนวทางแก้ไข:**
+### ข้อผิดพลาดในการนำเข้า**ปัญหา:** `ModuleNotFoundError: No module named 'chloros_sdk'`**แนวทางแก้ไข:**
 
 ```bash
 # Verify installation
@@ -1039,11 +1094,9 @@ pip install chloros-sdk
 python -c "import sys; print(sys.path)"
 ```
 
--
+***
 
-### หมดเวลาการประมวลผล
-
-**ปัญหา:** หมดเวลาการประมวลผล**แนวทางแก้ไข:**
+### หมดเวลาการประมวลผล**ปัญหา:** หมดเวลาการประมวลผล**แนวทางแก้ไข:**
 
 1. เพิ่มการหมดเวลา:
 
@@ -1055,11 +1108,9 @@ chloros = ChlorosLocal(timeout=120)  # 2 minutes
 3. ตรวจสอบพื้นที่ว่างในดิสก์
 4. ตรวจสอบทรัพยากรระบบ
 
--
+***
 
-### พอร์ตมีการใช้งานแล้ว
-
-**ปัญหา:** พอร์ตแบ็กเอนด์ 5000 ถูกครอบครอง**แนวทางแก้ไข:**
+### พอร์ตมีการใช้งานแล้ว**ปัญหา:** พอร์ตแบ็กเอนด์ 5000 ถูกครอบครอง**แนวทางแก้ไข:**
 
 ```python
 # Use different port
@@ -1069,11 +1120,17 @@ chloros = ChlorosLocal(api_url="http://localhost:5001")
 หรือค้นหาและปิดกระบวนการที่ขัดแย้งกัน:
 
 ```powershell
-# PowerShell
+# Windows PowerShell
 Get-NetTCPConnection -LocalPort 5000
 ```
 
--
+```bash
+# Linux
+lsof -i :5000
+kill $(lsof -t -i :5000)
+```
+
+***
 
 ## เคล็ดลับประสิทธิภาพ
 
@@ -1098,9 +1155,7 @@ chloros.configure(export_format="PNG (8-bit)")  # Faster than TIFF
 chloros.configure(indices=["NDVI"])  # Not all indices
 ```
 
-4. **ประมวลผลบน SSD** (ไม่ใช่ HDD)
-
--
+4. **ประมวลผลบน SSD** (ไม่ใช่ HDD)***
 
 ### การเพิ่มประสิทธิภาพหน่วยความจำ
 
@@ -1111,7 +1166,7 @@ chloros.configure(indices=["NDVI"])  # Not all indices
 # See "Memory Management" in Advanced Topics
 ```
 
--
+***
 
 ### การประมวลผลเบื้องหลัง
 
@@ -1124,7 +1179,7 @@ chloros.process(wait=False)  # Non-blocking
 # ...
 ```
 
--
+***
 
 ## ตัวอย่างการรวมระบบ
 
@@ -1199,49 +1254,44 @@ chloros.process(progress_callback=notebook_progress)
 # ... (your visualization code)
 ```
 
--
+***
 
 ## คำถามที่พบบ่อย
 
-### ถาม: SDK จำเป็นต้องเชื่อมต่ออินเทอร์เน็ตหรือไม่
+### ถาม: SDK จำเป็นต้องเชื่อมต่ออินเทอร์เน็ตหรือไม่?
 
-**A:** สำหรับการเปิดใช้งานใบอนุญาตครั้งแรกเท่านั้น หลังจากเข้าสู่ระบบผ่าน Chloros, Chloros (เบราว์เซอร์) หรือ Chloros CLI ใบอนุญาตจะถูกแคชในเครื่องและทำงานแบบออฟไลน์เป็นเวลา 30 วัน
+**A:** สำหรับการเปิดใช้งานใบอนุญาตครั้งแรกเท่านั้น หลังจากเข้าสู่ระบบผ่าน Chloros, Chloros (เบราว์เซอร์) หรือ Chloros CLI ใบอนุญาตจะถูกแคชในเครื่องและทำงานแบบออฟไลน์เป็นเวลา 30 วัน***
 
--
+### ถาม: ฉันสามารถใช้ SDK บนเซิร์ฟเวอร์ที่ไม่มี GUI ได้หรือไม่?**ก. ใช่! SDK ทำงานแบบไม่มีส่วนหัวบนเซิร์ฟเวอร์ Windows และ Linux**Linux (แนะนำสำหรับผู้ที่ไม่มีหัว):**
+* ติดตั้งผ่านแพ็คเกจ `.deb`
+* เปิดใช้งานใบอนุญาต: `chloros-cli login user@example.com 'password'`
 
-### ถาม: ฉันสามารถใช้ SDK บนเซิร์ฟเวอร์ที่ไม่มี GUI ได้หรือไม่
-
-**ก. ใช่! ความต้องการ:
-
+**เซิร์ฟเวอร์ Windows:**
 * Windows เซิร์ฟเวอร์ 2016 หรือใหม่กว่า
-* Chloros ติดตั้งแล้ว (ครั้งเดียว)
-* ใบอนุญาตเปิดใช้งานบนเครื่องใด ๆ (ใบอนุญาตแคชคัดลอกไปยังเซิร์ฟเวอร์)
+* ติดตั้ง Chloros (ครั้งเดียว)
+* ใบอนุญาตเปิดใช้งานผ่าน CLI หรือบนเครื่องใด ๆ
 
--
+***
 
 ### ถาม: เดสก์ท็อป, CLI และ SDK แตกต่างกันอย่างไร
 
-- คุณสมบัติ - GUI เดสก์ท็อป - CLI บรรทัดคำสั่ง - Python SDK -
-- --------------- - ----------- - ---------------- - ----------- -
-- **อินเทอร์เฟซ** - คลิกชี้ - คำสั่ง - Python API -
-- **ดีที่สุดสำหรับ** - งานทัศนศิลป์ - การเขียนสคริปต์ - บูรณาการ -
-- **ระบบอัตโนมัติ** - จำกัด - ดี - ดีเยี่ยม -
-- **ความยืดหยุ่น** - พื้นฐาน - ดี - สูงสุด -
-- **ใบอนุญาต** - Chloros+ - Chloros+ - Chloros+ -
+| คุณสมบัติ | GUI เดสก์ท็อป | CLI บรรทัดคำสั่ง | Python SDK |
+| --------------- | ----------- | ---------------- | ----------- |
+| **อินเทอร์เฟซ** | คลิกชี้ | คำสั่ง | Python API |
+| **ดีที่สุดสำหรับ** | งานทัศนศิลป์ | การเขียนสคริปต์ | บูรณาการ |
+| **ระบบอัตโนมัติ** | จำกัด | ดี | ดีเยี่ยม |
+| **ความยืดหยุ่น** | พื้นฐาน | ดี | สูงสุด |
+| **ใบอนุญาต** | Chloros+ | Chloros+ | Chloros+ |***
 
--
-
-### ถาม: ฉันสามารถเผยแพร่แอปที่สร้างด้วย SDK ได้หรือไม่
-
-**ตอบ:** รหัส SDK สามารถรวมเข้ากับแอปพลิเคชันของคุณได้ แต่:
+### ถาม: ฉันสามารถเผยแพร่แอปที่สร้างด้วย SDK ได้หรือไม่**ตอบ:** รหัส SDK สามารถรวมเข้ากับแอปพลิเคชันของคุณได้ แต่:
 
 * ผู้ใช้ปลายทางจำเป็นต้องติดตั้ง Chloros
 * ผู้ใช้ปลายทางต้องมีใบอนุญาต Chloros+ ที่ใช้งานได้
-* การจัดจำหน่ายเชิงพาณิชย์ต้องมีใบอนุญาต OEM
+* การจำหน่ายเชิงพาณิชย์ต้องมีใบอนุญาต OEM
 
 ติดต่อ info@mapir.camera เพื่อสอบถามข้อมูล OEM
 
--
+***
 
 ### ถาม: ฉันจะอัพเดต SDK ได้อย่างไร?
 
@@ -1249,7 +1299,7 @@ chloros.process(progress_callback=notebook_progress)
 pip install --upgrade chloros-sdk
 ```
 
--
+***
 
 ### ถาม: ภาพที่ประมวลผลแล้วจะถูกบันทึกไว้ที่ไหน?
 
@@ -1262,27 +1312,29 @@ Project_Path/
     └── Survey3N_RGN/          # Processed outputs
 ```
 
--
+***
 
-### ถาม: ฉันสามารถประมวลผลภาพจากสคริปต์ Python ที่ทำงานตามกำหนดเวลาได้หรือไม่
-
-**ก. ใช่! ใช้ Windows Task Scheduler กับสคริปต์ Python:
+### ถาม: ฉันสามารถประมวลผลภาพจากสคริปต์ Python ที่ทำงานตามกำหนดเวลาได้หรือไม่**ก. ใช่! ใช้ตัวกำหนดเวลา OS ของคุณกับสคริปต์ Python:
 
 ```python
 # scheduled_processing.py
 from chloros_sdk import process_folder
 
 # Process today's flights
-results = process_folder("C:\\Flights\\Today")
+results = process_folder("/data/flights/today")  # Linux
+# results = process_folder("C:\\Flights\\Today")  # Windows
 ```
 
-กำหนดเวลาผ่าน Task Scheduler เพื่อให้ทำงานทุกวัน
+**Windows:** กำหนดเวลาผ่าน Task Scheduler เพื่อให้ทำงานทุกวัน**Linux:** กำหนดการผ่าน cron:
 
--
+```cron
+# Run at 2 AM daily
+0 2 * ** /usr/bin/python3 /home/user/scheduled_processing.py >> /var/log/chloros.log 2>&1
+```
 
-### ถาม: SDK รองรับ async/await หรือไม่
+***
 
-**A:** เวอร์ชันปัจจุบันเป็นแบบซิงโครนัส สำหรับการทำงานแบบอะซิงก์ ให้ใช้ `wait=False` หรือรันในเธรดแยกกัน:
+### ถาม: SDK รองรับ async/await หรือไม่**A:** เวอร์ชันปัจจุบันเป็นแบบซิงโครนัส สำหรับการทำงานแบบอะซิงก์ ให้ใช้ `wait=False` หรือรันในเธรดแยกกัน:
 
 ```python
 import threading
@@ -1296,11 +1348,9 @@ thread.start()
 # Continue with other work...
 ```
 
--
+***
 
-### ถาม: ฉันจะสลับระหว่างบัญชี Chloros+ ที่แตกต่างกันได้อย่างไร
-
-**A:** ใช้วิธี `logout()` เพื่อล้างข้อมูลประจำตัวที่แคชไว้ จากนั้นเข้าสู่ระบบอีกครั้งด้วยบัญชีใหม่:
+### ถาม: ฉันจะสลับระหว่างบัญชี Chloros+ ที่แตกต่างกันได้อย่างไร**A:** ใช้วิธี `logout()` เพื่อล้างข้อมูลประจำตัวที่แคชไว้ จากนั้นเข้าสู่ระบบอีกครั้งด้วยบัญชีใหม่:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -1314,7 +1364,7 @@ chloros.logout()
 
 หลังจากออกจากระบบ ให้ตรวจสอบสิทธิ์กับบัญชีใหม่ผ่าน GUI, เบราว์เซอร์ หรือ CLI ก่อนที่จะใช้ SDK อีกครั้ง
 
--
+***
 
 ## การขอความช่วยเหลือ
 
@@ -1332,10 +1382,8 @@ chloros.logout()
 
 ตัวอย่างทั้งหมดที่แสดงไว้ที่นี่ได้รับการทดสอบและพร้อมสำหรับการผลิต คัดลอกและปรับใช้ให้เหมาะกับกรณีการใช้งานของคุณ
 
--
+***
 
-## ใบอนุญาต
-
-**ซอฟต์แวร์ที่เป็นกรรมสิทธิ์** - ลิขสิทธิ์ (c) 2025 MAPIR Inc.
+## ใบอนุญาต**ซอฟต์แวร์ที่เป็นกรรมสิทธิ์** - ลิขสิทธิ์ (c) 2025 MAPIR Inc.
 
 SDK จำเป็นต้องมีการสมัครสมาชิก Chloros+ ที่ใช้งานอยู่ ห้ามใช้ แจกจ่าย หรือดัดแปลงโดยไม่ได้รับอนุญาต
