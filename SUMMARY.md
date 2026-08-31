@@ -1,47 +1,72 @@
-#สารบัญ
+# สารบัญ
 
 * [เริ่มต้นใช้งาน](README.md)
-* [GUI : ได้](navigation.md)
+* [การใช้Chlorosกับผู้ช่วย AI](ai-assistants.md)
+* [GUI : การนำทาง](navigation.md)
 * [GUI : โครงการ](projects.md)
-* [CLI : คำสั่งใหม่](CLI.md)
+* [CLI : บรรทัดคำสั่ง](CLI.md)
 * [API : Python SDK](api-python-sdk.md)
 * [กล้องที่รองรับ](supported-cameras.md)
-* [ รูปแบบภายนอกส่งออก](output-image-formats.md)
-* [Chloros+ เข้าสู่ระบบ](คลอรอส+-login.md)
-* [กลุ่มเป้าหมายเปรียบเทียบกัน](calibration-targets.md)
+* [รูปแบบภาพออก](output-image-formats.md)
+* [Chloros+ การเข้าสู่ระบบ](chloros+-login.md)
+* [เป้าหมายการปรับเทียบ](calibration-targets.md)
 * [ภาษาที่รองรับ](supported-languages.md)
 * [ดาวน์โหลด](download.md)
 * [คำถามที่พบบ่อย](faq.md)
 
-## ขึ้นอยู่กับความต้องการรูปภาพ (GUI)
+## การประมวลผลภาพ (GUI)
 
-* [ เราจะพบกับโปรเจ็กต์](processing-images-gui/adjusting-project-settings.md)
-* [ ไฟล์แนบ](processing-images-gui/adding-files-to-a-project.md)
-* [ เลือกภาพกลุ่มเป้าหมาย](processing-images-gui/choosing-target-images.md)
-* [เริ่มทำกิจกรรม](processing-images-gui/starting-the-processing.md)
-* [ ตรวจวัดอุณหภูมิ](processing-images-gui/monitoring-the-processing.md)
-* [ วิธีการปฏิบัติ](processing-images-gui/finishing-the-processing.md)
+* [การปรับตั้งค่าโครงการ](processing-images-gui/adjusting-project-settings.md)
+* [การเพิ่มไฟล์เข้าสู่โครงการ](processing-images-gui/adding-files-to-a-project.md)
+* [การเลือกภาพเป้าหมาย](processing-images-gui/choosing-target-images.md)
+* [เริ่มการประมวลผล](processing-images-gui/starting-the-processing.md)
+* [ติดตามการประมวลผล](processing-images-gui/monitoring-the-processing.md)
+* [เสร็จสิ้นการประมวลผล](processing-images-gui/finishing-the-processing.md)
 
-## นอกจากนี้ยังมีโครงการ
+## การตั้งค่าโครงการ
 
-* [ โปรดติดตามโครงการ](project-settings/project-settings.md)
-* [สูตรดัชนีหลายเหตุการณ์](project-settings/multispectral-index-formulas.md)
+* [การตั้งค่าโครงการ](project-settings/project-settings.md)
+* [สูตรดัชนีมัลติสเปกตรัม](project-settings/multispectral-index-formulas.md)
 
-## การอ่านรูปภาพ (GUI)
+## โปรแกรมดูภาพ (GUI)
 
-* [ตารางภาพ](image-viewer-gui/image-grid.md)
-* [ อย่าลืมภาพแบบเต็มหน้าจอ](image-viewer-gui/opening-an-image-full-screen.md)
-* [รูปภาพรูปภาพ](image-viewer-gui/image-layers.md)
-* [ แซนด์บ็อกซ์ดัชนี/LUT](image-viewer-gui/index-lut-sandbox.md)
-* [เครื่องหมายแผนที่](image-viewer-gui/map-markers.md)
+* [กริดภาพ](image-viewer-gui/image-grid.md)
+* [เปิดภาพในโหมดเต็มหน้าจอ](image-viewer-gui/opening-an-image-full-screen.md)
+* [ชั้นภาพ](image-viewer-gui/image-layers.md)
+* [พื้นที่ทดลองดัชนี/LUT](image-viewer-gui/index-lut-sandbox.md)
+* [เครื่องหมายบนแผนที่](image-viewer-gui/map-markers.md)
 
-## Linux และแบบกำหนดเองแอดจ์
+## กล้อง LATTICE
 
-* [ สำหรับ Linux](linux/linux-overview.md)
-* [ เครื่องเชื่อม Linux](linux/linux-installation.md)
+* [กล้อง LATTICE](lattice/README.md)
+* [การเชื่อมต่อกล้อง](lattice/connecting.md)
+* [การตั้งค่ากล้อง](lattice/camera-settings.md)
+* [การตั้งค่าและโหมดการถ่ายภาพ](lattice/capture.md)
+* [ระบบกล้องหลายตัว](lattice/arrays.md)
+* [กล้องโมโนโครมและดัชนีพืชพรรณ](lattice/mono-indices.md)
+
+## เซ็นเซอร์แสง DAQ
+
+* [เซ็นเซอร์แสง DAQ](daq/README.md)
+* [แท็บ DAQ ใน Chloros](daq/gui.md)
+* [คู่มือเริ่มต้นอย่างรวดเร็ว CLI (pool-\*)](daq/cli-quick-start.md)
+* [โปรไฟล์ Cap และช่วงที่ปรับเทียบ](daq/caps-and-range.md)
+* [การบันทึกและรูปแบบ .daq](daq/recording.md)
+* [เครือข่าย DAQ-E และการซิงค์เวลา](daq/ethernet-ptp.md)
+* [ขั้นตอนการทำงานด้านการสะท้อนแสง](daq/reflectance.md)
+
+## Linux &amp; Edge Computing
+
+* [ภาพรวมของ Linux](linux/linux-overview.md)
+* [การติดตั้ง Linux](linux/linux-installation.md)
 * [คู่มือ NVIDIA Jetson](linux/nvidia-jetson-guide.md)
 
-## วิธีการปฏิบัติ
+## สถาปัตยกรรมการประมวลผล
 
-* [ การรับรู้ตอนกลางคืน](processing-architecture/dynamic-compute-adaptation.md)
-* [ขั้นตอนการปฏิบัติ](processing-architecture/processing-pipeline.md)
+* [การปรับแต่งการประมวลผลแบบไดนามิก](processing-architecture/dynamic-compute-adaptation.md)
+* [ท่อการประมวลผล](processing-architecture/processing-pipeline.md)
+
+## เอกสารอ้างอิง (CLI &amp; SDK)
+
+* [Chloros เอกสารอ้างอิง CLI](reference/cli-reference.md)
+* [Chloros เอกสารอ้างอิง Python SDK](reference/sdk-reference.md)
