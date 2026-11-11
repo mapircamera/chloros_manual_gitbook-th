@@ -12,9 +12,7 @@ metaLinks:
 
 <table><thead><tr><th align="center">สีของตัวกรอง Survey3</th><th width="196.199951171875" align="center">ชื่อตัวกรอง Survey3</th><th width="159.800048828125" align="center">ช่วงการส่งผ่าน (FWHM)</th><th align="center">การส่งผ่านเฉลี่ย</th></tr></thead><tbody><tr><td align="center">Blue</td><td align="center">NGB - Blue</td><td align="center">468-483nm</td><td align="center">475 นาโนเมตร</td></tr><tr><td align="center">Cyan</td><td align="center">OCN- Cyan</td><td align="center">476-512 นาโนเมตร</td><td align="center">494 นาโนเมตร</td></tr><tr><td align="center">Green</td><td align="center">RGN | NGB - Green</td><td align="center">543-558 นาโนเมตร</td><td align="center">547 นาโนเมตร</td></tr><tr><td align="center">Orange</td><td align="center">OCN - Orange</td><td align="center">598-640 นาโนเมตร</td><td align="center">619 นาโนเมตร</td></tr><tr><td align="center">Red</td><td align="center">RGN - Red</td><td align="center">653-668 นาโนเมตร</td><td align="center">661 นาโนเมตร</td></tr><tr><td align="center">RedEdge</td><td align="center">Re - RedEdge</td><td align="center">712-735 นาโนเมตร</td><td align="center">724 นาโนเมตร</td></tr><tr><td align="center">NIR1</td><td align="center">OCN - NIR1</td><td align="center">798-848 นาโนเมตร</td><td align="center">823 นาโนเมตร</td></tr><tr><td align="center">NIR2</td><td align="center">RGN | NGB | NIR - NIR2</td><td align="center">835-865 นาโนเมตร</td><td align="center">850 นาโนเมตร</td></tr></tbody></table>
 
-เมื่อใช้สูตรเหล่านี้ ชื่ออาจลงท้ายด้วย &quot;\_1&quot; หรือ &quot;\_2&quot; ซึ่งสอดคล้องกับตัวกรองNIR ที่ใช้ คือ NIR1 หรือ NIR2
-
-สำหรับกล้อง LATTICE M3C (Bayer triple-bandpass) เครื่องยนต์ดัชนีเดียวกันจะใช้แถบกรอง M3C ดังนี้:
+เมื่อใช้สูตรเหล่านี้ ชื่ออาจลงท้ายด้วย "\_1" หรือ "\_2" ซึ่งสอดคล้องกับตัวกรองNIR ที่ใช้ คือ NIR1 หรือ NIR2 สำหรับกล้อง LATTICE M3C (Bayer triple-bandpass) เครื่องยนต์ดัชนีเดียวกันจะใช้แถบกรอง M3C ดังนี้:
 
 | ตัวกรอง M3C | แถบ 1 (จุดศูนย์กลาง/FWHM) | แถบ 2 (จุดศูนย์กลาง/FWHM) | แถบ 3 (จุดศูนย์กลาง/FWHM) |
 | --- | --- | --- | --- |
@@ -118,9 +116,7 @@ Surface 1 และ 2 ทำงานกับ **ภาพหนึ่งภา�
 | RE | RE 0 |
 | NIR | NIR 0 |
 
-**ฟิลเตอร์เริ่มต้น** ของพรีเซ็ต (คอลัมน์ &quot;Default filter&quot; ข้างต้น) จะถูกใช้เมื่อโครงการมีภาพที่ใช้ฟิลเตอร์นั้น หากไม่มี Chloros จะสแกนตัวกรองที่มีอยู่ในโครงการตามลำดับ `RGN, OCN, NGB, RGB, RE, NIR` และเลือกตัวกรองแรกที่สามารถจัดหาทุกช่องสัญญาณที่พรีเซ็ตต้องการได้ หากไม่มีตัวกรองใดที่สามารถทำได้ พรีเซ็ตนั้นจะถูกยกเลิกสำหรับการรันครั้งนั้น นี่คือเหตุผลที่ `NDVI` ที่ถูกขอใช้กับชุดข้อมูลที่มีเพียง OCN เท่านั้น ยังคงให้ผลลัพธ์ที่สมเหตุสมผล — เนื่องจากมันผูกกับตำแหน่ง Orange และ NIR ของ OCN
-
-สตริงแบบจำลอง LATTICE M3C นำฟิลเตอร์มาพร้อมกับคำนำหน้า `F` (`LATT-M3C-L41-FRGN`) แต่คำนำหน้านี้จะถูกลบออกเมื่ออ่านรหัสตัวกรองจากภาพ ดังนั้นกล้อง FRGN จึงสามารถแก้ไขได้ผ่านแถว `RGN` ด้านบน และไม่จำเป็นต้องมีการจัดการพิเศษ
+**ฟิลเตอร์เริ่มต้น** ของพรีเซ็ต (คอลัมน์ "Default filter" ข้างต้น) จะถูกใช้เมื่อโครงการมีภาพที่ใช้ฟิลเตอร์นั้น หากไม่มี Chloros จะสแกนตัวกรองที่มีอยู่ในโครงการตามลำดับ `RGN, OCN, NGB, RGB, RE, NIR` และเลือกตัวกรองแรกที่สามารถจัดหาทุกช่องสัญญาณที่พรีเซ็ตต้องการได้ หากไม่มีตัวกรองใดที่สามารถทำได้ พรีเซ็ตนั้นจะถูกยกเลิกสำหรับการรันครั้งนั้น นี่คือเหตุผลที่ `NDVI` ที่ถูกขอใช้กับชุดข้อมูลที่มีเพียง OCN เท่านั้น ยังคงให้ผลลัพธ์ที่สมเหตุสมผล — เนื่องจากมันผูกกับตำแหน่ง Orange และ NIR ของ OCN สตริงแบบจำลอง LATTICE M3C นำฟิลเตอร์มาพร้อมกับคำนำหน้า `F` (`LATT-M3C-L41-FRGN`) แต่คำนำหน้านี้จะถูกลบออกเมื่ออ่านรหัสตัวกรองจากภาพ ดังนั้นกล้อง FRGN จึงสามารถแก้ไขได้ผ่านแถว `RGN` ด้านบน และไม่จำเป็นต้องมีการจัดการพิเศษ
 
 ### 3. เครื่องยนต์ดัชนี LATTICE (`lattice index --preset`, เครื่องคำนวณดัชนีแบบเรียลไทม์) — 22 ค่าตั้งล่วงหน้า
 
@@ -165,7 +161,7 @@ $$
 
 ใน GUI และรายการตั้งค่าล่วงหน้าของ CLI/SDK สัญลักษณ์นี้คือสูตร `(z/y)*(x/y)` โดย x=Red, y=Green, z=NIR (แถบของกล้องRGN); การตั้งค่าล่วงหน้าของเครื่องยนต์ดัชนี LATTICE คือ `nir * red / green**2` ทุกพื้นผิวจะคำนวณดัชนีเดียวกัน
 
-_อ้างอิง: Vincini, M., E. Frazzi, และ P. D&#x27;Alessio. &quot;A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale.&quot; Precision Agriculture 9 (2008): 303-319._
+_อ้างอิง: Vincini, M., E. Frazzi, และ P. D'Alessio. "A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale." Precision Agriculture 9 (2008): 303-319._
 
 ***
 
@@ -191,7 +187,7 @@ $$
 
 ค่า EVI สำหรับพิกเซลพืชควรอยู่ในช่วง 0 ถึง 1 ลักษณะที่สว่าง เช่น เมฆและอาคารสีขาว รวมถึงลักษณะที่มืด เช่น น้ำ อาจก่อให้เกิดค่าพิกเซลผิดปกติในภาพ EVI ก่อนสร้างภาพ EVI คุณควรใช้มาสก์เพื่อกำจัดเมฆและลักษณะที่สว่างออกจากภาพการสะท้อนแสง และอาจตั้งค่าเกณฑ์ให้ค่าพิกเซลอยู่ในช่วง 0 ถึง 1 ได้
 
-_อ้างอิง: Huete, A., et al. &quot;Overview of the Radiometric and Biophysical Performance of the MODIS Vegetation Indices.&quot; Remote Sensing of Environment 83 (2002):195–213._
+_อ้างอิง: Huete, A., et al. "Overview of the Radiometric and Biophysical Performance of the MODIS Vegetation Indices." Remote Sensing of Environment 83 (2002):195–213._
 
 ***
 
@@ -207,7 +203,7 @@ $$
 
 พื้นที่ป่าจะมีค่าFCI1 ที่ต่ำกว่า เนื่องจากความสะท้อนแสงของต้นไม้ที่ต่ำลง และการมีเงาภายในชั้นใบไม้
 
-_อ้างอิง: Becker, Sarah J., Craig S.T. Daughtry, และ Andrew L. Russ. &quot;ดัชนีความปกคลุมของป่าที่ทนทานสำหรับภาพมัลติสเปกตรัม.&quot; Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505-512._
+_อ้างอิง: Becker, Sarah J., Craig S.T. Daughtry, และ Andrew L. Russ. "ดัชนีความปกคลุมของป่าที่ทนทานสำหรับภาพมัลติสเปกตรัม." Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505-512._
 
 ***
 
@@ -223,7 +219,7 @@ $$
 
 พื้นที่ป่าจะมีค่าFCI2 ที่ต่ำกว่า เนื่องจากค่าการสะท้อนแสงของต้นไม้ที่ต่ำลง และการมีเงาภายในชั้นเรือนยอด
 
-_อ้างอิง: Becker, Sarah J., Craig S.T. Daughtry, and Andrew L. Russ. &quot;ดัชนีความปกคลุมของป่าที่ทนทานสำหรับภาพมัลติสเปกตรัม.&quot; Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505-512._
+_อ้างอิง: Becker, Sarah J., Craig S.T. Daughtry, and Andrew L. Russ. "ดัชนีความปกคลุมของป่าที่ทนทานสำหรับภาพมัลติสเปกตรัม." Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505-512._
 
 ***
 
@@ -259,7 +255,7 @@ $$
 
 ค่าคงที่แกมมา (gamma constant) เป็นฟังก์ชันการถ่วงน้ำหนักที่ขึ้นอยู่กับสภาพของแอโรซอลในบรรยากาศ ENVI ใช้ค่า 1.7 ซึ่งเป็นค่าที่แนะนำโดย Gitelson, Kaufman และ Merzylak (1996, หน้า 296).
 
-_อ้างอิง: Gitelson, A., Y. Kaufman, และ M. Merzylak. &quot;Use of a Green Channel in Remote Sensing of Global Vegetation from EOS-MODIS.&quot; Remote Sensing of Environment 58 (1996): 289-298._
+_อ้างอิง: Gitelson, A., Y. Kaufman, และ M. Merzylak. "Use of a Green Channel in Remote Sensing of Global Vegetation from EOS-MODIS." Remote Sensing of Environment 58 (1996): 289-298._
 
 ***
 
@@ -273,7 +269,7 @@ $$
 
 การมีช่วงความยาวคลื่นNIR และสีเขียวที่กว้างช่วยคาดการณ์ปริมาณคลอโรฟิลล์ได้ดีขึ้น พร้อมทั้งเพิ่มความไวและอัตราส่วนสัญญาณต่อสัญญาณรบกวนที่สูงขึ้น
 
-_อ้างอิง: Gitelson, A., Y. Gritz, และ M. Merzlyak. &quot;ความสัมพันธ์ระหว่างปริมาณคลอโรฟิลล์ในใบกับค่าการสะท้อนแสงสเปกตรัม และอัลกอริทึมสำหรับการประเมินคลอโรฟิลล์แบบไม่ทำลายในใบพืชชั้นสูง&quot; Journal of Plant Physiology 160 (2003): 271-282._
+_อ้างอิง: Gitelson, A., Y. Gritz, และ M. Merzlyak. "ความสัมพันธ์ระหว่างปริมาณคลอโรฟิลล์ในใบกับค่าการสะท้อนแสงสเปกตรัม และอัลกอริทึมสำหรับการประเมินคลอโรฟิลล์แบบไม่ทำลายในใบพืชชั้นสูง" Journal of Plant Physiology 160 (2003): 271-282._
 
 ***
 
@@ -287,7 +283,7 @@ $$
 
 ค่า GLI มีช่วงตั้งแต่ -1 ถึง +1 ค่าลบแสดงถึงดินและองค์ประกอบที่ไม่เป็นชีวิต ส่วนค่าบวกแสดงถึงใบและลำต้นสีเขียว
 
-_อ้างอิง: Louhaichi, M., M. Borman, และ D. Johnson. &quot;Spatially Located Platform and Aerial Photography for Documentation of Grazing Impacts on Wheat.&quot; Geocarto International 16, No. 1 (2001): 65-70._
+_อ้างอิง: Louhaichi, M., M. Borman, และ D. Johnson. "Spatially Located Platform and Aerial Photography for Documentation of Grazing Impacts on Wheat." Geocarto International 16, No. 1 (2001): 65-70._
 
 ***
 
@@ -299,7 +295,7 @@ $$
 GNDVI = {(NIR - Green) \over (NIR + Green)  }
 $$
 
-_อ้างอิง: Gitelson, A., และ M. Merzlyak. &quot;Remote Sensing of Chlorophyll Concentration in Higher Plant Leaves.&quot; Advances in Space Research 22 (1998): 689-692._
+_อ้างอิง: Gitelson, A., และ M. Merzlyak. "Remote Sensing of Chlorophyll Concentration in Higher Plant Leaves." Advances in Space Research 22 (1998): 689-692._
 
 ***
 
@@ -311,7 +307,7 @@ $$
 GOSAVI = {NIR - Green \over NIR + Green + 0.16)  }
 $$
 
-_อ้างอิง: Sripada, R., et al. &quot;การกำหนดความต้องการไนโตรเจนระหว่างฤดูสำหรับข้าวโพดโดยใช้การถ่ายภาพสี-อินฟราเรดจากอากาศ&quot; วิทยานิพนธ์ระดับปริญญาเอก, มหาวิทยาลัยรัฐนอร์ทแคโรไลนา, 2005._
+_อ้างอิง: Sripada, R., et al. "การกำหนดความต้องการไนโตรเจนระหว่างฤดูสำหรับข้าวโพดโดยใช้การถ่ายภาพสี-อินฟราเรดจากอากาศ" วิทยานิพนธ์ระดับปริญญาเอก, มหาวิทยาลัยรัฐนอร์ทแคโรไลนา, 2005._
 
 ***
 
@@ -323,7 +319,7 @@ $$
 GRVI = {NIR \over Green }
 $$
 
-_อ้างอิง: Sripada, R., et al. &quot;การถ่ายภาพสีอินฟราเรดจากอากาศเพื่อกำหนดความต้องการไนโตรเจนในช่วงต้นฤดูของข้าวโพด.&quot; Agronomy Journal 98 (2006): 968-977._
+_อ้างอิง: Sripada, R., et al. "การถ่ายภาพสีอินฟราเรดจากอากาศเพื่อกำหนดความต้องการไนโตรเจนในช่วงต้นฤดูของข้าวโพด." Agronomy Journal 98 (2006): 968-977._
 
 ***
 
@@ -335,7 +331,7 @@ $$
 GSAVI = 1.5 * {(NIR - Green) \over (NIR + Green + 0.5)  }
 $$
 
-_อ้างอิง: Sripada, R., et al. &quot;การกำหนดความต้องการไนโตรเจนระหว่างฤดูสำหรับข้าวโพดโดยใช้การถ่ายภาพสี-อินฟราเรดจากอากาศ&quot; วิทยานิพนธ์ระดับปริญญาเอก, มหาวิทยาลัยรัฐนอร์ทแคโรไลนา, 2005._
+_อ้างอิง: Sripada, R., et al. "การกำหนดความต้องการไนโตรเจนระหว่างฤดูสำหรับข้าวโพดโดยใช้การถ่ายภาพสี-อินฟราเรดจากอากาศ" วิทยานิพนธ์ระดับปริญญาเอก, มหาวิทยาลัยรัฐนอร์ทแคโรไลนา, 2005._
 
 ***
 
@@ -353,9 +349,7 @@ $$
 EVI = 2.5 *  {(NIR - Red) \over (NIR + 6 * Red - 7.5 * Blue + 1)}
 $$
 
-ค่าLAI สูงมักอยู่ในช่วงประมาณ 0 ถึง 3.5 อย่างไรก็ตาม เมื่อภาพมีเมฆและลักษณะสว่างอื่น ๆ ที่ก่อให้เกิดพิกเซลอิ่มตัว ค่าLAI อาจเกิน 3.5 ดังนั้น คุณควรตัดเมฆและลักษณะสว่างออกจากภาพก่อนสร้างภาพLAI
-
-_อ้างอิง: Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde, และ A. Thomsen. &quot;ข้อมูลมัลติสเปกตรัมจากอากาศยานสำหรับการวัดดัชนีพื้นที่ใบ (LAI), ความเข้มข้นของไนโตรเจน และประสิทธิภาพการสังเคราะห์แสงในเกษตรกรรม.&quot; Remote Sensing of Environment 81, no. 2-3 (2002): 179-193._
+ค่าLAI สูงมักอยู่ในช่วงประมาณ 0 ถึง 3.5 อย่างไรก็ตาม เมื่อภาพมีเมฆและลักษณะสว่างอื่น ๆ ที่ก่อให้เกิดพิกเซลอิ่มตัว ค่าLAI อาจเกิน 3.5 ดังนั้น คุณควรตัดเมฆและลักษณะสว่างออกจากภาพก่อนสร้างภาพLAI_อ้างอิง: Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde, และ A. Thomsen. "ข้อมูลมัลติสเปกตรัมจากอากาศยานสำหรับการวัดดัชนีพื้นที่ใบ (LAI), ความเข้มข้นของไนโตรเจน และประสิทธิภาพการสังเคราะห์แสงในเกษตรกรรม." Remote Sensing of Environment 81, no. 2-3 (2002): 179-193._
 
 ***
 
@@ -369,7 +363,7 @@ $$
 LCI = {NIR2 - RedEdge \over NIR2 + Red}
 $$
 
-_อ้างอิง: Datt, B. &quot;Remote Sensing of Water Content in Eucalyptus Leaves.&quot; Journal of Plant Physiology 154, no. 1 (1999): 30-36._
+_อ้างอิง: Datt, B. "Remote Sensing of Water Content in Eucalyptus Leaves." Journal of Plant Physiology 154, no. 1 (1999): 30-36._
 
 ***
 
@@ -381,7 +375,7 @@ $$
 MNLI = {(NIR^{2} - Red) * (1 + L) \over (NIR^{2} + Red + L)  }
 $$
 
-_อ้างอิง: Yang, Z., P. Willis, และ R. Mueller. &quot;ผลกระทบของภาพ AWIFS ที่ปรับปรุงด้วยอัตราส่วนแถบต่อความแม่นยำในการจำแนกพืชผล.&quot; รายงานการประชุม Pecora 17 Remote Sensing Symposium (2008), Denver, CO._
+_อ้างอิง: Yang, Z., P. Willis, และ R. Mueller. "ผลกระทบของภาพ AWIFS ที่ปรับปรุงด้วยอัตราส่วนแถบต่อความแม่นยำในการจำแนกพืชผล." รายงานการประชุม Pecora 17 Remote Sensing Symposium (2008), Denver, CO._
 
 ***
 
@@ -393,7 +387,7 @@ $$
 MSAVI2 = {2 * NIR + 1 - \sqrt{(2 * NIR + 1)^{2} - 8(NIR - Red)} \over 2}
 $$
 
-_อ้างอิง: Qi, J., A. Chehbouni, A. Huete, Y. Kerr, และ S. Sorooshian. &quot;A Modified Soil Adjusted Vegetation Index.&quot; Remote Sensing of Environment 48 (1994): 119-126._
+_อ้างอิง: Qi, J., A. Chehbouni, A. Huete, Y. Kerr, และ S. Sorooshian. "A Modified Soil Adjusted Vegetation Index." Remote Sensing of Environment 48 (1994): 119-126._
 
 ***
 
@@ -405,7 +399,7 @@ $$
 MSR = {(NIR / Red) - 1 \over \sqrt{NIR / Red} + 1}
 $$
 
-_อ้างอิง: Chen, J. &quot;Evaluation of Vegetation Indices and a Modified Simple Ratio for Boreal Applications.&quot; Canadian Journal of Remote Sensing 22 (1996): 229-242._
+_อ้างอิง: Chen, J. "Evaluation of Vegetation Indices and a Modified Simple Ratio for Boreal Applications." Canadian Journal of Remote Sensing 22 (1996): 229-242._
 
 ***
 
@@ -441,7 +435,7 @@ $$
 NLI = {NIR^{2} - Red \over NIR^{2} + Red  }
 $$
 
-_อ้างอิง: Goel, N., และ W. Qin. &quot;Influences of Canopy Architecture on Relationships Between Various Vegetation Indices and LAI and Fpar: A Computer Simulation.&quot; Remote Sensing Reviews 10 (1994): 309-347._
+_อ้างอิง: Goel, N., และ W. Qin. "Influences of Canopy Architecture on Relationships Between Various Vegetation Indices and LAI and Fpar: A Computer Simulation." Remote Sensing Reviews 10 (1994): 309-347._
 
 ***
 
@@ -453,7 +447,7 @@ $$
 OSAVI = {(NIR - Red) \over (NIR + Red + 0.16)  }
 $$
 
-_อ้างอิง: Rondeaux, G., M. Steven, และ F. Baret. &quot;Optimization of Soil-Adjusted Vegetation Indices.&quot; Remote Sensing of Environment 55 (1996): 95-107._
+_อ้างอิง: Rondeaux, G., M. Steven, และ F. Baret. "Optimization of Soil-Adjusted Vegetation Indices." Remote Sensing of Environment 55 (1996): 95-107._
 
 ***
 
@@ -465,7 +459,7 @@ $$
 RDVI = {(NIR- Red) \over \sqrt{(NIR + Red)}  }
 $$
 
-_อ้างอิง: Roujean, J., and F. Breon. &quot;การประมาณค่า PAR ที่ถูกพืชดูดซับจากการวัดการสะท้อนสองทิศทาง.&quot; Remote Sensing of Environment 51 (1995): 375-384._
+_อ้างอิง: Roujean, J., and F. Breon. "การประมาณค่า PAR ที่ถูกพืชดูดซับจากการวัดการสะท้อนสองทิศทาง." Remote Sensing of Environment 51 (1995): 375-384._
 
 ***
 
@@ -477,7 +471,7 @@ $$
 SAVI = {1.5 * (NIR- Red) \over (NIR + Red + 0.5)  }
 $$
 
-_อ้างอิง: Huete, A. &quot;A Soil-Adjusted Vegetation Index (SAVI).&quot; Remote Sensing of Environment 25 (1988): 295-309._
+_อ้างอิง: Huete, A. "A Soil-Adjusted Vegetation Index (SAVI)." Remote Sensing of Environment 25 (1988): 295-309._
 
 ***
 
@@ -489,7 +483,7 @@ $$
 TDVI = 1.5 * {(NIR- Red) \over \sqrt{NIR^{2} + Red + 0.5}  }
 $$
 
-_อ้างอิง: Bannari, A., H. Asalhi, และ P. Teillet. &quot;ดัชนีความแตกต่างที่แปลงแล้วของพืชพรรณ (TDVI) สำหรับการทำแผนที่ความปกคลุมของพืชพรรณ&quot; ในรายงานการประชุมวิชาการด้านธรณีวิทยาและการสำรวจระยะไกล, IGARSS &#x27;02, IEEE International, เล่ม 5 (2002)._
+_อ้างอิง: Bannari, A., H. Asalhi, และ P. Teillet. "ดัชนีความแตกต่างที่แปลงแล้วของพืชพรรณ (TDVI) สำหรับการทำแผนที่ความปกคลุมของพืชพรรณ" ในรายงานการประชุมวิชาการด้านธรณีวิทยาและการสำรวจระยะไกล, IGARSS '02, IEEE International, เล่ม 5 (2002)._
 
 ***
 
@@ -501,7 +495,7 @@ $$
 VARI = {Green - Red \over Green + Red - Blue  }
 $$
 
-_อ้างอิง: Gitelson, A., et al. &quot;เส้นแบ่งพืชและดินในพื้นที่สเปกตรัมแสงที่มองเห็นได้: แนวคิดและเทคนิคสำหรับการประมาณสัดส่วนพืชจากระยะไกล. International Journal of Remote Sensing 23 (2002): 2537−2562._
+_อ้างอิง: Gitelson, A., et al. "เส้นแบ่งพืชและดินในพื้นที่สเปกตรัมแสงที่มองเห็นได้: แนวคิดและเทคนิคสำหรับการประมาณสัดส่วนพืชจากระยะไกล. International Journal of Remote Sensing 23 (2002): 2537−2562._
 
 ***
 
@@ -517,6 +511,6 @@ $$
 
 _อ้างอิง_
 
-_Gitelson, A. &quot;ดัชนีพืชพรรณช่วงไดนามิกกว้าง (WDRVI) สำหรับการวัดปริมาณทางชีวฟิสิกส์ของพืชพรรณจากระยะไกล&quot; Journal of Plant Physiology 161, ฉบับที่ 2 (2004): 165-173._
+_Gitelson, A. "ดัชนีพืชพรรณช่วงไดนามิกกว้าง (WDRVI) สำหรับการวัดปริมาณทางชีวฟิสิกส์ของพืชพรรณจากระยะไกล" Journal of Plant Physiology 161, ฉบับที่ 2 (2004): 165-173._
 
-_Henebry, G., A. Viña และ A. Gitelson. &quot;ดัชนีพืชพรรณช่วงไดนามิกกว้าง (Wide Dynamic Range Vegetation Index) และประโยชน์ที่อาจมีในการวิเคราะห์ช่องว่าง (Gap Analysis).&quot; Gap Analysis Bulletin 12: 50-56._
+_Henebry, G., A. Viña และ A. Gitelson. "ดัชนีพืชพรรณช่วงไดนามิกกว้าง (Wide Dynamic Range Vegetation Index) และประโยชน์ที่อาจมีในการวิเคราะห์ช่องว่าง (Gap Analysis)." Gap Analysis Bulletin 12: 50-56._

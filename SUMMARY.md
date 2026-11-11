@@ -55,7 +55,7 @@
 * [เครือข่าย DAQ-E และการซิงค์เวลา](daq/ethernet-ptp.md)
 * [ขั้นตอนการทำงานด้านการสะท้อนแสง](daq/reflectance.md)
 
-## Linux &amp; Edge Computing
+## Linux & Edge Computing
 
 * [ภาพรวมของ Linux](linux/linux-overview.md)
 * [การติดตั้ง Linux](linux/linux-installation.md)
@@ -66,7 +66,7 @@
 * [การปรับแต่งการประมวลผลแบบไดนามิก](processing-architecture/dynamic-compute-adaptation.md)
 * [ท่อการประมวลผล](processing-architecture/processing-pipeline.md)
 
-## เอกสารอ้างอิง (CLI &amp; SDK)
+## เอกสารอ้างอิง (CLI & SDK)
 
 * [Chloros เอกสารอ้างอิง CLI](reference/cli-reference.md)
 * [Chloros เอกสารอ้างอิง Python SDK](reference/sdk-reference.md)

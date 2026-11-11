@@ -1,9 +1,7 @@
 # API : Python SDK
 
 {% hint style="info" %}
-**กำลังหา API แบบครบถ้วนอยู่ใช่ไหม?** หน้านี้คือคู่มือปฏิบัติจริง ทุกคลาส เมธอด ลายเซ็นที่ถูกต้อง และตัวอย่างที่สามารถคัดลอกและวางได้ อยู่ใน [SDK Reference](reference/sdk-reference.md) ซึ่งได้รับการปรับให้เหมาะสมสำหรับผู้ช่วย AI**กำลังทำงานกับผู้ช่วย AI อยู่หรือไม่?** วางURL นี้ลงในแชทเพื่อให้ผู้ช่วย AI มีChloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API
-
-ทุกหน้าของคู่มือนี้มีให้ในรูปแบบ markdown ดิบที่ slug ตัวพิมพ์เล็ก + `.md` และคู่มือทั้งหมดถูกจัดทำดัชนีไว้ที่ `https://mapir.gitbook.io/chloros/llms.txt`
+**กำลังหา API แบบครบถ้วนอยู่ใช่ไหม?** หน้านี้คือคู่มือปฏิบัติจริง ทุกคลาส เมธอด ลายเซ็นที่ถูกต้อง และตัวอย่างที่สามารถคัดลอกและวางได้ อยู่ใน [SDK Reference](reference/sdk-reference.md) ซึ่งได้รับการปรับให้เหมาะสมสำหรับผู้ช่วย AI**กำลังทำงานกับผู้ช่วย AI อยู่หรือไม่?** วางURL นี้ลงในแชทเพื่อให้ผู้ช่วย AI มีChloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API Chloros API ทุกหน้าของคู่มือนี้มีให้ในรูปแบบ markdown ดิบที่ slug ตัวพิมพ์เล็ก + `.md` และคู่มือทั้งหมดถูกจัดทำดัชนีไว้ที่ `https://mapir.gitbook.io/chloros/llms.txt`
 {% endhint %}
 
 **Chloros Python SDK** (`chloros-sdk` บน PyPI) เป็นตัวขับเคลื่อนทุกฟังก์ชันที่แอปเดสก์ท็อปสามารถทำได้จาก Python: การประมวลผลภาพแบบแบทช์, การควบคุมกล้อง LATTICE และอาร์เรย์แบบเรียลไทม์, เซสชันเซ็นเซอร์แสง DAQ, และการทำงานอัตโนมัติของโครงการที่บันทึกไว้ นี่เป็นชั้นบางๆ ที่อยู่เหนือแบ็กเอนด์ท้องถิ่นเดียวกันที่ GUI และ CLI ใช้ (HTTP บน `127.0.0.1:5000`) ดังนั้นพฤติกรรมจึงเหมือนกันในทั้งสามอินเทอร์เฟซ
@@ -144,7 +142,7 @@ for hint in result.get("summary", {}).get("hints", []):
 ```
 
 {% hint style="warning" %}
-**`process()` ไม่ก่อให้เกิดข้อผิดพลาดเมื่อการรันไม่สร้างภาพใดๆ** นี่คือจุดเดียวที่SDK และCLI มีความแตกต่างโดยเจตนา: `chloros-cli process` ถือว่า &quot;มีการขอผลิตภัณฑ์ แต่ไม่มีการเขียนผลิตภัณฑ์ใด&quot; เป็นความล้มเหลวและออกค่าไม่เท่ากับศูนย์ ในขณะที่SDK จะคืนค่าตามปกติและรายงานสภาพดังกล่าวผ่าน `summary` / hints. หาก pipeline ของคุณควรหยุดเมื่อการรันไม่มีผลลัพธ์ ให้ตรวจสอบด้วยตัวเอง — ตรวจสอบ `summary` (หรือนับจำนวนไฟล์ในโฟลเดอร์โครงการ) แทนที่จะพึ่งพาข้อยกเว้น
+**`process()` ไม่ก่อให้เกิดข้อผิดพลาดเมื่อการรันไม่สร้างภาพใดๆ** นี่คือจุดเดียวที่SDK และCLI มีความแตกต่างโดยเจตนา: `chloros-cli process` ถือว่า "มีการขอผลิตภัณฑ์ แต่ไม่มีการเขียนผลิตภัณฑ์ใด" เป็นความล้มเหลวและออกค่าไม่เท่ากับศูนย์ ในขณะที่SDK จะคืนค่าตามปกติและรายงานสภาพดังกล่าวผ่าน `summary` / hints. หาก pipeline ของคุณควรหยุดเมื่อการรันไม่มีผลลัพธ์ ให้ตรวจสอบด้วยตัวเอง — ตรวจสอบ `summary` (หรือนับจำนวนไฟล์ในโฟลเดอร์โครงการ) แทนที่จะพึ่งพาข้อยกเว้น
 {% endhint %}
 
 ## Smart Connect — ฮาร์ดแวร์แบบเรียลไทม์
@@ -163,7 +161,7 @@ with chloros_sdk.connect_camera("213800234") as cam:
 ```
 
 {% hint style="info" %}
-**เส้นทางสัมพัทธ์จะชี้ไปยังตำแหน่งที่สคริปต์ของคุณทำงาน (เปลี่ยนแปลงในเวอร์ชัน 1.3.0)** เมื่อใช้ backend ท้องถิ่น `output_dir` แบบสัมพัทธ์ (รวมถึง `"output"` ตามค่าเริ่มต้น) — และเส้นทางอื่น ๆ ที่ backend เปิด (`burst_dir`, `profile_path`, `save_path`, `mask_path`) — จะถูกกำหนดตำแหน่งตามไดเรกทอรีทำงานของสคริปต์ของคุณ ดังนั้น `cam.capture("output/")` จะเขียนข้อมูลลงใน `<current folder>/output/` ในเวอร์ชัน 1.2.0 เบ็กเอนด์ที่ติดตั้งไว้จะทำการแปลงเส้นทางเหล่านี้ในโฟลเดอร์ติดตั้งของตัวเอง และเกิดข้อผิดพลาด &quot;Access is denied&quot; เมื่อใช้กับเบ็กเอนด์ระยะไกล เส้นทางจะถูกส่งไปตามที่พิมพ์ไว้
+**เส้นทางสัมพัทธ์จะชี้ไปยังตำแหน่งที่สคริปต์ของคุณทำงาน (เปลี่ยนแปลงในเวอร์ชัน 1.3.0)** เมื่อใช้ backend ท้องถิ่น `output_dir` แบบสัมพัทธ์ (รวมถึง `"output"` ตามค่าเริ่มต้น) — และเส้นทางอื่น ๆ ที่ backend เปิด (`burst_dir`, `profile_path`, `save_path`, `mask_path`) — จะถูกกำหนดตำแหน่งตามไดเรกทอรีทำงานของสคริปต์ของคุณ ดังนั้น `cam.capture("output/")` จะเขียนข้อมูลลงใน `<current folder>/output/` ในเวอร์ชัน 1.2.0 เบ็กเอนด์ที่ติดตั้งไว้จะทำการแปลงเส้นทางเหล่านี้ในโฟลเดอร์ติดตั้งของตัวเอง และเกิดข้อผิดพลาด "Access is denied" เมื่อใช้กับเบ็กเอนด์ระยะไกล เส้นทางจะถูกส่งไปตามที่พิมพ์ไว้
 {% endhint %}
 
 ### มصفوفةที่ซิงโครไนซ์ — `connect_array`
@@ -246,7 +244,7 @@ claude mcp add chloros -- chloros-mcp
 
 ## ข้อยกเว้น
 
-จับคลาสพื้นฐานเพื่อจัดการกับ &quot;ทุกปัญหาที่ Chloros อาจเกิดขึ้น&quot;:
+จับคลาสพื้นฐานเพื่อจัดการกับ "ทุกปัญหาที่ Chloros อาจเกิดขึ้น":
 
 ```python
 import chloros_sdk

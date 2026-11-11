@@ -77,7 +77,7 @@ Chloros ส่งออกผลิตภัณฑ์ที่ผ่านกา
 | `Chloros:IlluminationInvariant` | `True` สำหรับดัชนีที่คำนวณจากค่าการสะท้อนแสง, `False` จากค่าความส่องสว่างหรือค่าจากเซ็นเซอร์ |
 | `Chloros:ChlorosPipelineVersion` | เวอร์ชันChloros ที่สร้างดัชนี |
 
-`Chloros:PixelScale` ถูกลบออกจากผลิตภัณฑ์ดัชนี — ใช้ `IndexMin` / `IndexMax` ข้างต้น สูตรการอ่านกลับแบบเต็มอยู่ในส่วน &quot;An integer index raster is a per-image contrast stretch&quot; ใน [CLI Reference](reference/cli-reference.md).
+`Chloros:PixelScale` ถูกลบออกจากผลิตภัณฑ์ดัชนี — ใช้ `IndexMin` / `IndexMax` ข้างต้น สูตรการอ่านกลับแบบเต็มอยู่ในส่วน "An integer index raster is a per-image contrast stretch" ใน [CLI Reference](reference/cli-reference.md).
 
 ## การอ่านค่าพิกเซลการสะท้อน
 
@@ -94,4 +94,4 @@ Chloros ส่งออกผลิตภัณฑ์ที่ผ่านกา
 **การบันทึก 8-bit** ข้อมูลที่ส่งออกจากการบันทึก 8-bit เป็น 8-bit ค่าสะท้อนแสงจะถูกปรับสเกลใหม่และประทับด้วย `Chloros:PixelScale=32768` ดังนั้นสเกลจึงคงที่; ผลิตภัณฑ์ DN แบบ 8-bit และไฟล์ความสะท้อนที่เขียนก่อนเวอร์ชัน 1.3.0 จะถูกตัดช่วงค่าให้อยู่ในช่วง 0–255 และไม่มีแท็กสเกล หากแท็กนี้ไม่มีในไฟล์ความสะท้อน LATTICE อย่าสมมติว่ามีสเกล; ให้ส่งออกใหม่ในแบบ 16-bit หรือ 32-bit แทน
 {% endhint %}
 
-สำหรับกฎเกณฑ์ทั้งหมด (รวมถึงแท็กที่เข้ากันได้กับ MicaSense) ดู **&quot;การอ่านพิกเซลการสะท้อนแสง&quot;** ใน [คู่มืออ้างอิง [CLI]](reference/cli-reference.md).
+สำหรับกฎเกณฑ์ทั้งหมด (รวมถึงแท็กที่เข้ากันได้กับ MicaSense) ดู **"การอ่านพิกเซลการสะท้อนแสง"** ใน [คู่มืออ้างอิง [CLI]](reference/cli-reference.md).
