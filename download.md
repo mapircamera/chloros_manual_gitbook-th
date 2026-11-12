@@ -194,7 +194,9 @@ pip install chloros-sdk
 * **🐻 วิธีเดเบเยอร์ขั้นสูงที่รับรู้พื้นผิว** - วิธีเดเบเยอร์คุณภาพสูงที่รับรู้ขอบภาพ ร่วมกับโมเดลลดสัญญาณรบกวน AI/ML ซึ่งช่วยกำจัดสัญญาณรบกวนจากการเดเบเยอร์ได้เกือบทั้งหมด
 * 🧮 **สูตรกำหนดเอง** - สร้างดัชนีมัลติสเปกตรัมตามต้องการ
 
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">ดูแพ็กเกจและราคาChloros+</a></p>***
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">ดูแพ็กเกจและราคาChloros+</a></p>
+
+***
 
 ## ความช่วยเหลือในการติดตั้ง
 
@@ -235,7 +237,9 @@ pip install chloros-sdk
 * 📧 **อีเมล**: info@mapir.camera
 * 🌐 **เว็บไซต์**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **เอกสาร**: [เริ่มต้นใช้งาน](./)
-* ❓ **FAQ**: [คำถามที่พบบ่อย](faq.md)***
+* ❓ **FAQ**: [คำถามที่พบบ่อย](faq.md)
+
+***
 
 ## การอัปเดตซอฟต์แวร์
 

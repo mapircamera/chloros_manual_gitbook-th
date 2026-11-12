@@ -18,7 +18,9 @@
 2. **ปุ่มกรองกล้อง** — หนึ่งปุ่มต่อกล้อง LATTICE หนึ่งตัว ปรากฏเฉพาะในโหมด Per Camera
 3. **ปุ่มโหมดส่งออก/ดู** — กำหนดว่าภาพย่อแต่ละภาพจะแสดงผลิตภัณฑ์ใด
 
-เมื่อหน้าต่างแคบเกินไปที่จะแสดงทั้งหมด กลุ่มจะยุบลงจากขวาไปซ้ายเป็นเมนูแบบเลื่อนลงเมื่อนำเมาส์ไปวาง: ปุ่มส่งออก/ดูก่อนยุบ ตามด้วยปุ่มกล้อง กลุ่มที่พับลงจะเหลือปุ่มเดียวที่แสดงตัวเลือกที่กำลังใช้งานอยู่ และเมื่อนำเมาส์ไปวางเหนือปุ่มนั้น ชุดปุ่มทั้งหมดจะเลื่อนลงมา **โหมด Per Trigger / Per Camera ไม่เคยพับลง**<!-- SCREENSHOT-NEEDED: Image grid toolbar of a LATTICE array project at full width, showing all three button groups inline: Per Trigger / Per Camera, three camera filter buttons labelled "LATT-M3M (serial)", and the export/view buttons including TIFF, RAW (Original), RAW (Radiance), RAW (Reflectance). -->***
+เมื่อหน้าต่างแคบเกินไปที่จะแสดงทั้งหมด กลุ่มจะยุบลงจากขวาไปซ้ายเป็นเมนูแบบเลื่อนลงเมื่อนำเมาส์ไปวาง: ปุ่มส่งออก/ดูก่อนยุบ ตามด้วยปุ่มกล้อง กลุ่มที่พับลงจะเหลือปุ่มเดียวที่แสดงตัวเลือกที่กำลังใช้งานอยู่ และเมื่อนำเมาส์ไปวางเหนือปุ่มนั้น ชุดปุ่มทั้งหมดจะเลื่อนลงมา **โหมด Per Trigger / Per Camera ไม่เคยพับลง**<!-- SCREENSHOT-NEEDED: Image grid toolbar of a LATTICE array project at full width, showing all three button groups inline: Per Trigger / Per Camera, three camera filter buttons labelled "LATT-M3M (serial)", and the export/view buttons including TIFF, RAW (Original), RAW (Radiance), RAW (Reflectance). -->
+
+***
 
 ## ปุ่มส่งออก/ดู
 

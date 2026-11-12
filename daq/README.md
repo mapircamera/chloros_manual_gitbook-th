@@ -9,7 +9,9 @@ MAPIR วัดแสงรอบตัวในรูปแบบสเปก�
 
 
 
-<!-- SCREENSHOT-NEEDED: product photo of the DAQ-U, DAQ-M, and DAQ-E units side by side, each with its Sunshine cosine-corrector cap fitted (request from hardware team — no repo asset exists) -->***
+<!-- SCREENSHOT-NEEDED: product photo of the DAQ-U, DAQ-M, and DAQ-E units side by side, each with its Sunshine cosine-corrector cap fitted (request from hardware team — no repo asset exists) -->
+
+***
 
 ## สามรุ่น หนึ่งรูปแบบข้อมูล
 
@@ -17,7 +19,9 @@ MAPIR วัดแสงรอบตัวในรูปแบบสเปก�
 | --- | --- | --- |
 | **DAQ-U** | USB (ซีเรียล) | สแกนพอร์ตซีเรียล |
 | **DAQ-M** | Bluetooth Low Energy | สแกน BLE ตามชื่อ |
-| **DAQ-E** | Ethernet (IPv4, PoE-powered) | mDNS `_daq-e._tcp` (hostname `daq-e-<id>.local`) |**DAQ-E-S (ใหม่ในเวอร์ชัน 1.3.0).** DAQ-E ที่มาพร้อมตัวกระจายแสงแบบถาวรและเซ็นเซอร์วัดมุมเอียง Chloros ระบุอุปกรณ์นี้ด้วยรหัส `DAQ-E-S` และทำงานเหมือนกับ DAQ-E ทุกประการ ยกเว้นว่าไม่มีการปรับค่าความจุ และทุกค่าที่อ่านได้จะรวมข้อมูลมุมเอียง มุมหมุน และมุมก้มของอุปกรณ์ ดู [DAQ-E-S: ตัวกระจายแสงแบบคงที่และเซ็นเซอร์เอียง](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
+| **DAQ-E** | Ethernet (IPv4, PoE-powered) | mDNS `_daq-e._tcp` (hostname `daq-e-<id>.local`) |
+
+**DAQ-E-S (ใหม่ในเวอร์ชัน 1.3.0).** DAQ-E ที่มาพร้อมตัวกระจายแสงแบบถาวรและเซ็นเซอร์วัดมุมเอียง Chloros ระบุอุปกรณ์นี้ด้วยรหัส `DAQ-E-S` และทำงานเหมือนกับ DAQ-E ทุกประการ ยกเว้นว่าไม่มีการปรับค่าความจุ และทุกค่าที่อ่านได้จะรวมข้อมูลมุมเอียง มุมหมุน และมุมก้มของอุปกรณ์ ดู [DAQ-E-S: ตัวกระจายแสงแบบคงที่และเซ็นเซอร์เอียง](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
 
 ทั้งสามรุ่นใช้โปรโตคอลการสื่อสารผ่านสายเดียวกันและส่งข้อมูลที่เหมือนกัน:
 

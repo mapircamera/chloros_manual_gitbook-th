@@ -168,7 +168,9 @@ Chloros ยังเขียนแท็ก XMP ของตัวเอง `Ch
 3. แนบไปกับเอกสารโครงการ
 4. ส่งไปยังทีมสนับสนุน MAPIR หากพบปัญหา
 
-เพื่อส่งปัญหาโดยตรงไปยัง MAPIR ให้ใช้ไอคอนข้อผิดพลาด (**Report a bug**) ที่ด้านบนของแท็บ Debug Log — ดู [รายงานข้อผิดพลาดจากแท็บ log](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+เพื่อส่งปัญหาโดยตรงไปยัง MAPIR ให้ใช้ไอคอนข้อผิดพลาด (**Report a bug**) ที่ด้านบนของแท็บ Debug Log — ดู [รายงานข้อผิดพลาดจากแท็บ log](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).
+
+***
 
 ## ปัญหาผลลัพธ์ที่พบบ่อยและวิธีแก้ไข
 
